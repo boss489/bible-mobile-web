@@ -3,6 +3,7 @@ import { ChapterView, type VerseStudyOpenMode } from './components/ChapterView/C
 import { CommentarySheet } from './components/CommentarySheet/CommentarySheet';
 import { EntryGate } from './components/EntryGate/EntryGate';
 import { HistoryTimeline } from './components/HistoryTimeline/HistoryTimeline';
+import { HistoryTimelineModal } from './components/HistoryTimeline/HistoryTimelineModal';
 import { MainHome } from './components/MainHome/MainHome';
 import { MyRecordsModal } from './components/MyRecordsModal/MyRecordsModal';
 import { PassageNavigator } from './components/PassageNavigator/PassageNavigator';
@@ -119,6 +120,7 @@ export function App() {
 
   const [isNavigatorOpen, setIsNavigatorOpen] = useState<boolean>(false);
   const [isCommentaryOpen, setIsCommentaryOpen] = useState<boolean>(false);
+  const [isHistoryModalOpen, setIsHistoryModalOpen] = useState<boolean>(false);
   const [isRecordsOpen, setIsRecordsOpen] = useState<boolean>(false);
   const [studyVerse, setStudyVerse] = useState<number | null>(null);
   const [studyInitialTab, setStudyInitialTab] = useState<VerseStudyTabKey>('references');
@@ -336,7 +338,11 @@ export function App() {
   }, [fontSize, screen]);
 
   const isAnySheetOpen =
-    isNavigatorOpen || isCommentaryOpen || isRecordsOpen || studyVerse !== null;
+    isNavigatorOpen ||
+    isCommentaryOpen ||
+    isHistoryModalOpen ||
+    isRecordsOpen ||
+    studyVerse !== null;
 
   // 본문 스크롤 시 현재 읽고 있는 절 추적
   useEffect(() => {
@@ -583,6 +589,7 @@ export function App() {
     };
     setReturnOrigin(originToSave);
     setIsCommentaryOpen(false);
+    setIsHistoryModalOpen(false);
     setStudyVerse(null);
     navigateTo(translation, ref.book, ref.chapter, ref.verseStart, {
       highlight: true,
@@ -620,6 +627,7 @@ export function App() {
 
   // 본문 화면의 역사적 배경 -> '전체 역사 연대표 보기' 클릭 시
   const handleOpenFullTimelineFromReader = () => {
+    setIsHistoryModalOpen(false);
     setTimelineBackToReader({
       translation,
       book,
@@ -885,6 +893,7 @@ export function App() {
             onGoHome={() => {
               setIsNavigatorOpen(false);
               setIsCommentaryOpen(false);
+              setIsHistoryModalOpen(false);
               setStudyVerse(null);
               navigateScreen('home');
               window.scrollTo(0, 0);
@@ -922,6 +931,7 @@ export function App() {
             onOpenVerseStudy={handleOpenVerseStudy}
             onOpenCommentary={() => setIsCommentaryOpen(true)}
             onSelectHistoryPassage={(ref) => handleReadFullRelatedChapter(ref)}
+            onOpenHistoryModal={() => setIsHistoryModalOpen(true)}
             onOpenFullHistoryTimeline={handleOpenFullTimelineFromReader}
             onNavigateChapter={(nextB, nextC, nextV) =>
               navigateTo(translation, nextB, nextC, nextV, { highlight: false })
@@ -976,6 +986,18 @@ export function App() {
             maps={commentaryIndex?.maps ?? {}}
             onReadFullRelatedChapter={(ref) => handleReadFullRelatedChapter(ref)}
             onClose={() => setIsCommentaryOpen(false)}
+          />
+
+          <HistoryTimelineModal
+            isOpen={isHistoryModalOpen}
+            book={book}
+            chapter={chapter}
+            translation={translation}
+            dataset={historyDataset}
+            anchorMapping={currentChapterHistoryContext}
+            onSelectPassage={(ref) => handleReadFullRelatedChapter(ref)}
+            onOpenFullTimeline={handleOpenFullTimelineFromReader}
+            onClose={() => setIsHistoryModalOpen(false)}
           />
         </div>
       ) : null}

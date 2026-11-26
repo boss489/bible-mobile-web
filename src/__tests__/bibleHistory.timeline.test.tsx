@@ -307,4 +307,100 @@ describe('성경 앱 개편: 성경순 · 연대순 읽기 및 역사 연대표 
       screen.queryByRole('region', { name: '현재 본문의 역사적 배경' }),
     ).not.toBeInTheDocument();
   });
+
+  it('6. 모바일 화면 최적화(1단계): 초기 진입 시 차트 시야 확보(하단 요약 바), 바텀시트 열기·확장·닫기, 기준 안내 토글, 전체화면 모드를 지원한다', async () => {
+    window.localStorage.setItem('bible_web_v1:unlocked_hash', UNLOCKED_SHA256);
+    const user = userEvent.setup();
+    render(<App />);
+
+    await user.click(screen.getByRole('button', { name: /역사 연대표/ }));
+    await screen.findByRole('heading', { name: '연대순 읽기 · 통합 역사 연대표' });
+
+    // 초기 진입 시 상세 바텀시트는 닫혀 있고 하단 요약 바를 통해 차트 가시 영역을 최대로 확보한다
+    expect(
+      screen.queryByRole('article', { name: '선택된 역사 항목 상세 정보' }),
+    ).not.toBeInTheDocument();
+
+    const peekOpenBtn = screen.getByRole('button', { name: /시대 설명 · 말씀/ });
+    await user.click(peekOpenBtn);
+
+    const detailSheet = screen.getByRole('article', { name: '선택된 역사 항목 상세 정보' });
+    expect(within(detailSheet).getByRole('heading', { name: /시대 개관/ })).toBeInTheDocument();
+
+    // 크기 전환 버튼 없이 기본 크게 열린 상태에서 닫기 동작 확인
+    expect(within(detailSheet).queryByRole('button', { name: /크게|기본 높이/ })).not.toBeInTheDocument();
+    await user.click(within(detailSheet).getByRole('button', { name: '상세 시트 닫기' }));
+    expect(
+      screen.queryByRole('article', { name: '선택된 역사 항목 상세 정보' }),
+    ).not.toBeInTheDocument();
+
+    // 상단 긴 안내문은 기본 접힘이며 'ⓘ 기준 안내' 클릭 시 펼쳐진다
+    const infoToggle = screen.getByRole('button', { name: 'ⓘ 기준 안내' });
+    expect(infoToggle).toHaveAttribute('aria-expanded', 'false');
+    await user.click(infoToggle);
+    expect(screen.getByRole('button', { name: '기준 접기 ▴' })).toHaveAttribute(
+      'aria-expanded',
+      'true',
+    );
+    expect(screen.getByText(/탐색 편의를 위한 요약 배치이며/)).toBeInTheDocument();
+
+    // '⤢ 크게 보기' 클릭 시 전체화면 클래스 및 스크롤 잠금 적용 후 종료 시 복원
+    const fullscreenBtn = screen.getByRole('button', { name: '⤢ 크게 보기' });
+    await user.click(fullscreenBtn);
+    expect(screen.getByRole('region', { name: '통합 성경 역사 연대표' })).toHaveClass(
+      'history-timeline-fullscreen',
+    );
+    expect(document.body.style.position).toBe('fixed');
+
+    await user.click(screen.getByRole('button', { name: '전체화면 종료' }));
+    expect(screen.getByRole('region', { name: '통합 성경 역사 연대표' })).not.toHaveClass(
+      'history-timeline-fullscreen',
+    );
+  });
+
+  it('7. 본문 내 역사적 배경 경량화 및 크게 열기 모달: 인라인 동시대 인물 퀵 프리뷰와 풀스크린 연대표 팝업 열기·닫기(스크롤 보존)를 지원한다', async () => {
+    window.localStorage.setItem('bible_web_v1:unlocked_hash', UNLOCKED_SHA256);
+    window.localStorage.setItem(
+      'bible_web_v1:last_read',
+      JSON.stringify({ translation: 'kr', book: 30, chapter: 1, verse: 1 }),
+    );
+    window.location.hash = '#/read';
+
+    const user = userEvent.setup();
+    render(<App />);
+
+    expect(await screen.findByRole('heading', { name: '아모스 1장' })).toBeInTheDocument();
+    window.scrollY = 180;
+
+    const historyToggle = await screen.findByRole('button', { name: /역사적 배경.*분열왕국/ });
+    await user.click(historyToggle);
+
+    const drawer = screen.getByRole('region', { name: '현재 본문의 역사적 배경' });
+    // 본문 드로어 내부에는 무거운 가로 스크롤 타임라인 뷰포트가 바로 렌더링되지 않아 본문 가독성을 해치지 않음
+    expect(
+      within(drawer).queryByRole('region', { name: '좌우 스크롤 가능한 통합 역사 시간축' }),
+    ).not.toBeInTheDocument();
+
+    // 동시대 인물 칩 클릭 시 인라인 요약 카드 노출
+    const amosChip = within(drawer).getByRole('button', { name: '아모스' });
+    await user.click(amosChip);
+    expect(within(drawer).getByRole('button', { name: '접기' })).toBeInTheDocument();
+
+    // '⤢ 이 시점 연대표 크게 열기' 클릭 시 풀스크린 레이어 팝업으로 공통 연대표가 열리고 배경 스크롤이 잠긴다
+    await user.click(within(drawer).getByRole('button', { name: /이 시점 연대표 크게 열기/ }));
+    const modal = screen.getByRole('dialog', { name: '아모스 1장 역사 연대표 크게 보기' });
+    expect(
+      within(modal).getByRole('region', { name: '좌우 스크롤 가능한 통합 역사 시간축' }),
+    ).toBeInTheDocument();
+    expect(document.body.style.position).toBe('fixed');
+    expect(document.body.style.top).toBe('-180px');
+
+    // 팝업을 닫으면 원래 본문(아모스 1장) 상태와 스크롤이 복원된다
+    await user.click(within(modal).getByRole('button', { name: '연대표 팝업 닫기' }));
+    expect(
+      screen.queryByRole('dialog', { name: '아모스 1장 역사 연대표 크게 보기' }),
+    ).not.toBeInTheDocument();
+    expect(document.body.style.position).toBe('');
+    expect(screen.getByRole('heading', { name: '아모스 1장' })).toBeInTheDocument();
+  });
 });

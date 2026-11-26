@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useState } from 'react';
 import {
   formatVerseRef,
   getAdjacentChapter,
@@ -23,7 +23,7 @@ import type {
   ScriptureRef,
 } from '../../types/bible';
 import type { BibleHistoryDataset, ChapterHistoryMapping } from '../../types/history';
-import { HistoryTimeline } from '../HistoryTimeline/HistoryTimeline';
+import { ChapterHistorySection } from '../HistoryTimeline/ChapterHistorySection';
 
 export type VerseStudyOpenMode = 'default' | 'translations';
 
@@ -49,6 +49,7 @@ interface ChapterViewProps {
   onOpenVerseStudy?: (verse: number, mode: VerseStudyOpenMode) => void;
   onOpenCommentary?: () => void;
   onSelectHistoryPassage?: (ref: ScriptureRef) => void;
+  onOpenHistoryModal?: () => void;
   onOpenFullHistoryTimeline?: () => void;
   onNavigateChapter: (book: number, chapter: number, verse: number) => void;
   onReturnToOrigin: () => void;
@@ -76,23 +77,13 @@ export function ChapterView({
   onOpenVerseStudy,
   onOpenCommentary,
   onSelectHistoryPassage,
+  onOpenHistoryModal,
   onOpenFullHistoryTimeline,
   onNavigateChapter,
   onReturnToOrigin,
 }: ChapterViewProps) {
   const [actionToast, setActionToast] = useState<{ verse: number; msg: string } | null>(null);
-  const [isHistoryOpen, setIsHistoryOpen] = useState<boolean>(false);
   const fontMeta = FONT_SIZE_OPTIONS.find((f) => f.level === fontSize) ?? FONT_SIZE_OPTIONS[2];
-
-  // 새 장으로 이동할 때 본문 집중을 위해 역사적 배경 패널은 기본 접힘 상태로 시작
-  useEffect(() => {
-    setIsHistoryOpen(false);
-  }, [chapterData?.book, chapterData?.chapter]);
-
-  const historyEra = useMemo(() => {
-    if (!historyDataset || !chapterHistoryContext) return null;
-    return historyDataset.eras.find((e) => e.id === chapterHistoryContext.eraId) ?? null;
-  }, [historyDataset, chapterHistoryContext]);
 
   const showFeedback = (verse: number, msg: string) => {
     setActionToast({ verse, msg });
@@ -171,40 +162,15 @@ export function ChapterView({
 
       {/* 역사적 배경이 검증된 본문에만 버튼 제공 (기본 접힘 상태 권장 · 비역사 본문에는 임의 연대 미표시) */}
       {historyDataset && chapterHistoryContext ? (
-        <section className="chapter-history-section" aria-label="현재 본문의 역사적 배경">
-          <button
-            type="button"
-            className={`chapter-history-toggle-btn ${
-              isHistoryOpen ? 'chapter-history-toggle-open' : ''
-            }`}
-            aria-expanded={isHistoryOpen}
-            onClick={() => setIsHistoryOpen((prev) => !prev)}
-          >
-            <span className="chapter-history-toggle-info">
-              <strong className="chapter-history-badge">역사적 배경</strong>
-              <span className="chapter-history-period">{chapterHistoryContext.displayPeriodKo}</span>
-              {historyEra ? (
-                <span className="chapter-history-era">· {historyEra.nameKo}</span>
-              ) : null}
-            </span>
-            <span className="chapter-history-chevron" aria-hidden="true">
-              {isHistoryOpen ? '접기 ▴' : '열기 ▾'}
-            </span>
-          </button>
-
-          {isHistoryOpen ? (
-            <div className="chapter-history-drawer">
-              <HistoryTimeline
-                variant="embedded"
-                dataset={historyDataset}
-                translation={chapterData.translation}
-                anchorMapping={chapterHistoryContext}
-                onSelectPassage={(ref) => onSelectHistoryPassage?.(ref)}
-                onOpenFullTimeline={onOpenFullHistoryTimeline}
-              />
-            </div>
-          ) : null}
-        </section>
+        <ChapterHistorySection
+          dataset={historyDataset}
+          context={chapterHistoryContext}
+          translation={chapterData.translation}
+          chapterKey={`${chapterData.book}_${chapterData.chapter}`}
+          onSelectPassage={onSelectHistoryPassage}
+          onOpenTimelineModal={() => onOpenHistoryModal?.()}
+          onOpenFullTimeline={onOpenFullHistoryTimeline}
+        />
       ) : null}
 
       {!keyVerse && !readingFact && chapterData.chapter === 1 && bookOverview?.reviewed && onOpenCommentary ? (

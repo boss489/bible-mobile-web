@@ -140,4 +140,5 @@ export interface TimelineViewState {
   categoryFilter: TimelineCategoryFilter;
   activeEraId: HistoryEraId | null;
   selection: TimelineSelection | null;
+  isDetailOpen?: boolean;
 }
