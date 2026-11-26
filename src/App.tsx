@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import { BibleSearchModal } from './components/BibleSearchModal/BibleSearchModal';
 import { ChapterView, type VerseStudyOpenMode } from './components/ChapterView/ChapterView';
 import { CommentarySheet } from './components/CommentarySheet/CommentarySheet';
 import { EntryGate } from './components/EntryGate/EntryGate';
@@ -122,6 +123,8 @@ export function App() {
   const [isCommentaryOpen, setIsCommentaryOpen] = useState<boolean>(false);
   const [isHistoryModalOpen, setIsHistoryModalOpen] = useState<boolean>(false);
   const [isRecordsOpen, setIsRecordsOpen] = useState<boolean>(false);
+  const [isSearchOpen, setIsSearchOpen] = useState<boolean>(false);
+  const [searchInitialQuery, setSearchInitialQuery] = useState<string>('');
   const [studyVerse, setStudyVerse] = useState<number | null>(null);
   const [studyInitialTab, setStudyInitialTab] = useState<VerseStudyTabKey>('references');
 
@@ -342,6 +345,7 @@ export function App() {
     isCommentaryOpen ||
     isHistoryModalOpen ||
     isRecordsOpen ||
+    isSearchOpen ||
     studyVerse !== null;
 
   // 본문 스크롤 시 현재 읽고 있는 절 추적
@@ -578,6 +582,48 @@ export function App() {
     setRecords((prev) => removePersonalRecord(prev, id));
   };
 
+  const handleOpenSearch = (initialQuery = '') => {
+    setSearchInitialQuery(initialQuery);
+    setIsSearchOpen(true);
+  };
+
+  const handleSelectSearchResult = (
+    targetTranslation: TranslationId,
+    nextBook: number,
+    nextChapter: number,
+    nextVerse: number,
+  ) => {
+    if (screen === 'reader') {
+      const originToSave: ReturnOriginState = returnOrigin ?? {
+        translation,
+        book,
+        chapter,
+        verse: selectedVerse ?? activeVerseRef.current,
+        scrollY: captureCurrentScrollY(),
+        reopenStudyVerse: null,
+      };
+      setReturnOrigin(originToSave);
+      setIsCommentaryOpen(false);
+      setIsHistoryModalOpen(false);
+      setIsNavigatorOpen(false);
+      setStudyVerse(null);
+      navigateTo(targetTranslation, nextBook, nextChapter, nextVerse, {
+        highlight: true,
+        openReader: true,
+      });
+      return;
+    }
+
+    setReaderBackSource(
+      screen === 'timeline' ? 'timeline' : screen === 'canon' ? 'canon' : null,
+    );
+    navigateTo(targetTranslation, nextBook, nextChapter, nextVerse, {
+      highlight: true,
+      clearReturnOrigin: true,
+      openReader: true,
+    });
+  };
+
   const handleReadFullRelatedChapter = (ref: ScriptureRef, originStudyVerse?: number) => {
     const originToSave: ReturnOriginState = returnOrigin ?? {
       translation,
@@ -735,6 +781,7 @@ export function App() {
             });
           }}
           onSwitchTranslation={handleSwitchTranslation}
+          onOpenSearch={() => handleOpenSearch('')}
           onOpenRecords={() => setIsRecordsOpen(true)}
         />
       ) : null}
@@ -748,6 +795,7 @@ export function App() {
           currentVerse={activeVerse}
           translation={translation}
           onSwitchTranslation={handleSwitchTranslation}
+          onSearchFullText={(q) => handleOpenSearch(q)}
           onSelectPassage={(nextB, nextC, nextV) => {
             setReaderBackSource('canon');
             navigateTo(translation, nextB, nextC, nextV, {
@@ -833,6 +881,15 @@ export function App() {
               <button
                 type="button"
                 className="toolbar-action-btn"
+                onClick={() => handleOpenSearch('')}
+                aria-label="본문 검색 열기"
+              >
+                검색
+              </button>
+
+              <button
+                type="button"
+                className="toolbar-action-btn"
                 onClick={() => setIsRecordsOpen(true)}
                 aria-label={`내 기록 열기${records.length > 0 ? ` (${records.length}개)` : ''}`}
               >
@@ -894,6 +951,7 @@ export function App() {
               setIsNavigatorOpen(false);
               setIsCommentaryOpen(false);
               setIsHistoryModalOpen(false);
+              setIsSearchOpen(false);
               setStudyVerse(null);
               navigateScreen('home');
               window.scrollTo(0, 0);
@@ -902,6 +960,7 @@ export function App() {
             onSwitchTranslation={handleSwitchTranslation}
             onChangeFontSize={handleChangeFontSize}
             onOpenCommentary={() => setIsCommentaryOpen(true)}
+            onOpenSearch={() => handleOpenSearch('')}
             onOpenRecords={() => setIsRecordsOpen(true)}
           />
 
@@ -946,6 +1005,7 @@ export function App() {
             currentChapter={chapter}
             currentVerse={activeVerse}
             translation={translation}
+            onSearchFullText={(q) => handleOpenSearch(q)}
             onSelectPassage={(nextB, nextC, nextV) =>
               navigateTo(translation, nextB, nextC, nextV, {
                 highlight: nextV > 1,
@@ -1015,6 +1075,19 @@ export function App() {
         }}
         onRemoveRecord={handleRemoveRecord}
         onClose={() => setIsRecordsOpen(false)}
+      />
+
+      <BibleSearchModal
+        isOpen={isSearchOpen}
+        initialQuery={searchInitialQuery}
+        translation={translation}
+        currentBook={screen === 'reader' ? book : lastReadPos?.book ?? null}
+        isFromReader={screen === 'reader'}
+        onSelectResult={handleSelectSearchResult}
+        onClose={() => {
+          setIsSearchOpen(false);
+          setSearchInitialQuery('');
+        }}
       />
     </>
   );

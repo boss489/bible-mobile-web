@@ -17,6 +17,7 @@ interface ReaderHeaderProps {
   onSwitchTranslation: (next: TranslationId) => void;
   onChangeFontSize: (next: FontSizeLevel) => void;
   onOpenCommentary: () => void;
+  onOpenSearch: () => void;
   onOpenRecords: () => void;
 }
 
@@ -34,6 +35,7 @@ export function ReaderHeader({
   onSwitchTranslation,
   onChangeFontSize,
   onOpenCommentary,
+  onOpenSearch,
   onOpenRecords,
 }: ReaderHeaderProps) {
   const [fontPanelOpen, setFontPanelOpen] = useState(false);
@@ -117,6 +119,15 @@ export function ReaderHeader({
         </button>
 
         <div className="toolbar-right-group">
+          <button
+            type="button"
+            className="toolbar-action-btn"
+            onClick={onOpenSearch}
+            aria-label="본문 검색 열기"
+          >
+            검색
+          </button>
+
           <button
             type="button"
             className={`toolbar-action-btn ${fontPanelOpen ? 'toolbar-action-active' : ''}`}

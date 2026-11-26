@@ -14,6 +14,7 @@ interface PassageNavigatorProps {
   onSelectPassage: (book: number, chapter: number, verse: number) => void;
   onClose: () => void;
   onSwitchTranslation?: (next: TranslationId) => void;
+  onSearchFullText?: (initialQuery: string) => void;
 }
 
 type Step = 'book' | 'chapter' | 'verse';
@@ -28,6 +29,7 @@ export function PassageNavigator({
   onSelectPassage,
   onClose,
   onSwitchTranslation,
+  onSearchFullText,
 }: PassageNavigatorProps) {
   useBodyScrollLock(mode === 'sheet' && isOpen);
 
@@ -156,27 +158,61 @@ export function PassageNavigator({
                 className="book-search-input"
                 aria-label="성경 책 이름 검색"
               />
-            </div>
-
-            <div className="book-grid">
-              {filteredBooks.map((b) => (
+              {onSearchFullText && filteredBooks.length > 0 && searchQuery.trim().length >= 2 ? (
                 <button
-                  key={b.book}
                   type="button"
-                  className={`book-grid-btn ${b.book === selectedBook ? 'grid-btn-selected' : ''}`}
+                  className="book-search-fulltext-hint"
                   onClick={() => {
-                    setSelectedBook(b.book);
-                    setSelectedChapter(1);
-                    setStep('chapter');
+                    const q = searchQuery.trim();
+                    if (mode === 'sheet') onClose();
+                    onSearchFullText(q);
                   }}
                 >
-                  <span className="book-grid-ko">{b.nameKo}</span>
-                  <span className="book-grid-en">
-                    {b.nameEn} · {b.category}
-                  </span>
+                  구절 단어를 찾으시나요? <strong>‘{searchQuery.trim()}’ 본문 전체에서 검색 →</strong>
                 </button>
-              ))}
+              ) : null}
             </div>
+
+            {filteredBooks.length === 0 ? (
+              <div className="book-empty-fulltext-box">
+                <p className="empty-state-msg">
+                  ‘{searchQuery.trim()}’에 일치하는 성경 책 이름이 없습니다.
+                </p>
+                {onSearchFullText && searchQuery.trim() ? (
+                  <button
+                    type="button"
+                    className="book-empty-fulltext-btn"
+                    onClick={() => {
+                      const q = searchQuery.trim();
+                      if (mode === 'sheet') onClose();
+                      onSearchFullText(q);
+                    }}
+                  >
+                    ‘{searchQuery.trim()}’ 본문 전체에서 검색하기 →
+                  </button>
+                ) : null}
+              </div>
+            ) : (
+              <div className="book-grid">
+                {filteredBooks.map((b) => (
+                  <button
+                    key={b.book}
+                    type="button"
+                    className={`book-grid-btn ${b.book === selectedBook ? 'grid-btn-selected' : ''}`}
+                    onClick={() => {
+                      setSelectedBook(b.book);
+                      setSelectedChapter(1);
+                      setStep('chapter');
+                    }}
+                  >
+                    <span className="book-grid-ko">{b.nameKo}</span>
+                    <span className="book-grid-en">
+                      {b.nameEn} · {b.category}
+                    </span>
+                  </button>
+                ))}
+              </div>
+            )}
           </>
         ) : null}
 

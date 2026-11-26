@@ -1,5 +1,6 @@
 import { getAdjacentChapter } from '../config/books';
 import { clearHistoryDataCache, loadBibleHistoryDataset } from './historyDataService';
+import { clearSearchDataCache, loadBibleSearchIndex } from './searchService';
 import type {
   BookStudyBundle,
   ChapterCommentary,
@@ -10,7 +11,7 @@ import type {
   TranslationId,
 } from '../types/bible';
 
-export { loadBibleHistoryDataset };
+export { loadBibleHistoryDataset, loadBibleSearchIndex };
 
 const chapterCache = new Map<string, Promise<ChapterData>>();
 let commentaryIndexPromise: Promise<CommentaryIndex> | null = null;
@@ -34,6 +35,7 @@ export function clearDataCaches(): void {
   studyIndexPromise = null;
   bookStudyCache.clear();
   clearHistoryDataCache();
+  clearSearchDataCache();
 }
 
 export function loadReadingFacts(): Promise<Record<string, ReadingFact>> {

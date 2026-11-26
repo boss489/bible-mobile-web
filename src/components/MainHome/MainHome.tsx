@@ -9,6 +9,7 @@ interface MainHomeProps {
   onSelectChronologicalPath: () => void;
   onResumeReading: (pos: ReadingPosition) => void;
   onSwitchTranslation: (next: TranslationId) => void;
+  onOpenSearch: () => void;
   onOpenRecords: () => void;
 }
 
@@ -20,6 +21,7 @@ export function MainHome({
   onSelectChronologicalPath,
   onResumeReading,
   onSwitchTranslation,
+  onOpenSearch,
   onOpenRecords,
 }: MainHomeProps) {
   const resumeRefLabel = lastReadPos
@@ -77,6 +79,23 @@ export function MainHome({
 
       <main className="home-main">
         <p className="home-lead">원하는 방식으로 성경을 읽어보세요</p>
+
+        <button
+          type="button"
+          className="home-search-trigger"
+          onClick={onOpenSearch}
+          aria-label="성경 본문 단어 및 장절 검색 열기"
+        >
+          <span className="home-search-trigger-left">
+            <span className="home-search-icon" aria-hidden="true">
+              🔍
+            </span>
+            <span className="home-search-placeholder">
+              말씀 단어 · 장절 검색 (예: 목자, 요 3:16)
+            </span>
+          </span>
+          <span className="home-search-badge">검색</span>
+        </button>
 
         <section className="home-path-grid" aria-label="성경 읽기 방식 선택">
           <article className="home-path-card">
