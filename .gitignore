@@ -1,0 +1,19 @@
+# Dependencies & build output
+node_modules/
+dist/
+docs/
+coverage/
+*.tsbuildinfo
+__pycache__/
+
+# Local env files
+.env
+.env.*
+!.env.example
+
+raw/
+
+# OS / Editor
+.DS_Store
+.idea/
+.vscode/

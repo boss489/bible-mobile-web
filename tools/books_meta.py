@@ -1,0 +1,81 @@
+"""신구약 66권 표준 메타데이터 (개역개정 / NIV 기준)."""
+
+from __future__ import annotations
+
+BOOKS_META: list[dict] = [
+    # 구약 39권
+    {"book": 1, "testament": "OT", "category": "모세오경", "nameKo": "창세기", "abbrKo": "창", "nameEn": "Genesis", "abbrEn": "Gen", "chapters": 50},
+    {"book": 2, "testament": "OT", "category": "모세오경", "nameKo": "출애굽기", "abbrKo": "출", "nameEn": "Exodus", "abbrEn": "Exod", "chapters": 40},
+    {"book": 3, "testament": "OT", "category": "모세오경", "nameKo": "레위기", "abbrKo": "레", "nameEn": "Leviticus", "abbrEn": "Lev", "chapters": 27},
+    {"book": 4, "testament": "OT", "category": "모세오경", "nameKo": "민수기", "abbrKo": "민", "nameEn": "Numbers", "abbrEn": "Num", "chapters": 36},
+    {"book": 5, "testament": "OT", "category": "모세오경", "nameKo": "신명기", "abbrKo": "신", "nameEn": "Deuteronomy", "abbrEn": "Deut", "chapters": 34},
+    {"book": 6, "testament": "OT", "category": "역사서", "nameKo": "여호수아", "abbrKo": "수", "nameEn": "Joshua", "abbrEn": "Josh", "chapters": 24},
+    {"book": 7, "testament": "OT", "category": "역사서", "nameKo": "사사기", "abbrKo": "삿", "nameEn": "Judges", "abbrEn": "Judg", "chapters": 21},
+    {"book": 8, "testament": "OT", "category": "역사서", "nameKo": "룻기", "abbrKo": "룻", "nameEn": "Ruth", "abbrEn": "Ruth", "chapters": 4},
+    {"book": 9, "testament": "OT", "category": "역사서", "nameKo": "사무엘상", "abbrKo": "삼상", "nameEn": "1 Samuel", "abbrEn": "1Sam", "chapters": 31},
+    {"book": 10, "testament": "OT", "category": "역사서", "nameKo": "사무엘하", "abbrKo": "삼하", "nameEn": "2 Samuel", "abbrEn": "2Sam", "chapters": 24},
+    {"book": 11, "testament": "OT", "category": "역사서", "nameKo": "열왕기상", "abbrKo": "왕상", "nameEn": "1 Kings", "abbrEn": "1Kgs", "chapters": 22},
+    {"book": 12, "testament": "OT", "category": "역사서", "nameKo": "열왕기하", "abbrKo": "왕하", "nameEn": "2 Kings", "abbrEn": "2Kgs", "chapters": 25},
+    {"book": 13, "testament": "OT", "category": "역사서", "nameKo": "역대상", "abbrKo": "대상", "nameEn": "1 Chronicles", "abbrEn": "1Chr", "chapters": 29},
+    {"book": 14, "testament": "OT", "category": "역사서", "nameKo": "역대하", "abbrKo": "대하", "nameEn": "2 Chronicles", "abbrEn": "2Chr", "chapters": 36},
+    {"book": 15, "testament": "OT", "category": "역사서", "nameKo": "에스라", "abbrKo": "스", "nameEn": "Ezra", "abbrEn": "Ezra", "chapters": 10},
+    {"book": 16, "testament": "OT", "category": "역사서", "nameKo": "느헤미야", "abbrKo": "느", "nameEn": "Nehemiah", "abbrEn": "Neh", "chapters": 13},
+    {"book": 17, "testament": "OT", "category": "역사서", "nameKo": "에스더", "abbrKo": "에", "nameEn": "Esther", "abbrEn": "Esth", "chapters": 10},
+    {"book": 18, "testament": "OT", "category": "시가서", "nameKo": "욥기", "abbrKo": "욥", "nameEn": "Job", "abbrEn": "Job", "chapters": 42},
+    {"book": 19, "testament": "OT", "category": "시가서", "nameKo": "시편", "abbrKo": "시", "nameEn": "Psalms", "abbrEn": "Ps", "chapters": 150},
+    {"book": 20, "testament": "OT", "category": "시가서", "nameKo": "잠언", "abbrKo": "잠", "nameEn": "Proverbs", "abbrEn": "Prov", "chapters": 31},
+    {"book": 21, "testament": "OT", "category": "시가서", "nameKo": "전도서", "abbrKo": "전", "nameEn": "Ecclesiastes", "abbrEn": "Eccl", "chapters": 12},
+    {"book": 22, "testament": "OT", "category": "시가서", "nameKo": "아가", "abbrKo": "아", "nameEn": "Song of Songs", "abbrEn": "Song", "chapters": 8},
+    {"book": 23, "testament": "OT", "category": "대선지서", "nameKo": "이사야", "abbrKo": "사", "nameEn": "Isaiah", "abbrEn": "Isa", "chapters": 66},
+    {"book": 24, "testament": "OT", "category": "대선지서", "nameKo": "예레미야", "abbrKo": "렘", "nameEn": "Jeremiah", "abbrEn": "Jer", "chapters": 52},
+    {"book": 25, "testament": "OT", "category": "대선지서", "nameKo": "예레미야애가", "abbrKo": "애", "nameEn": "Lamentations", "abbrEn": "Lam", "chapters": 5},
+    {"book": 26, "testament": "OT", "category": "대선지서", "nameKo": "에스겔", "abbrKo": "겔", "nameEn": "Ezekiel", "abbrEn": "Ezek", "chapters": 48},
+    {"book": 27, "testament": "OT", "category": "대선지서", "nameKo": "다니엘", "abbrKo": "단", "nameEn": "Daniel", "abbrEn": "Dan", "chapters": 12},
+    {"book": 28, "testament": "OT", "category": "소선지서", "nameKo": "호세아", "abbrKo": "호", "nameEn": " Hosea".strip(), "abbrEn": "Hos", "chapters": 14},
+    {"book": 29, "testament": "OT", "category": "소선지서", "nameKo": "요엘", "abbrKo": "욜", "nameEn": "Joel", "abbrEn": "Joel", "chapters": 3},
+    {"book": 30, "testament": "OT", "category": "소선지서", "nameKo": "아모스", "abbrKo": "암", "nameEn": "Amos", "abbrEn": "Amos", "chapters": 9},
+    {"book": 31, "testament": "OT", "category": "소선지서", "nameKo": "오바댜", "abbrKo": "옵", "nameEn": "Obadiah", "abbrEn": "Obad", "chapters": 1},
+    {"book": 32, "testament": "OT", "category": "소선지서", "nameKo": "요나", "abbrKo": "욘", "nameEn": "Jonah", "abbrEn": "Jonah", "chapters": 4},
+    {"book": 33, "testament": "OT", "category": "소선지서", "nameKo": "미가", "abbrKo": "미", "nameEn": "Micah", "abbrEn": "Mic", "chapters": 7},
+    {"book": 34, "testament": "OT", "category": "소선지서", "nameKo": "나훔", "abbrKo": "나", "nameEn": "Nahum", "abbrEn": "Nah", "chapters": 3},
+    {"book": 35, "testament": "OT", "category": "소선지서", "nameKo": "하박국", "abbrKo": "합", "nameEn": "Habakkuk", "abbrEn": "Hab", "chapters": 3},
+    {"book": 36, "testament": "OT", "category": "소선지서", "nameKo": "스바냐", "abbrKo": "습", "nameEn": "Zephaniah", "abbrEn": "Zeph", "chapters": 3},
+    {"book": 37, "testament": "OT", "category": "소선지서", "nameKo": "학개", "abbrKo": "학", "nameEn": "Haggai", "abbrEn": "Hag", "chapters": 2},
+    {"book": 38, "testament": "OT", "category": "소선지서", "nameKo": "스가랴", "abbrKo": "슥", "nameEn": "Zechariah", "abbrEn": "Zech", "chapters": 14},
+    {"book": 39, "testament": "OT", "category": "소선지서", "nameKo": "말라기", "abbrKo": "말", "nameEn": "Malachi", "abbrEn": "Mal", "chapters": 4},
+    # 신약 27권
+    {"book": 40, "testament": "NT", "category": "복음서", "nameKo": "마태복음", "abbrKo": "마", "nameEn": "Matthew", "abbrEn": "Matt", "chapters": 28},
+    {"book": 41, "testament": "NT", "category": "복음서", "nameKo": "마가복음", "abbrKo": "막", "nameEn": "Mark", "abbrEn": "Mark", "chapters": 16},
+    {"book": 42, "testament": "NT", "category": "복음서", "nameKo": "누가복음", "abbrKo": "눅", "nameEn": "Luke", "abbrEn": "Luke", "chapters": 24},
+    {"book": 43, "testament": "NT", "category": "복음서", "nameKo": "요한복음", "abbrKo": "요", "nameEn": "John", "abbrEn": "John", "chapters": 21},
+    {"book": 44, "testament": "NT", "category": "역사서(신약)", "nameKo": "사도행전", "abbrKo": "행", "nameEn": "Acts", "abbrEn": "Acts", "chapters": 28},
+    {"book": 45, "testament": "NT", "category": "바울서신", "nameKo": "로마서", "abbrKo": "롬", "nameEn": "Romans", "abbrEn": "Rom", "chapters": 16},
+    {"book": 46, "testament": "NT", "category": "바울서신", "nameKo": "고린도전서", "abbrKo": "고전", "nameEn": "1 Corinthians", "abbrEn": "1Cor", "chapters": 16},
+    {"book": 47, "testament": "NT", "category": "바울서신", "nameKo": "고린도후서", "abbrKo": "고후", "nameEn": "2 Corinthians", "abbrEn": "2Cor", "chapters": 13},
+    {"book": 48, "testament": "NT", "category": "바울서신", "nameKo": "갈라디아서", "abbrKo": "갈", "nameEn": "Galatians", "abbrEn": "Gal", "chapters": 6},
+    {"book": 49, "testament": "NT", "category": "바울서신", "nameKo": "에베소서", "abbrKo": "엡", "nameEn": "Ephesians", "abbrEn": "Eph", "chapters": 6},
+    {"book": 50, "testament": "NT", "category": "바울서신", "nameKo": "빌립보서", "abbrKo": "빌", "nameEn": "Philippians", "abbrEn": "Phil", "chapters": 4},
+    {"book": 51, "testament": "NT", "category": "바울서신", "nameKo": "골로새서", "abbrKo": "골", "nameEn": "Colossians", "abbrEn": "Col", "chapters": 4},
+    {"book": 52, "testament": "NT", "category": "바울서신", "nameKo": "데살로니가전서", "abbrKo": "살전", "nameEn": "1 Thessalonians", "abbrEn": "1Thess", "chapters": 5},
+    {"book": 53, "testament": "NT", "category": "바울서신", "nameKo": "데살로니가후서", "abbrKo": "살후", "nameEn": "2 Thessalonians", "abbrEn": "2Thess", "chapters": 3},
+    {"book": 54, "testament": "NT", "category": "바울서신", "nameKo": "디모데전서", "abbrKo": "딤전", "nameEn": "1 Timothy", "abbrEn": "1Tim", "chapters": 6},
+    {"book": 55, "testament": "NT", "category": "바울서신", "nameKo": "디모데후서", "abbrKo": "딤후", "nameEn": "2 Timothy", "abbrEn": "2Tim", "chapters": 4},
+    {"book": 56, "testament": "NT", "category": "바울서신", "nameKo": "디도서", "abbrKo": "딛", "nameEn": "Titus", "abbrEn": "Titus", "chapters": 3},
+    {"book": 57, "testament": "NT", "category": "바울서신", "nameKo": "빌레몬서", "abbrKo": "몬", "nameEn": "Philemon", "abbrEn": "Phlm", "chapters": 1},
+    {"book": 58, "testament": "NT", "category": "일반서신", "nameKo": "히브리서", "abbrKo": "히", "nameEn": "Hebrews", "abbrEn": "Heb", "chapters": 13},
+    {"book": 59, "testament": "NT", "category": "일반서신", "nameKo": "야고보서", "abbrKo": "약", "nameEn": "James", "abbrEn": "Jas", "chapters": 5},
+    {"book": 60, "testament": "NT", "category": "일반서신", "nameKo": "베드로전서", "abbrKo": "벧전", "nameEn": "1 Peter", "abbrEn": "1Pet", "chapters": 5},
+    {"book": 61, "testament": "NT", "category": "일반서신", "nameKo": "베드로후서", "abbrKo": "벧후", "nameEn": "2 Peter", "abbrEn": "2Pet", "chapters": 3},
+    {"book": 62, "testament": "NT", "category": "일반서신", "nameKo": "요한일서", "abbrKo": "요일", "nameEn": "1 John", "abbrEn": "1John", "chapters": 5},
+    {"book": 63, "testament": "NT", "category": "일반서신", "nameKo": "요한이서", "abbrKo": "요이", "nameEn": "2 John", "abbrEn": "2John", "chapters": 1},
+    {"book": 64, "testament": "NT", "category": "일반서신", "nameKo": "요한삼서", "abbrKo": "요삼", "nameEn": "3 John", "abbrEn": "3John", "chapters": 1},
+    {"book": 65, "testament": "NT", "category": "일반서신", "nameKo": "유다서", "abbrKo": "유", "nameEn": "Jude", "abbrEn": "Jude", "chapters": 1},
+    {"book": 66, "testament": "NT", "category": "예언서", "nameKo": "요한계시록", "abbrKo": "계", "nameEn": "Revelation", "abbrEn": "Rev", "chapters": 22},
+]
+
+for _b in BOOKS_META:
+    _b["osis"] = _b["abbrEn"].upper()
+
+BOOKS_BY_NUMBER = {b["book"]: b for b in BOOKS_META}
+BOOKS_BY_OSIS = {b["osis"]: b for b in BOOKS_META}
+

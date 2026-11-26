@@ -1,0 +1,3245 @@
+{
+  "maps": [
+    {
+      "id": "patriarchs-fertile-crescent",
+      "title": "메소포타미아와 족장 시대 비옥한 초승달·가나안 2D 지도",
+      "regionSummary": "유프라테스·티그리스 두 강 유역(갈대아·바벨론·앗수르·밧단아람)에서 가나안과 나일 삼각주에 이르는 비옥한 초승달 권역과 주요 성읍 후보를 옅은 영역 색으로 표시했습니다.",
+      "backdropImageUrl": "./assets/maps/patriarchs-fertile-crescent.jpg",
+      "modernBordersImageUrl": "./assets/maps/patriarchs-fertile-crescent-modern.png",
+      "bbox": [
+        29.493,
+        28.4,
+        49.507,
+        38.6
+      ],
+      "scaleBar": {
+        "km": 400,
+        "svgWidth": 77.5
+      },
+      "projection": {
+        "crs": "WGS84 (EPSG:4326)",
+        "name": "Equidistant Cylindrical (정거 원통 투영)",
+        "standardParallel": 33.5,
+        "viewBox": [
+          0,
+          0,
+          360,
+          220
+        ]
+      },
+      "license": "OpenBible.info Bible Geocoding Data & Region Isobands: CC BY 4.0; Natural Earth 1:10m Vector: Public Domain; Terrain DEM (USGS SRTM / GMTED2010 / NOAA ETOPO1): Public Domain; Underlying gazetteer coordinates: Wikidata (CC0), Pleiades (CC BY 3.0), GeoNames (CC BY 4.0), OpenStreetMap contributors (ODbL 1.0)",
+      "attribution": "OpenBible.info Bible Geocoding Data (CC BY 4.0); Natural Earth 1:10m; USGS/NASA SRTM & NOAA ETOPO1; Pleiades; OpenStreetMap contributors",
+      "sourceNote": "지형·수계: Natural Earth 1:10m 자연 지형 + 공개 DEM 음영기복 · 성경 지명·고대 권역 범위: OpenBible.info Bible Geocoding Data (확률 등치선 기반 추정 영역) · 투영: WGS84 정거 원통 투영(표준위선 33.5°N)",
+      "ancientRegions": [
+        {
+          "id": "chaldea",
+          "label": "갈대아",
+          "biblicalNameEn": "Chaldea",
+          "color": "#9dc46c",
+          "lat": 30.90364,
+          "lon": 45.83777,
+          "sourceId": "a32a4f8",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a32a4f8/chaldea",
+          "svgPath": "M 296.0,148.5 308.0,152.5 315.0,152.5 318.0,150.5 320.0,151.5 327.5,160.0 329.5,164.0 329.5,168.0 324.5,179.0 320.0,183.5 316.0,183.5 315.5,184.0 315.0,184.5 290.0,183.5 287.0,182.5 284.5,180.0 279.5,171.0 279.5,170.0 279.5,169.0 277.5,166.0 274.5,157.0 283.0,152.5 291.0,151.5 Z M 310.0,164.5 308.5,166.0 308.5,169.0 311.0,170.5 316.0,169.5 316.5,170.0 317.0,170.5 325.0,171.5 326.5,170.0 323.0,166.5 322.0,166.5 321.0,166.5 320.5,167.0 320.5,168.0 320.0,168.5 319.0,168.5 318.0,166.5 315.0,166.5 313.0,164.5 Z"
+        },
+        {
+          "id": "babylonia",
+          "label": "바벨론(시날)",
+          "biblicalNameEn": "Babylonia",
+          "color": "#add078",
+          "lat": 32.52636,
+          "lon": 44.44791,
+          "sourceId": "a8394b8",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a8394b8/babylonia",
+          "svgPath": "M 246.0,102.5 254.0,102.5 254.5,103.0 255.0,103.5 259.0,103.5 259.5,104.0 260.0,104.5 264.0,104.5 264.5,105.0 265.0,105.5 269.0,105.5 275.0,107.5 280.0,107.5 280.5,108.0 281.0,108.5 285.0,108.5 285.5,109.0 286.0,109.5 290.0,109.5 296.0,111.5 301.0,111.5 307.0,113.5 311.5,121.0 315.5,135.0 319.5,144.0 319.5,149.0 320.5,151.0 313.0,153.5 312.5,153.0 312.0,152.5 304.0,151.5 300.0,149.5 295.0,149.5 290.0,152.5 284.0,152.5 276.0,156.5 270.0,156.5 269.5,156.0 269.0,155.5 258.0,154.5 252.0,152.5 244.5,146.0 242.5,141.0 242.5,110.0 243.0,109.5 243.5,109.0 243.5,105.0 Z"
+        },
+        {
+          "id": "assyria",
+          "label": "앗수르",
+          "biblicalNameEn": "Assyria",
+          "color": "#b7d37d",
+          "lat": 36.37455,
+          "lon": 42.44651,
+          "sourceId": "a3d1321",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a3d1321/assyria",
+          "svgPath": "M 229.0,13.5 235.0,15.5 259.0,33.5 284.5,59.0 285.5,61.0 285.5,66.0 281.0,68.5 273.0,69.5 268.0,71.5 264.0,71.5 263.5,72.0 263.0,72.5 260.0,72.5 255.0,74.5 251.0,74.5 246.0,76.5 233.0,76.5 232.5,76.0 232.0,75.5 228.0,75.5 218.0,70.5 213.0,69.5 197.0,59.5 193.5,56.0 197.5,51.0 196.5,47.0 216.5,23.0 224.0,15.5 Z"
+        },
+        {
+          "id": "aram-naharaim",
+          "label": "아람 나하라임(밧단아람)",
+          "biblicalNameEn": "Aram-naharaim",
+          "color": "#a2cb73",
+          "lat": 36.42091,
+          "lon": 38.94406,
+          "sourceId": "a3c7b44",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a3c7b44/aram-naharaim",
+          "svgPath": "M 166.0,38.5 180.0,38.5 180.5,39.0 181.0,39.5 184.0,39.5 196.0,46.5 197.5,48.0 197.5,53.0 194.0,55.5 188.0,55.5 187.5,56.0 187.0,56.5 162.0,56.5 159.0,55.5 157.0,54.5 154.5,51.0 154.5,46.0 159.0,41.5 Z"
+        },
+        {
+          "id": "aram",
+          "label": "아람",
+          "biblicalNameEn": "Aram",
+          "color": "#c8d67f",
+          "lat": 33.45364,
+          "lon": 36.44231,
+          "sourceId": "a3e66cd",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a3e66cd/aram",
+          "svgPath": "M 123.0,96.5 144.0,96.5 144.5,100.0 141.5,105.0 139.5,113.0 132.5,129.0 124.0,136.5 122.0,137.5 118.0,137.5 113.5,133.0 110.5,127.0 110.5,120.0 111.0,119.5 111.5,119.0 111.5,110.0 111.0,109.5 110.5,109.0 111.5,106.0 116.5,99.0 Z"
+        },
+        {
+          "id": "canaan",
+          "label": "가나안",
+          "biblicalNameEn": "Canaan",
+          "color": "#95bf68",
+          "lat": 32.48,
+          "lon": 35.27482,
+          "sourceId": "a581f0c",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a581f0c/canaan",
+          "svgPath": "M 108.0,108.5 111.5,109.0 111.5,122.0 111.0,122.5 110.0,122.5 109.5,122.0 109.0,121.5 107.5,123.0 107.5,124.0 107.5,125.0 109.0,126.5 111.5,127.0 109.5,138.0 103.5,154.0 97.0,158.5 94.0,158.5 91.5,156.0 91.5,148.0 97.5,130.0 99.5,127.0 101.5,119.0 103.5,116.0 103.5,115.0 103.5,114.0 Z"
+        },
+        {
+          "id": "egypt",
+          "label": "애굽",
+          "biblicalNameEn": "Egypt",
+          "color": "#a7cc74",
+          "lat": 29.88364,
+          "lon": 31.21643,
+          "sourceId": "af301ca",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/af301ca/egypt",
+          "svgPath": "M 20.0,156.5 40.0,156.5 43.0,157.5 45.0,158.5 46.0,160.5 50.0,161.5 53.0,164.5 67.0,172.5 75.5,179.0 77.5,183.0 77.0,219.5 69.0,219.5 66.5,217.0 65.5,214.0 65.5,207.0 62.5,203.0 59.5,201.0 56.5,194.0 56.5,191.0 54.5,189.0 55.0,188.5 55.5,188.0 54.0,186.5 54.5,188.0 52.5,189.0 51.5,194.0 55.5,198.0 57.5,210.0 59.5,211.0 60.5,215.0 63.5,218.0 63.5,219.0 63.0,219.5 -0.5,219.0 -0.5,167.0 1.0,165.5 2.0,165.5 3.0,165.5 5.0,163.5 Z M 50.0,175.5 49.5,178.0 52.0,180.5 55.0,181.5 55.5,179.0 55.0,178.5 54.0,178.5 52.0,175.5 51.0,175.5 Z"
+        }
+      ],
+      "stops": [
+        {
+          "id": "ur",
+          "label": "우르",
+          "biblicalName": "갈대아 우르 (Ur of the Chaldeans)",
+          "biblicalNameEn": "Ur of the Chaldeans",
+          "placeType": "settlement",
+          "locationStatus": "estimated",
+          "statusReason": "남부 메소포타미아 수메르 도시 유적(텔 엘 무카야르)이 주류 학설이나 북부 메소포타미아(우르파·우라) 후보도 제기되어 복수 후보로 표시합니다.",
+          "historicalBackground": "데라와 아브람 가족이 하란으로 이주하기 전 거주하던 '갈대아인의 우르'입니다. 유프라테스강 하류 고대 도시 우르(텔 엘 무카야르) 동정이 가장 유력하지만 북부 메소포타미아권 후보설도 함께 논의됩니다.",
+          "scriptureRef": "창 11:28-31; 15:7",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a6cf75c/ur-1",
+          "sourceId": "a6cf75c",
+          "candidates": [
+            {
+              "lat": 30.962222,
+              "lon": 46.104444,
+              "modernName": "Tell el Muqayyar",
+              "modernNameKo": "텔 엘 무카야르(이라크 나시리야 인근)",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/m297af3/tell-el-muqayyar",
+              "precisionMeters": 5
+            },
+            {
+              "lat": 37.147778,
+              "lon": 38.784444,
+              "modernName": "Urfa",
+              "modernNameKo": "우르파(튀르키예 샨르우르파)",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/m240af5/urfa",
+              "precisionMeters": 250
+            },
+            {
+              "lat": 40.254639,
+              "lon": 40.226,
+              "modernName": "Bayburt",
+              "modernNameKo": "바이부르트 일대(우라 후보)",
+              "geometryType": "center",
+              "representative": true,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/m428846/bayburt",
+              "precisionMeters": 250
+            },
+            {
+              "lat": 39.702761,
+              "lon": 44.300381,
+              "modernName": "Urartu",
+              "modernNameKo": "우라르투 권역 대표점",
+              "geometryType": "representative point",
+              "representative": true,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/m08a591/urartu"
+            }
+          ]
+        },
+        {
+          "id": "haran",
+          "label": "하란",
+          "biblicalName": "하란 (Haran)",
+          "biblicalNameEn": "Haran",
+          "placeType": "settlement",
+          "locationStatus": "confirmed",
+          "statusReason": "발리크강 상류의 고대 하란 유적(현대 하란)으로 고고학·문헌적 동정이 확립되어 있습니다.",
+          "historicalBackground": "유프라테스강 지류 발리크강 유역의 교역 거점 도시로, 데라 일행이 머물렀고 아브람이 소명을 받아 가나안으로 출발한 곳이며 야곱이 라반의 집에 기거한 밧단아람의 중심지입니다.",
+          "scriptureRef": "창 11:31-12:5; 27:43",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a6d9af3/haran",
+          "sourceId": "a6d9af3",
+          "candidates": [
+            {
+              "lat": 36.864444,
+              "lon": 39.032778,
+              "modernName": "Harran",
+              "modernNameKo": "하란(튀르키예 하란 유적)",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/mc9a69d/harran",
+              "precisionMeters": 5
+            }
+          ],
+          "lat": 36.864444,
+          "lon": 39.032778,
+          "modernName": "Harran",
+          "modernNameKo": "하란(튀르키예 하란 유적)"
+        },
+        {
+          "id": "damascus",
+          "label": "다메섹",
+          "biblicalName": "다메섹 (Damascus)",
+          "biblicalNameEn": "Damascus",
+          "placeType": "settlement",
+          "locationStatus": "confirmed",
+          "statusReason": "고대부터 현대 다마스쿠스 구시가지까지 연속 거주된 역사 도시로 위치가 확정되어 있습니다.",
+          "historicalBackground": "안티레바논 산맥 동쪽 오아시스에 자리한 시리아의 고대 성읍으로, 족장 시대 기사(창 14:15, 다메섹 사람 엘리에셀)와 이후 아람 왕국의 수도로 등장합니다.",
+          "scriptureRef": "창 14:15; 15:2",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a69c1d4/damascus",
+          "sourceId": "a69c1d4",
+          "candidates": [
+            {
+              "lat": 33.511112,
+              "lon": 36.30639,
+              "modernName": "Damascus",
+              "modernNameKo": "다마스쿠스 구시가지",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/m878978/damascus",
+              "precisionMeters": 10
+            }
+          ],
+          "lat": 33.511112,
+          "lon": 36.30639,
+          "modernName": "Damascus",
+          "modernNameKo": "다마스쿠스 구시가지"
+        },
+        {
+          "id": "shechem",
+          "label": "세겜",
+          "biblicalName": "세겜 (Shechem)",
+          "biblicalNameEn": "Shechem",
+          "placeType": "settlement",
+          "locationStatus": "confirmed",
+          "statusReason": "그리심산과 에발산 사이 통로의 텔 발라타(Tell Balatah) 유적으로 고고학적 위치가 확정되어 있습니다.",
+          "historicalBackground": "가나안 중앙 산지의 동서·남북 교통 요충지로, 아브람이 가나안 입성 후 첫 제단을 쌓았고 야곱이 밧단아람에서 돌아와 성읍 앞 토지를 매입한 장소입니다.",
+          "scriptureRef": "창 12:6-7; 33:18",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/adf74d4/shechem",
+          "sourceId": "adf74d4",
+          "candidates": [
+            {
+              "lat": 32.213611,
+              "lon": 35.281944,
+              "modernName": "Tell Balatah",
+              "modernNameKo": "텔 발라타(나블루스 동편 유적)",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/m657590/tell-balatah",
+              "precisionMeters": 250
+            }
+          ],
+          "lat": 32.213611,
+          "lon": 35.281944,
+          "modernName": "Tell Balatah",
+          "modernNameKo": "텔 발라타(나블루스 동편 유적)"
+        },
+        {
+          "id": "bethel",
+          "label": "벧엘",
+          "biblicalName": "벧엘(루스) (Bethel (Luz))",
+          "biblicalNameEn": "Bethel (Luz)",
+          "placeType": "settlement",
+          "locationStatus": "estimated",
+          "statusReason": "베이틴(Beitin) 유적이 대표적이나 인근 알 비라·부르즈 베이틴 등 복수 유적 후보가 제시되어 추정 위치로 분류합니다.",
+          "historicalBackground": "예루살렘 북쪽 중앙 산지 능선의 성읍(옛 이름 루스)으로, 아브람이 장막과 제단을 두었고 야곱이 하란으로 가던 길에 꿈을 꾼 뒤 '하나님의 집(벧엘)'이라 부른 곳입니다.",
+          "scriptureRef": "창 12:8; 28:19",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a64f355/bethel-1",
+          "sourceId": "a64f355",
+          "candidates": [
+            {
+              "lat": 31.922778,
+              "lon": 35.241389,
+              "modernName": "Beitin",
+              "modernNameKo": "베이틴(라말라 북동쪽)",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/me58522/beitin",
+              "precisionMeters": 250
+            },
+            {
+              "lat": 31.905142,
+              "lon": 35.214958,
+              "modernName": "Al Bira",
+              "modernNameKo": "알 비라",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/mebe332/al-bira",
+              "precisionMeters": 250
+            },
+            {
+              "lat": 31.921866,
+              "lon": 35.245478,
+              "modernName": "Burj Beitin",
+              "modernNameKo": "부르즈 베이틴 유적",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "OpenStreetMap (ODbL 1.0)",
+              "sourceUrl": "https://www.openbible.info/geo/modern/m26f59b/burj-beitin",
+              "precisionMeters": 5
+            }
+          ]
+        },
+        {
+          "id": "hebron",
+          "label": "헤브론",
+          "biblicalName": "헤브론(기럇아르바) (Hebron (Kiriath-arba))",
+          "biblicalNameEn": "Hebron (Kiriath-arba)",
+          "placeType": "settlement",
+          "locationStatus": "confirmed",
+          "statusReason": "유대 산지 남부의 텔 루메이다(Tel Rumeida, 고대 헤브론 성터)로 위치가 확정되어 있습니다.",
+          "historicalBackground": "유대 남부 산지의 고지대 성읍으로 아브라함이 마므레 상수리나무 수풀에 거주하며 사라의 매장지인 막벨라 굴을 매입한 족장들의 주요 거점입니다.",
+          "scriptureRef": "창 13:18; 23:19",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a85151a/hebron",
+          "sourceId": "a85151a",
+          "candidates": [
+            {
+              "lat": 31.525087,
+              "lon": 35.10222,
+              "modernName": "Tel Rumeida",
+              "modernNameKo": "텔 루메이다(헤브론 고대 성터)",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/m86f941/tel-rumeida",
+              "precisionMeters": 50
+            }
+          ],
+          "lat": 31.525087,
+          "lon": 35.10222,
+          "modernName": "Tel Rumeida",
+          "modernNameKo": "텔 루메이다(헤브론 고대 성터)"
+        },
+        {
+          "id": "beersheba",
+          "label": "브엘세바",
+          "biblicalName": "브엘세바 (Beersheba)",
+          "biblicalNameEn": "Beersheba",
+          "placeType": "settlement",
+          "locationStatus": "estimated",
+          "statusReason": "고대 성읍 유적 텔 브엘세바(Tel Beer Sheva)와 비르 에스 세바(Bir es-Seba) 두 후보가 함께 논의되어 복수 후보로 표시합니다.",
+          "historicalBackground": "네겝 북단 분지의 거점으로 아브라함과 이삭이 아비멜렉과 우물을 둘러싼 맹약을 맺은 일화와 연결됩니다.",
+          "scriptureRef": "창 21:31; 26:33",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a075d61/beersheba-2",
+          "sourceId": "a075d61",
+          "candidates": [
+            {
+              "lat": 31.244722,
+              "lon": 34.840833,
+              "modernName": "Tel Beer Sheva",
+              "modernNameKo": "텔 브엘세바 고고학 유적",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/m392188/tel-beer-sheva",
+              "precisionMeters": 5
+            },
+            {
+              "lat": 31.237225,
+              "lon": 34.793078,
+              "modernName": "Bir es Seba",
+              "modernNameKo": "비르 에스 세바(베르셰바 구시가지)",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/m14a95e/bir-es-seba",
+              "precisionMeters": 250
+            }
+          ]
+        },
+        {
+          "id": "egypt",
+          "label": "애굽",
+          "biblicalName": "애굽 (Egypt)",
+          "biblicalNameEn": "Egypt",
+          "placeType": "region",
+          "locationStatus": "unknown",
+          "statusReason": "나일강 유역의 광역 고대 문명권 지명으로, 창세기 12장 본문에 구체적 체류 도시가 명시되지 않아 단일 점 마커를 두지 않습니다.",
+          "historicalBackground": "기근 때 아브람이 내려가 거류했고 후대 야곱 가족이 이주한 나일강 유역 권역입니다. 권역 범위는 지도의 옅은 색 고대 권역에서 확인할 수 있습니다.",
+          "scriptureRef": "창 12:10-20; 46:6",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/af301ca/egypt",
+          "sourceId": "af301ca",
+          "candidates": []
+        }
+      ]
+    },
+    {
+      "id": "exodus-sinai",
+      "title": "출애굽과 시내산 후보·모압 광야 권역 2D 지도",
+      "regionSummary": "애굽(고센)에서 시내반도·바란 광야·미디안·에돔·모압 권역을 옅은 색으로 구분하고, 시내산 등 미확정 지명은 복수 후보로 표시했습니다.",
+      "backdropImageUrl": "./assets/maps/exodus-sinai.jpg",
+      "modernBordersImageUrl": "./assets/maps/exodus-sinai-modern.png",
+      "bbox": [
+        29.411,
+        27.55,
+        38.089,
+        32.15
+      ],
+      "scaleBar": {
+        "km": 150,
+        "svgWidth": 64.4
+      },
+      "projection": {
+        "crs": "WGS84 (EPSG:4326)",
+        "name": "Equidistant Cylindrical (정거 원통 투영)",
+        "standardParallel": 29.85,
+        "viewBox": [
+          0,
+          0,
+          360,
+          220
+        ]
+      },
+      "license": "OpenBible.info Bible Geocoding Data & Region Isobands: CC BY 4.0; Natural Earth 1:10m Vector: Public Domain; Terrain DEM (USGS SRTM / GMTED2010 / NOAA ETOPO1): Public Domain; Underlying gazetteer coordinates: Wikidata (CC0), Pleiades (CC BY 3.0), GeoNames (CC BY 4.0), OpenStreetMap contributors (ODbL 1.0)",
+      "attribution": "OpenBible.info Bible Geocoding Data (CC BY 4.0); Natural Earth 1:10m; USGS/NASA SRTM & NOAA ETOPO1; Pleiades; OpenStreetMap contributors",
+      "sourceNote": "지형·수계: Natural Earth 1:10m 자연 지형 + 공개 DEM 음영기복 · 성경 지명·고대 권역 범위: OpenBible.info Bible Geocoding Data (확률 등치선 기반 추정 영역) · 투영: WGS84 정거 원통 투영(표준위선 29.85°N)",
+      "ancientRegions": [
+        {
+          "id": "egypt",
+          "label": "애굽",
+          "biblicalNameEn": "Egypt",
+          "color": "#9ec66b",
+          "lat": 29.01364,
+          "lon": 31.07428,
+          "sourceId": "af301ca",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/af301ca/egypt",
+          "svgPath": "M 59.0,39.5 90.0,39.5 90.5,40.0 91.0,40.5 96.0,40.5 102.0,42.5 108.0,45.5 111.0,49.5 114.0,48.5 117.0,51.5 132.0,58.5 166.0,83.5 170.0,85.5 182.5,96.0 182.5,100.0 180.5,104.0 180.5,125.0 181.5,128.0 183.5,130.0 183.5,157.0 183.0,157.5 182.5,158.0 182.5,186.0 182.0,186.5 181.5,187.0 181.0,197.5 180.0,197.5 176.5,193.0 174.5,190.0 174.5,189.0 174.5,188.0 171.5,184.0 166.0,180.5 165.5,180.0 165.5,179.0 159.5,174.0 158.5,172.0 159.0,170.5 157.5,171.0 157.5,170.0 157.5,169.0 155.5,166.0 157.5,162.0 154.5,156.0 155.5,154.0 154.5,150.0 149.5,145.0 148.5,142.0 147.0,140.5 146.0,140.5 145.0,140.5 142.5,138.0 140.5,131.0 136.5,128.0 136.5,123.0 134.5,121.0 135.5,116.0 133.5,112.0 131.5,111.0 132.5,108.0 129.0,104.5 128.0,104.5 127.5,105.0 126.5,107.0 127.5,109.0 124.5,115.0 122.5,116.0 122.5,120.0 122.0,120.5 121.5,121.0 122.5,124.0 131.5,132.0 133.5,138.0 133.5,142.0 134.0,142.5 134.5,143.0 133.5,152.0 135.5,154.0 135.5,155.0 135.5,156.0 141.5,162.0 143.5,170.0 149.5,175.0 149.5,176.0 149.5,177.0 153.5,181.0 154.5,185.0 159.5,191.0 162.5,193.0 162.5,194.0 162.5,195.0 167.0,196.5 170.5,200.0 171.5,204.0 173.5,206.0 173.5,207.0 173.5,208.0 171.5,210.0 171.5,211.0 171.5,212.0 173.5,214.0 169.5,214.0 172.5,218.0 172.5,219.0 172.0,219.5 8.0,219.5 3.5,212.0 -0.5,208.0 -0.5,65.0 10.0,60.5 12.0,58.5 23.0,53.5 25.0,51.5 33.0,47.5 40.0,45.5 50.0,40.5 58.0,40.5 58.5,40.0 Z M 107.0,58.5 103.0,63.5 102.5,63.0 102.0,62.5 98.0,62.5 96.5,64.0 96.5,68.0 98.0,69.5 99.0,69.5 100.0,69.5 104.0,66.5 108.0,71.5 109.0,71.5 110.0,71.5 112.5,69.0 112.5,66.0 110.5,60.0 109.0,58.5 108.0,58.5 Z M 122.0,81.5 119.5,83.0 118.5,86.0 119.0,86.5 120.0,86.5 121.0,88.5 124.0,89.5 125.0,91.5 128.0,90.5 128.5,93.0 130.0,94.5 131.5,93.0 131.5,92.0 131.5,91.0 129.0,88.5 128.0,88.5 127.0,88.5 126.5,86.0 123.5,82.0 123.0,81.5 Z"
+        },
+        {
+          "id": "goshen-1",
+          "label": "고센",
+          "biblicalNameEn": "Goshen",
+          "color": "#89b85c",
+          "lat": 30.79091,
+          "lon": 31.99029,
+          "sourceId": "a60f092",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a60f092/goshen-1",
+          "svgPath": "M 107.0,57.5 108.0,57.5 109.0,57.5 111.5,60.0 111.5,63.0 112.0,63.5 112.5,64.0 112.5,70.0 111.5,72.0 109.0,72.5 106.0,70.5 102.0,70.5 101.5,71.0 101.0,71.5 96.0,71.5 93.0,73.5 91.5,67.0 99.0,61.5 103.0,61.5 Z"
+        },
+        {
+          "id": "paran",
+          "label": "바란 광야",
+          "biblicalNameEn": "Wilderness of Paran",
+          "color": "#dfd08c",
+          "lat": 29.93364,
+          "lon": 34.28032,
+          "sourceId": "aa6b19b",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/aa6b19b/paran",
+          "svgPath": "M 197.0,74.5 218.0,74.5 224.0,76.5 226.5,80.0 226.5,83.0 227.0,83.5 227.5,84.0 227.5,96.0 227.0,96.5 226.5,97.0 226.5,101.0 223.5,107.0 223.5,112.0 221.5,117.0 215.0,123.5 206.0,128.5 183.0,131.5 181.0,128.5 180.0,128.5 179.0,128.5 176.5,126.0 176.5,115.0 181.5,101.0 181.5,97.0 183.5,93.0 185.5,91.0 192.5,78.0 Z"
+        },
+        {
+          "id": "midian",
+          "label": "미디안",
+          "biblicalNameEn": "Midian",
+          "color": "#d5ba82",
+          "lat": 28.95091,
+          "lon": 35.34097,
+          "sourceId": "acc6d8e",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/acc6d8e/midian",
+          "svgPath": "M 241.0,120.5 248.0,120.5 251.0,121.5 253.5,124.0 265.5,151.0 266.5,157.0 265.5,159.0 237.0,186.5 233.0,188.5 227.0,188.5 222.5,184.0 222.5,175.0 223.0,174.5 223.5,174.0 224.5,161.0 225.0,160.5 225.5,160.0 226.5,152.0 228.5,148.0 228.5,145.0 229.0,144.5 229.5,144.0 229.5,141.0 231.5,137.0 231.5,134.0 233.5,128.0 234.5,126.0 Z"
+        },
+        {
+          "id": "edom",
+          "label": "에돔",
+          "biblicalNameEn": "Edom",
+          "color": "#9ec19a",
+          "lat": 30.51909,
+          "lon": 35.43739,
+          "sourceId": "a2735ff",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a2735ff/edom",
+          "svgPath": "M 248.0,51.5 252.0,53.5 255.0,53.5 261.0,55.5 270.0,59.5 271.0,59.5 272.0,59.5 276.0,55.5 281.5,59.0 283.5,63.0 283.5,66.0 279.5,76.0 279.5,79.0 276.5,85.0 263.5,101.0 246.0,119.5 238.0,122.5 235.0,125.5 231.0,125.5 227.5,124.0 222.5,113.0 223.5,106.0 226.5,99.0 226.5,91.0 227.0,90.5 227.5,90.0 226.5,87.0 226.5,81.0 223.0,76.5 217.0,75.5 215.5,74.0 227.0,63.5 Z"
+        },
+        {
+          "id": "moab-1",
+          "label": "모압",
+          "biblicalNameEn": "Moab",
+          "color": "#dac36f",
+          "lat": 31.29273,
+          "lon": 35.82308,
+          "sourceId": "aa0b1d6",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/aa0b1d6/moab-1",
+          "svgPath": "M 264.0,16.5 271.0,16.5 273.0,17.5 277.5,24.0 277.5,30.0 278.0,30.5 278.5,31.0 277.5,49.0 277.0,49.5 276.5,50.0 276.5,55.0 272.0,59.5 269.0,59.5 261.0,55.5 255.0,54.5 249.5,52.0 249.5,51.0 250.0,50.5 253.5,50.0 252.5,48.0 253.5,45.0 250.0,43.5 247.5,40.0 251.0,38.5 251.5,39.0 251.5,40.0 252.0,40.5 253.0,40.5 254.5,39.0 254.5,35.0 255.0,34.5 255.5,34.0 254.5,25.0 255.0,24.5 255.5,24.0 255.5,21.0 258.0,17.5 263.0,17.5 263.5,17.0 Z"
+        }
+      ],
+      "stops": [
+        {
+          "id": "raamses",
+          "label": "라암셋",
+          "biblicalName": "라암셋 (Rameses)",
+          "biblicalNameEn": "Rameses",
+          "placeType": "settlement",
+          "locationStatus": "estimated",
+          "statusReason": "나일 삼각주 동부의 피람세스 유적 칸티르(Qantir)와 인접한 아바리스 유적 텔 엘 다바(Tell el-Daba) 등 복수 후보가 있어 단일 지점으로 확정하지 않습니다.",
+          "historicalBackground": "이스라엘 자손이 국고성으로 건축했다고 언급되며 출애굽 여정의 출발지로 기록된 동부 삼각주 도시입니다. 고고학계에서는 람세스 2세의 수도 피람세스(칸티르) 일대와 연결합니다.",
+          "scriptureRef": "출 1:11; 12:37",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a079b21/rameses",
+          "sourceId": "a079b21",
+          "candidates": [
+            {
+              "lat": 30.79937,
+              "lon": 31.834217,
+              "modernName": "Qantir",
+              "modernNameKo": "칸티르(피람세스 유적)",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/m53b227/qantir",
+              "precisionMeters": 250
+            },
+            {
+              "lat": 30.786228,
+              "lon": 31.82253,
+              "modernName": "Tell el Daba",
+              "modernNameKo": "텔 엘 다바(아바리스 유적)",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/ma868d6/tell-el-daba",
+              "precisionMeters": 5
+            }
+          ]
+        },
+        {
+          "id": "succoth",
+          "label": "숙곳",
+          "biblicalName": "숙곳 (Succoth)",
+          "biblicalNameEn": "Succoth",
+          "placeType": "settlement",
+          "locationStatus": "estimated",
+          "statusReason": "와디 투밀라트 연안의 텔 엘 마스쿠타(Tell el-Maskhuta), 텔 에르 레타바(Tell er-Retaba) 등 여러 후보지가 논의되는 추정 지명입니다.",
+          "historicalBackground": "라암셋을 떠난 이스라엘 백성이 첫째로 진을 친 장소로, 나일 삼각주 동쪽 경계 통로인 와디 투밀라트 일대의 이집트 지명 제쿠(Tjeku)와 연관 지어 연구됩니다.",
+          "scriptureRef": "출 12:37; 13:20",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/aa28709/succoth-2",
+          "sourceId": "aa28709",
+          "candidates": [
+            {
+              "lat": 30.5527,
+              "lon": 32.099,
+              "modernName": "Tell el Maskhuta",
+              "modernNameKo": "텔 엘 마스쿠타(와디 투밀라트)",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/mf20d69/tell-el-maskhuta",
+              "precisionMeters": 50
+            },
+            {
+              "lat": 30.5467,
+              "lon": 32.3042,
+              "modernName": "Jabal Maryam",
+              "modernNameKo": "자발 마리암 인근",
+              "geometryType": "center",
+              "representative": true,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/md89371/jabal-maryam",
+              "precisionMeters": 300
+            },
+            {
+              "lat": 30.5475,
+              "lon": 31.963611,
+              "modernName": "Tell er Retaba",
+              "modernNameKo": "텔 에르 레타바",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/m6badf8/tell-er-retaba",
+              "precisionMeters": 50
+            }
+          ]
+        },
+        {
+          "id": "redsea",
+          "label": "얌 수프(홍해)",
+          "biblicalName": "얌 수프(홍해·갈대바다) (Yam Suph (Red Sea))",
+          "biblicalNameEn": "Yam Suph (Red Sea)",
+          "placeType": "water",
+          "locationStatus": "unknown",
+          "statusReason": "출애굽기 14장의 정확한 도하 지점은 고고학적으로 미상이며, 수에즈만·쓴 호수(Bitter Lakes)·팀사 호수·발라 호수 등 여러 수역 가설이 병존합니다.",
+          "historicalBackground": "히브리어 '얌 수프(갈대 바다, 칠십인역 홍해)' 도하 사건의 배경 수역입니다. 비하히롯·바알스본 등 주변 진영지의 위치가 확정되지 않아 특정 지점에 사건 핀을 찍지 않습니다.",
+          "scriptureRef": "출 13:18; 14:21-22",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a3d18b2/red-sea-1",
+          "sourceId": "a3d18b2",
+          "candidates": []
+        },
+        {
+          "id": "marah",
+          "label": "마라",
+          "biblicalName": "마라 (Marah)",
+          "biblicalNameEn": "Marah",
+          "placeType": "settlement",
+          "locationStatus": "estimated",
+          "statusReason": "아인 하와라(Ain Hawarah), 비르 마라, 우윤 무사 등 여러 오아시스·샘 후보가 제시되어 복수 후보로 표시합니다.",
+          "historicalBackground": "얌 수프를 건넌 뒤 사흘 길을 걸어 도착해 쓴 물을 마셨다고 기록된 광야 샘터로, 다음 숙영지인 엘림과는 별개의 장소입니다.",
+          "scriptureRef": "출 15:23; 민 33:8",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/ad3970d/marah",
+          "sourceId": "ad3970d",
+          "candidates": [
+            {
+              "lat": 29.34604,
+              "lon": 32.94284,
+              "modernName": "Ain Hawarah",
+              "modernNameKo": "아인 하와라 샘",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "GeoNames (CC BY 4.0)",
+              "sourceUrl": "https://www.openbible.info/geo/modern/md8dd4a/ain-hawarah",
+              "precisionMeters": 100
+            },
+            {
+              "lat": 29.96667,
+              "lon": 32.7,
+              "modernName": "Bir Mara",
+              "modernNameKo": "비르 마라",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "GeoNames (CC BY 4.0)",
+              "sourceUrl": "https://www.openbible.info/geo/modern/me8880b/bir-mara",
+              "precisionMeters": 1000
+            },
+            {
+              "lat": 29.876944,
+              "lon": 32.658333,
+              "modernName": "Uyun Musa",
+              "modernNameKo": "우윤 무사(모세의 샘)",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/mfcf75f/uyun-musa",
+              "precisionMeters": 100
+            },
+            {
+              "lat": 30.338333,
+              "lon": 32.377778,
+              "modernName": "Bitter Lakes",
+              "modernNameKo": "쓴 호수(그레이트 비터 호 일대)",
+              "geometryType": "representative point",
+              "representative": true,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/md254e8/bitter-lakes"
+            }
+          ]
+        },
+        {
+          "id": "elim",
+          "label": "엘림",
+          "biblicalName": "엘림 (Elim)",
+          "biblicalNameEn": "Elim",
+          "placeType": "settlement",
+          "locationStatus": "estimated",
+          "statusReason": "와디 가란달(Wadi Gharandal), 우윤 무사, 엘 토르 등 복수의 오아시스 후보가 있어 단일 위치로 확정하지 않습니다.",
+          "historicalBackground": "물 샘 열둘과 종려나무 일흔 그루가 있었다고 기록된 광야 오아시스 숙영지로, 마라 이후 시내 광야로 나아가는 길목으로 언급됩니다.",
+          "scriptureRef": "출 15:27; 민 33:9",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a2410c1/elim",
+          "sourceId": "a2410c1",
+          "candidates": [
+            {
+              "lat": 29.254722,
+              "lon": 32.915833,
+              "modernName": "Wadi Gharandal",
+              "modernNameKo": "와디 가란달 오아시스",
+              "geometryType": "representative point",
+              "representative": true,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/md37ab1/wadi-gharandal",
+              "precisionMeters": 100
+            },
+            {
+              "lat": 29.876944,
+              "lon": 32.658333,
+              "modernName": "Uyun Musa",
+              "modernNameKo": "우윤 무사(모세의 샘)",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/mfcf75f/uyun-musa",
+              "precisionMeters": 100
+            },
+            {
+              "lat": 28.24168,
+              "lon": 33.6222,
+              "modernName": "El Tor",
+              "modernNameKo": "엘 토르(시나이 서해안)",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "GeoNames (CC BY 4.0)",
+              "sourceUrl": "https://www.openbible.info/geo/modern/meb169c/el-tor",
+              "precisionMeters": 250
+            },
+            {
+              "lat": 29.866111,
+              "lon": 32.748056,
+              "modernName": "Wadi ar Raynah",
+              "modernNameKo": "와디 아르 라이나",
+              "geometryType": "representative point",
+              "representative": true,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/me00c08/wadi-ar-raynah",
+              "precisionMeters": 100
+            }
+          ]
+        },
+        {
+          "id": "sinai",
+          "label": "시내산",
+          "biblicalName": "시내산(호렙산) (Mount Sinai (Horeb))",
+          "biblicalNameEn": "Mount Sinai (Horeb)",
+          "placeType": "mountain",
+          "locationStatus": "traditional",
+          "statusReason": "4세기 이후 기독교 순례 전승지인 남부 시내반도의 제벨 무사(Jebel Musa) 외에도 하르 카르콤, 제벨 세르발, 자발 알 라우즈 등 10여 개 학술·전승 후보가 병존합니다.",
+          "historicalBackground": "이스라엘이 언약을 맺고 율법을 받은 산입니다. 비잔틴 시대 이래 제벨 무사가 전통적 시내산으로 알려졌으나 고고학·문헌적으로 단일 산봉우리가 확정되지는 않았습니다.",
+          "scriptureRef": "출 19:2; 19:20",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/abfba2a/mount-sinai",
+          "sourceId": "abfba2a",
+          "candidates": [
+            {
+              "lat": 28.539722,
+              "lon": 33.973333,
+              "modernName": "Jebel Musa",
+              "modernNameKo": "제벨 무사(시나이산 남부 봉우리)",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/mb374b4/jebel-musa",
+              "precisionMeters": 1000
+            },
+            {
+              "lat": 30.283333,
+              "lon": 34.75,
+              "modernName": "Har Karkom",
+              "modernNameKo": "하르 카르콤(네겝 남부)",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/m0cc900/har-karkom",
+              "precisionMeters": 1000
+            },
+            {
+              "lat": 29.671,
+              "lon": 32.961,
+              "modernName": "Jebel Sin Bishar",
+              "modernNameKo": "제벨 신 비샤르(시나이 서북부)",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/m1bfeb1/jebel-sin-bishar",
+              "precisionMeters": 1000
+            },
+            {
+              "lat": 28.555556,
+              "lon": 33.967222,
+              "modernName": "Ras es Safsafeh",
+              "modernNameKo": "라스 에스 사프사페(제벨 무사 북봉)",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/m5e6c65/ras-es-safsafeh",
+              "precisionMeters": 1000
+            },
+            {
+              "lat": 28.646389,
+              "lon": 33.651667,
+              "modernName": "Jebel Serbal",
+              "modernNameKo": "제벨 세르발",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/mb78572/jebel-serbal",
+              "precisionMeters": 1000
+            },
+            {
+              "lat": 28.510833,
+              "lon": 33.955278,
+              "modernName": "Jebel Katherina",
+              "modernNameKo": "제벨 카테리나",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/me89f58/jebel-katherina",
+              "precisionMeters": 1000
+            },
+            {
+              "lat": 29.669217,
+              "lon": 34.633411,
+              "modernName": "Jebel Hashem el Tarif",
+              "modernNameKo": "제벨 하솀 엘 타리프",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/m0c2d62/jebel-hashem-el-tarif",
+              "precisionMeters": 1000
+            },
+            {
+              "lat": 30.653056,
+              "lon": 34.028889,
+              "modernName": "Jebel Halal",
+              "modernNameKo": "제벨 할랄",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/m91f093/jebel-halal",
+              "precisionMeters": 1000
+            },
+            {
+              "lat": 30.4265,
+              "lon": 34.7334,
+              "modernName": "Har ‘Arif",
+              "modernNameKo": "하르 아리프",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/mb43cbb/har-arif",
+              "precisionMeters": 1000
+            },
+            {
+              "lat": 30.702222,
+              "lon": 33.376667,
+              "modernName": "Jabal al Magharah",
+              "modernNameKo": "자발 알 마가라",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/mad096a/jabal-al-magharah",
+              "precisionMeters": 1000
+            },
+            {
+              "lat": 30.351111,
+              "lon": 33.523056,
+              "modernName": "Jebel Yeleq",
+              "modernNameKo": "제벨 옐레크",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/m582106/jebel-yeleq",
+              "precisionMeters": 1000
+            },
+            {
+              "lat": 28.654167,
+              "lon": 35.305833,
+              "modernName": "Jabal al Lawz",
+              "modernNameKo": "자발 알 라우즈(아라비아 북서부)",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/m4d1277/jabal-al-lawz",
+              "precisionMeters": 1000
+            }
+          ]
+        },
+        {
+          "id": "kadesh",
+          "label": "가데스 바네아",
+          "biblicalName": "가데스 바네아 (Kadesh-barnea)",
+          "biblicalNameEn": "Kadesh-barnea",
+          "placeType": "settlement",
+          "locationStatus": "estimated",
+          "statusReason": "철기 시대 요새가 발굴된 아인 엘 쿠데이라트(Ain el-Qudeirat)와 지명이 보존된 인근 샘 아인 카데스(Ein Qedeis) 두 오아시스 후보를 함께 표시합니다.",
+          "historicalBackground": "바란 광야와 신 광야 경계의 대형 오아시스 거점으로, 정탐꾼 파송과 광야 장기 체류, 모세의 므리바 물 사건이 연결된 핵심 지명입니다.",
+          "scriptureRef": "민 13:26; 20:1; 신 1:46",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/ac2cef0/kadesh-barnea",
+          "sourceId": "ac2cef0",
+          "candidates": [
+            {
+              "lat": 30.648333,
+              "lon": 34.422222,
+              "modernName": "Ain el Qudeirat",
+              "modernNameKo": "아인 엘 쿠데이라트(가데스 요새 유적)",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/m6da23a/ain-el-qudeirat",
+              "precisionMeters": 50
+            },
+            {
+              "lat": 30.583378,
+              "lon": 34.484081,
+              "modernName": "Ein Qedeis",
+              "modernNameKo": "아인 카데스 샘",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/m2ed468/ein-qedeis",
+              "precisionMeters": 100
+            }
+          ]
+        },
+        {
+          "id": "ezion",
+          "label": "에시온게벨",
+          "biblicalName": "에시온게벨 (Ezion-geber)",
+          "biblicalNameEn": "Ezion-geber",
+          "placeType": "island",
+          "locationStatus": "estimated",
+          "statusReason": "아카바만 북단의 산호섬 제지라트 파라운(Jezirat Faraun)과 텔 엘 켈레이페(Tell el-Kheleifeh) 등 복수 후보가 논의되어 추정 위치로 분류합니다.",
+          "historicalBackground": "홍해(아카바만) 최북단 엘랏 인근의 항구 거점으로, 광야 여정 기착지이자 솔로몬·여호사밧 시대 해상 선단 건조 기지로 기록됩니다.",
+          "scriptureRef": "민 33:35; 왕상 9:26",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a8e53d5/ezion-geber",
+          "sourceId": "a8e53d5",
+          "candidates": [
+            {
+              "lat": 29.462839,
+              "lon": 34.86005,
+              "modernName": "Jezirat Faraun",
+              "modernNameKo": "제지라트 파라운(아카바만 산호섬)",
+              "geometryType": "representative point",
+              "representative": true,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/mb1c0e5/jezirat-faraun",
+              "precisionMeters": 5
+            },
+            {
+              "lat": 29.547181,
+              "lon": 34.980258,
+              "modernName": "Tell el Kheleifeh",
+              "modernNameKo": "텔 엘 켈레이페 유적",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/mfce9f4/tell-el-kheleifeh",
+              "precisionMeters": 5
+            },
+            {
+              "lat": 29.530676,
+              "lon": 34.999999,
+              "modernName": "Aqaba",
+              "modernNameKo": "아카바 연안",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Pleiades Ancient World Gazetteer (CC BY 3.0)",
+              "sourceUrl": "https://www.openbible.info/geo/modern/med32df/aqaba",
+              "precisionMeters": 250
+            },
+            {
+              "lat": 29.57148,
+              "lon": 34.96352,
+              "modernName": "Eilat",
+              "modernNameKo": "에일라트 연안",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "DAAHL (Digital Archaeological Atlas of the Holy Land)",
+              "sourceUrl": "https://www.openbible.info/geo/modern/m6f1b7f/eilat",
+              "precisionMeters": 250
+            }
+          ]
+        },
+        {
+          "id": "moab",
+          "label": "모압 평지",
+          "biblicalName": "모압 평지 (Plains of Moab)",
+          "biblicalNameEn": "Plains of Moab",
+          "placeType": "region",
+          "locationStatus": "unknown",
+          "statusReason": "요단강 동편·사해 북동부의 넓은 지역을 가리키는 광역 지명으로, 느보산과 같은 단일 지점과 동일시하여 점 마커를 찍지 않습니다.",
+          "historicalBackground": "가나안 입성 직전 이스라엘이 요단강 건너편에 진을 쳤던 모압 권역의 저지대 평원이며, 신명기 설교의 지리적 배경입니다.",
+          "scriptureRef": "민 22:1; 36:13; 신 34:1",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/aa0b1d6/moab-1",
+          "sourceId": "aa0b1d6",
+          "candidates": []
+        }
+      ]
+    },
+    {
+      "id": "israel-judah-levant",
+      "title": "가나안 정복·사사·통일·분열왕국(이스라엘·유다) 2D 지도",
+      "regionSummary": "이스라엘(북왕국·중앙 산지)과 유다(남왕국), 블레셋·길르앗·암몬·모압·네겝 권역을 옅은 색으로 구분하고 시대별 주요 성읍을 작은 마커로 표시했습니다.",
+      "backdropImageUrl": "./assets/maps/israel-judah-levant.jpg",
+      "modernBordersImageUrl": "./assets/maps/israel-judah-levant-modern.png",
+      "bbox": [
+        32.833,
+        30.95,
+        37.667,
+        33.45
+      ],
+      "scaleBar": {
+        "km": 100,
+        "svgWidth": 79.1
+      },
+      "projection": {
+        "crs": "WGS84 (EPSG:4326)",
+        "name": "Equidistant Cylindrical (정거 원통 투영)",
+        "standardParallel": 32.2,
+        "viewBox": [
+          0,
+          0,
+          360,
+          220
+        ]
+      },
+      "license": "OpenBible.info Bible Geocoding Data & Region Isobands: CC BY 4.0; Natural Earth 1:10m Vector: Public Domain; Terrain DEM (USGS SRTM / GMTED2010 / NOAA ETOPO1): Public Domain; Underlying gazetteer coordinates: Wikidata (CC0), Pleiades (CC BY 3.0), GeoNames (CC BY 4.0), OpenStreetMap contributors (ODbL 1.0)",
+      "attribution": "OpenBible.info Bible Geocoding Data (CC BY 4.0); Natural Earth 1:10m; USGS/NASA SRTM & NOAA ETOPO1; Pleiades; OpenStreetMap contributors",
+      "sourceNote": "지형·수계: Natural Earth 1:10m 자연 지형 + 공개 DEM 음영기복 · 성경 지명·고대 권역 범위: OpenBible.info Bible Geocoding Data (확률 등치선 기반 추정 영역) · 투영: WGS84 정거 원통 투영(표준위선 32.2°N)",
+      "ancientRegions": [
+        {
+          "id": "galilee-1",
+          "label": "갈릴리",
+          "biblicalNameEn": "Galilee",
+          "color": "#a8c973",
+          "lat": 32.71136,
+          "lon": 35.31714,
+          "sourceId": "a9cf1e8",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a9cf1e8/galilee-1",
+          "svgPath": "M 197.0,22.5 201.5,25.0 205.5,30.0 207.5,35.0 207.5,47.0 202.0,49.5 198.5,54.0 198.5,55.0 200.5,56.0 201.5,60.0 205.5,66.0 205.0,66.5 204.5,67.0 204.5,72.0 202.5,78.0 196.0,83.5 190.0,84.5 189.5,84.0 189.0,83.5 185.0,83.5 177.0,80.5 168.5,73.0 167.5,71.0 167.5,55.0 173.5,37.0 175.5,34.0 183.0,27.5 Z"
+        },
+        {
+          "id": "samaria-2",
+          "label": "이스라엘(에브라임·사마리아)",
+          "biblicalNameEn": "Israel / Samaria",
+          "color": "#94be69",
+          "lat": 32.27955,
+          "lon": 35.16943,
+          "sourceId": "a282dce",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a282dce/samaria-2",
+          "svgPath": "M 167.0,79.5 174.0,79.5 174.5,80.0 175.0,80.5 178.0,80.5 182.0,82.5 188.0,83.5 196.0,88.5 201.5,94.0 202.5,97.0 201.5,110.0 197.5,120.0 192.0,125.5 185.0,127.5 184.5,127.0 184.0,126.5 177.0,126.5 176.5,126.0 176.0,125.5 171.0,125.5 165.0,123.5 155.0,116.5 148.5,110.0 148.5,102.0 149.0,101.5 149.5,101.0 149.5,97.0 150.0,96.5 150.5,96.0 150.5,93.0 152.5,87.0 155.0,84.5 Z"
+        },
+        {
+          "id": "judea-2",
+          "label": "유다",
+          "biblicalNameEn": "Judah",
+          "color": "#d6b86e",
+          "lat": 31.77955,
+          "lon": 35.16943,
+          "sourceId": "ab86a69",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/ab86a69/judea-2",
+          "svgPath": "M 156.0,123.5 171.0,124.5 171.5,125.0 172.0,125.5 189.0,127.5 198.0,131.5 202.5,136.0 202.5,147.0 195.5,151.0 190.5,161.0 191.5,166.0 189.5,170.0 190.5,175.0 189.0,177.5 177.0,173.5 165.0,167.5 164.0,167.5 163.0,167.5 159.0,165.5 154.5,161.0 152.5,157.0 152.5,130.0 153.0,129.5 153.5,129.0 153.5,126.0 Z"
+        },
+        {
+          "id": "philistia",
+          "label": "블레셋",
+          "biblicalNameEn": "Philistia",
+          "color": "#e2cf77",
+          "lat": 31.43864,
+          "lon": 34.55176,
+          "sourceId": "ac71e65",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/ac71e65/philistia",
+          "svgPath": "M 147.0,117.5 154.0,117.5 155.5,119.0 155.5,124.0 153.5,126.0 153.5,133.0 153.0,133.5 152.5,134.0 152.5,157.0 139.5,184.0 135.0,187.5 129.0,194.5 121.0,197.5 117.0,201.5 109.0,202.5 108.5,203.0 108.0,203.5 103.0,203.5 102.5,204.0 102.0,204.5 97.0,204.5 96.5,205.0 96.0,205.5 91.0,205.5 90.5,206.0 90.0,206.5 81.0,206.5 79.0,205.5 76.5,203.0 76.5,202.0 76.5,201.0 78.0,199.5 87.0,196.5 100.0,188.5 100.5,188.0 100.5,187.0 112.5,176.0 120.5,166.0 122.5,162.0 125.5,159.0 130.5,148.0 133.5,144.0 133.5,143.0 133.5,142.0 137.5,135.0 138.5,130.0 141.5,125.0 142.5,120.0 Z"
+        },
+        {
+          "id": "gilead-1",
+          "label": "길르앗",
+          "biblicalNameEn": "Gilead",
+          "color": "#aec878",
+          "lat": 32.38182,
+          "lon": 35.86768,
+          "sourceId": "ae73b90",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/ae73b90/gilead-1",
+          "svgPath": "M 221.0,70.5 225.0,70.5 229.0,72.5 240.5,82.0 244.5,89.0 244.5,96.0 240.5,106.0 230.0,111.5 226.5,115.0 218.5,132.0 214.0,136.5 213.0,136.5 212.0,136.5 209.5,133.0 208.5,130.0 208.5,124.0 208.0,123.5 207.5,123.0 207.5,118.0 208.0,117.5 208.5,117.0 208.5,92.0 209.0,91.5 209.5,91.0 210.5,80.0 212.5,76.0 218.0,71.5 Z"
+        },
+        {
+          "id": "ammon",
+          "label": "암몬",
+          "biblicalNameEn": "Ammon",
+          "color": "#a5bf93",
+          "lat": 31.98409,
+          "lon": 36.16309,
+          "sourceId": "a6046fa",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a6046fa/ammon",
+          "svgPath": "M 243.0,104.5 249.0,104.5 249.5,105.0 250.0,105.5 261.0,106.5 270.0,109.5 273.0,111.5 282.0,114.5 285.5,118.0 286.5,121.0 284.5,127.0 277.5,136.0 262.0,150.5 258.0,153.5 252.0,155.5 244.0,155.5 243.5,155.0 243.0,154.5 240.0,154.5 235.0,149.5 231.0,147.5 227.0,147.5 221.0,144.5 218.0,142.5 213.5,137.0 219.5,130.0 225.5,116.0 233.0,109.5 Z"
+        },
+        {
+          "id": "moab-1",
+          "label": "모압",
+          "biblicalNameEn": "Moab",
+          "color": "#dcc56c",
+          "lat": 31.37045,
+          "lon": 35.82739,
+          "sourceId": "aa0b1d6",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/aa0b1d6/moab-1",
+          "svgPath": "M 223.0,146.5 228.0,146.5 234.0,148.5 240.5,154.0 242.5,160.0 242.5,164.0 244.5,170.0 244.5,190.0 244.0,190.5 243.5,191.0 243.5,200.0 243.0,200.5 242.5,201.0 242.5,208.0 242.0,208.5 241.5,209.0 240.5,219.0 205.0,219.5 194.5,213.0 193.5,208.0 199.5,206.0 200.5,198.0 197.0,197.5 190.5,192.0 191.0,191.5 191.5,191.0 191.5,188.0 193.0,186.5 193.5,187.0 194.0,187.5 197.0,183.5 198.0,183.5 198.5,184.0 197.5,186.0 198.0,188.5 199.0,188.5 200.0,188.5 202.5,186.0 201.5,184.0 202.5,177.0 203.0,176.5 203.5,176.0 202.5,165.0 203.0,164.5 203.5,164.0 203.5,157.0 204.0,156.5 204.5,156.0 204.5,152.0 205.5,150.0 207.0,148.5 222.0,147.5 222.5,147.0 Z"
+        },
+        {
+          "id": "negeb",
+          "label": "네겝",
+          "biblicalNameEn": "Negeb",
+          "color": "#d8be89",
+          "lat": 31.21136,
+          "lon": 34.73974,
+          "sourceId": "a1cb244",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a1cb244/negeb",
+          "svgPath": "M 138.0,185.5 151.0,185.5 157.0,187.5 162.0,187.5 162.5,188.0 163.0,188.5 170.0,189.5 172.5,192.0 173.5,195.0 173.5,211.0 171.5,215.0 171.5,218.0 170.0,219.5 118.0,219.5 116.5,218.0 116.5,204.0 117.0,203.5 117.5,203.0 117.5,200.0 125.0,195.5 126.0,195.5 127.0,195.5 Z"
+        }
+      ],
+      "stops": [
+        {
+          "id": "dan_ot",
+          "label": "단",
+          "biblicalName": "단(라이스) (Dan (Laish))",
+          "biblicalNameEn": "Dan (Laish)",
+          "placeType": "settlement",
+          "locationStatus": "confirmed",
+          "statusReason": "헐몬산 기슭 텔 단(Tel Dan) 유적과 아람어 '다윗의 집' 비문 출토로 위치가 확정되어 있습니다.",
+          "historicalBackground": "'단에서 브엘세바까지'의 북단 경계 성읍이자 분열왕국 여로보암 1세가 북쪽 산당을 세운 곳입니다.",
+          "scriptureRef": "삿 18:29; 왕상 12:29",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a513646/dan",
+          "sourceId": "a513646",
+          "candidates": [
+            {
+              "lat": 33.249,
+              "lon": 35.652,
+              "modernName": "Tel Dan",
+              "modernNameKo": "텔 단 유적",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/mb61c67/tel-dan",
+              "precisionMeters": 50
+            }
+          ],
+          "lat": 33.249,
+          "lon": 35.652,
+          "modernName": "Tel Dan",
+          "modernNameKo": "텔 단 유적"
+        },
+        {
+          "id": "hazor",
+          "label": "하솔",
+          "biblicalName": "하솔 (Hazor)",
+          "biblicalNameEn": "Hazor",
+          "placeType": "settlement",
+          "locationStatus": "confirmed",
+          "statusReason": "갈릴리 북쪽 훌라 분지 남단의 텔 하솔(Tel Hazor) 대형 성읍 유적으로 위치가 확정되어 있습니다.",
+          "historicalBackground": "가나안 북부 왕국들의 우두머리 성읍으로 여호수아와 사사 드보라·바락 기사, 솔로몬의 요새 건축 기록(하솔·므깃도·게셀)에 등장합니다.",
+          "scriptureRef": "수 11:10; 삿 4:2; 왕상 9:15",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a6f33c5/hazor-1",
+          "sourceId": "a6f33c5",
+          "candidates": [
+            {
+              "lat": 33.018333,
+              "lon": 35.569167,
+              "modernName": "Tel Hazor",
+              "modernNameKo": "텔 하솔 유적",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/m6429cf/tel-hazor",
+              "precisionMeters": 50
+            }
+          ],
+          "lat": 33.018333,
+          "lon": 35.569167,
+          "modernName": "Tel Hazor",
+          "modernNameKo": "텔 하솔 유적"
+        },
+        {
+          "id": "megiddo",
+          "label": "므깃도",
+          "biblicalName": "므깃도 (Megiddo)",
+          "biblicalNameEn": "Megiddo",
+          "placeType": "settlement",
+          "locationStatus": "confirmed",
+          "statusReason": "이스르엘 평야 남서 관문의 텔 므깃도(Tel Megiddo) 다층 성문·마구간 유적으로 위치가 확정되어 있습니다.",
+          "historicalBackground": "해안길(비아 마리스)이 갈멜산맥을 넘는 전략 요충지로 솔로몬의 병거 성읍이자 요시야 왕이 전사한 현장입니다.",
+          "scriptureRef": "수 12:21; 왕상 9:15; 왕하 23:29",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a8554e3/megiddo",
+          "sourceId": "a8554e3",
+          "candidates": [
+            {
+              "lat": 32.585278,
+              "lon": 35.184444,
+              "modernName": "Tel Megiddo",
+              "modernNameKo": "텔 므깃도 유적",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/mf52435/tel-megiddo",
+              "precisionMeters": 5
+            }
+          ],
+          "lat": 32.585278,
+          "lon": 35.184444,
+          "modernName": "Tel Megiddo",
+          "modernNameKo": "텔 므깃도 유적"
+        },
+        {
+          "id": "samaria_ot",
+          "label": "사마리아",
+          "biblicalName": "사마리아 성읍 (Samaria)",
+          "biblicalNameEn": "Samaria",
+          "placeType": "settlement",
+          "locationStatus": "confirmed",
+          "statusReason": "오므리·아합 왕궁 유적이 발굴된 현대 세바스티야(Sebastia) 언덕으로 위치가 확정되어 있습니다.",
+          "historicalBackground": "오므리 왕이 세운 북이스라엘 왕국의 수도로, 엘리야·엘리사·아모스·호세아서의 주요 역사 무대입니다.",
+          "scriptureRef": "왕상 16:24; 암 3:9",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a041bb3/samaria-1",
+          "sourceId": "a041bb3",
+          "candidates": [
+            {
+              "lat": 32.276111,
+              "lon": 35.195,
+              "modernName": "Samaria",
+              "modernNameKo": "세바스티야(사마리아·세바스테 유적)",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/me64af8/samaria",
+              "precisionMeters": 250
+            }
+          ],
+          "lat": 32.276111,
+          "lon": 35.195,
+          "modernName": "Samaria",
+          "modernNameKo": "세바스티야(사마리아·세바스테 유적)"
+        },
+        {
+          "id": "shechem_ot",
+          "label": "세겜",
+          "biblicalName": "세겜 (Shechem)",
+          "biblicalNameEn": "Shechem",
+          "placeType": "settlement",
+          "locationStatus": "confirmed",
+          "statusReason": "텔 발라타(Tell Balatah) 성문·신전 유적으로 위치가 확정되어 있습니다.",
+          "historicalBackground": "여호수아가 고별 언약을 맺은 성읍이자 솔로몬 사후 르호보암과 북쪽 열 지파가 갈라선 분열왕국의 출발지입니다.",
+          "scriptureRef": "수 24:1; 왕상 12:1",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/adf74d4/shechem",
+          "sourceId": "adf74d4",
+          "candidates": [
+            {
+              "lat": 32.213611,
+              "lon": 35.281944,
+              "modernName": "Tell Balatah",
+              "modernNameKo": "텔 발라타(나블루스 동편 유적)",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/m657590/tell-balatah",
+              "precisionMeters": 250
+            }
+          ],
+          "lat": 32.213611,
+          "lon": 35.281944,
+          "modernName": "Tell Balatah",
+          "modernNameKo": "텔 발라타(나블루스 동편 유적)"
+        },
+        {
+          "id": "shiloh",
+          "label": "실로",
+          "biblicalName": "실로 (Shiloh)",
+          "biblicalNameEn": "Shiloh",
+          "placeType": "settlement",
+          "locationStatus": "confirmed",
+          "statusReason": "에브라임 산지의 키르벳 세일룬(Khirbet Seilun) 유적으로 위치가 확정되어 있습니다.",
+          "historicalBackground": "정복 시대와 사사 시대 말기(엘리·사무엘 초기)까지 회막과 언약궤가 머물렀던 이스라엘 지파 연합의 중앙 성소입니다.",
+          "scriptureRef": "수 18:1; 삼상 1:3; 4:3",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/aa4680a/shiloh",
+          "sourceId": "aa4680a",
+          "candidates": [
+            {
+              "lat": 32.055703,
+              "lon": 35.289536,
+              "modernName": "Khirbet Seilun",
+              "modernNameKo": "키르벳 세일룬(고대 실로 유적)",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/m12f296/khirbet-seilun",
+              "precisionMeters": 50
+            }
+          ],
+          "lat": 32.055703,
+          "lon": 35.289536,
+          "modernName": "Khirbet Seilun",
+          "modernNameKo": "키르벳 세일룬(고대 실로 유적)"
+        },
+        {
+          "id": "bethel_ot",
+          "label": "벧엘",
+          "biblicalName": "벧엘 (Bethel)",
+          "biblicalNameEn": "Bethel",
+          "placeType": "settlement",
+          "locationStatus": "estimated",
+          "statusReason": "베이틴(Beitin)을 중심으로 알 비라·부르즈 베이틴 등 복수 유적 후보가 논의되어 추정 위치로 표시합니다.",
+          "historicalBackground": "남유다와의 접경에 자리한 북이스라엘 남단 왕실 성소로, 선지자 아모스가 제사장 아마샤와 대립하며 공의를 선포한 곳입니다.",
+          "scriptureRef": "왕상 12:29; 암 7:13",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a64f355/bethel-1",
+          "sourceId": "a64f355",
+          "candidates": [
+            {
+              "lat": 31.922778,
+              "lon": 35.241389,
+              "modernName": "Beitin",
+              "modernNameKo": "베이틴(라말라 북동쪽)",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/me58522/beitin",
+              "precisionMeters": 250
+            },
+            {
+              "lat": 31.905142,
+              "lon": 35.214958,
+              "modernName": "Al Bira",
+              "modernNameKo": "알 비라",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/mebe332/al-bira",
+              "precisionMeters": 250
+            },
+            {
+              "lat": 31.921866,
+              "lon": 35.245478,
+              "modernName": "Burj Beitin",
+              "modernNameKo": "부르즈 베이틴 유적",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "OpenStreetMap (ODbL 1.0)",
+              "sourceUrl": "https://www.openbible.info/geo/modern/m26f59b/burj-beitin",
+              "precisionMeters": 5
+            }
+          ]
+        },
+        {
+          "id": "jericho_ot",
+          "label": "여리고(구약)",
+          "biblicalName": "여리고(구약 시대) (Jericho (Old Testament))",
+          "biblicalNameEn": "Jericho (Old Testament)",
+          "placeType": "settlement",
+          "locationStatus": "confirmed",
+          "statusReason": "아인 에스 술탄 샘 곁의 고대 텔 에스 술탄(Tell es-Sultan) 언덕 유적으로 위치가 확정되어 있습니다(신약 여리고 유적과는 약 2km 떨어져 있음).",
+          "historicalBackground": "요단강 도하 직후 이스라엘이 가나안 서편에서 첫째로 마주한 요단 저지대 오아시스 성읍입니다.",
+          "scriptureRef": "수 2:1; 6:1-20; 왕상 16:34",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a231f80/jericho-1",
+          "sourceId": "a231f80",
+          "candidates": [
+            {
+              "lat": 31.871719,
+              "lon": 35.444564,
+              "modernName": "Tell es Sultan",
+              "modernNameKo": "텔 에스 술탄(구약 고대 여리고 성터)",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/m95349d/tell-es-sultan",
+              "precisionMeters": 50
+            }
+          ],
+          "lat": 31.871719,
+          "lon": 35.444564,
+          "modernName": "Tell es Sultan",
+          "modernNameKo": "텔 에스 술탄(구약 고대 여리고 성터)"
+        },
+        {
+          "id": "gilgal",
+          "label": "길갈",
+          "biblicalName": "길갈 (Gilgal)",
+          "biblicalNameEn": "Gilgal",
+          "placeType": "settlement",
+          "locationStatus": "estimated",
+          "statusReason": "여리고 동편 키르벳 엘 메프지르 등 여러 후보지가 제시되어 단일 지점으로 확정하지 않습니다.",
+          "historicalBackground": "요단강을 건넌 뒤 열두 돌을 세우고 진을 친 가나안 정복 본영이자 사울의 왕권이 갱신된 성소입니다.",
+          "scriptureRef": "수 4:19; 5:9; 삼상 11:14-15",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/ab94aea/gilgal-1",
+          "sourceId": "ab94aea",
+          "candidates": [
+            {
+              "lat": 31.881883,
+              "lon": 35.459969,
+              "modernName": "Khirbet el Mefjir",
+              "modernNameKo": "키르벳 엘 메프지르(여리고 동북편)",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/ma342c0/khirbet-el-mefjir",
+              "precisionMeters": 5
+            },
+            {
+              "lat": 32.159929,
+              "lon": 35.515486,
+              "modernName": "Bedhat esh Sha’ab",
+              "modernNameKo": "베다트 에쉬 샤압(요단 계곡 석조 유구)",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/mf0a9c6/bedhat-esh-shaab",
+              "precisionMeters": 250
+            },
+            {
+              "lat": 32.24925,
+              "lon": 35.3707,
+              "modernName": "El ’Unuq",
+              "modernNameKo": "El ’Unuq",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "DAAHL (Digital Archaeological Atlas of the Holy Land)",
+              "sourceUrl": "https://www.openbible.info/geo/modern/m888945/el-unuq",
+              "precisionMeters": 50
+            },
+            {
+              "lat": 31.87394,
+              "lon": 35.45883,
+              "modernName": "Tell el Jurn",
+              "modernNameKo": "Tell el Jurn",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "DAAHL (Digital Archaeological Atlas of the Holy Land)",
+              "sourceUrl": "https://www.openbible.info/geo/modern/m482f98/tell-el-jurn",
+              "precisionMeters": 120
+            }
+          ]
+        },
+        {
+          "id": "jerusalem_ot",
+          "label": "예루살렘",
+          "biblicalName": "예루살렘(시온) (Jerusalem)",
+          "biblicalNameEn": "Jerusalem",
+          "placeType": "settlement",
+          "locationStatus": "confirmed",
+          "statusReason": "다윗성과 성전산 고고학 유적으로 위치가 확정되어 있습니다.",
+          "historicalBackground": "다윗이 정복해 언약궤를 모시고 솔로몬이 성전을 건축한 통일왕국 및 남유다 다윗 왕조의 수도입니다.",
+          "scriptureRef": "삼하 5:6-9; 왕상 8:1",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a15257a/jerusalem",
+          "sourceId": "a15257a",
+          "candidates": [
+            {
+              "lat": 31.776667,
+              "lon": 35.234167,
+              "modernName": "Jerusalem",
+              "modernNameKo": "예루살렘 구시가지·다윗성",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikipedia Geodata (CC BY-SA)",
+              "sourceUrl": "https://www.openbible.info/geo/modern/m66c5b8/jerusalem",
+              "precisionMeters": 250
+            }
+          ],
+          "lat": 31.776667,
+          "lon": 35.234167,
+          "modernName": "Jerusalem",
+          "modernNameKo": "예루살렘 구시가지·다윗성"
+        },
+        {
+          "id": "hebron_ot",
+          "label": "헤브론",
+          "biblicalName": "헤브론 (Hebron)",
+          "biblicalNameEn": "Hebron",
+          "placeType": "settlement",
+          "locationStatus": "confirmed",
+          "statusReason": "텔 루메이다(Tel Rumeida) 고대 성터로 위치가 확정되어 있습니다.",
+          "historicalBackground": "갈렙의 기업이자 다윗이 예루살렘 천도 전 7년 6개월 동안 유다 왕으로 통치한 초기 수도입니다.",
+          "scriptureRef": "수 14:13-14; 삼하 2:1-4",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a85151a/hebron",
+          "sourceId": "a85151a",
+          "candidates": [
+            {
+              "lat": 31.525087,
+              "lon": 35.10222,
+              "modernName": "Tel Rumeida",
+              "modernNameKo": "텔 루메이다(헤브론 고대 성터)",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/m86f941/tel-rumeida",
+              "precisionMeters": 50
+            }
+          ],
+          "lat": 31.525087,
+          "lon": 35.10222,
+          "modernName": "Tel Rumeida",
+          "modernNameKo": "텔 루메이다(헤브론 고대 성터)"
+        },
+        {
+          "id": "lachish_ot",
+          "label": "라기스",
+          "biblicalName": "라기스 (Lachish)",
+          "biblicalNameEn": "Lachish",
+          "placeType": "settlement",
+          "locationStatus": "confirmed",
+          "statusReason": "텔 에드 두웨이르(Tell ed-Duweir) 요새 유적으로 위치가 확정되어 있습니다.",
+          "historicalBackground": "유다 세벨라(평지) 남부를 방어하던 핵심 요새 성읍입니다.",
+          "scriptureRef": "수 10:31; 대하 11:9; 미 1:13",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a3cc590/lachish",
+          "sourceId": "a3cc590",
+          "candidates": [
+            {
+              "lat": 31.565278,
+              "lon": 34.849167,
+              "modernName": "Tell ed Duweir",
+              "modernNameKo": "텔 에드 두웨이르(텔 라기스)",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/m31bdd9/tell-ed-duweir",
+              "precisionMeters": 50
+            }
+          ],
+          "lat": 31.565278,
+          "lon": 34.849167,
+          "modernName": "Tell ed Duweir",
+          "modernNameKo": "텔 에드 두웨이르(텔 라기스)"
+        },
+        {
+          "id": "gaza_ot",
+          "label": "가사",
+          "biblicalName": "가사 (Gaza)",
+          "biblicalNameEn": "Gaza",
+          "placeType": "settlement",
+          "locationStatus": "confirmed",
+          "statusReason": "텔 하루베(Tell Harube, 가자 구시가지) 유적으로 위치가 확정되어 있습니다.",
+          "historicalBackground": "해안 평야 블레셋 5대 방백 성읍 중 최남단 거점으로 삼손 기사의 주요 배경지입니다.",
+          "scriptureRef": "삿 16:1-3; 삼상 6:17",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/aa8edd2/gaza",
+          "sourceId": "aa8edd2",
+          "candidates": [
+            {
+              "lat": 31.504,
+              "lon": 34.4644,
+              "modernName": "Tell Harube",
+              "modernNameKo": "텔 하루베(현대 가자 구시가지 언덕)",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/mb5cfe4/tell-harube",
+              "precisionMeters": 1000
+            }
+          ],
+          "lat": 31.504,
+          "lon": 34.4644,
+          "modernName": "Tell Harube",
+          "modernNameKo": "텔 하루베(현대 가자 구시가지 언덕)"
+        },
+        {
+          "id": "beersheba_ot",
+          "label": "브엘세바",
+          "biblicalName": "브엘세바 (Beersheba)",
+          "biblicalNameEn": "Beersheba",
+          "placeType": "settlement",
+          "locationStatus": "estimated",
+          "statusReason": "텔 브엘세바(Tel Beer Sheva)와 비르 에스 세바 두 후보를 함께 안내합니다.",
+          "historicalBackground": "이스라엘 남쪽 경계를 대표하는 네겝 분지 성읍이자 엘리야가 호렙산으로 가던 길에 지났던 남단 거점입니다.",
+          "scriptureRef": "삿 20:1; 삼상 3:20; 왕상 19:3",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a075d61/beersheba-2",
+          "sourceId": "a075d61",
+          "candidates": [
+            {
+              "lat": 31.244722,
+              "lon": 34.840833,
+              "modernName": "Tel Beer Sheva",
+              "modernNameKo": "텔 브엘세바 고고학 유적",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/m392188/tel-beer-sheva",
+              "precisionMeters": 5
+            },
+            {
+              "lat": 31.237225,
+              "lon": 34.793078,
+              "modernName": "Bir es Seba",
+              "modernNameKo": "비르 에스 세바(베르셰바 구시가지)",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/m14a95e/bir-es-seba",
+              "precisionMeters": 250
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "canaan-kingdoms",
+      "title": "앗수르·바벨론 포로기와 바사(페르시아) 제국 권역 2D 지도",
+      "regionSummary": "유다·이스라엘과 앗수르·바벨론·엘람(바사)·메대 제국 권역의 상대적 규모를 옅은 영역 색으로 보여 주고 주요 수도를 표시했습니다.",
+      "backdropImageUrl": "./assets/maps/canaan-kingdoms.jpg",
+      "modernBordersImageUrl": "./assets/maps/canaan-kingdoms-modern.png",
+      "bbox": [
+        32.8,
+        29.2,
+        50.5,
+        38.2
+      ],
+      "scaleBar": {
+        "km": 300,
+        "svgWidth": 65.9
+      },
+      "projection": {
+        "crs": "WGS84 (EPSG:4326)",
+        "name": "Equidistant Cylindrical (정거 원통 투영)",
+        "standardParallel": 33.7,
+        "viewBox": [
+          0,
+          0,
+          360,
+          220
+        ]
+      },
+      "license": "OpenBible.info Bible Geocoding Data & Region Isobands: CC BY 4.0; Natural Earth 1:10m Vector: Public Domain; Terrain DEM (USGS SRTM / GMTED2010 / NOAA ETOPO1): Public Domain; Underlying gazetteer coordinates: Wikidata (CC0), Pleiades (CC BY 3.0), GeoNames (CC BY 4.0), OpenStreetMap contributors (ODbL 1.0)",
+      "attribution": "OpenBible.info Bible Geocoding Data (CC BY 4.0); Natural Earth 1:10m; USGS/NASA SRTM & NOAA ETOPO1; Pleiades; OpenStreetMap contributors",
+      "sourceNote": "지형·수계: Natural Earth 1:10m 자연 지형 + 공개 DEM 음영기복 · 성경 지명·고대 권역 범위: OpenBible.info Bible Geocoding Data (확률 등치선 기반 추정 영역) · 투영: WGS84 정거 원통 투영(표준위선 33.7°N)",
+      "ancientRegions": [
+        {
+          "id": "canaan",
+          "label": "유다·이스라엘",
+          "biblicalNameEn": "Judah & Israel",
+          "color": "#95be68",
+          "lat": 32.06364,
+          "lon": 35.11083,
+          "sourceId": "a581f0c",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a581f0c/canaan",
+          "svgPath": "M 56.0,113.5 58.5,114.0 58.5,130.0 58.0,130.5 57.5,130.0 57.5,129.0 57.0,128.5 56.0,128.5 54.5,130.0 54.5,131.0 54.5,132.0 56.0,134.5 57.5,132.0 58.0,131.5 58.5,132.0 58.5,138.0 54.5,150.0 54.5,153.0 52.5,156.0 49.5,165.0 43.0,169.5 39.0,169.5 36.5,167.0 36.5,159.0 37.0,158.5 37.5,158.0 38.5,151.0 41.5,145.0 43.5,137.0 47.5,129.0 50.5,119.0 51.5,117.0 Z"
+        },
+        {
+          "id": "aram",
+          "label": "아람(수리아)",
+          "biblicalNameEn": "Aram",
+          "color": "#cbcf7a",
+          "lat": 33.41364,
+          "lon": 36.43833,
+          "sourceId": "a3e66cd",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a3e66cd/aram",
+          "svgPath": "M 82.0,98.5 85.0,99.5 97.0,98.5 98.5,100.0 93.5,109.0 93.5,110.0 93.5,111.0 91.5,114.0 91.5,115.0 91.5,116.0 89.5,119.0 89.5,120.0 89.5,121.0 87.5,124.0 87.5,125.0 87.5,126.0 83.5,135.0 74.0,144.5 72.0,145.5 66.0,145.5 58.5,137.0 58.5,134.0 58.0,133.5 57.5,133.0 57.5,127.0 58.0,126.5 58.5,126.0 58.5,112.0 60.5,108.0 66.0,101.5 68.0,100.5 72.0,100.5 72.5,100.0 73.0,99.5 81.0,99.5 81.5,99.0 Z"
+        },
+        {
+          "id": "assyria",
+          "label": "앗수르",
+          "biblicalNameEn": "Assyria",
+          "color": "#d8b474",
+          "lat": 35.70455,
+          "lon": 42.73167,
+          "sourceId": "a3d1321",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a3d1321/assyria",
+          "svgPath": "M 158.0,41.5 191.0,43.5 191.5,44.0 192.0,44.5 199.0,44.5 199.5,45.0 200.0,45.5 207.0,45.5 207.5,46.0 208.0,46.5 215.0,46.5 215.5,47.0 216.0,47.5 229.0,48.5 229.5,49.0 230.0,49.5 235.0,49.5 235.5,50.0 236.0,50.5 240.0,50.5 245.0,52.5 249.0,52.5 254.0,56.5 256.5,60.0 256.5,65.0 252.0,67.5 243.0,68.5 242.5,69.0 242.0,69.5 234.0,70.5 229.0,72.5 225.0,72.5 224.5,73.0 224.0,73.5 221.0,73.5 216.0,75.5 212.0,75.5 211.5,76.0 211.0,76.5 197.0,76.5 196.5,76.0 196.0,75.5 192.0,75.5 176.0,68.5 175.0,68.5 174.0,68.5 169.0,65.5 168.0,65.5 167.0,65.5 155.0,57.5 150.5,52.0 153.5,46.0 Z"
+        },
+        {
+          "id": "babylonia",
+          "label": "바벨론",
+          "biblicalNameEn": "Babylonia",
+          "color": "#acc976",
+          "lat": 32.55455,
+          "lon": 44.35417,
+          "sourceId": "a8394b8",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a8394b8/babylonia",
+          "svgPath": "M 211.0,105.5 223.0,106.5 223.5,107.0 224.0,107.5 237.0,109.5 237.5,110.0 238.0,110.5 246.0,111.5 251.0,113.5 270.0,116.5 279.0,119.5 283.5,126.0 283.5,127.0 283.5,128.0 285.5,131.0 286.5,136.0 290.5,144.0 291.5,150.0 293.5,154.0 294.5,163.0 291.5,171.0 290.0,172.5 286.0,173.5 285.5,173.0 285.0,172.5 275.0,172.5 274.5,172.0 274.0,171.5 266.0,171.5 265.5,171.0 265.0,170.5 259.0,170.5 258.5,170.0 258.0,169.5 250.0,169.5 244.0,167.5 239.0,167.5 238.5,167.0 238.0,166.5 233.0,166.5 232.5,166.0 232.0,165.5 223.0,164.5 214.0,160.5 208.5,154.0 207.5,146.0 207.0,145.5 206.5,145.0 207.5,142.0 207.5,135.0 207.0,134.5 206.5,134.0 207.5,110.0 Z"
+        },
+        {
+          "id": "elam",
+          "label": "엘람·바사",
+          "biblicalNameEn": "Elam / Persia",
+          "color": "#dabf6e",
+          "lat": 31.9,
+          "lon": 48.5825,
+          "sourceId": "a7e3a59",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a7e3a59/elam",
+          "svgPath": "M 311.0,114.5 317.0,115.5 320.0,117.5 337.0,130.5 341.5,136.0 349.5,152.0 355.5,172.0 359.5,177.0 359.5,180.0 352.0,189.5 350.0,190.5 334.0,190.5 333.5,190.0 333.5,189.0 331.0,187.5 330.0,190.5 318.0,186.5 310.0,182.5 308.0,180.5 305.0,179.5 301.5,176.0 297.5,167.0 297.5,166.0 297.5,165.0 295.5,162.0 289.5,144.0 289.5,129.0 292.5,123.0 296.0,119.5 Z"
+        },
+        {
+          "id": "media",
+          "label": "메대",
+          "biblicalNameEn": "Media",
+          "color": "#c9b58c",
+          "lat": 36.11364,
+          "lon": 47.94333,
+          "sourceId": "ad2fadf",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/ad2fadf/media",
+          "svgPath": "M 114.0,-0.5 247.0,-0.5 248.0,1.5 250.5,2.0 250.5,3.0 248.5,4.0 248.5,8.0 252.5,10.0 251.5,12.0 253.5,18.0 252.5,20.0 253.5,23.0 256.0,24.5 257.0,26.5 260.0,26.5 260.5,23.0 263.0,22.5 266.5,20.0 264.5,16.0 262.5,15.0 264.5,12.0 261.0,9.5 256.5,9.0 256.5,8.0 256.5,7.0 258.5,5.0 258.0,-0.5 326.0,-0.5 328.5,11.0 333.0,15.5 334.0,15.5 335.0,15.5 338.0,17.5 345.0,17.5 345.5,18.0 346.0,18.5 351.0,18.5 353.0,19.5 354.5,24.0 359.5,29.0 359.5,176.0 359.0,176.5 358.0,176.5 355.5,172.0 350.5,155.0 339.5,133.0 300.0,102.5 251.0,53.5 245.0,52.5 244.5,52.0 244.0,51.5 240.0,51.5 235.0,49.5 222.0,48.5 221.5,48.0 221.0,47.5 215.0,47.5 214.5,47.0 214.0,46.5 207.0,46.5 206.5,46.0 206.0,45.5 199.0,45.5 198.5,45.0 198.0,44.5 191.0,44.5 190.5,44.0 190.0,43.5 181.0,43.5 180.5,43.0 180.0,42.5 167.0,42.5 166.5,42.0 166.0,41.5 156.0,41.5 155.5,41.0 155.0,40.5 152.0,40.5 149.5,38.0 148.5,35.0 148.5,32.0 146.5,28.0 146.5,25.0 143.5,17.0 142.5,10.0 139.0,6.5 135.0,6.5 134.5,6.0 134.0,5.5 130.0,5.5 129.5,5.0 129.0,4.5 125.0,4.5 124.5,4.0 124.0,3.5 117.0,2.5 115.0,1.5 113.5,0.0 Z M 358.0,183.5 359.0,183.5 359.5,184.0 359.0,210.5 358.5,210.0 358.5,209.0 355.5,207.0 355.5,206.0 355.5,205.0 351.5,201.0 351.5,197.0 349.5,195.0 354.5,187.0 Z"
+        }
+      ],
+      "stops": [
+        {
+          "id": "dan",
+          "label": "단",
+          "biblicalName": "단(라이스) (Dan (Laish))",
+          "biblicalNameEn": "Dan (Laish)",
+          "placeType": "settlement",
+          "locationStatus": "confirmed",
+          "statusReason": "헐몬산 기슭 요단강 발원지 인근의 텔 단(Tel Dan) 유적으로 위치가 확정되어 있습니다.",
+          "historicalBackground": "북이스라엘 북단 경계 성읍으로 아람·앗수르의 남하 침공 경로에서 가장 먼저 타격을 입던 관문 성읍입니다.",
+          "scriptureRef": "삿 18:29; 왕상 12:29",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a513646/dan",
+          "sourceId": "a513646",
+          "candidates": [
+            {
+              "lat": 33.249,
+              "lon": 35.652,
+              "modernName": "Tel Dan",
+              "modernNameKo": "텔 단 유적",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/mb61c67/tel-dan",
+              "precisionMeters": 50
+            }
+          ],
+          "lat": 33.249,
+          "lon": 35.652,
+          "modernName": "Tel Dan",
+          "modernNameKo": "텔 단 유적"
+        },
+        {
+          "id": "samaria",
+          "label": "사마리아",
+          "biblicalName": "사마리아 성읍 (Samaria)",
+          "biblicalNameEn": "Samaria",
+          "placeType": "settlement",
+          "locationStatus": "confirmed",
+          "statusReason": "오므리·아합 왕궁 유적이 발굴된 사마리아 언덕(현대 세바스티야)으로 위치가 확정되어 있습니다.",
+          "historicalBackground": "북이스라엘 왕국의 수도로 주전 722년 신앗수르 제국에 함락되어 주민들이 앗수르 각지로 포로 이주되었습니다.",
+          "scriptureRef": "왕상 16:24; 왕하 17:5-6",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a041bb3/samaria-1",
+          "sourceId": "a041bb3",
+          "candidates": [
+            {
+              "lat": 32.276111,
+              "lon": 35.195,
+              "modernName": "Samaria",
+              "modernNameKo": "세바스티야(사마리아·세바스테 유적)",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/me64af8/samaria",
+              "precisionMeters": 250
+            }
+          ],
+          "lat": 32.276111,
+          "lon": 35.195,
+          "modernName": "Samaria",
+          "modernNameKo": "세바스티야(사마리아·세바스테 유적)"
+        },
+        {
+          "id": "jerusalem",
+          "label": "예루살렘",
+          "biblicalName": "예루살렘(시온) (Jerusalem)",
+          "biblicalNameEn": "Jerusalem",
+          "placeType": "settlement",
+          "locationStatus": "confirmed",
+          "statusReason": "다윗성 능선과 성전산 일대의 고고학 층위 및 역사적 연속성으로 위치가 확정되어 있습니다.",
+          "historicalBackground": "남유다의 수도로 주전 701년 앗수르 산헤립의 포위에서 보존되었으나 주전 586년 바벨론에 함락된 뒤, 바사 시대 스룹바벨·에스라·느헤미야를 통해 성전과 성벽이 재건되었습니다.",
+          "scriptureRef": "왕하 19:32; 25:8-10; 스 1:2-3",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a15257a/jerusalem",
+          "sourceId": "a15257a",
+          "candidates": [
+            {
+              "lat": 31.776667,
+              "lon": 35.234167,
+              "modernName": "Jerusalem",
+              "modernNameKo": "예루살렘 구시가지·다윗성",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikipedia Geodata (CC BY-SA)",
+              "sourceUrl": "https://www.openbible.info/geo/modern/m66c5b8/jerusalem",
+              "precisionMeters": 250
+            }
+          ],
+          "lat": 31.776667,
+          "lon": 35.234167,
+          "modernName": "Jerusalem",
+          "modernNameKo": "예루살렘 구시가지·다윗성"
+        },
+        {
+          "id": "lachish",
+          "label": "라기스",
+          "biblicalName": "라기스 (Lachish)",
+          "biblicalNameEn": "Lachish",
+          "placeType": "settlement",
+          "locationStatus": "confirmed",
+          "statusReason": "텔 에드 두웨이르(Tell ed-Duweir) 공성 경사로 유적과 산헤립 궁전 부조·라기스 서신 출토로 위치가 확정되어 있습니다.",
+          "historicalBackground": "유다 평지(세벨라) 남부를 지키는 제2의 요새 성읍으로 앗수르 산헤립의 공성과 바벨론 침공 당시 최후까지 저항한 성읍입니다.",
+          "scriptureRef": "왕하 18:14; 19:8; 렘 34:7",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a3cc590/lachish",
+          "sourceId": "a3cc590",
+          "candidates": [
+            {
+              "lat": 31.565278,
+              "lon": 34.849167,
+              "modernName": "Tell ed Duweir",
+              "modernNameKo": "텔 에드 두웨이르(텔 라기스)",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/m31bdd9/tell-ed-duweir",
+              "precisionMeters": 50
+            }
+          ],
+          "lat": 31.565278,
+          "lon": 34.849167,
+          "modernName": "Tell ed Duweir",
+          "modernNameKo": "텔 에드 두웨이르(텔 라기스)"
+        },
+        {
+          "id": "nineveh",
+          "label": "니느웨(앗수르)",
+          "biblicalName": "니느웨 (Nineveh)",
+          "biblicalNameEn": "Nineveh",
+          "placeType": "settlement",
+          "locationStatus": "confirmed",
+          "statusReason": "티그리스강 동안(현대 이라크 모술 맞은편 쿠윤지크·네비 유누스 언덕)의 성벽·왕궁 유적으로 위치가 확정되어 있습니다.",
+          "historicalBackground": "신앗수르 제국 산헤립과 아슈르바니팔 시대의 대수도로, 열왕기의 유다 침공 기사와 요나서·나훔서의 직접적인 배경 도시입니다.",
+          "scriptureRef": "왕하 19:36; 욘 1:2; 나 1:1",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a70fd5d/nineveh",
+          "sourceId": "a70fd5d",
+          "candidates": [
+            {
+              "lat": 36.3594,
+              "lon": 43.1528,
+              "modernName": "Nineveh",
+              "modernNameKo": "니느웨 유적(이라크 모술 동안 쿠윤지크)",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/m52bd87/nineveh",
+              "precisionMeters": 5
+            }
+          ],
+          "lat": 36.3594,
+          "lon": 43.1528,
+          "modernName": "Nineveh",
+          "modernNameKo": "니느웨 유적(이라크 모술 동안 쿠윤지크)"
+        },
+        {
+          "id": "babylon",
+          "label": "바벨론",
+          "biblicalName": "바벨론 (Babylon)",
+          "biblicalNameEn": "Babylon",
+          "placeType": "settlement",
+          "locationStatus": "confirmed",
+          "statusReason": "유프라테스강 연안(현대 이라크 힐라 인근)의 이슈타르 문·왕궁·성벽 유적으로 위치가 확정되어 있습니다.",
+          "historicalBackground": "신바빌로니아 제국 느부갓네살 2세의 수도로, 남유다 왕국 멸망과 바벨론 포로기 공동체(다니엘·에스겔 등)의 핵심 배경 도시입니다.",
+          "scriptureRef": "왕하 24:10-16; 단 1:1; 렘 29:1",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a217d18/babylon-1",
+          "sourceId": "a217d18",
+          "candidates": [
+            {
+              "lat": 32.543333,
+              "lon": 44.422222,
+              "modernName": "Babylon",
+              "modernNameKo": "바빌론 유적(이라크 힐라 인근)",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/md561de/babylon",
+              "precisionMeters": 5
+            }
+          ],
+          "lat": 32.543333,
+          "lon": 44.422222,
+          "modernName": "Babylon",
+          "modernNameKo": "바빌론 유적(이라크 힐라 인근)"
+        },
+        {
+          "id": "susa",
+          "label": "수산(바사)",
+          "biblicalName": "수산 궁 (Susa (Shushan))",
+          "biblicalNameEn": "Susa (Shushan)",
+          "placeType": "settlement",
+          "locationStatus": "confirmed",
+          "statusReason": "이란 남서부 후제스탄 평원의 고대 수사 유적(현대 슈시, Shush)의 아케메네스 왕궁터로 위치가 확정되어 있습니다.",
+          "historicalBackground": "아케메네스 왕조 바사(페르시아) 제국의 겨울 왕궁 도시로, 느헤미야의 봉직과 에스더서 전체 사건의 무대입니다.",
+          "scriptureRef": "느 1:1; 에 1:2; 단 8:2",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a033b84/susa",
+          "sourceId": "a033b84",
+          "candidates": [
+            {
+              "lat": 32.18922,
+              "lon": 48.25778,
+              "modernName": "Shush",
+              "modernNameKo": "슈시(이란 수사 고고학 유적)",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/m9cb1d4/shush",
+              "precisionMeters": 5
+            }
+          ],
+          "lat": 32.18922,
+          "lon": 48.25778,
+          "modernName": "Shush",
+          "modernNameKo": "슈시(이란 수사 고고학 유적)"
+        }
+      ]
+    },
+    {
+      "id": "jesus-palestine",
+      "title": "예수님 시대(갈릴리·사마리아·유대)와 초대교회 사역 2D 지도",
+      "regionSummary": "로마 통치기 팔레스타인의 갈릴리·사마리아·유대·데가볼리·이두매 권역을 옅은 색으로 구분하고 복음서 및 빌립·베드로 사역 성읍을 표시했습니다.",
+      "backdropImageUrl": "./assets/maps/jesus-palestine.jpg",
+      "modernBordersImageUrl": "./assets/maps/jesus-palestine-modern.png",
+      "bbox": [
+        32.964,
+        31.1,
+        37.336,
+        33.36
+      ],
+      "scaleBar": {
+        "km": 100,
+        "svgWidth": 87.4
+      },
+      "projection": {
+        "crs": "WGS84 (EPSG:4326)",
+        "name": "Equidistant Cylindrical (정거 원통 투영)",
+        "standardParallel": 32.23,
+        "viewBox": [
+          0,
+          0,
+          360,
+          220
+        ]
+      },
+      "license": "OpenBible.info Bible Geocoding Data & Region Isobands: CC BY 4.0; Natural Earth 1:10m Vector: Public Domain; Terrain DEM (USGS SRTM / GMTED2010 / NOAA ETOPO1): Public Domain; Underlying gazetteer coordinates: Wikidata (CC0), Pleiades (CC BY 3.0), GeoNames (CC BY 4.0), OpenStreetMap contributors (ODbL 1.0)",
+      "attribution": "OpenBible.info Bible Geocoding Data (CC BY 4.0); Natural Earth 1:10m; USGS/NASA SRTM & NOAA ETOPO1; Pleiades; OpenStreetMap contributors",
+      "sourceNote": "지형·수계: Natural Earth 1:10m 자연 지형 + 공개 DEM 음영기복 · 성경 지명·고대 권역 범위: OpenBible.info Bible Geocoding Data (확률 등치선 기반 추정 영역) · 투영: WGS84 정거 원통 투영(표준위선 32.23°N)",
+      "ancientRegions": [
+        {
+          "id": "galilee-1",
+          "label": "갈릴리",
+          "biblicalNameEn": "Galilee",
+          "color": "#e2ce68",
+          "lat": 32.72309,
+          "lon": 35.30788,
+          "sourceId": "a9cf1e8",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a9cf1e8/galilee-1",
+          "svgPath": "M 206.0,16.5 210.0,17.5 214.5,22.0 217.5,27.0 218.5,30.0 218.5,44.0 218.0,44.5 217.0,44.5 216.5,44.0 216.0,43.5 209.5,49.0 209.5,53.0 211.5,57.0 213.5,58.0 214.5,61.0 214.5,64.0 210.5,74.0 204.0,79.5 200.0,84.5 197.0,84.5 185.0,80.5 175.5,72.0 174.5,70.0 174.5,52.0 182.5,30.0 191.0,22.5 Z"
+        },
+        {
+          "id": "samaria-2",
+          "label": "사마리아",
+          "biblicalNameEn": "Samaria",
+          "color": "#9ec46d",
+          "lat": 32.29164,
+          "lon": 35.15,
+          "sourceId": "a282dce",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a282dce/samaria-2",
+          "svgPath": "M 176.0,78.5 185.0,79.5 188.0,81.5 199.0,84.5 210.5,97.0 211.5,103.0 212.0,103.5 212.5,104.0 211.5,107.0 211.5,114.0 208.5,122.0 205.5,126.0 200.0,130.5 197.0,131.5 189.0,131.5 188.5,131.0 188.0,130.5 182.0,130.5 181.5,130.0 181.0,129.5 178.0,129.5 172.0,127.5 165.0,123.5 153.5,113.0 153.5,104.0 159.5,86.0 168.0,80.5 175.0,79.5 175.5,79.0 Z"
+        },
+        {
+          "id": "judea-2",
+          "label": "유대",
+          "biblicalNameEn": "Judea",
+          "color": "#b4cc6b",
+          "lat": 31.79855,
+          "lon": 35.21072,
+          "sourceId": "ab86a69",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/ab86a69/judea-2",
+          "svgPath": "M 162.0,128.5 181.0,129.5 181.5,130.0 182.0,130.5 187.0,130.5 187.5,131.0 188.0,131.5 192.0,131.5 192.5,132.0 193.0,132.5 200.0,133.5 207.0,136.5 212.5,142.0 212.5,155.0 209.0,155.5 205.5,158.0 205.5,159.0 205.5,160.0 200.5,168.0 200.0,174.5 185.0,173.5 184.5,173.0 184.0,172.5 180.0,172.5 179.5,172.0 179.0,171.5 172.0,170.5 168.0,168.5 165.5,163.0 157.5,157.0 158.5,131.0 Z"
+        },
+        {
+          "id": "decapolis",
+          "label": "데가볼리",
+          "biblicalNameEn": "Decapolis",
+          "color": "#dda86b",
+          "lat": 32.48682,
+          "lon": 35.81794,
+          "sourceId": "ae733a2",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/ae733a2/decapolis",
+          "svgPath": "M 220.0,53.5 233.0,53.5 252.0,61.5 257.5,67.0 261.5,75.0 262.5,82.0 265.5,91.0 266.5,103.0 267.0,103.5 267.5,104.0 268.5,128.0 262.5,137.0 259.0,140.5 254.0,143.5 241.0,144.5 234.5,140.0 227.5,128.0 219.5,117.0 218.5,114.0 212.5,106.0 209.5,96.0 200.5,86.0 200.5,83.0 209.5,75.0 214.5,63.0 217.0,62.5 218.5,61.0 220.5,57.0 220.0,56.5 219.5,56.0 Z"
+        },
+        {
+          "id": "idumea",
+          "label": "이두매",
+          "biblicalNameEn": "Idumea",
+          "color": "#a8c777",
+          "lat": 31.44927,
+          "lon": 35.0407,
+          "sourceId": "a2517a0",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a2517a0/idumea",
+          "svgPath": "M 157.0,157.5 167.0,162.5 184.0,163.5 184.5,164.0 185.0,164.5 197.0,164.5 200.5,167.0 200.5,176.0 198.5,180.0 199.0,180.5 199.5,181.0 199.5,193.0 201.5,198.0 201.5,203.0 200.0,206.5 197.5,206.0 196.0,211.5 186.0,211.5 185.5,211.0 185.0,210.5 178.0,210.5 177.5,210.0 177.0,209.5 170.0,209.5 169.5,209.0 169.0,208.5 161.0,208.5 160.5,208.0 160.0,207.5 148.0,206.5 141.0,202.5 137.5,199.0 133.5,191.0 Z"
+        },
+        {
+          "id": "philistia",
+          "label": "해안 평야",
+          "biblicalNameEn": "Coastal Plain",
+          "color": "#c2d478",
+          "lat": 31.34655,
+          "lon": 34.44562,
+          "sourceId": "ac71e65",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/ac71e65/philistia",
+          "svgPath": "M 158.0,120.5 161.5,122.0 161.5,129.0 158.5,132.0 157.5,157.0 135.5,190.0 135.5,195.0 139.5,201.0 135.5,208.0 127.0,212.5 118.0,213.5 117.5,214.0 117.0,214.5 112.0,214.5 106.0,216.5 101.0,216.5 92.0,219.5 75.0,219.5 73.5,217.0 74.0,212.5 90.0,206.5 99.0,200.5 108.5,192.0 117.5,180.0 122.5,175.0 123.5,172.0 127.5,167.0 132.5,156.0 135.5,153.0 142.5,138.0 146.5,124.0 149.0,122.5 157.0,121.5 157.5,121.0 Z"
+        }
+      ],
+      "stops": [
+        {
+          "id": "capernaum",
+          "label": "가버나움",
+          "biblicalName": "가버나움 (Capernaum)",
+          "biblicalNameEn": "Capernaum",
+          "placeType": "settlement",
+          "locationStatus": "confirmed",
+          "statusReason": "갈릴리 호수 북서안의 텔 훔(Tell Hum, 크파르 나훔) 회당·주거지 유적으로 고고학적 위치가 확정되어 있습니다.",
+          "historicalBackground": "갈릴리 호수 북서쪽 해안의 어업·세관 마을로, 예수님이 나사렛을 떠나 갈릴리 공생애 사역의 중심 거점으로 삼으신 도시입니다.",
+          "scriptureRef": "마 4:13; 막 1:21; 눅 4:31",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/af2161c/capernaum",
+          "sourceId": "af2161c",
+          "candidates": [
+            {
+              "lat": 32.881111,
+              "lon": 35.575,
+              "modernName": "Tell Hum",
+              "modernNameKo": "텔 훔(크파르 나훔 유적)",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/m66efd0/tell-hum",
+              "precisionMeters": 5
+            }
+          ],
+          "lat": 32.881111,
+          "lon": 35.575,
+          "modernName": "Tell Hum",
+          "modernNameKo": "텔 훔(크파르 나훔 유적)"
+        },
+        {
+          "id": "cana",
+          "label": "가나",
+          "biblicalName": "갈릴리 가나 (Cana of Galilee)",
+          "biblicalNameEn": "Cana of Galilee",
+          "placeType": "settlement",
+          "locationStatus": "traditional",
+          "statusReason": "비잔틴·중세 순례 전승지 케프르 켄나(Kefr Kenna)와 현대 고고학계에서 유력하게 보는 키르벳 카나(Horbat Qana) 등 복수 후보가 병존합니다.",
+          "historicalBackground": "요한복음에서 첫 표적인 혼인 잔치 사건과 왕의 신하의 아들 치유 말씀이 선포된 갈릴리 산지 마을이자 나다나엘의 출신지입니다.",
+          "scriptureRef": "요 2:1-11; 4:46; 21:2",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a031bda/cana",
+          "sourceId": "a031bda",
+          "candidates": [
+            {
+              "lat": 32.8222,
+              "lon": 35.30269,
+              "modernName": "Horbat Qana",
+              "modernNameKo": "키르벳 카나(호르바트 카나 유적)",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/m7c7d60/horbat-qana",
+              "precisionMeters": 20
+            },
+            {
+              "lat": 32.74647,
+              "lon": 35.33921,
+              "modernName": "Kefr Kenna",
+              "modernNameKo": "케프르 켄나(카프르 칸나)",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "DAAHL (Digital Archaeological Atlas of the Holy Land)",
+              "sourceUrl": "https://www.openbible.info/geo/modern/ma43757/kefr-kenna",
+              "precisionMeters": 250
+            },
+            {
+              "lat": 32.71313,
+              "lon": 35.31996,
+              "modernName": "Ain Qana",
+              "modernNameKo": "아인 카나",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "DAAHL (Digital Archaeological Atlas of the Holy Land)",
+              "sourceUrl": "https://www.openbible.info/geo/modern/m375464/ain-qana",
+              "precisionMeters": 10
+            }
+          ]
+        },
+        {
+          "id": "nazareth",
+          "label": "나사렛",
+          "biblicalName": "나사렛 (Nazareth)",
+          "biblicalNameEn": "Nazareth",
+          "placeType": "settlement",
+          "locationStatus": "confirmed",
+          "statusReason": "하부 갈릴리 분지의 현대 나사렛 구시가지 일대 1세기 주거·무덤 유적으로 위치가 확정되어 있습니다.",
+          "historicalBackground": "이스르엘 평야 북쪽 구릉지에 자리한 갈릴리 마을로, 예수님이 유년기와 청년기를 보내며 성장하신 고향입니다.",
+          "scriptureRef": "마 2:23; 눅 1:26; 4:16",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/af5884f/nazareth",
+          "sourceId": "af5884f",
+          "candidates": [
+            {
+              "lat": 32.70214,
+              "lon": 35.29769,
+              "modernName": "Nazareth",
+              "modernNameKo": "나사렛 구시가지",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/mb3f688/nazareth",
+              "precisionMeters": 10
+            }
+          ],
+          "lat": 32.70214,
+          "lon": 35.29769,
+          "modernName": "Nazareth",
+          "modernNameKo": "나사렛 구시가지"
+        },
+        {
+          "id": "caesarea",
+          "label": "가이사랴",
+          "biblicalName": "해변 가이사랴 (Caesarea Maritima)",
+          "biblicalNameEn": "Caesarea Maritima",
+          "placeType": "settlement",
+          "locationStatus": "confirmed",
+          "statusReason": "헤롯 대왕이 건설한 인공 항구·원형극장·빌라도 비문 출토 유적(가이사랴 마리티마)으로 위치가 확정되어 있습니다.",
+          "historicalBackground": "로마 유대 총독부의 행정 수도(가이사랴 빌립보와 구별)로, 전도자 빌립의 정착지이자 베드로가 백부장 고넬료 가정에 복음을 전한 초대교회 이방 선교 분기점입니다.",
+          "scriptureRef": "행 8:40; 10:1-48; 23:23",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a58735e/caesarea",
+          "sourceId": "a58735e",
+          "candidates": [
+            {
+              "lat": 32.5,
+              "lon": 34.891667,
+              "modernName": "Caesarea Maritima",
+              "modernNameKo": "가이사랴 마리티마 해안 유적",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikipedia Geodata (CC BY-SA)",
+              "sourceUrl": "https://www.openbible.info/geo/modern/m11da12/caesarea-maritima",
+              "precisionMeters": 5
+            }
+          ],
+          "lat": 32.5,
+          "lon": 34.891667,
+          "modernName": "Caesarea Maritima",
+          "modernNameKo": "가이사랴 마리티마 해안 유적"
+        },
+        {
+          "id": "sychar",
+          "label": "수가",
+          "biblicalName": "수가 (Sychar)",
+          "biblicalNameEn": "Sychar",
+          "placeType": "settlement",
+          "locationStatus": "estimated",
+          "statusReason": "에발산 남동 기슭의 아스카르(Askar)와 고대 세겜 유적 텔 발라타(Tell Balatah) 두 후보가 논의되어 단일 위치로 확정하지 않습니다.",
+          "historicalBackground": "요한복음 4장에서 예수님이 야곱의 우물 곁에서 사마리아 여인과 대화하신 사마리아 지방의 성읍입니다. 북서쪽 약 11km 떨어진 구 수도 '사마리아 성읍(세바스테)'과는 전혀 다른 장소입니다.",
+          "scriptureRef": "요 4:5-6",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a27b472/sychar",
+          "sourceId": "a27b472",
+          "candidates": [
+            {
+              "lat": 32.21776,
+              "lon": 35.28897,
+              "modernName": "Askar",
+              "modernNameKo": "아스카르(에발산 동남 기슭)",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "DAAHL (Digital Archaeological Atlas of the Holy Land)",
+              "sourceUrl": "https://www.openbible.info/geo/modern/mb04b16/askar",
+              "precisionMeters": 250
+            },
+            {
+              "lat": 32.213611,
+              "lon": 35.281944,
+              "modernName": "Tell Balatah",
+              "modernNameKo": "텔 발라타(나블루스 동편 유적)",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/m657590/tell-balatah",
+              "precisionMeters": 250
+            }
+          ]
+        },
+        {
+          "id": "samaria_city",
+          "label": "사마리아 성읍",
+          "biblicalName": "사마리아 성읍(세바스테) (City of Samaria (Sebaste))",
+          "biblicalNameEn": "City of Samaria (Sebaste)",
+          "placeType": "settlement",
+          "locationStatus": "confirmed",
+          "statusReason": "고대 북왕국 수도이자 헤롯 대왕이 '세바스테(Sebaste)'로 재건한 세바스티야(Sebastia) 유적으로 위치가 확정되어 있습니다.",
+          "historicalBackground": "구약 북이스라엘의 옛 수도 성읍으로 헬라·로마 시대에 세바스테라 불렸습니다. 요한복음 4:5의 '수가'와 별개 성읍이며, 사도행전 8:5의 '사마리아 성' 배경과 연결됩니다.",
+          "scriptureRef": "왕상 16:24; 행 8:5",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a041bb3/samaria-1",
+          "sourceId": "a041bb3",
+          "candidates": [
+            {
+              "lat": 32.276111,
+              "lon": 35.195,
+              "modernName": "Samaria",
+              "modernNameKo": "세바스티야(사마리아·세바스테 유적)",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/me64af8/samaria",
+              "precisionMeters": 250
+            }
+          ],
+          "lat": 32.276111,
+          "lon": 35.195,
+          "modernName": "Samaria",
+          "modernNameKo": "세바스티야(사마리아·세바스테 유적)"
+        },
+        {
+          "id": "joppa",
+          "label": "욥바",
+          "biblicalName": "욥바 (Joppa)",
+          "biblicalNameEn": "Joppa",
+          "placeType": "settlement",
+          "locationStatus": "confirmed",
+          "statusReason": "지중해 연안의 고대 항구 유적(현대 텔아비브 남쪽 야파, Jaffa)으로 위치가 확정되어 있습니다.",
+          "historicalBackground": "예루살렘의 외항 역할을 한 항구 성읍으로, 사도행전 9–10장에서 베드로가 다비다(도르가)를 살리고 피장 시몬의 집 지붕에서 환상을 본 초대교회 사역지입니다.",
+          "scriptureRef": "욘 1:3; 행 9:36-43; 10:5-8",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/ae023a9/joppa",
+          "sourceId": "ae023a9",
+          "candidates": [
+            {
+              "lat": 32.054481,
+              "lon": 34.753039,
+              "modernName": "Jaffa",
+              "modernNameKo": "야파(고대 욥바 항구 구시가지)",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/mcb49f3/jaffa",
+              "precisionMeters": 10
+            }
+          ],
+          "lat": 32.054481,
+          "lon": 34.753039,
+          "modernName": "Jaffa",
+          "modernNameKo": "야파(고대 욥바 항구 구시가지)"
+        },
+        {
+          "id": "jericho",
+          "label": "여리고",
+          "biblicalName": "여리고(신약 시대) (Jericho (New Testament))",
+          "biblicalNameEn": "Jericho (New Testament)",
+          "placeType": "settlement",
+          "locationStatus": "confirmed",
+          "statusReason": "구약 여리고(텔 에스 술탄) 남서쪽 와디 켈트 출구의 헤롯·로마 시대 여리고 유적(툴룰 아부 엘 알라이크)으로 위치가 확정되어 있습니다.",
+          "historicalBackground": "해수면 아래 요단 저지대의 오아시스 도시로, 예루살렘으로 올라가는 순례길 관문이자 바디매오 치유와 삭개오 일화의 배경입니다.",
+          "scriptureRef": "막 10:46; 눅 10:30; 19:1",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/aaf03fa/jericho-2",
+          "sourceId": "aaf03fa",
+          "candidates": [
+            {
+              "lat": 31.851872,
+              "lon": 35.436238,
+              "modernName": "Tell el Alayiq",
+              "modernNameKo": "툴룰 아부 엘 알라이크(와디 켈트 신약 여리고)",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/mdf4652/tell-el-alayiq",
+              "precisionMeters": 5
+            }
+          ],
+          "lat": 31.851872,
+          "lon": 35.436238,
+          "modernName": "Tell el Alayiq",
+          "modernNameKo": "툴룰 아부 엘 알라이크(와디 켈트 신약 여리고)"
+        },
+        {
+          "id": "bethany_jordan",
+          "label": "요단강 건너편 베다니",
+          "biblicalName": "요단강 건너편 베다니 (Bethany beyond the Jordan)",
+          "biblicalNameEn": "Bethany beyond the Jordan",
+          "placeType": "settlement",
+          "locationStatus": "traditional",
+          "statusReason": "비잔틴 시대 이래의 세례터 전승지 알 마그타스(Al-Maghtas, 와디 알 카라르)를 비롯해 요단강 동편의 여러 후보지가 함께 논의됩니다.",
+          "historicalBackground": "세례 요한이 세례를 베풀고 예수님을 증언한 요단강 동편 지역(후대 사본에는 '베다바라')으로, 예루살렘 감람산 동쪽 나사로의 마을 베다니(요 11:18, 알 에이자리야)와는 다른 곳입니다.",
+          "scriptureRef": "요 1:28; 10:40",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a6e060d/bethany-2",
+          "sourceId": "a6e060d",
+          "candidates": [
+            {
+              "lat": 31.837109,
+              "lon": 35.550301,
+              "modernName": "Al Maghtas",
+              "modernNameKo": "알 마그타스(와디 알 카라르 세례터 유적)",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/m6b5d69/al-maghtas",
+              "precisionMeters": 50
+            },
+            {
+              "lat": 32.852034,
+              "lon": 36.19934,
+              "modernName": "Raphana",
+              "modernNameKo": "라파나(바산·바타네아 권역 대표점)",
+              "geometryType": "representative point",
+              "representative": true,
+              "coordinateSource": "Pleiades Ancient World Gazetteer (CC BY 3.0)",
+              "sourceUrl": "https://www.openbible.info/geo/modern/m693908/raphana",
+              "precisionMeters": 50
+            },
+            {
+              "lat": 31.771661,
+              "lon": 35.255903,
+              "modernName": "Al Eizariya",
+              "modernNameKo": "알 에이자리야(감람산 동편 베다니)",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/m227592/al-eizariya",
+              "precisionMeters": 250
+            },
+            {
+              "lat": 32.1,
+              "lon": 35.52,
+              "modernName": "Wadi al Fara",
+              "modernNameKo": "와디 알 파라",
+              "geometryType": "representative point",
+              "representative": true,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/m5c5bc6/wadi-al-fara",
+              "precisionMeters": 100
+            },
+            {
+              "lat": 31.909106,
+              "lon": 35.63872,
+              "modernName": "Tall Bleibel",
+              "modernNameKo": "탈 블레이벨",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "MEGA-Jordan Archaeological Database",
+              "sourceUrl": "https://www.openbible.info/geo/modern/m7cc2d3/tall-bleibel",
+              "precisionMeters": 50
+            },
+            {
+              "lat": 31.90094,
+              "lon": 35.624546,
+              "modernName": "Tall Nimrin",
+              "modernNameKo": "탈 님린",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "MEGA-Jordan Archaeological Database",
+              "sourceUrl": "https://www.openbible.info/geo/modern/m4b6ab1/tall-nimrin",
+              "precisionMeters": 50
+            },
+            {
+              "lat": 32.010571,
+              "lon": 35.710739,
+              "modernName": "Khirbet Batneh",
+              "modernNameKo": "키르벳 바트네",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "MEGA-Jordan Archaeological Database",
+              "sourceUrl": "https://www.openbible.info/geo/modern/m5b9e13/khirbet-batneh",
+              "precisionMeters": 250
+            }
+          ]
+        },
+        {
+          "id": "jerusalem_nt",
+          "label": "예루살렘",
+          "biblicalName": "예루살렘 (Jerusalem)",
+          "biblicalNameEn": "Jerusalem",
+          "placeType": "settlement",
+          "locationStatus": "confirmed",
+          "statusReason": "제2성전기 성전산 축대와 구시가지 일대 고고학 유적으로 위치가 확정되어 있습니다.",
+          "historicalBackground": "유대 종교와 절기 순례의 중심 도시로, 예수님의 성전 가르침과 십자가 수난·부활, 오순절 성령 강림과 초대교회 출발의 무대입니다.",
+          "scriptureRef": "마 21:10; 눅 2:22; 행 1:8",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a15257a/jerusalem",
+          "sourceId": "a15257a",
+          "candidates": [
+            {
+              "lat": 31.776667,
+              "lon": 35.234167,
+              "modernName": "Jerusalem",
+              "modernNameKo": "예루살렘 구시가지·다윗성",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikipedia Geodata (CC BY-SA)",
+              "sourceUrl": "https://www.openbible.info/geo/modern/m66c5b8/jerusalem",
+              "precisionMeters": 250
+            }
+          ],
+          "lat": 31.776667,
+          "lon": 35.234167,
+          "modernName": "Jerusalem",
+          "modernNameKo": "예루살렘 구시가지·다윗성"
+        },
+        {
+          "id": "bethlehem",
+          "label": "베들레헴",
+          "biblicalName": "유대 베들레헴(에브라다) (Bethlehem of Judea)",
+          "biblicalNameEn": "Bethlehem of Judea",
+          "placeType": "settlement",
+          "locationStatus": "confirmed",
+          "statusReason": "예루살렘 남쪽 약 8km 유대 산지의 베들레헴 성읍(스불론의 갈릴리 베들레헴과 구별)으로 도시 위치가 확정되어 있습니다.",
+          "historicalBackground": "다윗의 고향이자 마태복음과 누가복음에서 예수님의 탄생지로 기록된 유대 산지 성읍입니다.",
+          "scriptureRef": "미 5:2; 마 2:1-6; 눅 2:4",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a112427/bethlehem-1",
+          "sourceId": "a112427",
+          "candidates": [
+            {
+              "lat": 31.704306,
+              "lon": 35.207639,
+              "modernName": "Bethlehem",
+              "modernNameKo": "베들레헴(베이트 라흠)",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/m9b8daa/bethlehem",
+              "precisionMeters": 250
+            }
+          ],
+          "lat": 31.704306,
+          "lon": 35.207639,
+          "modernName": "Bethlehem",
+          "modernNameKo": "베들레헴(베이트 라흠)"
+        },
+        {
+          "id": "gaza_road",
+          "label": "가사",
+          "biblicalName": "가사 (Gaza)",
+          "biblicalNameEn": "Gaza",
+          "placeType": "settlement",
+          "locationStatus": "confirmed",
+          "statusReason": "고대 블레셋 5대 성읍 중 하나인 가사 구시가지 언덕(텔 하루베, Tell Harube)으로 성읍 자체의 위치는 확정되어 있습니다.",
+          "historicalBackground": "지중해 남동 해안의 고대 교역 성읍으로 애굽과는 별개의 도시입니다. 사도행전 8:26은 '예루살렘에서 가사로 내려가는 광야 길'을 언급하며, 길 위에서 내시가 세례받은 구체적 지점은 미상입니다.",
+          "scriptureRef": "삿 16:1; 행 8:26",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/aa8edd2/gaza",
+          "sourceId": "aa8edd2",
+          "candidates": [
+            {
+              "lat": 31.504,
+              "lon": 34.4644,
+              "modernName": "Tell Harube",
+              "modernNameKo": "텔 하루베(현대 가자 구시가지 언덕)",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/mb5cfe4/tell-harube",
+              "precisionMeters": 1000
+            }
+          ],
+          "lat": 31.504,
+          "lon": 34.4644,
+          "modernName": "Tell Harube",
+          "modernNameKo": "텔 하루베(현대 가자 구시가지 언덕)"
+        },
+        {
+          "id": "egypt",
+          "label": "애굽",
+          "biblicalName": "애굽 (Egypt)",
+          "biblicalNameEn": "Egypt",
+          "placeType": "region",
+          "locationStatus": "unknown",
+          "statusReason": "가사 남서쪽 나일강 유역의 광역 지명으로, 마태복음 2장에 요셉 가족의 구체적 체류 성읍이 기록되지 않아 점 마커를 표시하지 않습니다.",
+          "historicalBackground": "헤롯 대왕의 박해를 피해 아기 예수와 요셉·마리아가 피신해 머물렀다가 귀환한 가사 남서편 인접 문명권 지역입니다.",
+          "scriptureRef": "마 2:13-15",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/af301ca/egypt",
+          "sourceId": "af301ca",
+          "candidates": []
+        }
+      ]
+    },
+    {
+      "id": "paul-mediterranean",
+      "title": "바울 전도여행과 로마 속주 지중해 권역 2D 지도",
+      "regionSummary": "수리아·길리기아·갈라디아·아시아·비두니아·마게도냐·아가야·이탈리아 등 성경 속 로마 속주 권역을 옅은 색으로 표시하고 주요 선교 거점 도시를 수록했습니다.",
+      "backdropImageUrl": "./assets/maps/paul-mediterranean.jpg",
+      "modernBordersImageUrl": "./assets/maps/paul-mediterranean-modern.png",
+      "bbox": [
+        10.895,
+        30.3,
+        37.905,
+        43.5
+      ],
+      "scaleBar": {
+        "km": 500,
+        "svgWidth": 74.9
+      },
+      "projection": {
+        "crs": "WGS84 (EPSG:4326)",
+        "name": "Equidistant Cylindrical (정거 원통 투영)",
+        "standardParallel": 36.9,
+        "viewBox": [
+          0,
+          0,
+          360,
+          220
+        ]
+      },
+      "license": "OpenBible.info Bible Geocoding Data & Region Isobands: CC BY 4.0; Natural Earth 1:10m Vector: Public Domain; Terrain DEM (USGS SRTM / GMTED2010 / NOAA ETOPO1): Public Domain; Underlying gazetteer coordinates: Wikidata (CC0), Pleiades (CC BY 3.0), GeoNames (CC BY 4.0), OpenStreetMap contributors (ODbL 1.0)",
+      "attribution": "OpenBible.info Bible Geocoding Data (CC BY 4.0); Natural Earth 1:10m; USGS/NASA SRTM & NOAA ETOPO1; Pleiades; OpenStreetMap contributors",
+      "sourceNote": "지형·수계: Natural Earth 1:10m 자연 지형 + 공개 DEM 음영기복 · 성경 지명·고대 권역 범위: OpenBible.info Bible Geocoding Data (확률 등치선 기반 추정 영역) · 투영: WGS84 정거 원통 투영(표준위선 36.9°N)",
+      "ancientRegions": [
+        {
+          "id": "syria-1",
+          "label": "수리아",
+          "biblicalNameEn": "Syria",
+          "color": "#d6ca78",
+          "lat": 33.24,
+          "lon": 36.32942,
+          "sourceId": "a159fa4",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a159fa4/syria-1",
+          "svgPath": "M 340.0,155.5 349.0,155.5 349.5,156.0 350.0,156.5 353.0,156.5 353.5,160.0 346.5,180.0 341.0,186.5 339.0,187.5 335.0,187.5 331.5,184.0 329.5,180.0 328.5,171.0 329.0,170.5 329.5,170.0 329.5,166.0 332.5,160.0 336.0,156.5 339.0,156.5 339.5,156.0 Z"
+        },
+        {
+          "id": "cilicia",
+          "label": "길리기아",
+          "biblicalNameEn": "Cilicia",
+          "color": "#cbb483",
+          "lat": 37.26,
+          "lon": 35.27903,
+          "sourceId": "ad63819",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/ad63819/cilicia",
+          "svgPath": "M 329.0,92.5 339.0,92.5 344.0,94.5 346.5,97.0 347.5,99.0 347.5,108.0 344.0,111.5 337.0,114.5 336.5,111.0 334.0,109.5 329.0,115.5 325.0,115.5 318.0,111.5 317.0,111.5 316.0,111.5 314.0,112.5 307.0,120.5 306.5,120.0 306.0,119.5 305.0,122.5 297.0,122.5 292.0,124.5 286.0,122.5 282.5,119.0 280.5,115.0 280.5,111.0 282.0,107.5 289.0,106.5 289.5,106.0 290.0,105.5 300.0,104.5 305.0,102.5 309.0,98.5 313.0,96.5 323.0,94.5 323.5,94.0 324.0,93.5 328.0,93.5 328.5,93.0 Z"
+        },
+        {
+          "id": "galatia",
+          "label": "갈라디아",
+          "biblicalNameEn": "Galatia",
+          "color": "#ded17b",
+          "lat": 40.14,
+          "lon": 34.30367,
+          "sourceId": "a0f440a",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a0f440a/galatia",
+          "svgPath": "M 311.0,35.5 321.0,35.5 321.5,36.0 322.0,36.5 325.0,36.5 332.0,41.5 337.5,44.0 337.5,50.0 333.5,57.0 333.5,58.0 333.5,59.0 311.5,97.0 305.0,102.5 301.0,104.5 291.0,105.5 285.0,107.5 279.0,107.5 270.0,103.5 262.0,102.5 260.5,100.0 267.5,92.0 266.5,85.0 272.5,77.0 273.5,74.0 270.5,60.0 274.0,55.5 278.0,53.5 289.0,43.5 297.0,39.5 306.0,36.5 310.0,36.5 310.5,36.0 Z M 298.0,71.5 295.5,79.0 302.0,83.5 304.5,80.0 302.5,76.0 300.5,76.0 299.5,72.0 299.0,71.5 Z M 272.0,91.5 271.5,92.0 271.5,93.0 273.5,98.0 277.0,97.5 277.5,97.0 277.5,96.0 275.5,93.0 274.0,91.5 273.0,91.5 Z"
+        },
+        {
+          "id": "asia",
+          "label": "아시아",
+          "biblicalNameEn": "Asia",
+          "color": "#a8ca78",
+          "lat": 38.76,
+          "lon": 28.82664,
+          "sourceId": "a197f19",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a197f19/asia",
+          "svgPath": "M 222.0,47.5 227.0,48.5 228.5,50.0 228.0,51.5 228.5,51.0 229.0,50.5 235.0,50.5 235.5,51.0 236.0,51.5 236.5,51.0 237.0,50.5 248.0,55.5 259.0,56.5 259.5,57.0 260.0,57.5 266.0,57.5 271.5,60.0 271.5,65.0 273.5,70.0 273.5,76.0 268.5,84.0 263.5,87.0 264.5,90.0 264.0,90.5 263.5,91.0 264.5,93.0 263.5,97.0 242.0,115.5 236.0,113.5 235.0,111.5 232.0,111.5 229.0,115.5 226.0,116.5 223.5,115.0 226.0,113.5 226.5,113.0 226.0,112.5 225.0,112.5 224.0,112.5 223.0,114.5 222.5,114.0 222.0,113.5 220.0,114.5 218.5,113.0 220.0,111.5 222.0,110.5 227.0,110.5 228.0,107.5 222.0,108.5 221.5,109.0 221.0,109.5 219.0,108.5 219.0,110.5 213.0,113.5 212.5,113.0 212.5,112.0 215.5,110.0 213.0,109.5 212.5,107.0 210.5,105.0 212.0,103.5 214.0,106.5 215.0,106.5 216.0,106.5 218.0,104.5 220.5,105.0 219.0,102.5 216.5,102.0 216.5,99.0 215.0,97.5 211.0,97.5 210.5,97.0 210.0,96.5 208.0,99.5 205.5,98.0 211.0,93.5 216.0,95.5 217.5,92.0 214.0,90.5 212.0,91.5 211.0,88.5 208.0,89.5 203.0,86.5 201.0,89.5 198.5,87.0 199.5,85.0 198.5,83.0 199.0,80.5 202.0,80.5 205.0,82.5 204.5,81.0 206.0,79.5 207.0,79.5 208.0,79.5 208.5,80.0 208.5,81.0 209.0,81.5 210.0,81.5 209.5,79.0 212.5,78.0 210.5,75.0 211.5,73.0 210.5,71.0 208.5,70.0 208.5,69.0 209.0,68.5 211.5,68.0 212.0,65.5 208.0,65.5 204.5,67.0 206.5,68.0 206.5,69.0 206.5,70.0 207.0,70.5 208.0,70.5 209.5,73.0 208.0,75.5 205.0,75.5 198.5,72.0 198.5,71.0 198.5,70.0 202.5,68.0 202.0,67.5 201.5,67.0 202.5,62.0 200.5,61.0 200.5,60.0 202.5,59.0 202.5,56.0 206.0,52.5 211.0,49.5 211.5,50.0 212.0,50.5 218.0,49.5 221.0,52.5 223.5,51.0 221.5,50.0 Z M 229.0,116.5 231.5,117.0 230.5,121.0 229.0,123.5 224.0,126.5 222.5,122.0 223.0,121.5 223.5,121.0 221.0,121.5 220.5,121.0 220.5,120.0 225.0,119.5 Z M 216.0,127.5 217.0,127.5 217.5,128.0 217.5,133.0 216.0,134.5 215.0,134.5 214.0,134.5 Z"
+        },
+        {
+          "id": "bithynia",
+          "label": "비두니아",
+          "biblicalNameEn": "Bithynia",
+          "color": "#d1ba8e",
+          "lat": 40.62,
+          "lon": 30.47725,
+          "sourceId": "a5c0cb0",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a5c0cb0/bithynia",
+          "svgPath": "M 320.0,22.5 322.5,24.0 322.5,25.0 322.5,26.0 326.0,29.5 329.0,30.5 333.0,28.5 336.5,31.0 338.0,35.5 342.0,36.5 343.5,38.0 343.5,41.0 339.0,43.5 335.0,43.5 324.0,36.5 319.0,36.5 318.5,36.0 318.0,35.5 308.0,36.5 307.5,37.0 307.0,37.5 304.0,37.5 298.0,39.5 290.0,43.5 274.0,56.5 269.0,56.5 268.5,57.0 268.0,57.5 259.0,57.5 258.5,57.0 258.0,56.5 248.0,55.5 242.0,53.5 240.5,52.0 241.0,51.5 241.5,51.0 238.5,49.0 240.0,46.5 245.5,46.0 244.0,44.5 243.0,44.5 242.0,44.5 240.5,41.0 245.0,37.5 249.0,37.5 249.5,38.0 250.0,38.5 256.0,38.5 259.0,37.5 264.0,39.5 270.0,39.5 272.5,38.0 272.5,37.0 272.5,36.0 274.0,34.5 277.0,34.5 279.0,32.5 282.0,31.5 284.0,28.5 285.0,28.5 286.0,28.5 289.0,26.5 292.0,26.5 300.0,23.5 303.0,24.5 318.0,24.5 Z"
+        },
+        {
+          "id": "macedonia",
+          "label": "마게도냐",
+          "biblicalNameEn": "Macedonia",
+          "color": "#dfd07a",
+          "lat": 41.22,
+          "lon": 22.07414,
+          "sourceId": "a69e1b8",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a69e1b8/macedonia",
+          "svgPath": "M 149.0,19.5 150.0,19.5 156.0,26.5 170.0,30.5 175.5,34.0 179.5,39.0 180.5,42.0 179.5,44.0 176.0,46.5 173.0,45.5 170.5,46.0 173.5,48.0 173.0,50.5 173.5,50.0 174.0,49.5 178.5,53.0 179.5,55.0 179.5,56.0 179.0,56.5 178.0,56.5 176.0,53.5 171.0,52.5 170.5,53.0 174.5,56.0 174.5,59.0 174.0,59.5 173.0,59.5 170.5,57.0 170.0,54.5 166.0,53.5 166.5,56.0 171.5,59.0 169.0,59.5 166.0,58.5 164.5,57.0 164.5,56.0 164.5,55.0 160.0,52.5 158.0,49.5 156.5,51.0 155.0,58.5 144.0,59.5 135.0,54.5 123.0,53.5 112.5,50.0 111.5,47.0 111.5,44.0 113.5,40.0 113.0,39.5 112.5,39.0 113.0,38.5 113.5,38.0 112.5,34.0 114.5,31.0 115.0,25.5 118.0,23.5 139.0,24.5 139.5,24.0 140.0,23.5 143.0,23.5 Z M 130.0,37.5 128.5,42.0 130.0,43.5 132.0,42.5 132.5,45.0 134.0,46.5 135.0,46.5 136.0,46.5 136.5,43.0 135.5,41.0 133.0,40.5 132.5,40.0 132.5,39.0 Z"
+        },
+        {
+          "id": "achaia",
+          "label": "아가야",
+          "biblicalNameEn": "Achaia",
+          "color": "#cfbb88",
+          "lat": 39.12,
+          "lon": 21.99911,
+          "sourceId": "aef4242",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/aef4242/achaia",
+          "svgPath": "M 111.0,50.5 115.0,50.5 124.0,53.5 135.0,54.5 143.0,58.5 145.0,60.5 148.0,60.5 148.5,61.0 149.0,61.5 156.0,61.5 159.0,60.5 159.5,63.0 164.5,68.0 166.0,71.5 166.5,71.0 167.0,70.5 171.0,71.5 174.0,69.5 176.0,66.5 179.0,67.5 179.0,69.5 176.0,68.5 175.5,69.0 175.5,70.0 171.0,73.5 169.0,72.5 164.5,73.0 172.0,79.5 176.0,79.5 178.5,87.0 180.0,88.5 181.0,88.5 182.0,88.5 183.0,91.5 185.0,90.5 185.5,91.0 185.5,92.0 187.5,93.0 187.5,96.0 191.0,96.5 193.5,101.0 193.0,101.5 192.0,101.5 191.0,99.5 190.0,99.5 189.0,99.5 183.0,92.5 177.0,92.5 176.0,88.5 174.5,90.0 176.5,95.0 176.0,97.5 173.0,97.5 172.5,95.0 172.0,94.5 171.0,94.5 170.0,92.5 166.0,93.5 165.0,91.5 162.5,93.0 164.0,97.5 166.5,96.0 166.0,94.5 168.5,95.0 166.5,98.0 168.5,99.0 168.5,102.0 167.0,103.5 166.0,103.5 165.5,103.0 166.0,101.5 162.0,104.5 161.5,101.0 160.0,99.5 159.0,99.5 158.5,100.0 159.5,104.0 161.5,106.0 162.5,114.0 163.0,114.5 163.5,115.0 163.5,116.0 163.5,117.0 160.5,118.0 162.5,120.0 162.0,122.5 159.5,122.0 159.5,115.0 157.0,111.5 156.0,111.5 155.5,112.0 154.0,117.5 151.5,116.0 151.5,112.0 148.0,107.5 147.5,112.0 144.0,113.5 142.5,112.0 142.5,108.0 142.0,107.5 141.5,107.0 142.5,101.0 141.5,99.0 138.0,97.5 137.5,95.0 135.5,94.0 135.5,93.0 135.5,92.0 138.5,90.0 138.5,87.0 139.0,86.5 142.0,88.5 143.5,86.0 143.0,85.5 142.0,85.5 140.0,86.5 139.5,86.0 139.0,85.5 136.0,86.5 134.5,85.0 134.0,82.5 129.0,81.5 128.5,82.0 129.0,82.5 130.0,82.5 131.5,85.0 130.5,87.0 132.5,90.0 130.0,90.5 129.5,90.0 129.0,89.5 128.5,90.0 128.0,90.5 124.5,88.0 125.5,85.0 127.5,84.0 128.5,77.0 130.5,76.0 128.5,72.0 123.5,68.0 122.5,65.0 120.0,62.5 120.5,66.0 122.5,67.0 122.5,68.0 122.0,68.5 121.0,68.5 118.5,67.0 117.0,63.5 112.5,61.0 113.0,60.5 114.0,60.5 114.5,61.0 115.0,61.5 115.5,61.0 116.0,60.5 119.0,60.5 119.5,58.0 114.0,55.5 113.5,55.0 113.5,54.0 111.5,53.0 Z M 154.0,84.5 151.0,85.5 151.0,87.5 158.0,90.5 162.5,89.0 155.0,86.5 Z M 130.0,91.5 133.5,94.0 133.5,95.0 133.5,96.0 132.0,97.5 130.0,96.5 128.5,94.0 Z M 190.0,104.5 192.0,105.5 195.0,104.5 195.5,108.0 197.5,111.0 197.0,111.5 195.0,109.5 192.0,114.5 191.5,114.0 191.0,113.5 189.0,114.5 185.0,114.5 185.0,112.5 188.0,113.5 192.5,110.0 192.0,107.5 189.0,109.5 188.0,109.5 187.5,109.0 187.5,108.0 187.5,107.0 Z"
+        },
+        {
+          "id": "italy",
+          "label": "이탈리아",
+          "biblicalNameEn": "Italy",
+          "color": "#b4cb7b",
+          "lat": 42.12,
+          "lon": 13.29589,
+          "sourceId": "a7184a7",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a7184a7/italy",
+          "svgPath": "M 0.0,-0.5 36.0,-0.5 38.5,3.0 42.5,15.0 45.0,16.5 48.0,20.5 49.0,20.5 50.0,20.5 51.0,22.5 57.0,25.5 67.0,25.5 67.5,25.0 68.0,24.5 70.0,25.5 70.5,28.0 67.0,30.5 66.5,31.0 66.5,32.0 69.0,33.5 70.0,35.5 75.0,36.5 76.0,38.5 79.0,38.5 85.0,40.5 87.0,43.5 93.0,45.5 100.5,53.0 101.5,55.0 100.5,60.0 99.0,61.5 98.0,61.5 97.0,61.5 93.5,58.0 92.0,53.5 87.0,53.5 82.0,49.5 80.0,50.5 76.5,56.0 76.5,59.0 74.5,61.0 76.0,63.5 77.0,63.5 78.0,63.5 83.5,68.0 83.0,68.5 82.5,69.0 84.5,74.0 83.0,76.5 78.0,76.5 75.5,79.0 75.5,84.0 69.5,90.0 69.5,91.0 69.5,92.0 68.0,93.5 67.5,93.0 67.0,92.5 63.0,92.5 62.5,89.0 61.0,89.5 60.5,89.0 60.5,88.0 62.0,86.5 64.5,86.0 65.5,84.0 64.5,80.0 69.5,78.0 67.5,68.0 65.5,66.0 63.5,61.0 64.0,60.5 64.5,60.0 62.0,57.5 59.0,58.5 56.0,55.5 53.0,54.5 52.5,52.0 53.5,50.0 51.0,47.5 44.0,48.5 43.5,48.0 46.5,46.0 45.0,44.5 39.0,46.5 38.5,46.0 38.5,45.0 41.5,44.0 37.0,37.5 35.0,38.5 33.0,36.5 28.0,37.5 25.0,34.5 22.0,34.5 19.5,30.0 17.0,29.5 15.5,26.0 10.5,23.0 10.5,22.0 10.5,21.0 9.0,19.5 2.0,18.5 1.5,18.0 1.5,17.0 2.0,16.5 2.5,16.0 -0.5,12.0 Z"
+        },
+        {
+          "id": "cyprus",
+          "label": "구브로",
+          "biblicalNameEn": "Cyprus",
+          "color": "#bad184",
+          "lat": 35.04,
+          "lon": 33.17825,
+          "sourceId": "a2e7601",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a2e7601/cyprus",
+          "svgPath": "M 312.0,130.5 313.0,130.5 313.5,131.0 306.5,137.0 308.5,140.0 308.0,142.5 307.5,142.0 307.0,141.5 304.0,142.5 303.0,144.5 299.0,146.5 295.0,146.5 294.0,148.5 289.0,147.5 285.5,145.0 284.5,140.0 288.0,137.5 291.0,137.5 291.5,138.0 292.0,138.5 293.0,134.5 302.0,135.5 Z"
+        },
+        {
+          "id": "crete",
+          "label": "그레데",
+          "biblicalNameEn": "Crete",
+          "color": "#aecb82",
+          "lat": 35.22,
+          "lon": 24.92519,
+          "sourceId": "a26aa94",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a26aa94/crete",
+          "svgPath": "M 170.0,129.5 174.0,132.5 175.0,130.5 176.0,130.5 177.0,130.5 179.0,134.5 182.0,134.5 182.5,134.0 183.0,133.5 188.0,133.5 188.5,134.0 189.0,134.5 191.0,133.5 191.0,135.5 191.5,135.0 192.0,134.5 194.0,135.5 196.0,134.5 198.5,136.0 198.0,138.5 201.0,136.5 205.0,135.5 205.5,139.0 203.0,142.5 201.0,141.5 184.0,142.5 183.0,140.5 179.0,138.5 168.0,137.5 167.5,132.0 Z"
+        }
+      ],
+      "stops": [
+        {
+          "id": "jerusalem_acts",
+          "label": "예루살렘",
+          "biblicalName": "예루살렘 (Jerusalem)",
+          "biblicalNameEn": "Jerusalem",
+          "placeType": "settlement",
+          "locationStatus": "confirmed",
+          "statusReason": "역사적 도시 및 고고학 유적으로 위치가 확정되어 있습니다.",
+          "historicalBackground": "사도행전 초대교회의 출발지이자 예루살렘 공의회(행 15장)가 열린 모교회의 중심 도시입니다.",
+          "scriptureRef": "행 1:4-8; 15:2; 21:17",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a15257a/jerusalem",
+          "sourceId": "a15257a",
+          "candidates": [
+            {
+              "lat": 31.776667,
+              "lon": 35.234167,
+              "modernName": "Jerusalem",
+              "modernNameKo": "예루살렘 구시가지·다윗성",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikipedia Geodata (CC BY-SA)",
+              "sourceUrl": "https://www.openbible.info/geo/modern/m66c5b8/jerusalem",
+              "precisionMeters": 250
+            }
+          ],
+          "lat": 31.776667,
+          "lon": 35.234167,
+          "modernName": "Jerusalem",
+          "modernNameKo": "예루살렘 구시가지·다윗성"
+        },
+        {
+          "id": "antioch",
+          "label": "수리아 안디옥",
+          "biblicalName": "수리아 안디옥 (Antioch in Syria)",
+          "biblicalNameEn": "Antioch in Syria",
+          "placeType": "settlement",
+          "locationStatus": "confirmed",
+          "statusReason": "오론테스강 연안의 고대 안디옥(현대 튀르키예 안타키아, 비시디아 안디옥과 구별)으로 위치가 확정되어 있습니다.",
+          "historicalBackground": "제자들이 처음으로 '그리스도인'이라 일컬음을 받은 곳이자 바나바와 바울의 전도여행 파송 모교회 도시입니다.",
+          "scriptureRef": "행 11:26; 13:1-3",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/ae41ab4/antioch-1",
+          "sourceId": "ae41ab4",
+          "candidates": [
+            {
+              "lat": 36.226691,
+              "lon": 36.171743,
+              "modernName": "Antioch on the Orontes",
+              "modernNameKo": "안타키아(오론테스강변 고대 안디옥)",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/mbe432b/antioch-on-the-orontes",
+              "precisionMeters": 5
+            }
+          ],
+          "lat": 36.226691,
+          "lon": 36.171743,
+          "modernName": "Antioch on the Orontes",
+          "modernNameKo": "안타키아(오론테스강변 고대 안디옥)"
+        },
+        {
+          "id": "tarsus",
+          "label": "다소",
+          "biblicalName": "길리기아 다소 (Tarsus)",
+          "biblicalNameEn": "Tarsus",
+          "placeType": "settlement",
+          "locationStatus": "confirmed",
+          "statusReason": "길리기아 평야의 고대 다소 유적(현대 타르수스)으로 위치가 확정되어 있습니다.",
+          "historicalBackground": "타우루스 산맥 관문 남쪽 길리기아 속주의 중심 도시로 사울(바울)의 출생지이자 초기 체류지입니다.",
+          "scriptureRef": "행 9:11; 11:25; 21:39",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a666ea0/tarsus",
+          "sourceId": "a666ea0",
+          "candidates": [
+            {
+              "lat": 36.913028,
+              "lon": 34.892056,
+              "modernName": "Tarsus",
+              "modernNameKo": "타르수스(고대 다소 유적)",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/mc9df1a/tarsus",
+              "precisionMeters": 250
+            }
+          ],
+          "lat": 36.913028,
+          "lon": 34.892056,
+          "modernName": "Tarsus",
+          "modernNameKo": "타르수스(고대 다소 유적)"
+        },
+        {
+          "id": "lystra",
+          "label": "루스드라",
+          "biblicalName": "루스드라 (Lystra)",
+          "biblicalNameEn": "Lystra",
+          "placeType": "settlement",
+          "locationStatus": "confirmed",
+          "statusReason": "소아시아 남부 고원 하툰사라이 인근 텔 루스드라( 조르둘라 비문 확인) 유적으로 위치가 확정되어 있습니다.",
+          "historicalBackground": "남갈라디아(루가오니아) 지역의 로마 식민 도시로 바울의 1차 전도여행 사역지이자 제2차 여행에서 디모데가 합류한 고향입니다.",
+          "scriptureRef": "행 14:6-8; 16:1-2",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/af0719d/lystra",
+          "sourceId": "af0719d",
+          "candidates": [
+            {
+              "lat": 37.6017,
+              "lon": 32.3384,
+              "modernName": "Tel Lystra",
+              "modernNameKo": "하툰사라이 인근 텔 루스드라 유적",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "topostext",
+              "sourceUrl": "https://www.openbible.info/geo/modern/ma6f6dc/tel-lystra",
+              "precisionMeters": 50
+            }
+          ],
+          "lat": 37.6017,
+          "lon": 32.3384,
+          "modernName": "Tel Lystra",
+          "modernNameKo": "하툰사라이 인근 텔 루스드라 유적"
+        },
+        {
+          "id": "pisidian_antioch",
+          "label": "비시디아 안디옥",
+          "biblicalName": "비시디아 안디옥 (Antioch in Pisidia)",
+          "biblicalNameEn": "Antioch in Pisidia",
+          "placeType": "settlement",
+          "locationStatus": "confirmed",
+          "statusReason": "얄바츠(Yalvaç) 북쪽 고대 비시디아 안디옥 아우구스투스 신전·도로 유적으로 위치가 확정되어 있습니다.",
+          "historicalBackground": "갈라디아 속주 남부의 주요 로마 식민 도시로(수리아 안디옥과 동명이인 성읍), 바울의 첫 회당 설교 본문이 기록된 거점입니다.",
+          "scriptureRef": "행 13:14-52; 14:21",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a6c704a/antioch-2",
+          "sourceId": "a6c704a",
+          "candidates": [
+            {
+              "lat": 38.306111,
+              "lon": 31.189167,
+              "modernName": "Antioch in Pisidia",
+              "modernNameKo": "얄바츠 인근 고대 비시디아 안디옥 유적",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/m93f901/antioch-in-pisidia",
+              "precisionMeters": 5
+            }
+          ],
+          "lat": 38.306111,
+          "lon": 31.189167,
+          "modernName": "Antioch in Pisidia",
+          "modernNameKo": "얄바츠 인근 고대 비시디아 안디옥 유적"
+        },
+        {
+          "id": "ephesus",
+          "label": "에베소",
+          "biblicalName": "에베소 (Ephesus)",
+          "biblicalNameEn": "Ephesus",
+          "placeType": "settlement",
+          "locationStatus": "confirmed",
+          "statusReason": "소아시아 서해안 카이스테르강 하구 인근의 고대 에베소 유적(셀주크 인근)으로 위치가 확정되어 있습니다.",
+          "historicalBackground": "로마 아시아 속주의 중심 항구·상업 도시로, 바울이 두란노 서원에서 강론하며 장기간 사역한 소아시아 선교의 핵심 거점입니다.",
+          "scriptureRef": "행 19:1-10; 엡 1:1",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a5feb15/ephesus",
+          "sourceId": "a5feb15",
+          "candidates": [
+            {
+              "lat": 37.939125,
+              "lon": 27.3407,
+              "modernName": "Ephesus",
+              "modernNameKo": "에베소 유적(튀르키예 셀주크 인근)",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/m84025e/ephesus",
+              "precisionMeters": 5
+            }
+          ],
+          "lat": 37.939125,
+          "lon": 27.3407,
+          "modernName": "Ephesus",
+          "modernNameKo": "에베소 유적(튀르키예 셀주크 인근)"
+        },
+        {
+          "id": "troas",
+          "label": "드로아",
+          "biblicalName": "드로아(알렉산드리아 드로아) (Troas (Alexandria Troas))",
+          "biblicalNameEn": "Troas (Alexandria Troas)",
+          "placeType": "settlement",
+          "locationStatus": "confirmed",
+          "statusReason": "에게해 북동 연안의 알렉산드리아 드로아 항구 유적으로 위치가 확정되어 있습니다.",
+          "historicalBackground": "소아시아와 마게도냐를 잇는 해상 교통 항구로, 바울이 마게도냐 환상을 본 곳이자 유두고 사건이 기록된 도시입니다.",
+          "scriptureRef": "행 16:8-10; 20:6-12",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a91c509/troas",
+          "sourceId": "a91c509",
+          "candidates": [
+            {
+              "lat": 39.751944,
+              "lon": 26.158611,
+              "modernName": "Alexandria Troas",
+              "modernNameKo": "알렉산드리아 드로아 유적(달리안 인근)",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/mf8cbc7/alexandria-troas",
+              "precisionMeters": 5
+            }
+          ],
+          "lat": 39.751944,
+          "lon": 26.158611,
+          "modernName": "Alexandria Troas",
+          "modernNameKo": "알렉산드리아 드로아 유적(달리안 인근)"
+        },
+        {
+          "id": "philippi",
+          "label": "빌립보",
+          "biblicalName": "빌립보 (Philippi)",
+          "biblicalNameEn": "Philippi",
+          "placeType": "settlement",
+          "locationStatus": "confirmed",
+          "statusReason": "에그나티아 가도 연변의 고대 빌립보 극장·포럼 유적으로 위치가 확정되어 있습니다.",
+          "historicalBackground": "마게도냐 첫 지경의 로마 식민지 도시로, 루디아 가정과 간수 가정의 회심을 통해 유럽 본토 교회가 세워진 곳입니다.",
+          "scriptureRef": "행 16:12-40; 빌 1:1",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a49e1d0/philippi",
+          "sourceId": "a49e1d0",
+          "candidates": [
+            {
+              "lat": 41.012072,
+              "lon": 24.284576,
+              "modernName": "Philippi",
+              "modernNameKo": "필리피 고고학 유적(카발라 북서쪽)",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/mec5201/philippi",
+              "precisionMeters": 5
+            }
+          ],
+          "lat": 41.012072,
+          "lon": 24.284576,
+          "modernName": "Philippi",
+          "modernNameKo": "필리피 고고학 유적(카발라 북서쪽)"
+        },
+        {
+          "id": "thessalonica",
+          "label": "데살로니가",
+          "biblicalName": "데살로니가 (Thessalonica)",
+          "biblicalNameEn": "Thessalonica",
+          "placeType": "settlement",
+          "locationStatus": "confirmed",
+          "statusReason": "테르마이코스만 연안의 고대 로마 아고라 유적과 현대 테살로니키 도심으로 위치가 확정되어 있습니다.",
+          "historicalBackground": "로마 마게도냐 속주의 수도이자 에그나티아 가도와 에게해 해운이 만나는 대도시로, 데살로니가전후서의 수신 교회가 세워진 곳입니다.",
+          "scriptureRef": "행 17:1-9; 살전 1:1",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/afa9d8e/thessalonica",
+          "sourceId": "afa9d8e",
+          "candidates": [
+            {
+              "lat": 40.637771,
+              "lon": 22.945767,
+              "modernName": "Thessaloniki",
+              "modernNameKo": "테살로니키(고대 로마 아고라 일대)",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/mdadcc0/thessaloniki",
+              "precisionMeters": 5
+            }
+          ],
+          "lat": 40.637771,
+          "lon": 22.945767,
+          "modernName": "Thessaloniki",
+          "modernNameKo": "테살로니키(고대 로마 아고라 일대)"
+        },
+        {
+          "id": "athens",
+          "label": "아덴",
+          "biblicalName": "아덴(아테네) (Athens)",
+          "biblicalNameEn": "Athens",
+          "placeType": "settlement",
+          "locationStatus": "confirmed",
+          "statusReason": "아크로폴리스와 아레오바고 언덕·아고라 유적이 현존하는 아테네 도심으로 위치가 확정되어 있습니다.",
+          "historicalBackground": "고전 헬라 철학과 종교의 중심 도시로, 바울이 아레오바고 가운데 서서 '알지 못하는 신' 제단을 단서로 창조주와 부활을 변증한 곳입니다.",
+          "scriptureRef": "행 17:15-34; 살전 3:1",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a1fe6e7/athens",
+          "sourceId": "a1fe6e7",
+          "candidates": [
+            {
+              "lat": 37.971851,
+              "lon": 23.726738,
+              "modernName": "Athens",
+              "modernNameKo": "아테네 아크로폴리스·아레오바고 일대",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/md70ac9/athens",
+              "precisionMeters": 5
+            }
+          ],
+          "lat": 37.971851,
+          "lon": 23.726738,
+          "modernName": "Athens",
+          "modernNameKo": "아테네 아크로폴리스·아레오바고 일대"
+        },
+        {
+          "id": "corinth",
+          "label": "고린도",
+          "biblicalName": "고린도 (Corinth)",
+          "biblicalNameEn": "Corinth",
+          "placeType": "settlement",
+          "locationStatus": "confirmed",
+          "statusReason": "고린도 지협 남서쪽 고대 고린도(아폴로 신전·갈리오 재판자리 베마 유적)로 위치가 확정되어 있습니다.",
+          "historicalBackground": "아가야 속주의 수도이자 동서 양해를 잇는 교역 도시로, 총독 갈리오 비문(AD 51–52년)으로 바울 연대기의 기준점이 되는 곳입니다.",
+          "scriptureRef": "행 18:1-17; 고전 1:2",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a6f437a/corinth",
+          "sourceId": "a6f437a",
+          "candidates": [
+            {
+              "lat": 37.905785,
+              "lon": 22.878741,
+              "modernName": "Corinth",
+              "modernNameKo": "고대 코린토스 유적(아르카이아 코린토스)",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/me0518f/corinth",
+              "precisionMeters": 5
+            }
+          ],
+          "lat": 37.905785,
+          "lon": 22.878741,
+          "modernName": "Corinth",
+          "modernNameKo": "고대 코린토스 유적(아르카이아 코린토스)"
+        },
+        {
+          "id": "rome",
+          "label": "로마",
+          "biblicalName": "로마 (Rome)",
+          "biblicalNameEn": "Rome",
+          "placeType": "settlement",
+          "locationStatus": "confirmed",
+          "statusReason": "테베레강 유역 고대 로마 도심 유적으로 위치가 확정되어 있습니다.",
+          "historicalBackground": "로마 제국의 수도로, 로마서의 수신 공동체가 있던 곳이자 사도행전 마지막 장에서 바울이 셋집에 머물며 하나님 나라를 전파한 도시입니다.",
+          "scriptureRef": "행 28:14-31; 롬 1:7",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/afc8e7a/rome",
+          "sourceId": "afc8e7a",
+          "candidates": [
+            {
+              "lat": 41.8922,
+              "lon": 12.4852,
+              "modernName": "Rome",
+              "modernNameKo": "로마 고대 포로 로마노 일대",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/mb083bc/rome",
+              "precisionMeters": 5
+            }
+          ],
+          "lat": 41.8922,
+          "lon": 12.4852,
+          "modernName": "Rome",
+          "modernNameKo": "로마 고대 포로 로마노 일대"
+        }
+      ]
+    },
+    {
+      "id": "seven-churches-asia",
+      "title": "요한계시록 밧모섬과 소아시아 일곱 교회 2D 지도",
+      "regionSummary": "로마 아시아 속주와 인접 무시아·브루기아 권역을 옅은 색으로 표시하고, 밧모섬과 일곱 교회 도시를 작은 마커로 수록했습니다.",
+      "backdropImageUrl": "./assets/maps/seven-churches-asia.jpg",
+      "modernBordersImageUrl": "./assets/maps/seven-churches-asia-modern.png",
+      "bbox": [
+        24.933,
+        36.85,
+        30.767,
+        39.65
+      ],
+      "scaleBar": {
+        "km": 100,
+        "svgWidth": 70.6
+      },
+      "projection": {
+        "crs": "WGS84 (EPSG:4326)",
+        "name": "Equidistant Cylindrical (정거 원통 투영)",
+        "standardParallel": 38.25,
+        "viewBox": [
+          0,
+          0,
+          360,
+          220
+        ]
+      },
+      "license": "OpenBible.info Bible Geocoding Data & Region Isobands: CC BY 4.0; Natural Earth 1:10m Vector: Public Domain; Terrain DEM (USGS SRTM / GMTED2010 / NOAA ETOPO1): Public Domain; Underlying gazetteer coordinates: Wikidata (CC0), Pleiades (CC BY 3.0), GeoNames (CC BY 4.0), OpenStreetMap contributors (ODbL 1.0)",
+      "attribution": "OpenBible.info Bible Geocoding Data (CC BY 4.0); Natural Earth 1:10m; USGS/NASA SRTM & NOAA ETOPO1; Pleiades; OpenStreetMap contributors",
+      "sourceNote": "지형·수계: Natural Earth 1:10m 자연 지형 + 공개 DEM 음영기복 · 성경 지명·고대 권역 범위: OpenBible.info Bible Geocoding Data (확률 등치선 기반 추정 영역) · 투영: WGS84 정거 원통 투영(표준위선 38.25°N)",
+      "ancientRegions": [
+        {
+          "id": "asia",
+          "label": "아시아 속주",
+          "biblicalNameEn": "Province of Asia",
+          "color": "#b4ce78",
+          "lat": 38.26273,
+          "lon": 28.82233,
+          "sourceId": "a197f19",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a197f19/asia",
+          "svgPath": "M 75.0,-0.5 359.0,-0.5 359.5,110.0 359.0,110.5 358.5,111.0 358.5,116.0 359.0,116.5 359.5,117.0 359.5,151.0 351.0,156.5 338.0,168.5 314.0,187.5 293.0,206.5 285.0,212.5 279.0,219.5 217.0,219.5 216.5,219.0 216.0,218.5 214.0,219.5 189.0,219.5 188.5,219.0 190.0,217.5 191.5,218.0 189.5,215.0 191.0,212.5 193.0,211.5 193.5,212.0 194.0,212.5 200.0,211.5 200.5,209.0 202.0,207.5 206.0,206.5 208.0,205.5 208.5,205.0 208.0,204.5 201.0,204.5 196.0,206.5 193.0,205.5 178.0,206.5 175.0,208.5 169.0,207.5 166.0,209.5 164.0,208.5 162.0,209.5 158.0,208.5 157.0,211.5 152.5,209.0 152.5,208.0 153.0,207.5 155.5,208.0 154.0,206.5 153.0,206.5 152.0,206.5 151.0,208.5 148.0,206.5 148.5,208.0 146.0,211.5 143.0,210.5 140.5,204.0 141.5,201.0 143.5,200.0 142.5,198.0 146.0,197.5 146.5,195.0 147.0,194.5 148.0,194.5 154.0,197.5 155.0,199.5 156.0,199.5 157.0,199.5 160.5,197.0 159.5,193.0 162.5,192.0 162.5,191.0 162.5,190.0 164.5,187.0 162.0,186.5 160.0,189.5 159.0,189.5 158.0,189.5 158.0,187.5 156.0,188.5 155.5,186.0 156.5,184.0 155.0,184.5 150.5,181.0 153.5,177.0 152.0,175.5 149.5,177.0 148.0,180.5 144.0,180.5 143.5,181.0 143.0,181.5 139.0,180.5 138.5,180.0 138.5,179.0 140.5,175.0 139.5,173.0 140.0,172.5 140.5,172.0 137.5,170.0 138.5,167.0 136.5,161.0 137.0,160.5 137.5,161.0 139.0,164.5 139.5,161.0 134.0,157.5 130.0,157.5 127.5,155.0 128.0,152.5 122.0,153.5 120.0,157.5 114.0,157.5 113.5,157.0 113.5,156.0 109.0,152.5 106.0,152.5 104.0,154.5 103.0,154.5 102.0,154.5 100.5,152.0 100.5,149.0 106.0,144.5 117.0,143.5 123.0,147.5 124.0,145.5 130.0,146.5 129.5,149.0 131.5,150.0 131.5,151.0 131.5,152.0 129.5,153.0 137.0,153.5 139.0,152.5 142.5,148.0 142.5,143.0 142.0,142.5 141.5,142.0 142.5,136.0 143.0,135.5 143.5,135.0 142.5,132.0 141.0,130.5 140.5,131.0 140.0,131.5 134.0,130.5 133.5,130.0 133.5,129.0 131.0,128.5 128.0,124.5 122.0,124.5 119.0,126.5 116.5,123.0 117.5,121.0 115.5,117.0 112.5,116.0 112.0,112.5 110.0,113.5 106.0,113.5 103.5,121.0 103.0,121.5 102.0,121.5 101.5,121.0 101.5,120.0 100.0,120.5 93.0,112.5 92.5,113.0 92.0,113.5 89.0,112.5 89.0,109.5 88.0,111.5 87.0,111.5 86.0,111.5 84.0,109.5 79.5,108.0 83.5,103.0 83.0,102.5 82.5,102.0 83.0,99.5 84.0,99.5 85.0,99.5 85.5,102.0 88.0,103.5 94.5,100.0 93.5,97.0 93.5,96.0 94.0,95.5 96.5,96.0 95.0,93.5 92.0,92.5 90.0,94.5 88.5,93.0 89.5,90.0 87.5,87.0 86.5,77.0 90.0,75.5 94.0,75.5 97.0,77.5 99.5,80.0 100.5,84.0 105.5,89.0 105.5,93.0 102.5,95.0 104.5,97.0 106.0,101.5 106.5,98.0 109.0,94.5 110.0,94.5 112.5,97.0 112.5,98.0 112.5,99.0 115.0,100.5 115.5,100.0 116.0,99.5 121.0,99.5 128.0,96.5 133.0,97.5 135.5,94.0 133.0,93.5 132.5,94.0 132.0,94.5 131.5,94.0 131.0,93.5 126.0,93.5 124.0,94.5 121.0,90.5 115.5,88.0 117.5,82.0 114.0,82.5 112.0,81.5 109.5,78.0 109.5,77.0 111.5,76.0 109.5,74.0 110.0,71.5 113.0,71.5 116.0,69.5 120.0,70.5 121.5,69.0 120.5,65.0 123.0,64.5 123.5,65.0 124.0,65.5 124.5,63.0 127.0,60.5 129.0,61.5 130.5,60.0 130.0,59.5 129.5,59.0 130.0,58.5 130.5,58.0 130.0,55.5 128.0,57.5 125.0,56.5 118.0,57.5 114.5,54.0 114.5,51.0 115.0,50.5 115.5,50.0 114.5,48.0 119.0,45.5 119.5,45.0 119.5,44.0 118.5,42.0 110.5,35.0 109.0,29.5 106.0,30.5 103.5,29.0 104.0,25.5 108.0,25.5 110.0,22.5 114.5,20.0 114.5,17.0 118.0,15.5 118.5,15.0 118.5,14.0 122.5,11.0 123.5,6.0 119.0,5.5 117.0,7.5 116.5,7.0 116.0,6.5 108.0,6.5 103.0,8.5 95.0,9.5 92.0,11.5 89.0,11.5 88.0,13.5 83.0,12.5 81.0,14.5 79.0,13.5 72.0,14.5 69.5,13.0 69.5,10.0 72.5,2.0 Z M 87.0,19.5 88.5,21.0 88.0,21.5 87.5,22.0 91.5,25.0 89.5,29.0 94.0,31.5 95.5,35.0 99.5,38.0 100.5,44.0 103.5,47.0 103.5,48.0 103.5,49.0 102.0,50.5 100.0,49.5 99.0,52.5 96.0,53.5 90.0,53.5 89.5,53.0 89.0,52.5 85.0,52.5 84.0,50.5 81.0,49.5 75.0,49.5 70.5,44.0 72.0,42.5 75.0,42.5 75.5,42.0 75.5,41.0 78.0,39.5 79.0,39.5 80.0,39.5 82.5,37.0 81.0,34.5 76.0,35.5 70.0,43.5 69.0,43.5 68.0,43.5 65.0,41.5 62.0,41.5 58.0,39.5 54.5,36.0 55.0,35.5 55.5,35.0 55.5,31.0 59.0,28.5 60.0,26.5 61.0,26.5 62.0,28.5 65.0,28.5 68.0,26.5 74.0,25.5 75.5,24.0 76.0,20.5 86.0,20.5 86.5,20.0 Z M 65.0,81.5 69.0,82.5 71.0,84.5 75.5,85.0 75.5,89.0 73.5,91.0 75.5,92.0 74.5,94.0 75.5,105.0 72.5,107.0 72.5,112.0 69.0,112.5 67.5,114.0 67.0,117.5 63.0,116.5 62.5,116.0 62.5,115.0 56.5,110.0 58.0,106.5 63.5,104.0 64.5,100.0 61.5,97.0 62.5,95.0 54.5,88.0 56.0,83.5 60.0,83.5 Z M 78.0,86.5 82.0,87.5 83.5,90.0 82.0,89.5 81.5,90.0 81.0,90.5 78.0,89.5 Z M 109.0,86.5 110.0,86.5 110.5,87.0 110.5,90.0 111.0,90.5 111.5,91.0 111.0,93.5 107.5,92.0 107.5,88.0 Z M 85.0,153.5 86.0,153.5 87.0,153.5 87.5,156.0 80.0,163.5 74.0,163.5 71.0,165.5 70.0,167.5 63.5,167.0 63.5,166.0 63.5,165.0 69.0,157.5 78.0,157.5 Z M 97.0,155.5 99.5,160.0 96.5,163.0 97.5,166.0 97.0,166.5 96.0,166.5 94.0,163.5 91.0,163.5 89.5,162.0 92.0,159.5 93.0,159.5 94.0,161.5 95.0,159.5 95.5,160.0 96.0,160.5 95.5,157.0 Z M 98.0,177.5 99.0,177.5 100.0,177.5 103.5,180.0 103.5,181.0 103.0,181.5 100.5,182.0 100.0,186.5 97.5,185.0 97.5,182.0 98.0,181.5 98.5,181.0 98.0,180.5 97.5,180.0 Z M 109.0,181.5 114.0,183.5 114.5,186.0 112.0,186.5 108.5,183.0 108.5,182.0 Z M 115.0,191.5 118.5,193.0 118.5,194.0 118.5,195.0 120.5,198.0 120.5,201.0 124.0,203.5 125.0,203.5 126.0,203.5 128.0,206.5 130.5,207.0 129.5,209.0 130.0,209.5 130.5,210.0 130.0,212.5 127.0,211.5 126.5,212.0 126.5,213.0 124.0,214.5 121.5,212.0 122.5,210.0 122.0,209.5 121.5,209.0 123.5,206.0 121.5,205.0 119.5,201.0 119.0,200.5 118.0,200.5 112.5,194.0 112.5,193.0 Z M 143.0,214.5 146.0,216.5 147.0,216.5 148.0,216.5 149.5,218.0 148.0,219.5 132.5,219.0 137.0,215.5 142.0,215.5 142.5,215.0 Z"
+        },
+        {
+          "id": "mysia",
+          "label": "무시아",
+          "biblicalNameEn": "Mysia",
+          "color": "#d6cb82",
+          "lat": 39.24273,
+          "lon": 27.18557,
+          "sourceId": "a2d9bc8",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a2d9bc8/mysia",
+          "svgPath": "M 75.0,-0.5 265.0,-0.5 265.5,4.0 266.0,4.5 266.5,5.0 266.5,32.0 267.0,32.5 267.5,33.0 267.5,45.0 263.0,45.5 262.5,46.0 262.0,46.5 248.0,46.5 247.5,47.0 247.0,47.5 234.0,47.5 233.5,48.0 233.0,48.5 220.0,48.5 219.5,49.0 219.0,49.5 206.0,49.5 205.5,50.0 205.0,50.5 191.0,50.5 190.5,51.0 190.0,51.5 177.0,51.5 176.5,52.0 176.0,52.5 163.0,52.5 162.5,53.0 162.0,53.5 149.0,53.5 148.5,54.0 148.0,54.5 134.0,54.5 133.5,55.0 133.0,55.5 118.0,55.5 115.5,48.0 119.0,45.5 119.5,45.0 119.5,44.0 118.5,42.0 110.5,35.0 109.0,29.5 106.0,30.5 103.5,29.0 103.5,26.0 108.0,25.5 110.0,22.5 114.0,20.5 114.5,17.0 118.0,15.5 118.5,15.0 118.5,14.0 122.5,11.0 123.5,6.0 119.0,5.5 117.0,7.5 116.5,7.0 116.0,6.5 108.0,6.5 107.5,7.0 107.0,7.5 99.0,8.5 98.5,9.0 98.0,9.5 95.0,9.5 94.5,10.0 94.0,10.5 91.0,10.5 82.0,13.5 70.0,12.5 69.5,10.0 70.0,9.5 70.5,9.0 70.5,6.0 Z"
+        },
+        {
+          "id": "phrygia",
+          "label": "브루기아",
+          "biblicalNameEn": "Phrygia",
+          "color": "#dbc188",
+          "lat": 39.19182,
+          "lon": 30.15119,
+          "sourceId": "ab8ae56",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/ab8ae56/phrygia",
+          "svgPath": "M 262.0,-0.5 359.0,-0.5 359.5,90.0 351.0,93.5 340.0,100.5 337.0,100.5 273.5,16.0 263.5,4.0 261.5,1.0 261.5,0.0 Z"
+        }
+      ],
+      "stops": [
+        {
+          "id": "patmos",
+          "label": "밧모섬",
+          "biblicalName": "밧모섬 (Patmos)",
+          "biblicalNameEn": "Patmos",
+          "placeType": "island",
+          "locationStatus": "estimated",
+          "statusReason": "에게해 파트모스섬 자체는 명확하나, 원자료 좌표는 섬 전체의 영역 대표점이므로 특정 사건 현장이 아닌 추정(영역 대표) 위치로 구분합니다.",
+          "historicalBackground": "에베소 남서쪽 에게해 스포라데스·도데카니사 제도의 바위섬으로, 요한계시록 저자 요한이 하나님의 말씀과 예수의 증언으로 말미암아 머물렀다고 기록된 섬입니다.",
+          "scriptureRef": "계 1:9",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a8f60f3/patmos",
+          "sourceId": "a8f60f3",
+          "candidates": [
+            {
+              "lat": 37.325,
+              "lon": 26.541667,
+              "modernName": "Patmos",
+              "modernNameKo": "파트모스섬(그리스 도데카니사 제도)",
+              "geometryType": "representative point",
+              "representative": true,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/m5c4548/patmos"
+            }
+          ]
+        },
+        {
+          "id": "ephesus_rev",
+          "label": "에베소",
+          "biblicalName": "에베소 (Ephesus)",
+          "biblicalNameEn": "Ephesus",
+          "placeType": "settlement",
+          "locationStatus": "confirmed",
+          "statusReason": "고대 에베소 도시 유적(현대 셀주크 인근)으로 위치가 확정되어 있습니다.",
+          "historicalBackground": "소아시아 서해안의 관문 항구 도시로, 요한계시록 2–3장 일곱 교회 순회 서신의 첫 번째 수신 교회가 있던 곳입니다.",
+          "scriptureRef": "계 1:11; 2:1-7",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a5feb15/ephesus",
+          "sourceId": "a5feb15",
+          "candidates": [
+            {
+              "lat": 37.939125,
+              "lon": 27.3407,
+              "modernName": "Ephesus",
+              "modernNameKo": "에베소 유적(튀르키예 셀주크 인근)",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/m84025e/ephesus",
+              "precisionMeters": 5
+            }
+          ],
+          "lat": 37.939125,
+          "lon": 27.3407,
+          "modernName": "Ephesus",
+          "modernNameKo": "에베소 유적(튀르키예 셀주크 인근)"
+        },
+        {
+          "id": "smyrna",
+          "label": "서머나",
+          "biblicalName": "서머나 (Smyrna)",
+          "biblicalNameEn": "Smyrna",
+          "placeType": "settlement",
+          "locationStatus": "confirmed",
+          "statusReason": "현대 튀르키예 이즈미르(Izmir) 도심의 고대 스미르나 아고라 유적으로 위치가 확정되어 있습니다.",
+          "historicalBackground": "서머나만 안쪽의 천연 항구 도시로, 환난과 궁핍 속에서도 충성을 권면받은 일곱 교회 중 둘째 교회의 소재지입니다.",
+          "scriptureRef": "계 1:11; 2:8-11",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a2e65fb/smyrna",
+          "sourceId": "a2e65fb",
+          "candidates": [
+            {
+              "lat": 38.418889,
+              "lon": 27.137778,
+              "modernName": "Izmir",
+              "modernNameKo": "이즈미르(스미르나 아고라 유적)",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/m1876bb/izmir",
+              "precisionMeters": 5
+            }
+          ],
+          "lat": 38.418889,
+          "lon": 27.137778,
+          "modernName": "Izmir",
+          "modernNameKo": "이즈미르(스미르나 아고라 유적)"
+        },
+        {
+          "id": "pergamum",
+          "label": "버가모",
+          "biblicalName": "버가모 (Pergamum)",
+          "biblicalNameEn": "Pergamum",
+          "placeType": "settlement",
+          "locationStatus": "confirmed",
+          "statusReason": "카이코스강 북쪽 아크로폴리스 유적(현대 베르가마, Bergama)으로 위치가 확정되어 있습니다.",
+          "historicalBackground": "헬레니즘 아탈로스 왕조의 옛 수도이자 황제 숭배 신전과 대형 제단이 있던 도시로, 일곱 교회 중 가장 북쪽에 위치한 셋째 교회의 도시입니다.",
+          "scriptureRef": "계 1:11; 2:12-17",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a75d2c1/pergamum",
+          "sourceId": "a75d2c1",
+          "candidates": [
+            {
+              "lat": 39.13216,
+              "lon": 27.18421,
+              "modernName": "Pergamon",
+              "modernNameKo": "베르가마(페르가몬 아크로폴리스 유적)",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/m16099a/pergamon",
+              "precisionMeters": 5
+            }
+          ],
+          "lat": 39.13216,
+          "lon": 27.18421,
+          "modernName": "Pergamon",
+          "modernNameKo": "베르가마(페르가몬 아크로폴리스 유적)"
+        },
+        {
+          "id": "thyatira",
+          "label": "두아디라",
+          "biblicalName": "두아디라 (Thyatira)",
+          "biblicalNameEn": "Thyatira",
+          "placeType": "settlement",
+          "locationStatus": "confirmed",
+          "statusReason": "고대 티아테이라 비문과 유적이 확인된 현대 아크히사르(Akhisar) 도심으로 위치가 확정되어 있습니다.",
+          "historicalBackground": "버가모에서 사데로 이어지는 내륙 평야 도로상의 상공업·염색 조합 도시로, 자주 장사 루디아의 고향이자 넷째 교회의 소재지입니다.",
+          "scriptureRef": "행 16:14; 계 2:18-29",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a94b661/thyatira",
+          "sourceId": "a94b661",
+          "candidates": [
+            {
+              "lat": 38.92021,
+              "lon": 27.83655,
+              "modernName": "Akhisar",
+              "modernNameKo": "아크히사르(고대 티아테이라 유적)",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "GeoNames (CC BY 4.0)",
+              "sourceUrl": "https://www.openbible.info/geo/modern/m4e3e3e/akhisar",
+              "precisionMeters": 5
+            }
+          ],
+          "lat": 38.92021,
+          "lon": 27.83655,
+          "modernName": "Akhisar",
+          "modernNameKo": "아크히사르(고대 티아테이라 유적)"
+        },
+        {
+          "id": "sardis",
+          "label": "사데",
+          "biblicalName": "사데 (Sardis)",
+          "biblicalNameEn": "Sardis",
+          "placeType": "settlement",
+          "locationStatus": "confirmed",
+          "statusReason": "트몰로스산 기슭의 고대 사르디스 아크로폴리스·회당 유적(현대 사르트, Sart)으로 위치가 확정되어 있습니다.",
+          "historicalBackground": "고대 리디아 왕국의 부유한 수도였던 내륙 교통 요충지로, 일곱 교회 중 다섯째 교회가 있던 도시입니다.",
+          "scriptureRef": "계 1:11; 3:1-6",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/aab4a5f/sardis",
+          "sourceId": "aab4a5f",
+          "candidates": [
+            {
+              "lat": 38.488333,
+              "lon": 28.040278,
+              "modernName": "Sardis",
+              "modernNameKo": "사르트(고대 사르디스 유적)",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/mb0ee42/sardis",
+              "precisionMeters": 5
+            }
+          ],
+          "lat": 38.488333,
+          "lon": 28.040278,
+          "modernName": "Sardis",
+          "modernNameKo": "사르트(고대 사르디스 유적)"
+        },
+        {
+          "id": "philadelphia",
+          "label": "빌라델비아",
+          "biblicalName": "빌라델비아 (Philadelphia)",
+          "biblicalNameEn": "Philadelphia",
+          "placeType": "settlement",
+          "locationStatus": "confirmed",
+          "statusReason": "코가모스강 계곡 남쪽 기슭의 고대 필라델피아 유적(현대 알라셰히르, Alaşehir)으로 위치가 확정되어 있습니다.",
+          "historicalBackground": "사데 남동쪽 지진 다발 고원 관문에 세워진 도시로, 일곱 교회 중 여섯째 교회의 소재지입니다.",
+          "scriptureRef": "계 1:11; 3:7-13",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a1c7cc1/philadelphia",
+          "sourceId": "a1c7cc1",
+          "candidates": [
+            {
+              "lat": 38.35,
+              "lon": 28.516667,
+              "modernName": "Alaşehir",
+              "modernNameKo": "알라셰히르(고대 필라델피아 유적)",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/m91dd93/alasehir",
+              "precisionMeters": 250
+            }
+          ],
+          "lat": 38.35,
+          "lon": 28.516667,
+          "modernName": "Alaşehir",
+          "modernNameKo": "알라셰히르(고대 필라델피아 유적)"
+        },
+        {
+          "id": "laodicea",
+          "label": "라오디게아",
+          "biblicalName": "라오디게아 (Laodicea)",
+          "biblicalNameEn": "Laodicea",
+          "placeType": "settlement",
+          "locationStatus": "confirmed",
+          "statusReason": "리코스(Lycus) 계곡의 고대 라오디게아 도시 유적(데니즐리 인근 에스키히사르)으로 위치가 확정되어 있습니다.",
+          "historicalBackground": "히에라볼리와 골로새 인근 리코스 계곡의 금융·직물·의학 중심 도시로, 인근 온천·냉천 수로 환경과 맞물린 일곱 교회의 마지막 서신 수신지입니다.",
+          "scriptureRef": "골 4:13-16; 계 3:14-22",
+          "sourceUrl": "https://www.openbible.info/geo/ancient/a83fb1e/laodicea",
+          "sourceId": "a83fb1e",
+          "candidates": [
+            {
+              "lat": 37.835833,
+              "lon": 29.1075,
+              "modernName": "Laodicea on the Lycus",
+              "modernNameKo": "에스키히사르(리코스 계곡 라오디게아 유적)",
+              "geometryType": "point",
+              "representative": false,
+              "coordinateSource": "Wikidata",
+              "sourceUrl": "https://www.openbible.info/geo/modern/m597755/laodicea-on-the-lycus",
+              "precisionMeters": 5
+            }
+          ],
+          "lat": 37.835833,
+          "lon": 29.1075,
+          "modernName": "Laodicea on the Lycus",
+          "modernNameKo": "에스키히사르(리코스 계곡 라오디게아 유적)"
+        }
+      ]
+    }
+  ]
+}

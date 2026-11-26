@@ -1,0 +1,50 @@
+{
+  "description": "kornkrv.lfa 원본 파일 내 절 번호 오기재·줄 병합 보정 및 누락 절 슬롯 정의 (원본 .lfa 파일은 수정하지 않음)",
+  "verseNumberFixes": [
+    {
+      "entry": "kornkrv01_29.lfb",
+      "lineIndex1Based": 28,
+      "expectedRawVerse": 29,
+      "correctedVerse": 28,
+      "expectedPrefixText": "야곱이 그대로 하여 그 칠 일을 채우매",
+      "reason": "창세기 29:28 본문이 원본에서 29:29로 오기재되어 29절이 중복되고 28절이 누락됨"
+    },
+    {
+      "entry": "kornkrv02_40.lfb",
+      "lineIndex1Based": 17,
+      "expectedRawVerse": 7,
+      "correctedVerse": 17,
+      "expectedPrefixText": "둘째 해 첫째 달 곧 그 달 초하루에 성막을 세우니라",
+      "reason": "출애굽기 40:17 본문이 원본에서 40:7로 오기재되어 기존 7절을 덮어쓸 위험이 있음"
+    },
+    {
+      "entry": "kornkrv27_3.lfb",
+      "lineIndex1Based": 19,
+      "expectedRawVerse": 9,
+      "correctedVerse": 19,
+      "expectedPrefixText": "느부갓네살이 분이 가득하여",
+      "reason": "다니엘 3:19 본문이 원본에서 3:9로 오기재되어 기존 9절을 덮어쓸 위험이 있음"
+    }
+  ],
+  "mergedLineSplits": [
+    {
+      "entry": "kornkrv23_40.lfb",
+      "lineIndex1Based": 15,
+      "verseFirst": 15,
+      "verseSecond": 16,
+      "splitDelimiterRegex": "\\s+16\\s{2,}",
+      "expectedSecondPrefix": "레바논은 땔감에도 부족하겠고",
+      "reason": "이사야 40:15 말미에 줄바꿈·접두어 없이 16절 본문이 병합되어 있음"
+    }
+  ],
+  "missingVerses": [
+    {
+      "entry": "kornkrv26_16.lfb",
+      "book": 26,
+      "chapter": 16,
+      "verse": 63,
+      "patchedText": null,
+      "reason": "원본 kornkrv26_16.lfb가 62절에서 끝나 63절이 수록되어 있지 않음. 운영자가 원문 확보 후 patchedText에 문자열을 입력하면 자동 반영되며, null인 동안에는 부재 안내 및 인접 절(62절) 표시로 처리함"
+    }
+  ]
+}

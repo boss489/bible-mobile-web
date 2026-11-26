@@ -1,0 +1,272 @@
+{
+  "crossReferences": [
+    {
+      "sourceVerseId": "MATT.4.4",
+      "targetVerseId": "DEUT.8.3",
+      "relationType": "DIRECT_QUOTE",
+      "reason": "예수님께서 돌들로 떡덩이가 되게 하라는 첫 시험을 물리치시며 광야 만나 사건을 해석한 신명기 8:3을 '기록되었으되'라고 직접 인용하십니다.",
+      "evidenceVerseIds": ["MATT.4.3-4", "DEUT.8.3"],
+      "sourceIds": ["biblical-internal-text"],
+      "reviewStatus": "VERIFIED"
+    },
+    {
+      "sourceVerseId": "MATT.4.4",
+      "targetVerseId": "LUKE.4.4",
+      "relationType": "PARALLEL_EVENT",
+      "reason": "누가복음에 기록된 동일한 광야 첫 번째 시험 병행 본문입니다.",
+      "evidenceVerseIds": ["MATT.4.3-4", "LUKE.4.3-4"],
+      "sourceIds": ["biblical-internal-text"],
+      "reviewStatus": "VERIFIED"
+    },
+    {
+      "sourceVerseId": "MATT.4.6",
+      "targetVerseId": "PS.91.11-12",
+      "relationType": "DIRECT_QUOTE",
+      "reason": "마귀가 성전 꼭대기에서 뛰어내리라고 유혹하면서 경건한 자를 천사들이 지켜 주신다는 시편 91:11–12 구절을 문맥과 다르게 끌어다 인용합니다.",
+      "evidenceVerseIds": ["MATT.4.5-6", "PS.91.11-12"],
+      "sourceIds": ["biblical-internal-text"],
+      "reviewStatus": "VERIFIED"
+    },
+    {
+      "sourceVerseId": "MATT.4.7",
+      "targetVerseId": "DEUT.6.16",
+      "relationType": "DIRECT_QUOTE",
+      "reason": "마귀의 시편 오용에 맞서 예수님께서 '너희의 하나님 여호와를 시험하지 말라'는 신명기 6:16 말씀을 다시 직접 인용해 성경을 바르게 해석하십니다.",
+      "evidenceVerseIds": ["MATT.4.7", "DEUT.6.16", "EXOD.17.7"],
+      "sourceIds": ["biblical-internal-text"],
+      "reviewStatus": "VERIFIED"
+    },
+    {
+      "sourceVerseId": "MATT.4.10",
+      "targetVerseId": "DEUT.6.13",
+      "relationType": "DIRECT_QUOTE",
+      "reason": "천하 만국 영광을 미끼로 절하라는 마지막 시험에 대하여 신명기 6:13의 유일신 경배·섬김 명령을 직접 인용하여 물리치십니다.",
+      "evidenceVerseIds": ["MATT.4.8-10", "DEUT.6.13"],
+      "sourceIds": ["biblical-internal-text"],
+      "reviewStatus": "VERIFIED"
+    },
+    {
+      "sourceVerseId": "MATT.2.6",
+      "targetVerseId": "MIC.5.2",
+      "relationType": "DIRECT_QUOTE",
+      "reason": "그리스도가 어디서 나겠느냐는 헤롯의 질문에 대제사장들과 서기관들이 베들레헴 탄생의 성경적 근거로 미가 5:2를 직접 인용합니다.",
+      "evidenceVerseIds": ["MATT.2.4-6", "MIC.5.2"],
+      "sourceIds": ["biblical-internal-text"],
+      "reviewStatus": "VERIFIED"
+    },
+    {
+      "sourceVerseId": "MATT.2.6",
+      "targetVerseId": "2SAM.5.2",
+      "relationType": "DIRECT_QUOTE",
+      "reason": "6절 후반부 '내 백성 이스라엘의 목자가 되리라'는 표현은 다윗에게 주신 목자 통치 약속(삼하 5:2)을 미가 5:2와 결합해 인용한 것입니다.",
+      "evidenceVerseIds": ["MATT.2.6", "2SAM.5.2"],
+      "sourceIds": ["biblical-internal-text", "tsk-public-domain"],
+      "reviewStatus": "VERIFIED"
+    },
+    {
+      "sourceVerseId": "MATT.2.15",
+      "targetVerseId": "HOS.11.1",
+      "relationType": "DIRECT_QUOTE",
+      "reason": "'애굽으로부터 내 아들을 불렀다'는 호세아 11:1 말씀을 직접 인용하여, 아기 예수의 애굽 피신과 귀환이 이스라엘 출애굽 역사를 완성하는 성취임을 밝힙니다.",
+      "evidenceVerseIds": ["MATT.2.14-15", "HOS.11.1"],
+      "sourceIds": ["biblical-internal-text"],
+      "reviewStatus": "VERIFIED"
+    },
+    {
+      "sourceVerseId": "MATT.2.18",
+      "targetVerseId": "JER.31.15",
+      "relationType": "DIRECT_QUOTE",
+      "reason": "라마에서 들린 라헬의 통곡을 노래한 예레미야 31:15을 인용해 베들레헴 영아 학살의 비극과 그 너머의 회복 소망(렘 31장)을 연결합니다.",
+      "evidenceVerseIds": ["MATT.2.16-18", "JER.31.15"],
+      "sourceIds": ["biblical-internal-text"],
+      "reviewStatus": "VERIFIED"
+    },
+    {
+      "sourceVerseId": "JOHN.1.1",
+      "targetVerseId": "GEN.1.1",
+      "relationType": "THEME",
+      "reason": "창세기 1:1과 동일하게 '태초에'로 시작하여 천지 창조 이전부터 말씀(로고스)이 하나님과 함께 계셨고 곧 하나님이셨음을 선포합니다.",
+      "evidenceVerseIds": ["JOHN.1.1-3", "GEN.1.1"],
+      "sourceIds": ["biblical-internal-text"],
+      "reviewStatus": "VERIFIED"
+    },
+    {
+      "sourceVerseId": "JOHN.1.14",
+      "targetVerseId": "EXOD.25.8",
+      "relationType": "THEME",
+      "reason": "말씀이 육신이 되어 '우리 가운데 거하시매(장막을 치시매)' 영광을 본다는 표현은 광야 백성 가운데 성막을 세워 거하시던 하나님의 임재와 연결됩니다.",
+      "evidenceVerseIds": ["JOHN.1.14", "EXOD.25.8", "EXOD.40.34"],
+      "sourceIds": ["biblical-internal-text", "standard-biblical-intro"],
+      "reviewStatus": "VERIFIED"
+    },
+    {
+      "sourceVerseId": "JOHN.1.23",
+      "targetVerseId": "ISA.40.3",
+      "relationType": "DIRECT_QUOTE",
+      "reason": "세례 요한이 자신의 정체를 묻는 예루살렘 파견단에게 이사야 40:3('주의 길을 곧게 하라')을 직접 인용하여 선구자 사명을 증언합니다.",
+      "evidenceVerseIds": ["JOHN.1.22-23", "ISA.40.3"],
+      "sourceIds": ["biblical-internal-text"],
+      "reviewStatus": "VERIFIED"
+    },
+    {
+      "sourceVerseId": "JOHN.1.29",
+      "targetVerseId": "ISA.53.7",
+      "relationType": "PROPHECY_FULFILLMENT",
+      "reason": "'세상 죄를 지고 가는 하나님의 어린 양' 선포는 우리의 죄악을 담당하고 도수장으로 끌려가는 어린 양(사 53:6–7) 및 유월절 어린 양 전승을 집약합니다.",
+      "evidenceVerseIds": ["JOHN.1.29", "ISA.53.6-7", "EXOD.12.5-7"],
+      "sourceIds": ["biblical-internal-text"],
+      "reviewStatus": "VERIFIED"
+    },
+    {
+      "sourceVerseId": "JOHN.3.14",
+      "targetVerseId": "NUM.21.8-9",
+      "relationType": "PERSON_EVENT",
+      "reason": "니고데모와의 대화에서 모세가 광야 장대 위에 놋뱀을 든 민수기 21장 사건을 직접 언급하여 인자의 십자가 들림을 설명하십니다.",
+      "evidenceVerseIds": ["JOHN.3.14-15", "NUM.21.8-9"],
+      "sourceIds": ["biblical-internal-text"],
+      "reviewStatus": "VERIFIED"
+    },
+    {
+      "sourceVerseId": "JOHN.3.16",
+      "targetVerseId": "ROM.5.8",
+      "relationType": "THEME",
+      "reason": "하나님이 세상을 사랑하사 독생자를 내어주신 사랑이 우리가 아직 죄인 되었을 때 그리스도께서 죽으심으로 확증되었음을 함께 증언합니다.",
+      "evidenceVerseIds": ["JOHN.3.16", "ROM.5.8"],
+      "sourceIds": ["biblical-internal-text", "tsk-public-domain"],
+      "reviewStatus": "VERIFIED"
+    },
+    {
+      "sourceVerseId": "JOHN.3.16",
+      "targetVerseId": "1JOHN.4.9-10",
+      "relationType": "CONTEXT",
+      "reason": "같은 요한 문헌 안에서 하나님이 독생자를 세상에 보내사 그로 말미암아 우리를 살리려 하심으로 하나님의 사랑이 나타났음을 거듭 확증합니다.",
+      "evidenceVerseIds": ["JOHN.3.16", "1JOHN.4.9-10"],
+      "sourceIds": ["biblical-internal-text"],
+      "reviewStatus": "VERIFIED"
+    },
+    {
+      "sourceVerseId": "ACTS.8.32",
+      "targetVerseId": "ISA.53.7-8",
+      "relationType": "DIRECT_QUOTE",
+      "reason": "에디오피아 내시가 수레 위에서 소리 내어 읽고 있던 구약 성경 구절이 바로 이사야 53:7–8임을 누가가 원문 그대로 인용해 밝힙니다.",
+      "evidenceVerseIds": ["ACTS.8.32-33", "ISA.53.7-8"],
+      "sourceIds": ["biblical-internal-text"],
+      "reviewStatus": "VERIFIED"
+    },
+    {
+      "sourceVerseId": "ACTS.16.31",
+      "targetVerseId": "ROM.10.9",
+      "relationType": "THEME",
+      "reason": "빌립보 간수에게 전한 '주 예수를 믿으라 그리하면 구원을 받으리라'는 복음 핵심이 로마서 10:9에서 입으로 예수를 주로 시인하고 믿어 구원에 이르는 원리로 정식화됩니다.",
+      "evidenceVerseIds": ["ACTS.16.30-31", "ROM.10.9"],
+      "sourceIds": ["biblical-internal-text", "tsk-public-domain"],
+      "reviewStatus": "VERIFIED"
+    },
+    {
+      "sourceVerseId": "ROM.8.32",
+      "targetVerseId": "GEN.22.12",
+      "relationType": "THEME",
+      "reason": "'자기 아들을 아끼지 아니하시고'라는 표현은 모리아산에서 독자 이삭을 아끼지 아니한 아브라함 기사(창 22:12, 16 칠십인역 어휘와 일치)를 연상시키며 하나님의 더 크신 사랑을 드러냅니다.",
+      "evidenceVerseIds": ["ROM.8.32", "GEN.22.12", "GEN.22.16"],
+      "sourceIds": ["biblical-internal-text", "standard-biblical-intro"],
+      "reviewStatus": "VERIFIED"
+    }
+  ],
+  "passageContexts": [
+    {
+      "passageId": "MATT.4.1-11",
+      "title": "예수님의 광야 사십 일 금식과 세 가지 시험 승리",
+      "summary": "세례 직후 성령에게 이끌려 광야로 가신 예수님께서 마귀의 세 가지 시험을 모두 신명기 말씀으로 물리치심으로 참된 하나님의 아들의 순종을 보이십니다.",
+      "statedFacts": "요단강 세례와 하늘 음성('내 사랑하는 아들', 3:17) 직후 예수님은 성령에게 이끌려 광야에서 사십 일 밤낮을 금식하셨고, 마귀가 떡·성전 꼭대기 투신·천하 만국 경배로 세 번 시험하자 세 번 모두 신명기(8:3, 6:16, 6:13) 구절을 인용해 물리치셨습니다.",
+      "speaker": "시험하는 자 마귀와 예수님 (대화 및 성경 인용)",
+      "audience": "광야 시험 현장의 당사자 및 복음서 독자",
+      "historicalSituation": "공생애 갈릴리 사역 개시(4:12) 직전 유대 광야를 배경으로 합니다.",
+      "flow": "요단강 세례와 하나님의 아들 선언(3:13–17) → 광야에서 하나님의 아들로서의 순종 검증과 승리(4:1–11) → 갈릴리 천국 복음 전파 시작(4:12–17).",
+      "interpretations": "출애굽한 이스라엘이 광야 40년 동안 주림·맛사 시험·우상 숭배에 넘어졌던 자리(신 6–8장)에서, 예수님은 하나님의 말씀에 온전히 순종하는 참된 아들로 승리하십니다.",
+      "expressions": [
+        {
+          "term": "네가 만일 하나님의 아들이어든",
+          "verse": 3,
+          "meaning": "바로 앞 장 세례 때 들린 하늘 음성('이는 내 사랑하는 아들이요', 3:17)을 겨냥해, 십자가와 순종의 길 대신 자기 과시와 편의를 위해 권능을 쓰도록 부추기는 유혹입니다.",
+          "basisType": "STATED_FACT"
+        },
+        {
+          "term": "기록되었으되",
+          "verse": 4,
+          "meaning": "헬라어 완료 수동태('게그랍타이')로, 과거에 기록되어 지금도 변함없는 권위를 지닌 성경 말씀을 근거로 삼는 정형구입니다.",
+          "basisType": "SCHOLARLY_INTERPRETATION"
+        }
+      ],
+      "evidenceVerseIds": ["MATT.3.17", "MATT.4.1-11", "DEUT.8.3", "DEUT.6.13", "DEUT.6.16"],
+      "sourceIds": ["biblical-internal-text", "standard-biblical-intro"],
+      "reviewStatus": "VERIFIED"
+    },
+    {
+      "passageId": "JOHN.3.1-21",
+      "title": "니고데모와의 밤중 대화: 거듭남과 하나님의 사랑",
+      "summary": "바리새인이자 유대인의 지도자인 니고데모에게 예수님은 물과 성령으로 거듭나야 하나님 나라에 들어감을 가르치시고, 독생자를 주신 하나님의 사랑과 십자가 구원을 선포하십니다.",
+      "statedFacts": "유대인의 지도자 니고데모가 밤에 예수께 찾아와 하나님께로부터 오신 선생이라 인정하자(1–2절), 예수님은 거듭나지 아니하면 하나님 나라를 볼 수 없다 하시고(3–8절), 광야의 뱀처럼 인자가 들려야 함과 독생자를 주신 영생의 복음을 설명하십니다(14–21절).",
+      "speaker": "니고데모와 예수님 (후반부 16–21절에 대한 화자 구분 논의 포함)",
+      "audience": "일차 청자 니고데모 및 복음서 독자",
+      "historicalSituation": "첫 유월절 예루살렘 방문 시기(요 2:13, 2:23), 산헤드린 공회원('유대인의 지도자')이었던 니고데모가 밤에 개인적으로 방문한 정황입니다.",
+      "flow": "표적을 보고 밤에 찾아온 니고데모와 거듭남 문답(3:1–13) → 광야 놋뱀 비유와 독생자를 통한 구원 선포(3:14–17) → 빛으로 오신 이에 대한 믿음과 심판(3:18–21).",
+      "divergentViews": "요한복음 3:16–21이 예수님의 직접 말씀의 연장인지, 아니면 복음서 저자가 예수님의 말씀을 바탕으로 이어 쓴 신학적 해설인지에 대해서는 고대 사본에 따옴표 부호가 없었기 때문에 주석가들 사이에 두 견해가 공존합니다.",
+      "expressions": [
+        {
+          "term": "거듭나지 아니하면",
+          "verse": 3,
+          "meaning": "원어 '아노텐'은 '다시(again)'와 '위로부터(from above)'라는 중의적 의미를 지녀, 니고데모는 육체적 재출생으로 오해했으나 예수님은 성령을 통한 위로부터의 새 출생을 가리키십니다.",
+          "basisType": "SCHOLARLY_INTERPRETATION"
+        },
+        {
+          "term": "독생자",
+          "verse": 16,
+          "meaning": "개역개정의 '독생자'와 NIV의 'his one and only Son'에 해당하는 원어 '모노게네스'는 유일무이하고 가장 사랑받는 아들이라는 뜻을 담고 있습니다.",
+          "basisType": "SCHOLARLY_INTERPRETATION"
+        }
+      ],
+      "evidenceVerseIds": ["JOHN.2.23", "JOHN.3.1-21", "NUM.21.8-9"],
+      "sourceIds": ["biblical-internal-text", "standard-biblical-intro"],
+      "reviewStatus": "VERIFIED"
+    },
+    {
+      "passageId": "ROM.8.28-39",
+      "title": "성도의 구원 확신과 끊을 수 없는 하나님의 사랑 찬가",
+      "summary": "하나님을 사랑하는 자들에게 모든 것이 합력하여 선을 이루며, 자기 아들을 내주신 하나님의 사랑에서 그 어떤 피조물도 우리를 끊을 수 없음을 선포합니다.",
+      "statedFacts": "바울은 현재의 고난과 성령의 탄식(18–27절)에 이어 미리 아시고 부르시고 의롭다 하시고 영화롭게 하시는 하나님의 구원 사슬을 제시하고(28–30절), 일련의 수사적 질문을 통해 그리스도 예수 안에 있는 하나님의 사랑의 확고함을 선포합니다(31–39절).",
+      "speaker": "사도 바울",
+      "audience": "로마에 있는 성도들 (롬 1:7)",
+      "historicalSituation": "제3차 선교 여행 말기(약 AD 57년경 고린도 체류기 추정), 고난과 박해 가능성 앞에 놓인 로마 교회 성도들을 격려하는 로마서 전반부 교리 본론(1–8장)의 절정 단락입니다.",
+      "flow": "현재의 고난과 성령의 도우심(8:18–27) → 합력하여 선을 이루시는 구원의 경륜(8:28–30) → 누구도 정죄하거나 끊을 수 없는 그리스도의 사랑(8:31–39).",
+      "evidenceVerseIds": ["ROM.1.7", "ROM.8.18-39"],
+      "sourceIds": ["biblical-internal-text", "standard-biblical-intro"],
+      "reviewStatus": "VERIFIED"
+    }
+  ],
+  "translationNotes": [
+    {
+      "verseId": "MATT.4.4",
+      "krPhrase": "사람이 떡으로만 살 것이 아니요",
+      "enPhrase": "Man does not live on bread alone",
+      "explanation": "주식 문화를 반영해 원어 '아르토스(빵)'를 개역개정은 한국인에게 익숙한 '떡'으로, NIV는 'bread'로 번역했으며 두 표현 모두 인간의 일용할 양식 전반을 뜻합니다.",
+      "sourceIds": ["biblical-internal-text"],
+      "reviewStatus": "VERIFIED"
+    },
+    {
+      "verseId": "JOHN.3.16",
+      "krPhrase": "독생자를 주셨으니",
+      "enPhrase": "that he gave his one and only Son",
+      "explanation": "개역개정은 전통 한자어 '독생자(홀로 나신 아들)'를 유지했고, NIV는 원어 '모노게네스'의 '유일무이한 아들'이라는 뉘앙스를 살려 'his one and only Son'으로 번역했습니다.",
+      "sourceIds": ["biblical-internal-text", "standard-biblical-intro"],
+      "reviewStatus": "VERIFIED"
+    },
+    {
+      "verseId": "ROM.8.28",
+      "krPhrase": "모든 것이 합력하여 선을 이루느니라",
+      "enPhrase": "in all things God works for the good of those who love him",
+      "explanation": "고대 헬라어 사본 차이와 문법 해석에 따라 개역개정은 '모든 것이(주어) 합력하여 선을 이룬다'로 옮겼고, NIV는 '하나님께서(주어) 모든 일 안에서 사랑하는 자들의 선을 위해 일하신다'로 능동 주체를 명시해 번역했습니다.",
+      "sourceIds": ["biblical-internal-text", "standard-biblical-intro"],
+      "reviewStatus": "VERIFIED"
+    }
+  ]
+}
