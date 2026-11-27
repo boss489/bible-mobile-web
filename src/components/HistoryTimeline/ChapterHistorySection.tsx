@@ -52,11 +52,16 @@ export function ChapterHistorySection({
   );
 
   const contextPeopleAndEvents = useMemo(() => {
-    const allIds = [...context.primaryItemIds, ...(context.relatedItemIds ?? [])];
+    const primaryAndContempIds = [
+      ...context.primaryItemIds,
+      ...(context.contemporaryItemIds ?? []),
+    ];
     const seen = new Set<string>();
     const people: TimelineItem[] = [];
+    const relatedPeople: TimelineItem[] = [];
     const events: TimelineItem[] = [];
-    for (const id of allIds) {
+
+    for (const id of primaryAndContempIds) {
       if (seen.has(id)) continue;
       seen.add(id);
       const it = itemsById.get(id);
@@ -64,7 +69,17 @@ export function ChapterHistorySection({
       if (it.category === 'event') events.push(it);
       else if (it.category !== 'polity') people.push(it);
     }
-    return { people, events };
+
+    for (const id of context.relatedItemIds ?? []) {
+      if (seen.has(id)) continue;
+      seen.add(id);
+      const it = itemsById.get(id);
+      if (!it) continue;
+      if (it.category === 'event') events.push(it);
+      else if (it.category !== 'polity') relatedPeople.push(it);
+    }
+
+    return { people, relatedPeople, events };
   }, [context, itemsById]);
 
   const previewItem = previewItemId ? itemsById.get(previewItemId) ?? null : null;
@@ -160,7 +175,7 @@ export function ChapterHistorySection({
             </p>
           ) : null}
 
-          {/* 3. 동시대 인물 및 관련 사건 칩 (탭하면 인라인 요약 + 다른 말씀 이동 표시) */}
+          {/* 3. 동시대 인물 · 연관 인물 · 관련 사건 칩 (탭하면 인라인 요약 + 다른 말씀 이동 표시) */}
           {contextPeopleAndEvents.people.length > 0 ? (
             <div className="timeline-chip-line">
               <span className="timeline-chip-line-title">동시대 인물:</span>
@@ -175,6 +190,25 @@ export function ChapterHistorySection({
                   onClick={() => handleToggleChip(p.id)}
                 >
                   {p.nameKo}
+                </button>
+              ))}
+            </div>
+          ) : null}
+
+          {contextPeopleAndEvents.relatedPeople.length > 0 ? (
+            <div className="timeline-chip-line">
+              <span className="timeline-chip-line-title">계보·연관 인물:</span>
+              {contextPeopleAndEvents.relatedPeople.map((rp) => (
+                <button
+                  key={rp.id}
+                  type="button"
+                  aria-pressed={previewItemId === rp.id}
+                  className={`evidence-chip-btn ${
+                    previewItemId === rp.id ? 'timeline-chip-selected' : ''
+                  }`}
+                  onClick={() => handleToggleChip(rp.id)}
+                >
+                  {rp.nameKo}
                 </button>
               ))}
             </div>
@@ -219,6 +253,9 @@ export function ChapterHistorySection({
                 </button>
               </div>
               <p className="chapter-history-quick-summary">{previewItem.summaryKo}</p>
+              {previewItem.dateHypothesesKo ? (
+                <p className="timeline-embedded-note">{previewItem.dateHypothesesKo}</p>
+              ) : null}
 
               {previewItem.passages.length > 0 ? (
                 <div className="chapter-history-quick-passages">

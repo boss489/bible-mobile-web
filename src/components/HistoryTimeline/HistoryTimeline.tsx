@@ -18,9 +18,11 @@ import {
   historicalSpanYears,
   packTimelineTracks,
   PERIOD_KIND_LABELS_KO,
+  PERIOD_SCALE_LABELS_KO,
   RECORD_TYPE_LABELS_KO,
   relativeOrderToSegment,
   resolveContemporaryItems,
+  resolveRelatedPeopleItems,
   TIMELINE_ZOOM_PRESETS,
   yearToX,
 } from '../../services/historyDataService';
@@ -350,7 +352,18 @@ export function HistoryTimeline({
     const targetZoom = TIMELINE_ZOOM_PRESETS[nextIdx] ?? zoom;
 
     let centerX = targetZoom.primevalWidthPx / 2;
-    if (era.datePrecision !== 'undetermined' && era.startYear !== null && era.endYear !== null) {
+    if (era.datePrecision === 'undetermined' && era.relativeRange) {
+      const seg = relativeOrderToSegment(
+        era.relativeRange[0],
+        era.relativeRange[1] - era.relativeRange[0] + 1,
+        targetZoom,
+      );
+      centerX = seg.x + seg.width / 2;
+    } else if (
+      era.datePrecision !== 'undetermined' &&
+      era.startYear !== null &&
+      era.endYear !== null
+    ) {
       const sx = yearToX(era.startYear, targetZoom);
       const ex = yearToX(era.endYear, targetZoom);
       centerX = (sx + ex) / 2;
@@ -476,7 +489,11 @@ export function HistoryTimeline({
     [anchorMapping],
   );
   const relatedHighlightIds = useMemo(
-    () => new Set<string>(anchorMapping?.relatedItemIds ?? []),
+    () =>
+      new Set<string>([
+        ...(anchorMapping?.contemporaryItemIds ?? []),
+        ...(anchorMapping?.relatedItemIds ?? []),
+      ]),
     [anchorMapping],
   );
 
@@ -492,6 +509,11 @@ export function HistoryTimeline({
     if (!selectedItem) return [];
     return resolveContemporaryItems(dataset, selectedItem, 8);
   }, [dataset, selectedItem]);
+
+  const relatedPeopleForSelected = useMemo(() => {
+    if (!selectedItem) return [];
+    return resolveRelatedPeopleItems(dataset, selectedItem, contemporaries);
+  }, [dataset, selectedItem, contemporaries]);
 
   const relatedEventsForSelected = useMemo(() => {
     if (!selectedItem) return [];
@@ -575,7 +597,7 @@ export function HistoryTimeline({
 
           <div className="timeline-scale-meta-row">
             <span className="timeline-scale-short">
-              요약 이동 바 · 아래 시간축은 연도 비례 (원역사 상대 순서 · 0년 없음)
+              왕정 이전은 본문 상대 순서 · 통일왕국 이후는 연도 비례 (0년 없음)
             </span>
             <button
               type="button"
@@ -589,7 +611,7 @@ export function HistoryTimeline({
 
           {isScaleNoticeOpen ? (
             <p className="timeline-scale-notice">
-              상단 시대 빠른 이동 바는 탐색 편의를 위한 요약 배치이며, 아래 상세 시간축은 실제 연도 간격에 비례합니다(원역사는 상대적 순서 표시 · BC/AD 사이 0년 없음). {dataset.overviewNoticeKo}
+              상단 시대 빠른 이동 바는 탐색 편의를 위한 요약 배치입니다. 왕정 이전(원역사·족장·출애굽·정복·사사)은 개인의 절대 BC 연도를 특정할 수 없으므로 성경 본문의 상대 순서와 기록 연수를 표시하며, 통일왕국 이후 시간축은 실제 연도 간격에 비례합니다(BC/AD 사이 0년 없음). {dataset.overviewNoticeKo}
             </p>
           ) : null}
         </div>
@@ -662,26 +684,43 @@ export function HistoryTimeline({
                   viewBox={`0 0 ${canvasWidth} 54`}
                   aria-hidden="true"
                 >
-                  {/* 원역사(연대 미확정 상대 순서 구간) 배경 */}
-                  <rect
-                    x={4}
-                    y={4}
-                    width={zoom.primevalWidthPx - 8}
-                    height={20}
-                    rx={6}
-                    fill="#6c757d"
-                    opacity={0.9}
-                  />
-                  <text
-                    x={zoom.primevalWidthPx / 2}
-                    y={18}
-                    textAnchor="middle"
-                    fill="#ffffff"
-                    fontSize="11"
-                    fontWeight="700"
-                  >
-                    원역사 (연대 미확정 · 서사 순서)
-                  </text>
+                  {/* 왕정 이전(절대 연도 미확정 · 성경 본문 상대 순서 구간) 4개 시대 띠 */}
+                  {dataset.eras
+                    .filter((e) => e.datePrecision === 'undetermined' && e.relativeRange)
+                    .map((era) => {
+                      const [slotStart, slotEnd] = era.relativeRange!;
+                      const seg = relativeOrderToSegment(
+                        slotStart,
+                        slotEnd - slotStart + 1,
+                        zoom,
+                      );
+                      return (
+                        <g key={era.id}>
+                          <rect
+                            x={seg.x}
+                            y={4}
+                            width={seg.width}
+                            height={20}
+                            rx={5}
+                            fill={era.color}
+                            opacity={activeEraId === era.id ? 0.96 : 0.8}
+                          />
+                          {seg.width >= 44 ? (
+                            <text
+                              x={seg.x + seg.width / 2}
+                              y={18}
+                              textAnchor="middle"
+                              fill="#ffffff"
+                              fontSize="10.8"
+                              fontWeight="700"
+                            >
+                              {era.shortNameKo}
+                            </text>
+                          ) : null}
+                        </g>
+                      );
+                    })}
+
                   <text
                     x={zoom.primevalWidthPx / 2}
                     y={41}
@@ -690,10 +729,10 @@ export function HistoryTimeline({
                     fontSize="10.5"
                     fontWeight="700"
                   >
-                    순서 1 → 4 (연도 비부여)
+                    왕정 이전 · 성경 본문 상대 순서 (개인 BC 연도 비부여)
                   </text>
 
-                  {/* 원역사 / 비례 연도축 구분 파선 */}
+                  {/* 상대 순서 구간 / 비례 연도축 구분 파선 */}
                   <line
                     x1={zoom.primevalWidthPx + 12}
                     y1={4}
@@ -864,6 +903,7 @@ export function HistoryTimeline({
                       const baseColor = item.accentColor ?? track.defaultColor;
                       const topPx = TRACK_PAD_Y_PX + packed.subLane * SUB_LANE_HEIGHT_PX;
                       const isEvent = item.category === 'event';
+                      const isWindow = item.periodScale === 'uncertainty_window';
                       const isUncertain =
                         item.datePrecision === 'estimated' || item.datePrecision === 'range';
                       const isExternal = item.recordType === 'external_history';
@@ -893,9 +933,9 @@ export function HistoryTimeline({
                           <span
                             className={`timeline-bar-shape ${
                               isEvent ? 'timeline-bar-event' : ''
-                            } ${isUncertain ? 'timeline-bar-uncertain' : ''} ${
-                              isExternal ? 'timeline-bar-external' : ''
-                            }`}
+                            } ${isWindow ? 'timeline-bar-window' : ''} ${
+                              isUncertain ? 'timeline-bar-uncertain' : ''
+                            } ${isExternal ? 'timeline-bar-external' : ''}`}
                             style={{
                               width: `${packed.barWidth}px`,
                               backgroundColor: isSelected
@@ -1090,6 +1130,12 @@ export function HistoryTimeline({
                     <span className="comm-tag comm-tag-neutral">
                       {DATE_PRECISION_LABELS_KO[selectedItem.datePrecision]}
                     </span>
+                    {selectedItem.periodScale &&
+                    selectedItem.periodScale !== 'actual_duration' ? (
+                      <span className="comm-tag comm-tag-neutral">
+                        {PERIOD_SCALE_LABELS_KO[selectedItem.periodScale]}
+                      </span>
+                    ) : null}
                     <span
                       className={`comm-tag ${
                         selectedItem.recordType === 'external_history'
@@ -1132,6 +1178,13 @@ export function HistoryTimeline({
 
                 <p className="comm-body-text">{selectedItem.summaryKo}</p>
 
+                {selectedItem.dateHypothesesKo ? (
+                  <div className="comm-card comm-card-views timeline-sub-alert">
+                    <span className="comm-tag comm-tag-views">절대 연대 가설 · 시기 안내</span>
+                    <p className="comm-body-text">{selectedItem.dateHypothesesKo}</p>
+                  </div>
+                ) : null}
+
                 {selectedItem.divergentViewsKo ? (
                   <div className="comm-card comm-card-views timeline-sub-alert">
                     <span className="comm-tag comm-tag-views">연대·학설 견해 안내</span>
@@ -1151,6 +1204,24 @@ export function HistoryTimeline({
                     <h4 className="timeline-sub-title">동시대 인물</h4>
                     <div className="timeline-chip-wrap">
                       {contemporaries.map((person) => (
+                        <button
+                          key={person.id}
+                          type="button"
+                          className="evidence-chip-btn"
+                          onClick={() => handleSelectItem(person, true)}
+                        >
+                          {person.nameKo}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                ) : null}
+
+                {relatedPeopleForSelected.length > 0 ? (
+                  <div className="timeline-related-block">
+                    <h4 className="timeline-sub-title">계보 · 시대 연관 인물 (동시대 단정 아님)</h4>
+                    <div className="timeline-chip-wrap">
+                      {relatedPeopleForSelected.map((person) => (
                         <button
                           key={person.id}
                           type="button"

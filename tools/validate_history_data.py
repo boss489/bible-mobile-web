@@ -2,16 +2,16 @@
 """
 통합 성경 역사 연대표(시대 · 왕국/제국 · 왕/통치자 · 선지자/사사/제사장 · 사도/인물 · 사건 · 장절 배경 매핑) 검증 및 빌드 도구.
 
-핵심 검증 원칙 (docs/bible-history-ui/REQUIREMENTS.md §6 준수):
+핵심 검증 원칙 (REQUIREMENTS.md §6, TIMELINE_ACCURACY_REVIEW.md, history-timeline-audit-and-improvement.md 종합):
 1. 모든 구절 ID(verseId)는 실제 66권 1,189장 성경 manifest 범위 내에 실재해야 한다.
 2. BC/AD 사이에 역사적 0년이 없으므로 0년(year == 0) 표기를 즉시 차단한다.
-3. 원역사(primeval) 등 연대 미확정(undetermined) 항목에는 임의의 BC 연도 숫자를 부여하지 못하고
-   상대적 순서(relativeOrder)로만 표현해야 한다.
-4. 날짜 성격(periodKind: 통치/활동/생존/사건/본문 사건/작성 시기)과 정확도(datePrecision: 확정/추정/범위/미확정)를 필수 구분한다.
-5. 신구약 중간기 외부 역사(external_history)와 성경 본문 기록(biblical_record)을 구분하며,
-   관련 본문이 없는 외부 역사에 억지 구절 연결을 강제하지 않는다.
-6. 서신서 배경(epistle_background) 항목은 작성 시기(composition_time)와 관련 사건(relatedItemIds / secondaryPeriods)을 구분해야 한다.
-7. 모든 sourceIds가 content/sources.json 에 등록되어 있는지 검증한다.
+3. 원역사(primeval) 및 왕정 수립 이전 상대 순서 구간(patriarchs, exodus, conquest_judges 단독 소속 항목)에는
+   확정할 수 없는 임의의 개인 BC 연도 막대를 부여하지 않고 상대적 순서(relativeOrder)로 표현한다.
+4. 기간의 성격(periodKind)과 수치 척도 의미(periodScale: actual_duration / point_or_brief /
+   uncertainty_window / relative_sequence)를 엄격히 분리하여, 발생 가능 연대 범위가 개인의 실제 활동 기간이나
+   사건 지속 기간처럼 오인되지 않도록 검증한다.
+5. 개인의 실제 활동(ministry <= 80년)·생애(lifespan <= 185년)·통치(reign <= 70년) 및 단기 사건(point_or_brief <= 3년)의
+   비정상 기간 초과, '722–722' 같은 중복 연도 표기, 시대(era) 경계 중첩, 아브라함-요셉 동시대 오분류 등을 빌드 시 차단한다.
 """
 
 from __future__ import annotations
@@ -19,6 +19,7 @@ from __future__ import annotations
 import argparse
 import json
 import pathlib
+import re
 import sys
 
 SCRIPT_DIR = pathlib.Path(__file__).resolve().parent
@@ -47,6 +48,8 @@ REQUIRED_ERA_IDS = [
     "early_church",
 ]
 
+PRE_MONARCHIC_ERAS = {"primeval", "patriarchs", "exodus", "conquest_judges"}
+
 ALLOWED_CATEGORIES = {
     "polity",
     "ruler",
@@ -65,6 +68,13 @@ ALLOWED_PERIOD_KINDS = {
     "composition_time",
 }
 
+ALLOWED_PERIOD_SCALES = {
+    "actual_duration",
+    "point_or_brief",
+    "uncertainty_window",
+    "relative_sequence",
+}
+
 ALLOWED_DATE_PRECISIONS = {
     "confirmed",
     "estimated",
@@ -77,6 +87,29 @@ ALLOWED_RECORD_TYPES = {
     "external_history",
     "epistle_background",
 }
+
+DUPLICATE_YEAR_RANGE_RE = re.compile(r"(?:BC|AD)?\s*(\d+)\s*[–-]\s*(?:BC|AD)?\s*\1(?:\s*년|\b)")
+
+
+def _year_to_continuous(year: int) -> int:
+    if year == 0:
+        raise ValueError("역사적 연대에 0년(Year 0)은 존재하지 않습니다.")
+    return year + 1 if year < 0 else year
+
+
+def _historical_span_years(start_year: int, end_year: int) -> int:
+    return max(1, _year_to_continuous(end_year) + 1 - _year_to_continuous(start_year))
+
+
+def _validate_display_period_format(display_ko: str, precision: str, ctx: str) -> None:
+    if DUPLICATE_YEAR_RANGE_RE.search(display_ko):
+        raise ValueError(
+            f"[{ctx}] 동일 연도가 중복된 범위 표기는 허용되지 않습니다: {display_ko!r}"
+        )
+    if precision == "confirmed" and display_ko.startswith("약 "):
+        raise ValueError(
+            f"[{ctx}] 확정 연대(confirmed)에는 '약 ' 접두사를 사용할 수 없습니다: {display_ko!r}"
+        )
 
 
 def _validate_year_pair(
@@ -96,6 +129,15 @@ def _validate_year_pair(
             raise ValueError(f"[{ctx}] 원역사(primeval) 항목의 datePrecision은 'undetermined'여야 합니다.")
         return
 
+    # 왕정 이전 시대(족장·출애굽·정복·사사)에만 속하는 항목에 확정할 수 없는 단일 BC 연도 막대 부여 차단
+    if set(era_ids).issubset(PRE_MONARCHIC_ERAS):
+        if start_year is not None or end_year is not None or precision != "undetermined":
+            raise ValueError(
+                f"[{ctx}] 왕정 이전 시대({era_ids}) 단독 소속 항목은 임의의 BC 연도 막대 대신 "
+                f"상대 순서(datePrecision='undetermined')로 표시해야 합니다."
+            )
+        return
+
     if precision == "undetermined":
         if start_year is not None or end_year is not None:
             raise ValueError(f"[{ctx}] undetermined 항목은 숫자 연도가 null이어야 합니다.")
@@ -107,6 +149,54 @@ def _validate_year_pair(
         raise ValueError(f"[{ctx}] startYear({start_year})가 endYear({end_year})보다 클 수 없습니다.")
     if start_year < -2500 or end_year > 120:
         raise ValueError(f"[{ctx}] 허용 시간축 범위를 벗어난 연도입니다: {start_year}..{end_year}")
+
+
+def _validate_duration_semantics(
+    category: str,
+    period_kind: str,
+    period_scale: str,
+    precision: str,
+    start_year: int | None,
+    end_year: int | None,
+    ctx: str,
+) -> None:
+    if precision == "undetermined":
+        if period_scale != "relative_sequence":
+            raise ValueError(
+                f"[{ctx}] undetermined 항목의 periodScale은 'relative_sequence'여야 합니다: {period_scale!r}"
+            )
+        return
+
+    assert start_year is not None and end_year is not None
+    span = _historical_span_years(start_year, end_year)
+
+    if period_scale == "relative_sequence":
+        raise ValueError(f"[{ctx}] 수치 연도가 있는 항목은 relative_sequence를 사용할 수 없습니다.")
+
+    if period_scale == "point_or_brief" and span > 3:
+        raise ValueError(
+            f"[{ctx}] 단회·단기 사건(point_or_brief)의 연도 폭({span}년)이 너무 깁니다."
+        )
+
+    if period_scale == "actual_duration" and category != "polity":
+        if period_kind == "ministry" and span > 80:
+            raise ValueError(
+                f"[{ctx}] 개인 활동·사역 기간(actual_duration)이 비정상적으로 깁니다({span}년). "
+                f"학설 간 불확실성 범위와 실제 활동 기간을 혼동하지 마세요."
+            )
+        if period_kind == "lifespan" and span > 185:
+            raise ValueError(
+                f"[{ctx}] 개인 생존 기간(lifespan)이 허용 범위를 초과합니다({span}년)."
+            )
+        if period_kind == "reign" and span > 70:
+            raise ValueError(
+                f"[{ctx}] 통치·재위 기간(reign)이 비정상적으로 깁니다({span}년)."
+            )
+        if period_kind == "event" and span > 15:
+            raise ValueError(
+                f"[{ctx}] 실제 지속 사건(event)의 기간이 비정상적으로 깁니다({span}년). "
+                f"발생 가능 범위라면 uncertainty_window를 사용하세요."
+            )
 
 
 def _validate_passage_link(
@@ -171,12 +261,13 @@ def validate_and_compile_history_data(
             if not (era.get(req_str) or "").strip():
                 raise ValueError(f"[{e_ctx}] 필수 문자열 누락: {req_str}")
 
+        _validate_display_period_format(era["displayPeriodKo"].strip(), precision, e_ctx)
+
         s_ids = era.get("sourceIds") or []
         if not s_ids or any(sid not in valid_source_ids for sid in s_ids):
             raise ValueError(f"[{e_ctx}] 유효하지 않은 sourceIds: {s_ids}")
 
         key_passages_raw = era.get("keyPassages") or []
-        # 중간기는 정경 66권 직접 서술 시대가 아니므로 keyPassages 빈 배열 허용, 나머지 시대는 최소 1개 이상 필수
         if era_id != "intertestamental" and not key_passages_raw:
             raise ValueError(f"[{e_ctx}] 시대별 주요 말씀(keyPassages) 최소 1개 필요")
 
@@ -199,6 +290,9 @@ def validate_and_compile_history_data(
             "keyPassages": compiled_kp,
             "sourceIds": s_ids,
         }
+        if precision == "undetermined" and not era.get("relativeRange"):
+            raise ValueError(f"[{e_ctx}] undetermined 시대는 relativeRange([startSlot, endSlot])가 필요합니다.")
+
         if era.get("relativeRange"):
             rr = era["relativeRange"]
             if (
@@ -218,6 +312,17 @@ def validate_and_compile_history_data(
         raise ValueError(
             f"12개 필수 시대 순서·구성이 요구사항과 일치해야 합니다. 현재: {seen_era_ids}"
         )
+
+    # 수치 연대 시대 간 비정상 대규모 중첩 차단
+    numeric_eras = [e for e in compiled_eras if e["startYear"] is not None]
+    for i in range(1, len(numeric_eras)):
+        prev_e = numeric_eras[i - 1]
+        curr_e = numeric_eras[i]
+        if prev_e["endYear"] > curr_e["startYear"]:
+            raise ValueError(
+                f"시대 경계 중첩 오류: {prev_e['id']}({prev_e['startYear']}..{prev_e['endYear']})와 "
+                f"{curr_e['id']}({curr_e['startYear']}..{curr_e['endYear']})가 서로 겹칩니다."
+            )
 
     # 2. 인물·왕국·사건 항목(items) 검증
     items_raw = raw.get("items") or []
@@ -256,11 +361,26 @@ def validate_and_compile_history_data(
         if precision not in ALLOWED_DATE_PRECISIONS:
             raise ValueError(f"[{i_ctx}] 허용되지 않은 datePrecision: {precision!r}")
 
+        default_scale = "relative_sequence" if precision == "undetermined" else "actual_duration"
+        p_scale = item.get("periodScale") or default_scale
+        if p_scale not in ALLOWED_PERIOD_SCALES:
+            raise ValueError(f"[{i_ctx}] 허용되지 않은 periodScale: {p_scale!r}")
+
         _validate_year_pair(
             item.get("startYear"),
             item.get("endYear"),
             precision,
             era_ids,
+            i_ctx,
+        )
+
+        _validate_duration_semantics(
+            cat,
+            p_kind,
+            p_scale,
+            precision,
+            item.get("startYear"),
+            item.get("endYear"),
             i_ctx,
         )
 
@@ -272,6 +392,8 @@ def validate_and_compile_history_data(
         for req_str in ("nameKo", "roleLabelKo", "displayPeriodKo", "summaryKo"):
             if not (item.get(req_str) or "").strip():
                 raise ValueError(f"[{i_ctx}] 필수 문자열 누락: {req_str}")
+
+        _validate_display_period_format(item["displayPeriodKo"].strip(), precision, i_ctx)
 
         s_ids = item.get("sourceIds") or []
         if not s_ids or any(sid not in valid_source_ids for sid in s_ids):
@@ -319,6 +441,7 @@ def validate_and_compile_history_data(
             "eraIds": era_ids,
             "recordType": rec_type,
             "periodKind": p_kind,
+            "periodScale": p_scale,
             "datePrecision": precision,
             "displayPeriodKo": item["displayPeriodKo"].strip(),
             "startYear": item.get("startYear"),
@@ -335,10 +458,14 @@ def validate_and_compile_history_data(
             compiled_item["relativeSpan"] = int(item["relativeSpan"])
         if sec_periods:
             compiled_item["secondaryPeriods"] = sec_periods
+        if item.get("dateHypothesesKo"):
+            compiled_item["dateHypothesesKo"] = item["dateHypothesesKo"].strip()
         if item.get("divergentViewsKo"):
             compiled_item["divergentViewsKo"] = item["divergentViewsKo"].strip()
         if item.get("externalHistoryNoteKo"):
             compiled_item["externalHistoryNoteKo"] = item["externalHistoryNoteKo"].strip()
+        if item.get("contemporaryItemIds"):
+            compiled_item["contemporaryItemIds"] = list(dict.fromkeys(item["contemporaryItemIds"]))
         if item.get("relatedItemIds"):
             compiled_item["relatedItemIds"] = list(dict.fromkeys(item["relatedItemIds"]))
         if item.get("accentColor"):
@@ -346,13 +473,40 @@ def validate_and_compile_history_data(
 
         compiled_items.append(compiled_item)
 
-    # relatedItemIds 참조 무결성 검증
+    items_by_id = {ci["id"]: ci for ci in compiled_items}
+
+    # contemporaryItemIds & relatedItemIds 참조 무결성 및 세대 정합성 검증
     for ci in compiled_items:
+        for cid in ci.get("contemporaryItemIds", []):
+            if cid == ci["id"]:
+                raise ValueError(f"[item:{ci['id']}] 자기 자신을 contemporaryItemIds로 참조할 수 없습니다.")
+            if cid not in items_by_id:
+                raise ValueError(f"[item:{ci['id']}] 존재하지 않는 contemporaryItemIds 참조: {cid}")
+            target_cat = items_by_id[cid]["category"]
+            if target_cat in {"polity", "event"}:
+                raise ValueError(
+                    f"[item:{ci['id']}] 왕국·사건({cid})은 동시대 인물(contemporaryItemIds)이 될 수 없습니다."
+                )
         for rel_id in ci.get("relatedItemIds", []):
             if rel_id == ci["id"]:
                 raise ValueError(f"[item:{ci['id']}] 자기 자신을 relatedItemIds로 참조할 수 없습니다.")
-            if rel_id not in seen_item_ids:
+            if rel_id not in items_by_id:
                 raise ValueError(f"[item:{ci['id']}] 존재하지 않는 relatedItemIds 참조: {rel_id}")
+
+    # 핵심 회귀 가드: 아브라함과 요셉은 결코 동시대 인물로 묶이거나 상대 순서 슬롯이 겹쳐서는 안 됨
+    if "item-abraham" in items_by_id and "item-joseph" in items_by_id:
+        abr = items_by_id["item-abraham"]
+        jos = items_by_id["item-joseph"]
+        if "item-joseph" in abr.get("contemporaryItemIds", []) or "item-abraham" in jos.get(
+            "contemporaryItemIds", []
+        ):
+            raise ValueError("세대 정합성 오류: 아브라함과 요셉은 동시대 인물로 지정할 수 없습니다.")
+        if abr["datePrecision"] == "undetermined" and jos["datePrecision"] == "undetermined":
+            abr_end = abr["relativeOrder"] + abr.get("relativeSpan", 1)
+            if abr_end > jos["relativeOrder"]:
+                raise ValueError(
+                    f"세대 순서 오류: 아브라함 슬롯 끝({abr_end})이 요셉 시작({jos['relativeOrder']})과 겹칩니다."
+                )
 
     # 3. 본문 장·절 역사적 배경 매핑(chapterMappings) 검증
     mappings_raw = raw.get("chapterMappings") or []
@@ -428,9 +582,15 @@ def validate_and_compile_history_data(
             if not (mp.get(req_str) or "").strip():
                 raise ValueError(f"[{m_ctx}] 필수 문자열 누락: {req_str}")
 
+        _validate_display_period_format(mp["displayPeriodKo"].strip(), precision, m_ctx)
+
         primary_ids = mp.get("primaryItemIds") or []
         if not primary_ids or any(pid not in seen_item_ids for pid in primary_ids):
             raise ValueError(f"[{m_ctx}] 유효하지 않거나 비어 있는 primaryItemIds: {primary_ids}")
+
+        contemp_ids = mp.get("contemporaryItemIds") or []
+        if any(cid not in seen_item_ids for cid in contemp_ids):
+            raise ValueError(f"[{m_ctx}] 유효하지 않은 contemporaryItemIds: {contemp_ids}")
 
         rel_ids = mp.get("relatedItemIds") or []
         if any(rid not in seen_item_ids for rid in rel_ids):
@@ -460,6 +620,8 @@ def validate_and_compile_history_data(
             compiled_mp["verseEnd"] = v_end
         if mp.get("focusRelativeOrder") is not None:
             compiled_mp["focusRelativeOrder"] = int(mp["focusRelativeOrder"])
+        if contemp_ids:
+            compiled_mp["contemporaryItemIds"] = list(dict.fromkeys(contemp_ids))
         if rel_ids:
             compiled_mp["relatedItemIds"] = list(dict.fromkeys(rel_ids))
         if mp.get("writtenVsEventNoteKo"):

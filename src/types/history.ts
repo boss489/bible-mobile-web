@@ -36,6 +36,12 @@ export type DatePrecision =
   | 'range'
   | 'undetermined';
 
+export type PeriodScaleKind =
+  | 'actual_duration'
+  | 'point_or_brief'
+  | 'uncertainty_window'
+  | 'relative_sequence';
+
 export type HistoricalRecordType =
   | 'biblical_record'
   | 'external_history'
@@ -87,9 +93,12 @@ export interface TimelineItem {
   relativeOrder?: number;
   relativeSpan?: number;
   secondaryPeriods?: SecondaryPeriodNote[];
+  periodScale?: PeriodScaleKind;
+  dateHypothesesKo?: string;
   summaryKo: string;
   divergentViewsKo?: string;
   externalHistoryNoteKo?: string;
+  contemporaryItemIds?: string[];
   relatedItemIds?: string[];
   passages: HistoryPassageLink[];
   accentColor?: string;
@@ -114,6 +123,7 @@ export interface ChapterHistoryMapping {
   writtenVsEventNoteKo?: string;
   divergentViewsKo?: string;
   primaryItemIds: string[];
+  contemporaryItemIds?: string[];
   relatedItemIds?: string[];
   sourceIds: string[];
 }

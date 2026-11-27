@@ -103,6 +103,77 @@ class HistoryDataPipelineTest(unittest.TestCase):
                     pathlib.Path(tf.name), self.sources, self.max_verses
                 )
 
+    def test_enforces_chronological_accuracy_and_duration_semantics(self) -> None:
+        base_raw = json.loads(self.history_path.read_text(encoding="utf-8"))
+        compiled = validate_and_compile_history_data(
+            self.history_path, self.sources, self.max_verses
+        )
+        by_id = {it["id"]: it for it in compiled["items"]}
+
+        # 1) 아브라함과 요셉 동시대 분리 및 상대 슬롯 비겹침 검증
+        abr = by_id["item-abraham"]
+        jos = by_id["item-joseph"]
+        self.assertNotIn("item-joseph", abr.get("contemporaryItemIds", []))
+        self.assertNotIn("item-abraham", jos.get("contemporaryItemIds", []))
+        self.assertLessEqual(
+            abr["relativeOrder"] + abr.get("relativeSpan", 1),
+            jos["relativeOrder"],
+        )
+
+        # 2) 모세·아론·여호수아·출애굽·시내산이 250년짜리 가짜 BC 활동 막대로 표시되지 않음을 검증
+        for pre_id in ("item-moses", "item-aaron", "item-joshua", "item-exodus", "item-sinai"):
+            item = by_id[pre_id]
+            self.assertEqual(item["datePrecision"], "undetermined")
+            self.assertIsNone(item["startYear"])
+            self.assertIsNone(item["endYear"])
+            self.assertNotIn("1450–1200", item["displayPeriodKo"])
+
+        self.assertIn("40년", by_id["item-moses"]["displayPeriodKo"])
+        self.assertIn("110세", by_id["item-joshua"]["displayPeriodKo"])
+
+        # 3) 아브라함-요셉 억지 동시대 지정 시 검증기가 즉시 차단하는지 확인
+        bad_contemp = copy.deepcopy(base_raw)
+        for it in bad_contemp["items"]:
+            if it["id"] == "item-abraham":
+                it["contemporaryItemIds"] = ["item-isaac", "item-joseph"]
+                break
+        with tempfile.NamedTemporaryFile("w", suffix=".json", encoding="utf-8") as tf:
+            json.dump(bad_contemp, tf, ensure_ascii=False)
+            tf.flush()
+            with self.assertRaisesRegex(ValueError, "아브라함과 요셉"):
+                validate_and_compile_history_data(
+                    pathlib.Path(tf.name), self.sources, self.max_verses
+                )
+
+        # 4) 250년짜리 비정상 개인 사역 기간(actual_duration) 및 '722–722' 중복 연도 표기 차단 확인
+        bad_span = copy.deepcopy(base_raw)
+        for it in bad_span["items"]:
+            if it["id"] == "item-isaiah":
+                it["startYear"] = -950
+                it["endYear"] = -700
+                it["periodScale"] = "actual_duration"
+                break
+        with tempfile.NamedTemporaryFile("w", suffix=".json", encoding="utf-8") as tf:
+            json.dump(bad_span, tf, ensure_ascii=False)
+            tf.flush()
+            with self.assertRaisesRegex(ValueError, "비정상적으로 깁니다"):
+                validate_and_compile_history_data(
+                    pathlib.Path(tf.name), self.sources, self.max_verses
+                )
+
+        bad_dup_year = copy.deepcopy(base_raw)
+        for it in bad_dup_year["items"]:
+            if it["id"] == "item-samaria-fall":
+                it["displayPeriodKo"] = "약 BC 722–722년"
+                break
+        with tempfile.NamedTemporaryFile("w", suffix=".json", encoding="utf-8") as tf:
+            json.dump(bad_dup_year, tf, ensure_ascii=False)
+            tf.flush()
+            with self.assertRaisesRegex(ValueError, "중복된 범위"):
+                validate_and_compile_history_data(
+                    pathlib.Path(tf.name), self.sources, self.max_verses
+                )
+
 
 if __name__ == "__main__":
     unittest.main()

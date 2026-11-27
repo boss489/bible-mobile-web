@@ -10,6 +10,8 @@ import {
   findChapterHistoryContext,
   historicalSpanYears,
   packTimelineTracks,
+  resolveContemporaryItems,
+  resolveRelatedPeopleItems,
   TIMELINE_ZOOM_PRESETS,
   yearToContinuous,
 } from '../services/historyDataService';
@@ -342,7 +344,7 @@ describe('성경 앱 개편: 성경순 · 연대순 읽기 및 역사 연대표 
       'aria-expanded',
       'true',
     );
-    expect(screen.getByText(/탐색 편의를 위한 요약 배치이며/)).toBeInTheDocument();
+    expect(screen.getByText(/탐색 편의를 위한 요약 배치/)).toBeInTheDocument();
 
     // '⤢ 크게 보기' 클릭 시 전체화면 클래스 및 스크롤 잠금 적용 후 종료 시 복원
     const fullscreenBtn = screen.getByRole('button', { name: '⤢ 크게 보기' });
@@ -402,5 +404,77 @@ describe('성경 앱 개편: 성경순 · 연대순 읽기 및 역사 연대표 
     ).not.toBeInTheDocument();
     expect(document.body.style.position).toBe('');
     expect(screen.getByRole('heading', { name: '아모스 1장' })).toBeInTheDocument();
+  });
+
+  it('8. 연대기 정확성 회귀 검증: 아브라함-요셉 비동시대 분리, 모세·아론·여호수아·출애굽 기간 정합성, 장별 배경 정확성 보장', async () => {
+    const byId = new Map(REAL_HISTORY_DATASET.items.map((i) => [i.id, i]));
+    const abraham = byId.get('item-abraham')!;
+    const joseph = byId.get('item-joseph')!;
+    const moses = byId.get('item-moses')!;
+    const aaron = byId.get('item-aaron')!;
+    const joshua = byId.get('item-joshua')!;
+    const exodus = byId.get('item-exodus')!;
+    const sinai = byId.get('item-sinai')!;
+    const deborah = byId.get('item-deborah')!;
+    const samariaFall = byId.get('item-samaria-fall')!;
+    const jesus = byId.get('person-jesus')!;
+
+    // 1) 아브라함과 요셉은 동시대 인물에 절대 함께 나오지 않으며, 차트 막대 구간도 겹치지 않는다
+    const abrahamContemp = resolveContemporaryItems(REAL_HISTORY_DATASET, abraham);
+    const josephContemp = resolveContemporaryItems(REAL_HISTORY_DATASET, joseph);
+    expect(abrahamContemp.map((c) => c.id)).toContain('item-isaac');
+    expect(abrahamContemp.map((c) => c.id)).not.toContain('item-joseph');
+    expect(josephContemp.map((c) => c.id)).not.toContain('item-abraham');
+    // 요셉은 동시대 인물이 아닌 '계보·연관 인물'로 분리됨
+    expect(
+      resolveRelatedPeopleItems(REAL_HISTORY_DATASET, abraham, abrahamContemp).map((r) => r.id),
+    ).toContain('item-joseph');
+
+    const personTrack = packTimelineTracks(
+      REAL_HISTORY_DATASET.items,
+      TIMELINE_ZOOM_PRESETS[2],
+      'person',
+    )[0];
+    const abrBar = personTrack.items.find((p) => p.item.id === 'item-abraham')!;
+    const josBar = personTrack.items.find((p) => p.item.id === 'item-joseph')!;
+    expect(abrBar.barX + abrBar.barWidth).toBeLessThanOrEqual(josBar.barX);
+
+    // 2) 모세·아론의 활동이 250년으로 표시되지 않고 약 40년 규모이며, 드보라·기드온·삼손과 동시대로 엮이지 않는다
+    expect(moses.displayPeriodKo).toContain('40년');
+    expect(aaron.displayPeriodKo).toContain('40년');
+    expect(joshua.displayPeriodKo).toContain('110세');
+    expect(exodus.displayPeriodKo).not.toMatch(/1450|1200/);
+    expect(sinai.displayPeriodKo).toContain('1년');
+
+    const mosesContempIds = resolveContemporaryItems(REAL_HISTORY_DATASET, moses).map((c) => c.id);
+    expect(mosesContempIds).toEqual(expect.arrayContaining(['item-aaron', 'item-joshua']));
+    expect(mosesContempIds).not.toContain('item-deborah');
+    expect(mosesContempIds).not.toContain('item-gideon');
+    expect(mosesContempIds).not.toContain('item-samson');
+
+    // 사사 시대 인물 간 불확실한 범위를 근거로 자동 동시대 판정을 하지 않는다
+    expect(resolveContemporaryItems(REAL_HISTORY_DATASET, deborah)).toEqual([]);
+
+    // 3) 단일 연도 표기('BC 722년') 및 예수님 지상 생애(lifespan)/공생애(ministry) 구분 검증
+    expect(samariaFall.displayPeriodKo).toBe('BC 722년');
+    expect(jesus.periodKind).toBe('lifespan');
+
+    // 4) 출애굽기·민수기·신명기·창세기 26장·아모스 1장 장별 매핑 검증
+    for (const [b, ch] of [
+      [2, 12],
+      [4, 14],
+      [5, 6],
+    ] as const) {
+      const ctx = findChapterHistoryContext(REAL_HISTORY_DATASET, b, ch)!;
+      expect(ctx.datePrecision).toBe('undetermined');
+      expect(ctx.displayPeriodKo).not.toMatch(/1450|1200/);
+    }
+    expect(findChapterHistoryContext(REAL_HISTORY_DATASET, 1, 26)?.primaryItemIds).toContain(
+      'item-isaac',
+    );
+    const amos1Ctx = findChapterHistoryContext(REAL_HISTORY_DATASET, 30, 1)!;
+    expect(amos1Ctx.contemporaryItemIds).toEqual(
+      expect.arrayContaining(['item-uzziah', 'item-jeroboam-ii']),
+    );
   });
 });
