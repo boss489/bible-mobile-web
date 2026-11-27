@@ -6,7 +6,9 @@ import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { App } from '../App';
 import { clearDataCaches } from '../services/dataLoader';
 import {
+  buildDedicatedEraChartLayout,
   buildProportionalAxisTicks,
+  buildVerticalEraSections,
   findChapterHistoryContext,
   historicalSpanYears,
   packTimelineTracks,
@@ -172,24 +174,29 @@ describe('성경 앱 개편: 성경순 · 연대순 읽기 및 역사 연대표 
     expect(await screen.findByText('원하는 방식으로 성경을 읽어보세요')).toBeInTheDocument();
   });
 
-  it('3. 통합 연대표 탐색 → 인물(아모스) 선택 → 말씀 이동 → 뒤로 가기 시 확대 배율·필터·선택·스크롤 상태 복원', async () => {
+  it('3. 시대별 차트 탐색 → 인물(아모스) 선택 → 말씀 이동 → 뒤로 가기 시 확대 배율·선택·스크롤 상태 복원', async () => {
     window.localStorage.setItem('bible_web_v1:unlocked_hash', UNLOCKED_SHA256);
     const user = userEvent.setup();
     render(<App />);
 
     await user.click(screen.getByRole('button', { name: /역사 연대표/ }));
     expect(
-      await screen.findByRole('heading', { name: '연대순 읽기 · 통합 역사 연대표' }),
+      await screen.findByRole('heading', { name: '연대순 읽기 · 역사 연대표' }),
     ).toBeInTheDocument();
 
-    // 확대 + 버튼 클릭 후 '선지자·사사' 유형 필터 적용
+    const modeTabs = within(screen.getByRole('group', { name: '연대표 표시 방식 선택' })).getAllByRole('button');
+    expect(modeTabs.map((button) => button.textContent)).toEqual([
+      '🔍 시대별 차트', '📱 세로 읽기', '📖 연대 노트',
+    ]);
+    expect(modeTabs[0]).toHaveAttribute('aria-pressed', 'true');
+    expect(screen.queryByRole('group', { name: '연대표 유형 필터' })).not.toBeInTheDocument();
+
+    // 확대 + 버튼 클릭
     await user.click(screen.getByRole('button', { name: '연대표 확대' }));
     expect(screen.getByText('배율: 상세')).toBeInTheDocument();
 
-    await user.click(screen.getByRole('button', { name: '선지자·사사' }));
-
     // 스크롤 좌표 설정
-    const viewport = screen.getByRole('region', { name: '좌우 스크롤 가능한 통합 역사 시간축' });
+    const viewport = screen.getByRole('region', { name: '분열왕국 전용 역사 시간축' });
     viewport.scrollLeft = 980;
 
     // 아모스 막대 선택 -> 동시대 인물 및 관련 말씀 표시 확인
@@ -208,20 +215,16 @@ describe('성경 앱 개편: 성경순 · 연대순 읽기 및 역사 연대표 
       screen.getByText(/유다 왕 웃시야의 시대 곧 이스라엘 왕 요아스의 아들 여로보암의 시대/),
     ).toBeInTheDocument();
 
-    // '← 연대표' 뒤로 가기 클릭 -> 배율(상세), 필터(선지자·사사), 선택(아모스), 스크롤(980) 모두 복원!
+    // '← 연대표' 뒤로 가기 클릭 -> 배율(상세), 선택(아모스), 스크롤(980) 모두 복원!
     await user.click(screen.getByRole('button', { name: '← 연대표' }));
 
     expect(
-      await screen.findByRole('heading', { name: '연대순 읽기 · 통합 역사 연대표' }),
+      await screen.findByRole('heading', { name: '연대순 읽기 · 역사 연대표' }),
     ).toBeInTheDocument();
     expect(screen.getByText('배율: 상세')).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: '선지자·사사' })).toHaveAttribute(
-      'aria-pressed',
-      'true',
-    );
     expect(screen.getByRole('heading', { name: '아모스 · 관련 말씀' })).toBeInTheDocument();
     const restoredViewport = screen.getByRole('region', {
-      name: '좌우 스크롤 가능한 통합 역사 시간축',
+      name: '분열왕국 전용 역사 시간축',
     });
     expect(restoredViewport.scrollLeft).toBe(980);
   });
@@ -232,7 +235,7 @@ describe('성경 앱 개편: 성경순 · 연대순 읽기 및 역사 연대표 
     render(<App />);
 
     await user.click(screen.getByRole('button', { name: /역사 연대표/ }));
-    await screen.findByRole('heading', { name: '연대순 읽기 · 통합 역사 연대표' });
+    await screen.findByRole('heading', { name: '연대순 읽기 · 역사 연대표' });
 
     // 중간기 빠른 이동 후 외부 역사 사건(마카비 항쟁) 선택
     const eraNav = screen.getByRole('navigation', { name: '시대 빠른 이동' });
@@ -316,7 +319,7 @@ describe('성경 앱 개편: 성경순 · 연대순 읽기 및 역사 연대표 
     render(<App />);
 
     await user.click(screen.getByRole('button', { name: /역사 연대표/ }));
-    await screen.findByRole('heading', { name: '연대순 읽기 · 통합 역사 연대표' });
+    await screen.findByRole('heading', { name: '연대순 읽기 · 역사 연대표' });
 
     // 초기 진입 시 상세 바텀시트는 닫혀 있고 하단 요약 바를 통해 차트 가시 영역을 최대로 확보한다
     expect(
@@ -349,13 +352,13 @@ describe('성경 앱 개편: 성경순 · 연대순 읽기 및 역사 연대표 
     // '⤢ 크게 보기' 클릭 시 전체화면 클래스 및 스크롤 잠금 적용 후 종료 시 복원
     const fullscreenBtn = screen.getByRole('button', { name: '⤢ 크게 보기' });
     await user.click(fullscreenBtn);
-    expect(screen.getByRole('region', { name: '통합 성경 역사 연대표' })).toHaveClass(
+    expect(screen.getByRole('region', { name: '성경 역사 연대표' })).toHaveClass(
       'history-timeline-fullscreen',
     );
     expect(document.body.style.position).toBe('fixed');
 
     await user.click(screen.getByRole('button', { name: '전체화면 종료' }));
-    expect(screen.getByRole('region', { name: '통합 성경 역사 연대표' })).not.toHaveClass(
+    expect(screen.getByRole('region', { name: '성경 역사 연대표' })).not.toHaveClass(
       'history-timeline-fullscreen',
     );
   });
@@ -392,8 +395,22 @@ describe('성경 앱 개편: 성경순 · 연대순 읽기 및 역사 연대표 
     await user.click(within(drawer).getByRole('button', { name: /이 시점 연대표 크게 열기/ }));
     const modal = screen.getByRole('dialog', { name: '아모스 1장 역사 연대표 크게 보기' });
     expect(
-      within(modal).getByRole('region', { name: '좌우 스크롤 가능한 통합 역사 시간축' }),
+      within(modal).getByRole('region', { name: '분열왕국 전용 역사 시간축' }),
     ).toBeInTheDocument();
+    const currentPoint = within(modal).getByRole('button', { name: '현재 본문 시점 켜짐' });
+    expect(currentPoint.parentElement).toContainElement(
+      within(modal).getByRole('button', { name: 'ⓘ 기준 안내' }),
+    );
+    expect(currentPoint).toHaveAttribute('aria-pressed', 'true');
+    expect(modal.querySelector('.timeline-item-hit-primary')).toBeInTheDocument();
+    await user.click(currentPoint);
+    expect(currentPoint).toHaveAttribute('aria-pressed', 'false');
+    expect(currentPoint).toHaveTextContent('현재 본문 시점 꺼짐');
+    expect(modal.querySelector('.timeline-item-hit-primary')).not.toBeInTheDocument();
+    await user.click(currentPoint);
+    expect(currentPoint).toHaveAttribute('aria-pressed', 'true');
+    expect(currentPoint).toHaveTextContent('현재 본문 시점 켜짐');
+    expect(modal.querySelector('.timeline-item-hit-primary')).toBeInTheDocument();
     expect(document.body.style.position).toBe('fixed');
     expect(document.body.style.top).toBe('-180px');
 
@@ -476,5 +493,160 @@ describe('성경 앱 개편: 성경순 · 연대순 읽기 및 역사 연대표 
     expect(amos1Ctx.contemporaryItemIds).toEqual(
       expect.arrayContaining(['item-uzziah', 'item-jeroboam-ii']),
     );
+  });
+
+  it('9. 시대별 전용 차트 엔진 검증: 12시대 맞춤 행 분리(북이스라엘/남유다 왕, 족장 4대, 바울서신 등), 가변 축척(≈) 및 전 배율 비겹침 보장', () => {
+    for (const era of REAL_HISTORY_DATASET.eras) {
+      const expectedEraItems = REAL_HISTORY_DATASET.items.filter((it) =>
+        it.eraIds.includes(era.id),
+      );
+
+      for (const preset of TIMELINE_ZOOM_PRESETS) {
+        const layout = buildDedicatedEraChartLayout(
+          era,
+          REAL_HISTORY_DATASET.items,
+          preset.index,
+          'ALL',
+        );
+        // 0년 눈금 금지 검증
+        expect(layout.ticks.some((tk) => tk.year === 0 || tk.label.includes(' 0'))).toBe(false);
+
+        // 누락 항목 0건 검증
+        const packedCount = layout.tracks.reduce((acc, tr) => acc + tr.items.length, 0);
+        expect(packedCount).toBe(expectedEraItems.length);
+
+        // 모든 맞춤 행 내 하위 레인별 수평 비겹침 검증
+        for (const track of layout.tracks) {
+          const bySubLane = new Map<number, typeof track.items>();
+          for (const p of track.items) {
+            const arr = bySubLane.get(p.subLane) ?? [];
+            arr.push(p);
+            bySubLane.set(p.subLane, arr);
+          }
+          for (const laneItems of bySubLane.values()) {
+            laneItems.sort((a, b) => a.barX - b.barX);
+            for (let i = 1; i < laneItems.length; i += 1) {
+              expect(laneItems[i].barX).toBeGreaterThanOrEqual(laneItems[i - 1].footprintEndX);
+            }
+          }
+        }
+      }
+    }
+
+    // 분열왕국: 북이스라엘 왕 / 남유다 왕 / 활동 선지자 맞춤 행 분리 검증
+    const dividedEra = REAL_HISTORY_DATASET.eras.find((e) => e.id === 'divided_kingdom')!;
+    const dividedLayout = buildDedicatedEraChartLayout(
+      dividedEra,
+      REAL_HISTORY_DATASET.items,
+      2,
+      'ALL',
+    );
+    const dividedTrackNames = dividedLayout.tracks.map((t) => t.labelKo);
+    expect(dividedTrackNames).toEqual(
+      expect.arrayContaining(['북이스라엘 왕', '남유다 왕', '활동 선지자']),
+    );
+
+    // 족장 시대: 아브라함~요셉 4대 가계 개별 행 분리 검증
+    const patEra = REAL_HISTORY_DATASET.eras.find((e) => e.id === 'patriarchs')!;
+    const patLayout = buildDedicatedEraChartLayout(patEra, REAL_HISTORY_DATASET.items, 2, 'ALL');
+    expect(patLayout.tracks.map((t) => t.labelKo)).toEqual([
+      '아브라함 (1대)',
+      '이삭 (2대)',
+      '야곱 · 이스라엘',
+      '요셉 (4대)',
+    ]);
+
+    // 예수님 생애·중간기·초대교회: 공백 구간 가변 축척 압축 마커(≈) 생성 검증
+    const jesusEra = REAL_HISTORY_DATASET.eras.find((e) => e.id === 'jesus_life')!;
+    const jesusLayout = buildDedicatedEraChartLayout(
+      jesusEra,
+      REAL_HISTORY_DATASET.items,
+      2,
+      'ALL',
+    );
+    expect(jesusLayout.scaleBreaks.length).toBeGreaterThan(0);
+
+    // 세로 읽기 섹션 정렬 검증
+    const verticalAll = buildVerticalEraSections(REAL_HISTORY_DATASET, 'ALL', 'ALL');
+    expect(verticalAll).toHaveLength(12);
+  });
+
+  it('10. 3중 뷰 전환(시대별 차트 · 특집 성막사/고난주간 · 모바일 세로 읽기 · 연대 노트) 및 본문 이동 후 뷰 상태 복원', async () => {
+    window.localStorage.setItem('bible_web_v1:unlocked_hash', UNLOCKED_SHA256);
+    const user = userEvent.setup();
+    render(<App />);
+
+    await user.click(screen.getByRole('button', { name: /역사 연대표/ }));
+    await screen.findByRole('heading', { name: '연대순 읽기 · 역사 연대표' });
+
+    // 1) '🔍 시대별 차트' 전환 -> 분열왕국 맞춤 행(북이스라엘 왕 / 남유다 왕) 노출 확인
+    await user.click(screen.getByRole('button', { name: '🔍 시대별 차트' }));
+    expect(screen.getByRole('region', { name: '분열왕국 전용 역사 시간축' })).toBeInTheDocument();
+    expect(screen.getByText('북이스라엘 왕')).toBeInTheDocument();
+    expect(screen.getByText('남유다 왕')).toBeInTheDocument();
+
+    // 2) 특집 '✦ 고난주간 (일별)' 클릭 -> 8일 요일별 컬럼 보드 및 4복음서 배지 확인
+    await user.click(screen.getByRole('button', { name: /고난주간 \(일별\)/ }));
+    const passionBoard = screen.getByRole('region', { name: '고난주간 일별 조화 일별 조화 보드' });
+    expect(within(passionBoard).getByText('종려주일')).toBeInTheDocument();
+    expect(within(passionBoard).getByText('부활주일')).toBeInTheDocument();
+    expect(within(passionBoard).getByText(/나귀 새끼를 타고 예루살렘 입성/)).toBeInTheDocument();
+
+    // 3) 특집 '✦ 성막·성전사' 클릭 -> 7단계 성막·성전 매트릭스 노출 확인
+    await user.click(screen.getByRole('button', { name: /성막·성전사/ }));
+    const sanctuaryChart = screen.getByRole('region', { name: '성막과 성전의 역사 단계별 차트' });
+    expect(within(sanctuaryChart).getByText('시내산 성막')).toBeInTheDocument();
+    expect(within(sanctuaryChart).getByText('솔로몬 제1성전')).toBeInTheDocument();
+
+    // 4) '📖 연대 노트' 뷰에서 족장 시대 차트 바로 열기 동작 확인
+    await user.click(screen.getByRole('button', { name: '📖 연대 노트' }));
+    const notesRegion = screen.getByRole('region', {
+      name: '성경 연대기 산출 근거 및 연구 노트',
+    });
+    expect(within(notesRegion).getByText(/역사적 0년 배제/)).toBeInTheDocument();
+    const jumpBtns = within(notesRegion).getAllByRole('button', { name: '🔍 이 시대 차트 열기' });
+    await user.click(jumpBtns[1]); // 제2시대: 족장
+    expect(screen.getByRole('region', { name: '족장 전용 역사 시간축' })).toBeInTheDocument();
+    expect(screen.getByText('아브라함 (1대)')).toBeInTheDocument();
+
+    // 5) '📱 세로 읽기' 전환 -> 분열왕국 선택 -> 아모스 1:1 말씀 이동 -> '← 연대표' 복귀 시 세로 읽기 상태 그대로 유지!
+    await user.click(screen.getByRole('button', { name: '📱 세로 읽기' }));
+    const allErasButton = screen.getByRole('button', { name: '12시대 전체 연속' });
+    await user.click(allErasButton);
+    const allEraCards = within(screen.getByRole('region', { name: '모바일 세로 읽기 연대기' }))
+      .getAllByRole('article');
+    expect(allEraCards).toHaveLength(12);
+    expect(allEraCards[0]).toHaveAttribute('aria-label', '원역사 세로 연대기');
+    expect(allEraCards[11]).toHaveAttribute('aria-label', '초대교회 세로 연대기');
+    const verticalScroll = screen.getByRole('region', { name: '모바일 세로 읽기 연대기' });
+    const patriarchs = within(verticalScroll).getByRole('article', { name: '족장 세로 연대기' });
+    verticalScroll.scrollTop = 180;
+    const viewportRect = vi.spyOn(verticalScroll, 'getBoundingClientRect')
+      .mockReturnValue({ top: 100 } as DOMRect);
+    const patriarchsRect = vi.spyOn(patriarchs, 'getBoundingClientRect')
+      .mockReturnValue({ top: 430 } as DOMRect);
+    const eraNav = screen.getByRole('navigation', { name: '시대 빠른 이동' });
+    await user.click(within(eraNav).getByRole('button', { name: /족장/ }));
+    expect(verticalScroll.scrollTop).toBe(510);
+    expect(within(verticalScroll).getAllByRole('article')).toHaveLength(12);
+    viewportRect.mockRestore();
+    patriarchsRect.mockRestore();
+    await user.click(screen.getByRole('button', { name: '선택 시대만' }));
+    await user.click(within(eraNav).getByRole('button', { name: /분열왕국/ }));
+
+    const verticalView = screen.getByRole('region', { name: '모바일 세로 읽기 연대기' });
+    expect(within(verticalView).getByText('⚖ 분열왕국 연대 산출 노트')).toBeInTheDocument();
+
+    const amosVerseChip = within(verticalView).getAllByRole('button', { name: /아모스 1:1.*읽기/ })[0];
+    await user.click(amosVerseChip);
+
+    expect(await screen.findByRole('heading', { name: '아모스 1장' })).toBeInTheDocument();
+
+    await user.click(screen.getByRole('button', { name: '← 연대표' }));
+    expect(screen.getByRole('button', { name: '📱 세로 읽기' })).toHaveAttribute(
+      'aria-pressed',
+      'true',
+    );
+    expect(screen.getByRole('region', { name: '모바일 세로 읽기 연대기' })).toBeInTheDocument();
   });
 });

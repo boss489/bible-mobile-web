@@ -1,5 +1,5 @@
 {
-  "contentVersion": "2026.11-v2",
+  "contentVersion": "2026.11-v3",
   "overviewNoticeKo": "왕정 이전(원역사·족장·출애굽·사사) 구간은 확정할 수 없는 개인 BC 연도 대신 성경 본문의 상대 순서와 기록 연수를 표시하며, 통일왕국 이후 구간은 사료 대조 비례 연도축(BC/AD 사이 0년 없음)으로 표시합니다. 발생 가능 연대 범위와 실제 활동 기간은 구분해 확인하세요.",
   "eras": [
     {
@@ -36,6 +36,11 @@
       "sourceIds": [
         "biblical-internal-text",
         "standard-biblical-intro"
+      ],
+      "anchorBasisKo": "창세기 1–11장 서사 순서 (절대 BC 연도 비부여)",
+      "studyNotesKo": [
+        "창세기 1–11장은 천지 창조, 에덴 타락, 노아 홍수, 바벨탑 사건을 구속사의 기원으로 서술합니다.",
+        "히브리 맛소라 사본·사마리아 오경·70인역(LXX) 간 족보 연수 표기 방식과 신학적 해석 차이가 크므로, 본 연대표는 임의의 BC 연도를 부여하지 않고 본문 서사 순서(1→4단계)로만 배치합니다."
       ]
     },
     {
@@ -73,6 +78,12 @@
       "sourceIds": [
         "biblical-internal-text",
         "standard-biblical-intro"
+      ],
+      "anchorBasisKo": "창세기 12–50장 족장 연령 좌표 (창 12:4 · 21:5 · 25:26 · 41:46 · 47:9)",
+      "studyNotesKo": [
+        "성경은 족장기에 BC 연도 대신 인물 나이를 기록합니다: 아브라함 75세 하란 출발(창 12:4) → 100세 이삭 출생(창 21:5) → 이삭 60세(아브라함 160세) 야곱 출생(창 25:26) → 아브라함 175세 별세(야곱 15세 때, 창 25:7).",
+        "요셉은 30세에 총리가 되었고(창 41:46) 풍년 7년·흉년 2년 뒤인 39세에 130세 부친 야곱을 맞았으므로(창 47:9), 야곱 약 91세(아브라함 사후 약 76년)에 태어났습니다. 따라서 아브라함과 요셉은 생존 기간이 겹치지 않습니다.",
+        "절대 BC 연대는 열왕기상 6:1 문자 역산(초기설 약 BC 2166–1805년경)과 중기 청동기 배경 비정(약 BC 2000–1700년경) 등 학설이 갈리므로 상대 세대 슬롯으로 표시합니다."
       ]
     },
     {
@@ -110,6 +121,12 @@
       "sourceIds": [
         "biblical-internal-text",
         "standard-biblical-intro"
+      ],
+      "anchorBasisKo": "출애굽기·민수기 여정 연월일 기록 (출 7:7 · 12:40 · 19:1 · 40:17 · 민 10:11 · 33:38 · 신 34:7)",
+      "studyNotesKo": [
+        "모세(80–120세)와 아론(83–123세)의 출애굽·광야 인도 기간은 성경 본문상 약 40년 규모입니다(출 7:7; 민 33:38–39; 신 34:7).",
+        "성경 본문은 시내산 여정을 월·일 단위로 기록합니다: 제1년 1월 14일 유월절 → 제1년 3월 시내 광야 도착(출 19:1) → 제2년 1월 1일 성막 건립(출 40:17) → 제2년 2월 20일 출발(민 10:11) → 제40년 5월 1일 아론 별세(민 33:38).",
+        "출애굽의 절대 BC 연대에 관해서는 왕상 6:1(솔로몬 제4년 전 480년)에 따른 초기설(약 BC 1446년)과 출 1:11 비돔·라암셋 고고학에 따른 후기설(약 BC 1260년)을 병기해 안내합니다."
       ]
     },
     {
@@ -147,6 +164,11 @@
       "sourceIds": [
         "biblical-internal-text",
         "standard-biblical-intro"
+      ],
+      "anchorBasisKo": "여호수아·사사기·룻기 서사 및 사사별 통치·평온 연수 (수 24:29 · 삿 2:16–19 · 룻 4:17–22)",
+      "studyNotesKo": [
+        "사사기에 기록된 압제·구원·평온 연수를 단순 합산하면 400년을 넘기나, 입다와 삼손 시기(삿 10:7 암몬·블레셋 동시 압제)처럼 여러 지파·지역에서 사사들이 부분 중첩 활동한 것으로 해석하는 견해가 유력합니다.",
+        "지역 간 정확한 동시 겹침 범위는 본문만으로 단정할 수 없으므로 사사들 사이에 억지 동시대 관계를 부여하지 않고 서사 순서대로 배열합니다."
       ]
     },
     {
@@ -180,6 +202,11 @@
         "biblical-internal-text",
         "standard-biblical-intro",
         "ane-epigraphic-chronology"
+      ],
+      "anchorBasisKo": "사무엘상하·열왕기상 통치 연수 (행 13:21 · 삼하 5:4–5 · 왕상 6:1 · 11:42)",
+      "studyNotesKo": [
+        "사울(전승 약 40년, 행 13:21), 다윗(헤브론 7년 6개월 + 예루살렘 33년 = 40년, 삼하 5:4–5), 솔로몬(40년, 왕상 11:42) 세 왕의 통일 왕정 시기입니다.",
+        "솔로몬 사후 왕국 분열 시점(약 BC 931/930년)이 후대 앗수르 연대기와 맞물리면서 이 시기부터 비례 연도축 표기가 가능해집니다."
       ]
     },
     {
@@ -214,6 +241,11 @@
         "biblical-internal-text",
         "standard-biblical-intro",
         "ane-epigraphic-chronology"
+      ],
+      "anchorBasisKo": "열왕기 동기화 연대 + 고대 근동 비문 (쿠르크 비문 BC 853 · 검은 오벨리스크 BC 841 · 앗수르 일식 BC 763 · 사마리아 함락 BC 722)",
+      "studyNotesKo": [
+        "북이스라엘(19왕)과 남유다(다윗 왕조)의 재위 연대는 아합의 카르카르 전투(BC 853), 예후의 조공(BC 841), 사마리아 함락(BC 722) 등 앗수르 연대기 고정점과 정밀하게 대조됩니다.",
+        "성경의 왕년 합산 차이는 부자 간 공동 섭정(co-regency, 예: 웃시야-요담) 및 즉위년 계산식(즉위년 산입 여부) 차이로 설명됩니다."
       ]
     },
     {
@@ -248,6 +280,11 @@
         "biblical-internal-text",
         "standard-biblical-intro",
         "ane-epigraphic-chronology"
+      ],
+      "anchorBasisKo": "산헤립 육각기둥(BC 701) · 바벨론 연대기 점토판(BC 605 · 597 · 586)",
+      "studyNotesKo": [
+        "북왕국 멸망(BC 722) 이후 남유다 단독기에는 히스기야 제14년 산헤립 침공(BC 701, 왕하 18:13), 요시야의 므깃도 전사(BC 609), 여호야긴 2차 포로(BC 597년 3월, 바벨론 연대기 점토판 일치), 예루살렘 함락(BC 587/586) 등 확정 사료 연대가 집중되어 있습니다.",
+        "나훔 등 선지자의 ‘활동 가능 범위(BC 663 테베 함락 ~ BC 612 니느웨 함락)’는 실제 51년 연속 사역이 아닌 상·하한 창(uncertainty window)으로 구분해 표시합니다."
       ]
     },
     {
@@ -282,6 +319,11 @@
         "biblical-internal-text",
         "standard-biblical-intro",
         "ane-epigraphic-chronology"
+      ],
+      "anchorBasisKo": "에스겔 포로기 연월일 표기 (겔 1:1–2 · 29:17) · 왕하 25:27 여호야긴 사면(BC 561)",
+      "studyNotesKo": [
+        "유다 포로 이송은 세 차례(1차 BC 605 다니엘, 2차 BC 597 여호야긴·에스겔, 3차 BC 586 예루살렘 함락)에 걸쳐 진행되었습니다.",
+        "에스겔서는 여호야긴 포로 연도를 기준으로 포로 제5년(BC 593)부터 제27년(BC 571)까지 날짜를 정밀하게 기록하며, 바벨론 배급 문서에서도 여호야긴 왕가의 실재가 확인됩니다."
       ]
     },
     {
@@ -315,6 +357,11 @@
         "biblical-internal-text",
         "standard-biblical-intro",
         "ane-epigraphic-chronology"
+      ],
+      "anchorBasisKo": "고레스 원통 비문(BC 539/538) · 다리오 재위기(학 1:1 · 스 6:15) · 아닥사스다 재위기(스 7:7 · 느 2:1)",
+      "studyNotesKo": [
+        "바벨론 함락(BC 539) 직후 고레스 칙령(BC 538)으로 1차 귀환이 이루어졌고, 학개·스가랴의 권면 속에 다리오 1세 제6년(BC 516/515) 제2성전이 완공되었습니다.",
+        "아하수에로(크세르크세스 1세, BC 486–465) 재위기 수산 궁 에스더 사건 이후, 아닥사스다 1세 제7년(BC 458, 다수설) 에스라 귀환과 제20년(BC 445) 느헤미야 성벽 재건으로 이어집니다."
       ]
     },
     {
@@ -331,6 +378,11 @@
       "sourceIds": [
         "standard-biblical-intro",
         "ane-epigraphic-chronology"
+      ],
+      "anchorBasisKo": "그리스·헬레니즘·로마 사료 및 요세푸스 『유대 고대사』 (외부 역사 배경)",
+      "studyNotesKo": [
+        "말라기 이후 세례 요한 등장 이전 약 400년은 개신교 정경 66권의 직접 서술 공백기이나, 알렉산드로스 원정(BC 334–323)으로 확산된 코이네 헬라어, 프톨레마이오스기의 70인역 번역, 마카비 항쟁(수전절 배경), 로마 정복(BC 63)이 신약 시대의 역사적 토양을 형성했습니다.",
+        "정경 본문에 없는 외부 역사 사건에는 임의의 성경 장절을 억지로 연결하지 않고 ‘외부 역사’로 투명하게 표기합니다."
       ]
     },
     {
@@ -365,6 +417,11 @@
         "biblical-internal-text",
         "standard-biblical-intro",
         "ane-epigraphic-chronology"
+      ],
+      "anchorBasisKo": "눅 2:1–2(아우구스투스) · 마 2:1(헤롯 대왕 BC 4 사망) · 눅 3:1(디베료 15년) · 빌라도 재임(AD 26–36)",
+      "studyNotesKo": [
+        "헤롯 대왕이 BC 4년에 사망했으므로 예수님의 베들레헴 탄생은 약 BC 6–4년경으로 산출됩니다(역사적 연대에는 0년이 없으므로 BC 1년 다음 해는 AD 1년입니다).",
+        "디베료 황제 제15년(눅 3:1, 계산법에 따라 AD 27–29년경)에 세례 요한과 예수님의 공생애가 시작되었고, 빌라도 재임기 유월절 준비일 금요일 역산에 따라 십자가·부활 연대는 AD 30년설과 AD 33년설이 학계에 공존합니다."
       ]
     },
     {
@@ -398,6 +455,11 @@
         "biblical-internal-text",
         "standard-biblical-intro",
         "ane-epigraphic-chronology"
+      ],
+      "anchorBasisKo": "행 11:28 · 18:2(글라우디오 추방령 AD 49) · 18:12(갈리오 총독 비문 AD 51–52) · 벨릭스/베스도 교체기",
+      "studyNotesKo": [
+        "델포이에서 발견된 클라우디우스 황제 서한 비문을 통해 아가야 총독 갈리오의 재임기(AD 51–52년)가 확정되면서, 바울의 고린도 체류(행 18:11–12)와 1–3차 전도여행 연대의 핵심 기준점이 세워졌습니다.",
+        "신약 서신서 항목은 본문이 다루는 구속사 내용과 책이 기록된 ‘작성 추정 시기(composition_time)’를 구분하고, 연결된 전도여행·투옥 사건을 함께 안내합니다."
       ]
     }
   ],
@@ -9182,6 +9244,684 @@
         "item-john-apostle"
       ],
       "divergentViewsKo": "전통적 다수설은 도미티안 황제 말기(약 AD 95년경)이나, 네로 황제 박해 직후(AD 68–69년경)로 보는 초기 연대설도 일부 존재합니다. 또한 환상 해석 방식에도 과거주의·역사주의·미래주의·상징적(이상주의) 견해 차이가 있습니다."
+    }
+  ],
+  "specialChronicles": [
+    {
+      "id": "sanctuary_history",
+      "nameKo": "성막과 성전의 역사",
+      "shortNameKo": "성막·성전사",
+      "subtitleKo": "시내산 성막부터 솔로몬·스룹바벨 성전, 성육신하신 그리스도와 성령의 전까지",
+      "displayPeriodKo": "출애굽 시내산 ~ AD 70년 · 종말 성취",
+      "layout": "stages",
+      "color": "#7b5e3b",
+      "summaryKo": "구약의 이동식 성막과 예루살렘 제1·2성전을 거쳐, 참 성전이신 예수 그리스도와 성령이 거하시는 교회, 새 예루살렘으로 이어지는 하나님 임재 처소의 구속사 흐름입니다.",
+      "anchorBasisKo": "출 25:8 · 왕상 6:1 · 왕하 25:9 · 스 6:15 · 요 2:19–21 · 고전 3:16 · 계 21:22",
+      "studyNotesKo": [
+        "구약 성소 역사는 ‘시내산 광야 성막 → 실로 회막·다윗 장막 → 솔로몬 제1성전(약 BC 966–586) → 스룹바벨 제2성전(BC 516/515 봉헌) 및 헤롯 증축 성전(BC 20경 착공 ~ AD 70 파괴)’의 뚜렷한 단계를 이룹니다.",
+        "신약 복음서와 서신서는 물리적 성전 역사가 성육신하신 말씀(요 1:14, ‘우리 가운데 장막을 치시매’)과 부활하신 그리스도의 몸(요 2:21), 그리고 성령이 거하시는 공동체(고전 3:16)로 성취됨을 증언합니다."
+      ],
+      "stages": [
+        {
+          "index": 1,
+          "labelKo": "시내산 성막",
+          "periodKo": "출애굽 제2년"
+        },
+        {
+          "index": 2,
+          "labelKo": "실로·다윗 장막",
+          "periodKo": "정복~통일왕국"
+        },
+        {
+          "index": 3,
+          "labelKo": "솔로몬 제1성전",
+          "periodKo": "약 BC 966–586"
+        },
+        {
+          "index": 4,
+          "labelKo": "제1성전 파괴",
+          "periodKo": "BC 587/586"
+        },
+        {
+          "index": 5,
+          "labelKo": "스룹바벨 제2성전",
+          "periodKo": "BC 538–515"
+        },
+        {
+          "index": 6,
+          "labelKo": "헤롯 증축·성육신",
+          "periodKo": "BC 20경~AD 30"
+        },
+        {
+          "index": 7,
+          "labelKo": "AD 70 파괴·새 성전",
+          "periodKo": "초대교회~새 하늘"
+        }
+      ],
+      "groups": [
+        {
+          "key": "sanctuary_place",
+          "labelKo": "성소 · 성전 체계",
+          "subLabelKo": "임재 처소의 형태",
+          "color": "#6d5637"
+        },
+        {
+          "key": "sanctuary_event",
+          "labelKo": "봉헌 · 정화 · 파괴",
+          "subLabelKo": "역사적 분기 사건",
+          "color": "#9a4d24"
+        },
+        {
+          "key": "sanctuary_theology",
+          "labelKo": "언약 · 신학적 성취",
+          "subLabelKo": "구속사적 의미",
+          "color": "#2c6252"
+        }
+      ],
+      "events": [
+        {
+          "id": "sanc-tabernacle-plan",
+          "groupKey": "sanctuary_place",
+          "stageIndex": 1,
+          "timeLabelKo": "시내산 언약 · 출애굽 제2년",
+          "titleKo": "광야 회막(성막) 건립",
+          "summaryKo": "‘내가 그들 중에 거할 성소를 지으라’는 말씀대로 성막을 세우자 여호와의 영광 구름이 회막에 충만했습니다.",
+          "datePrecision": "undetermined",
+          "recordType": "biblical_record",
+          "linkedItemId": "item-sinai",
+          "passages": [
+            {
+              "verseId": "EXOD.25.8-9",
+              "titleKo": "출애굽기",
+              "roleKo": "백성 중에 거하실 성소와 기구 식양을 명하신 본문입니다."
+            },
+            {
+              "verseId": "EXOD.40.34-38",
+              "titleKo": "출애굽기",
+              "roleKo": "출애굽 제2년 첫째 달 성막 완공 후 여호와의 영광이 충만한 기록입니다."
+            }
+          ]
+        },
+        {
+          "id": "sanc-shiloh-ark",
+          "groupKey": "sanctuary_place",
+          "stageIndex": 2,
+          "timeLabelKo": "가나안 정착 ~ 다윗 통치기",
+          "titleKo": "실로 회막과 다윗의 예루살렘 장막",
+          "summaryKo": "가나안 정착 후 실로에 세워졌던 회막 시대를 거쳐, 다윗이 언약궤를 예루살렘 장막에 모시고 성전 건축을 준비했습니다.",
+          "datePrecision": "estimated",
+          "recordType": "biblical_record",
+          "linkedItemId": "item-david",
+          "passages": [
+            {
+              "verseId": "JOSH.18.1",
+              "titleKo": "여호수아",
+              "roleKo": "온 회중이 실로에 모여 회막을 세운 정복기 기록입니다."
+            },
+            {
+              "verseId": "2SAM.6.17",
+              "titleKo": "사무엘하",
+              "roleKo": "다윗이 여호와의 궤를 예루살렘 장막 가운데 안치한 기록입니다."
+            }
+          ]
+        },
+        {
+          "id": "sanc-davidic-promise",
+          "groupKey": "sanctuary_theology",
+          "stageIndex": 2,
+          "timeLabelKo": "약 BC 1000년경",
+          "titleKo": "다윗 언약과 성전 건축 예고",
+          "summaryKo": "다윗의 후손이 여호와의 이름을 위해 집을 건축하고 그 나라 위가 영원하리라는 언약이 주어졌습니다.",
+          "datePrecision": "estimated",
+          "recordType": "biblical_record",
+          "linkedItemId": "item-david",
+          "passages": [
+            {
+              "verseId": "2SAM.7.12-13",
+              "titleKo": "사무엘하",
+              "roleKo": "네 몸에서 날 씨가 내 이름을 위하여 집을 건축하리라는 다윗 언약입니다."
+            }
+          ]
+        },
+        {
+          "id": "sanc-first-temple",
+          "groupKey": "sanctuary_place",
+          "stageIndex": 3,
+          "timeLabelKo": "약 BC 966–586년",
+          "titleKo": "솔로몬 제1성전 건축과 봉헌",
+          "summaryKo": "솔로몬 즉위 제4년에 착공해 7년 만에 예루살렘 모리아산에 완공·봉헌된 제1성전입니다.",
+          "datePrecision": "estimated",
+          "recordType": "biblical_record",
+          "linkedItemId": "item-solomon",
+          "passages": [
+            {
+              "verseId": "1KGS.6.1",
+              "titleKo": "열왕기상",
+              "roleKo": "솔로몬 제4년 성전 건축을 시작한 구약 연대 핵심 구절입니다."
+            },
+            {
+              "verseId": "1KGS.8.10-11",
+              "titleKo": "열왕기상",
+              "roleKo": "성전 봉헌 때 여호와의 영광 구름이 성전에 가득한 장면입니다."
+            }
+          ]
+        },
+        {
+          "id": "sanc-josiah-cleanse",
+          "groupKey": "sanctuary_event",
+          "stageIndex": 3,
+          "timeLabelKo": "BC 715년 · BC 622년",
+          "titleKo": "히스기야·요시야의 성전 정화 개혁",
+          "summaryKo": "남유다 혼합주의로 더럽혀진 성전을 히스기야와 요시야가 정화하고 성전에서 발견된 율법책으로 언약을 갱신했습니다.",
+          "datePrecision": "confirmed",
+          "recordType": "biblical_record",
+          "linkedItemId": "item-josiah",
+          "passages": [
+            {
+              "verseId": "2KGS.22.8",
+              "titleKo": "열왕기하",
+              "roleKo": "대제사장 힐기야가 여호와의 성전에서 율법책을 발견한 기사입니다."
+            },
+            {
+              "verseId": "2KGS.23.1-3",
+              "titleKo": "열왕기하",
+              "roleKo": "요시야 왕이 성전 기둥 곁에서 언약을 세우고 우상을 철폐한 본문입니다."
+            }
+          ]
+        },
+        {
+          "id": "sanc-babylon-destroy",
+          "groupKey": "sanctuary_event",
+          "stageIndex": 4,
+          "timeLabelKo": "BC 587/586년",
+          "titleKo": "바벨론 침공과 제1성전 소실",
+          "summaryKo": "신바벨론 느부갓네살 군대에 의해 솔로몬 성전이 불타고 성전 기명이 바벨론으로 옮겨졌습니다.",
+          "datePrecision": "confirmed",
+          "recordType": "biblical_record",
+          "linkedItemId": "item-jerusalem-fall",
+          "passages": [
+            {
+              "verseId": "2KGS.25.8-10",
+              "titleKo": "열왕기하",
+              "roleKo": "시위대장 느부사라단이 여호와의 성전을 불사른 기록입니다."
+            },
+            {
+              "verseId": "EZEK.37.26-28",
+              "titleKo": "에스겔",
+              "roleKo": "포로민 가운데 내 성소를 영원히 두시겠다는 회복 약속입니다."
+            }
+          ]
+        },
+        {
+          "id": "sanc-second-temple",
+          "groupKey": "sanctuary_place",
+          "stageIndex": 5,
+          "timeLabelKo": "BC 538년 착수 ~ BC 516/515년 완공",
+          "titleKo": "스룹바벨 제2성전 재건 완공",
+          "summaryKo": "고레스 칙령 후 귀환 공동체가 기초를 놓고 학개·스가랴의 격려 속에 다리오 제6년 성전을 완공했습니다.",
+          "datePrecision": "confirmed",
+          "recordType": "biblical_record",
+          "linkedItemId": "item-temple-complete",
+          "passages": [
+            {
+              "verseId": "EZRA.3.10-11",
+              "titleKo": "에스라",
+              "roleKo": "건축자가 여호와의 성전 기초를 놓을 때 찬송하고 통곡한 기록입니다."
+            },
+            {
+              "verseId": "EZRA.6.14-16",
+              "titleKo": "에스라",
+              "roleKo": "다리오 왕 제6년 아달월 3일에 성전 건축을 마치고 봉헌한 기록입니다."
+            }
+          ]
+        },
+        {
+          "id": "sanc-herod-christ",
+          "groupKey": "sanctuary_theology",
+          "stageIndex": 6,
+          "timeLabelKo": "약 BC 20년 증축 ~ AD 30년경",
+          "titleKo": "헤롯 성전 증축과 참 성전이신 그리스도",
+          "summaryKo": "헤롯 대왕이 확장한 예루살렘 성전에서 예수님은 성전을 정화하시고 자기 육체를 가리켜 사흘 만에 일으킬 성전이라 선언하셨습니다.",
+          "datePrecision": "range",
+          "recordType": "biblical_record",
+          "linkedItemId": "person-jesus",
+          "passages": [
+            {
+              "verseId": "JOHN.1.14",
+              "titleKo": "요한복음",
+              "roleKo": "말씀이 육신이 되어 우리 가운데 거하시매(장막을 치시매) 영광을 본다는 선언입니다."
+            },
+            {
+              "verseId": "JOHN.2.19-21",
+              "titleKo": "요한복음",
+              "roleKo": "이 성전을 헐라 내가 사흘 동안에 일으키리라 하신 성전 본체 선언입니다."
+            }
+          ]
+        },
+        {
+          "id": "sanc-ad70-destruction",
+          "groupKey": "sanctuary_event",
+          "stageIndex": 7,
+          "timeLabelKo": "AD 70년",
+          "titleKo": "로마군에 의한 제2성전 파괴 예고와 성취",
+          "summaryKo": "돌 하나도 돌 위에 남지 않으리라 하신 예수님의 예고 이후 AD 70년 로마 티투스 군대에 의해 예루살렘 성전이 파괴되었습니다.",
+          "datePrecision": "confirmed",
+          "recordType": "biblical_record",
+          "passages": [
+            {
+              "verseId": "MATT.24.1-2",
+              "titleKo": "마태복음",
+              "roleKo": "성전 건물들을 가리켜 돌 하나도 돌 위에 남지 않고 무너지리라 하신 예수님 말씀입니다."
+            }
+          ]
+        },
+        {
+          "id": "sanc-church-new-jerusalem",
+          "groupKey": "sanctuary_theology",
+          "stageIndex": 7,
+          "timeLabelKo": "초대교회 ~ 새 하늘과 새 땅",
+          "titleKo": "성령의 전인 교회와 새 예루살렘",
+          "summaryKo": "성령이 거하시는 성도 공동체가 하나님의 성전으로 세워지며, 장차 새 예루살렘에서는 하나님과 어린양이 친히 성전이 되십니다.",
+          "datePrecision": "undetermined",
+          "recordType": "biblical_record",
+          "passages": [
+            {
+              "verseId": "1COR.3.16-17",
+              "titleKo": "고린도전서",
+              "roleKo": "너희는 너희가 하나님의 성전인 것과 성령이 거하시는 줄을 알지 못하느냐는 말씀입니다."
+            },
+            {
+              "verseId": "EPH.2.19-22",
+              "titleKo": "에베소서",
+              "roleKo": "그리스도 예수 안에서 함께 지어져 성령 안에서 하나님이 거하실 처소가 된다는 말씀입니다."
+            },
+            {
+              "verseId": "REV.21.22-23",
+              "titleKo": "요한계시록",
+              "roleKo": "전능하신 하나님과 어린양이 새 예루살렘의 성전이심을 선포하는 계시록 말씀입니다."
+            }
+          ]
+        }
+      ],
+      "sourceIds": [
+        "biblical-internal-text",
+        "standard-biblical-intro",
+        "ane-epigraphic-chronology"
+      ]
+    },
+    {
+      "id": "passion_week",
+      "nameKo": "고난주간 일별 조화",
+      "shortNameKo": "고난주간 (일별)",
+      "subtitleKo": "예루살렘 입성부터 십자가 대속과 부활 새벽까지 4복음서 8일 행적",
+      "displayPeriodKo": "유월절 주간 (니산월 9–17일 · AD 30 또는 33년 봄)",
+      "layout": "day_columns",
+      "color": "#8b3a2e",
+      "summaryKo": "복음서 전체 분량의 큰 비중을 차지하는 예수님의 지상 마지막 한 주간을 종려주일부터 부활주일까지 요일별 컬럼으로 정렬하여 4복음서 본문을 한눈에 대조합니다.",
+      "anchorBasisKo": "마태복음 21–28장 · 마가복음 11–16장 · 누가복음 19–24장 · 요한복음 12–20장",
+      "divergentViewsKo": "십자가 수난 연대는 AD 30년(4월 7일)설과 AD 33년(4월 3일)설이 유력하며, 유대식 일몰 기준 하루 계산과 로마식 시간 표기(요한복음) 해석에 따라 세부 시각 대조 방식이 학자마다 조금씩 다릅니다.",
+      "studyNotesKo": [
+        "마가복음 11장은 입성(첫째 날) → 무화과나무 저주와 성전 정화(이튿날, 막 11:12) → 말라버린 무화과나무와 성전 변론(그 이튿날 아침, 막 11:20)으로 초반 사흘의 일자 흐름을 명시합니다.",
+        "유대 명절 하루는 해 질 녘(일몰)에 시작되므로, 목요일 저녁 다락방 유월절 만찬과 겟세마네 기도·체포는 유대력으로 금요일(유월절 당일) 초저녁~밤에 걸쳐 이어집니다."
+      ],
+      "groups": [
+        {
+          "key": "day_sun",
+          "labelKo": "종려주일",
+          "subLabelKo": "제1일 · 예루살렘 입성",
+          "color": "#7c5a32"
+        },
+        {
+          "key": "day_mon",
+          "labelKo": "월요일",
+          "subLabelKo": "제2일 · 성전 정화",
+          "color": "#6f5f46"
+        },
+        {
+          "key": "day_tue",
+          "labelKo": "화요일",
+          "subLabelKo": "제3일 · 변론과 강화",
+          "color": "#526b7a"
+        },
+        {
+          "key": "day_wed",
+          "labelKo": "수요일",
+          "subLabelKo": "제4일 · 침묵과 예비",
+          "color": "#686d76"
+        },
+        {
+          "key": "day_thu",
+          "labelKo": "목요일",
+          "subLabelKo": "제5일 · 만찬과 기도",
+          "color": "#4c6f94"
+        },
+        {
+          "key": "day_fri",
+          "labelKo": "금요일",
+          "subLabelKo": "제6일 · 십자가 대속",
+          "color": "#8b3a2e"
+        },
+        {
+          "key": "day_sat",
+          "labelKo": "토요일",
+          "subLabelKo": "제7일 · 무덤 안식",
+          "color": "#5d576b"
+        },
+        {
+          "key": "day_res",
+          "labelKo": "부활주일",
+          "subLabelKo": "제8일 · 빈 무덤과 현현",
+          "color": "#2c6252"
+        }
+      ],
+      "events": [
+        {
+          "id": "pw-triumphal-entry",
+          "groupKey": "day_sun",
+          "timeLabelKo": "종려주일 낮",
+          "titleKo": "나귀 새끼를 타고 예루살렘 입성",
+          "summaryKo": "스가랴 9:9 예언대로 겸손의 왕으로 입성하실 때 무리가 종려나무 가지를 흔들며 호산나를 외쳤고, 예수님은 성을 보시며 우셨습니다.",
+          "datePrecision": "range",
+          "recordType": "biblical_record",
+          "gospelTags": [
+            "마태",
+            "마가",
+            "누가",
+            "요한"
+          ],
+          "linkedItemId": "person-jesus",
+          "passages": [
+            {
+              "verseId": "MATT.21.1-9",
+              "titleKo": "마태복음",
+              "roleKo": "나귀를 타신 겸손의 왕과 무리의 호산나 찬송 기록입니다."
+            },
+            {
+              "verseId": "LUKE.19.41-44",
+              "titleKo": "누가복음",
+              "roleKo": "예루살렘을 가까이 보시고 평화의 일을 알지 못함을 두고 우신 본문입니다."
+            },
+            {
+              "verseId": "JOHN.12.12-15",
+              "titleKo": "요한복음",
+              "roleKo": "종려나무 가지를 가지고 맞이하러 나온 유월절 무리 기록입니다."
+            }
+          ]
+        },
+        {
+          "id": "pw-temple-cleansing",
+          "groupKey": "day_mon",
+          "timeLabelKo": "월요일 아침 · 낮",
+          "titleKo": "잎만 무성한 무화과나무와 성전 정화",
+          "summaryKo": "베다니에서 나오시며 열매 없는 무화과나무를 꾸짖으시고, 성전 뜰의 매매하는 자들을 내쫓으시며 ‘만민이 기도하는 집’을 회복하셨습니다.",
+          "datePrecision": "range",
+          "recordType": "biblical_record",
+          "gospelTags": [
+            "마태",
+            "마가",
+            "누가"
+          ],
+          "linkedItemId": "person-jesus",
+          "passages": [
+            {
+              "verseId": "MARK.11.12-18",
+              "titleKo": "마가복음",
+              "roleKo": "베다니에서 나오신 이튿날 무화과나무 사건과 성전 정화 본문입니다."
+            },
+            {
+              "verseId": "MATT.21.12-16",
+              "titleKo": "마태복음",
+              "roleKo": "성전 정화 직후 맹인과 저는 자들을 고치신 마태복음 기록입니다."
+            }
+          ]
+        },
+        {
+          "id": "pw-temple-debates",
+          "groupKey": "day_tue",
+          "timeLabelKo": "화요일 낮 · 성전 뜰",
+          "titleKo": "권위·세금·부활 논쟁과 가장 큰 계명",
+          "summaryKo": "대제사장·바리새인·사두개인들의 시험 질문에 지혜로 답하시고 하나님 사랑·이웃 사랑의 대계명과 과부의 두 렙돈을 칭찬하셨습니다.",
+          "datePrecision": "range",
+          "recordType": "biblical_record",
+          "gospelTags": [
+            "마태",
+            "마가",
+            "누가"
+          ],
+          "linkedItemId": "person-jesus",
+          "passages": [
+            {
+              "verseId": "MATT.22.15-22",
+              "titleKo": "마태복음",
+              "roleKo": "가이사의 것은 가이사에게, 하나님의 것은 하나님께 바치라 하신 답변입니다."
+            },
+            {
+              "verseId": "MARK.12.28-34",
+              "titleKo": "마가복음",
+              "roleKo": "마음을 다해 주 너의 하나님을 사랑하고 네 이웃을 사랑하라 하신 첫째·둘째 계명입니다."
+            },
+            {
+              "verseId": "LUKE.21.1-4",
+              "titleKo": "누가복음",
+              "roleKo": "가난한 과부가 넣은 두 렙돈을 가장 많이 넣었다 칭찬하신 본문입니다."
+            }
+          ]
+        },
+        {
+          "id": "pw-olivet-discourse",
+          "groupKey": "day_tue",
+          "timeLabelKo": "화요일 저녁 · 감람산",
+          "titleKo": "감람산 강화 (종말과 깨어 있음)",
+          "summaryKo": "성전을 나와 감람산에 앉으셔서 예루살렘 멸망과 인자의 재림, 열 처녀·달란트·양과 염소 비유로 깨어 준비할 것을 가르치셨습니다.",
+          "datePrecision": "range",
+          "recordType": "biblical_record",
+          "gospelTags": [
+            "마태",
+            "마가",
+            "누가"
+          ],
+          "linkedItemId": "person-jesus",
+          "passages": [
+            {
+              "verseId": "MATT.24.3-14",
+              "titleKo": "마태복음",
+              "roleKo": "감람산에서 제자들에게 세상 끝의 징조와 천국 복음 전파를 일러주신 강화입니다."
+            },
+            {
+              "verseId": "MATT.25.31-40",
+              "titleKo": "마태복음",
+              "roleKo": "지극히 작은 자 하나에게 한 것이 곧 내게 한 것이라 하신 심판 비유입니다."
+            }
+          ]
+        },
+        {
+          "id": "pw-wednesday-plot",
+          "groupKey": "day_wed",
+          "timeLabelKo": "수요일 · 베다니와 예루살렘",
+          "titleKo": "베다니 쉼과 대제사장·유다의 배반 모의",
+          "summaryKo": "예수님이 베다니에 머무시는 동안 대제사장들과 장로들이 흉계를 꾸미고 가룟 유다가 은 삼십에 넘겨줄 기회를 찾았습니다.",
+          "datePrecision": "range",
+          "recordType": "biblical_record",
+          "gospelTags": [
+            "마태",
+            "마가",
+            "누가"
+          ],
+          "linkedItemId": "person-jesus",
+          "passages": [
+            {
+              "verseId": "MATT.26.1-5",
+              "titleKo": "마태복음",
+              "roleKo": "이틀이 지나면 유월절이라 인자가 십자가에 못 박히기 위해 팔리리라 예고하신 본문입니다."
+            },
+            {
+              "verseId": "LUKE.22.3-6",
+              "titleKo": "누가복음",
+              "roleKo": "가룟 유다가 대제사장들과 군관들에게 예수를 넘겨줄 방도를 의논한 기록입니다."
+            }
+          ]
+        },
+        {
+          "id": "pw-last-supper",
+          "groupKey": "day_thu",
+          "timeLabelKo": "목요일 저녁 · 다락방",
+          "titleKo": "세족식 · 성만찬 제정(새 언약) · 다락방 강화",
+          "summaryKo": "제자들의 발을 씻기시며 새 계명을 주시고, 떡과 잔으로 새 언약 성만찬을 제정하신 뒤 보혜사 성령 약속과 대제사장적 기도를 드리셨습니다.",
+          "datePrecision": "range",
+          "recordType": "biblical_record",
+          "gospelTags": [
+            "마태",
+            "마가",
+            "누가",
+            "요한"
+          ],
+          "linkedItemId": "person-jesus",
+          "passages": [
+            {
+              "verseId": "JOHN.13.1-5",
+              "titleKo": "요한복음",
+              "roleKo": "자기 사람들을 끝까지 사랑하시어 제자들의 발을 씻기신 세족식입니다."
+            },
+            {
+              "verseId": "LUKE.22.19-20",
+              "titleKo": "누가복음",
+              "roleKo": "내 몸과 내 피로 세우는 새 언약이라 하시며 성찬을 제정하신 본문입니다."
+            },
+            {
+              "verseId": "JOHN.17.1-5",
+              "titleKo": "요한복음",
+              "roleKo": "십자가를 앞두고 아버지께 올려 드리신 대제사장적 기도입니다."
+            }
+          ]
+        },
+        {
+          "id": "pw-gethsemane-arrest",
+          "groupKey": "day_thu",
+          "timeLabelKo": "목요일 심야 · 겟세마네",
+          "titleKo": "겟세마네 고뇌의 기도와 체포",
+          "summaryKo": "감람산 겟세마네 동산에서 ‘나의 원대로 마시옵고 아버지의 원대로 하옵소서’ 땀이 핏방울같이 되도록 기도하신 후 체포되셨습니다.",
+          "datePrecision": "range",
+          "recordType": "biblical_record",
+          "gospelTags": [
+            "마태",
+            "마가",
+            "누가",
+            "요한"
+          ],
+          "linkedItemId": "person-jesus",
+          "passages": [
+            {
+              "verseId": "MARK.14.32-36",
+              "titleKo": "마가복음",
+              "roleKo": "겟세마네에서 아빠 아버지여 아버지의 원대로 하옵소서 기도하신 장면입니다."
+            },
+            {
+              "verseId": "JOHN.18.4-11",
+              "titleKo": "요한복음",
+              "roleKo": "체포 현장에서도 제자들을 보호하시고 아버지께서 주신 잔을 마시겠다 하신 기록입니다."
+            }
+          ]
+        },
+        {
+          "id": "pw-trials-crucifixion",
+          "groupKey": "day_fri",
+          "timeLabelKo": "금요일 새벽 ~ 오후 3시",
+          "titleKo": "공회·빌라도 재판과 골고다 십자가 대속",
+          "summaryKo": "가야바 공회와 총독 빌라도·헤롯 안티파스 앞 심문을 거쳐 오전 9시(제3시) 골고다에서 못 박히시고 오후 3시(제9시) ‘다 이루었다’ 하시며 영혼을 맡기셨습니다.",
+          "datePrecision": "range",
+          "recordType": "biblical_record",
+          "gospelTags": [
+            "마태",
+            "마가",
+            "누가",
+            "요한"
+          ],
+          "linkedItemId": "item-crucifixion",
+          "passages": [
+            {
+              "verseId": "LUKE.23.20-25",
+              "titleKo": "누가복음",
+              "roleKo": "빌라도가 무죄를 알면서도 무리의 소리에 내어준 재판 기록입니다."
+            },
+            {
+              "verseId": "MARK.15.25-39",
+              "titleKo": "마가복음",
+              "roleKo": "제3시에 못 박히시고 제6~9시 어둠 뒤 성소 휘장이 찢어진 수난 기록입니다."
+            },
+            {
+              "verseId": "JOHN.19.28-30",
+              "titleKo": "요한복음",
+              "roleKo": "다 이루었다 하시고 머리를 숙이니 영혼이 떠나가신 대속 완성 본문입니다."
+            }
+          ]
+        },
+        {
+          "id": "pw-burial-sabbath",
+          "groupKey": "day_sat",
+          "timeLabelKo": "금요일 해 질 무렵 ~ 토요일 안식일",
+          "titleKo": "아리마대 요셉의 새 무덤 장사와 안식일 경비",
+          "summaryKo": "안식일이 시작되기 전 아리마대 요셉과 니고데모가 예수님의 시신을 세마포로 싸서 새 무덤에 모셨고, 돌을 인봉하고 경비병이 지켰습니다.",
+          "datePrecision": "range",
+          "recordType": "biblical_record",
+          "gospelTags": [
+            "마태",
+            "마가",
+            "누가",
+            "요한"
+          ],
+          "linkedItemId": "item-crucifixion",
+          "passages": [
+            {
+              "verseId": "JOHN.19.38-42",
+              "titleKo": "요한복음",
+              "roleKo": "아리마대 요셉과 니고데모가 향품과 세마포로 예수님을 새 무덤에 장사한 기록입니다."
+            },
+            {
+              "verseId": "MATT.27.62-66",
+              "titleKo": "마태복음",
+              "roleKo": "대제사장들이 빌라도에게 청하여 돌을 인봉하고 경비병으로 무덤을 굳게 지킨 기록입니다."
+            }
+          ]
+        },
+        {
+          "id": "pw-resurrection-sunday",
+          "groupKey": "day_res",
+          "timeLabelKo": "안식 후 첫날 새벽 · 저녁",
+          "titleKo": "빈 무덤 부활 선언과 엠마오·예루살렘 현현",
+          "summaryKo": "안식 후 첫날 이른 새벽 돌이 굴려진 빈 무덤에서 부활 소식이 선포되었고, 부활하신 주님이 막달라 마리아와 엠마오 두 제자, 다락방 제자들에게 친히 나타나셨습니다.",
+          "datePrecision": "range",
+          "recordType": "biblical_record",
+          "gospelTags": [
+            "마태",
+            "마가",
+            "누가",
+            "요한"
+          ],
+          "linkedItemId": "item-crucifixion",
+          "passages": [
+            {
+              "verseId": "MATT.28.5-8",
+              "titleKo": "마태복음",
+              "roleKo": "그가 여기 계시지 않고 말씀하시던 대로 살아나셨느니라 선포한 빈 무덤 기사입니다."
+            },
+            {
+              "verseId": "LUKE.24.27-32",
+              "titleKo": "누가복음",
+              "roleKo": "엠마오로 가던 제자들에게 모세와 모든 선지자의 글로 자기에 관한 것을 풀어주신 본문입니다."
+            },
+            {
+              "verseId": "JOHN.20.19-22",
+              "titleKo": "요한복음",
+              "roleKo": "안식 후 첫날 저녁 제자들 가운데 오사 너희에게 평강이 있을지어다 선언하신 본문입니다."
+            }
+          ]
+        }
+      ],
+      "sourceIds": [
+        "biblical-internal-text",
+        "standard-biblical-intro",
+        "ane-epigraphic-chronology"
+      ]
     }
   ]
 }

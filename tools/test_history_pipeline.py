@@ -56,6 +56,18 @@ class HistoryDataPipelineTest(unittest.TestCase):
         for unanchored_book in (18, 20, 21, 22, 29):
             self.assertNotIn(unanchored_book, mapped_books)
 
+        # 12시대 전체 연대 산출 근거 노트(anchorBasisKo, studyNotesKo) 및 특집 연대기(성막사·고난주간) 검증
+        for era in compiled["eras"]:
+            self.assertTrue(era.get("anchorBasisKo"))
+            self.assertGreaterEqual(len(era.get("studyNotesKo") or []), 1)
+
+        specials = {sp["id"]: sp for sp in compiled.get("specialChronicles") or []}
+        self.assertIn("sanctuary_history", specials)
+        self.assertIn("passion_week", specials)
+        self.assertEqual(specials["sanctuary_history"]["layout"], "stages")
+        self.assertEqual(specials["passion_week"]["layout"], "day_columns")
+        self.assertEqual(len(specials["passion_week"]["groups"]), 8)
+
     def test_rejects_year_zero_and_primeval_bc_dates_and_invalid_verses(self) -> None:
         base_raw = json.loads(self.history_path.read_text(encoding="utf-8"))
 

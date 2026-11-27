@@ -847,7 +847,7 @@ export function App() {
               ) : null}
 
               <div>
-                <h1 className="subpage-title">연대순 읽기 · 통합 역사 연대표</h1>
+                <h1 className="subpage-title">연대순 읽기 · 역사 연대표</h1>
                 <p className="subpage-subtitle">
                   시대 · 왕국 · 인물 · 사건을 선택해 연결된 성경 본문으로 바로 이동합니다
                 </p>
@@ -902,7 +902,7 @@ export function App() {
           <main className="timeline-page-main">
             {historyLoading && !historyDataset ? (
               <div className="study-state-box">
-                <p className="study-state-text">통합 역사 연대표를 불러오는 중입니다...</p>
+                <p className="study-state-text">역사 연대표를 불러오는 중입니다...</p>
               </div>
             ) : historyError || !historyDataset ? (
               <div className="study-state-box study-error-box" role="alert">

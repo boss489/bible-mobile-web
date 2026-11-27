@@ -71,6 +71,8 @@ export interface TimelineEra {
   startYear: number | null;
   endYear: number | null;
   relativeRange?: [number, number];
+  anchorBasisKo?: string;
+  studyNotesKo?: string[];
   divergentViewsKo?: string;
   color: string;
   keyPassages: HistoryPassageLink[];
@@ -128,6 +130,57 @@ export interface ChapterHistoryMapping {
   sourceIds: string[];
 }
 
+export type SpecialChronicleId = 'sanctuary_history' | 'passion_week';
+
+export type GospelNameKo = '마태' | '마가' | '누가' | '요한';
+
+export interface SpecialChronicleGroup {
+  key: string;
+  labelKo: string;
+  subLabelKo: string;
+  color: string;
+}
+
+export interface SpecialChronicleStage {
+  index: number;
+  labelKo: string;
+  periodKo: string;
+}
+
+export interface SpecialChronicleEvent {
+  id: string;
+  groupKey: string;
+  stageIndex?: number;
+  timeLabelKo: string;
+  titleKo: string;
+  summaryKo: string;
+  datePrecision: DatePrecision;
+  recordType: HistoricalRecordType;
+  gospelTags?: GospelNameKo[];
+  linkedItemId?: string;
+  externalHistoryNoteKo?: string;
+  passages: HistoryPassageLink[];
+}
+
+export interface SpecialChronicle {
+  id: SpecialChronicleId;
+  order: number;
+  nameKo: string;
+  shortNameKo: string;
+  subtitleKo: string;
+  displayPeriodKo: string;
+  layout: 'stages' | 'day_columns';
+  color: string;
+  summaryKo: string;
+  anchorBasisKo: string;
+  studyNotesKo: string[];
+  divergentViewsKo?: string;
+  stages?: SpecialChronicleStage[];
+  groups: SpecialChronicleGroup[];
+  events: SpecialChronicleEvent[];
+  sourceIds: string[];
+}
+
 export interface BibleHistoryDataset {
   contentVersion: string;
   overviewNoticeKo: string;
@@ -135,13 +188,21 @@ export interface BibleHistoryDataset {
   eras: TimelineEra[];
   items: TimelineItem[];
   chapterMappings: ChapterHistoryMapping[];
+  specialChronicles?: SpecialChronicle[];
 }
 
 export type TimelineCategoryFilter = 'ALL' | TimelineItemCategory;
 
+export type TimelineDisplayMode = 'all' | 'era' | 'vertical' | 'notes';
+
+export type ActiveChronicleTarget =
+  | { kind: 'era'; id: HistoryEraId }
+  | { kind: 'special'; id: SpecialChronicleId };
+
 export type TimelineSelection =
   | { kind: 'era'; id: HistoryEraId }
-  | { kind: 'item'; id: string };
+  | { kind: 'item'; id: string }
+  | { kind: 'special_event'; chronicleId: SpecialChronicleId; eventId: string };
 
 export interface TimelineViewState {
   scrollLeft: number;
@@ -151,4 +212,7 @@ export interface TimelineViewState {
   activeEraId: HistoryEraId | null;
   selection: TimelineSelection | null;
   isDetailOpen?: boolean;
+  displayMode?: TimelineDisplayMode;
+  activeChronicle?: ActiveChronicleTarget;
+  verticalScope?: 'selected' | 'all';
 }

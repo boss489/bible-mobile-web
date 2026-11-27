@@ -4,6 +4,7 @@ import type {
   DatePrecision,
   HistoricalPeriodKind,
   HistoricalRecordType,
+  HistoryEraId,
   PeriodScaleKind,
   TimelineCategoryFilter,
   TimelineEra,
@@ -484,6 +485,653 @@ export function resolveRelatedPeopleItems(
     }
   }
   return out;
+}
+
+// ============================================================================
+// 시대별 독립 차트 (1~12 시리즈) · 맞춤 행(Track) · 가변 축척(Scale-Break) · 세로 읽기 엔진
+// ============================================================================
+
+export interface EraCustomTrackDef {
+  key: string;
+  labelKo: string;
+  subLabelKo: string;
+  color: string;
+}
+
+export const ERA_CUSTOM_TRACKS: Readonly<Record<HistoryEraId, readonly EraCustomTrackDef[]>> = {
+  primeval: [
+    { key: 'prim_creation', labelKo: '창조 · 에덴', subLabelKo: '창 1–4장', color: '#6d727c' },
+    { key: 'prim_flood', labelKo: '홍수 · 무지개 언약', subLabelKo: '창 6–9장', color: '#4c6f94' },
+    { key: 'prim_babel', labelKo: '바벨 · 열방 분화', subLabelKo: '창 10–11장', color: '#8f6b3e' },
+  ],
+  patriarchs: [
+    { key: 'pat_abraham', labelKo: '아브라함 (1대)', subLabelKo: '언약의 시조', color: '#8b5e34' },
+    { key: 'pat_isaac', labelKo: '이삭 (2대)', subLabelKo: '언약 계승', color: '#6f6544' },
+    { key: 'pat_jacob', labelKo: '야곱 · 이스라엘', subLabelKo: '12지파 조상', color: '#2c6252' },
+    { key: 'pat_joseph', labelKo: '요셉 (4대)', subLabelKo: '애굽 총리', color: '#4c6f94' },
+    { key: 'pat_events', labelKo: '족장기 사건', subLabelKo: '언약·이주', color: '#9a4d24' },
+  ],
+  exodus: [
+    { key: 'exo_moses', labelKo: '모세 (인도자)', subLabelKo: '광야 40년', color: '#2c6252' },
+    { key: 'exo_aaron', labelKo: '아론 · 제사장', subLabelKo: '초대 대제사장', color: '#8f6b3e' },
+    { key: 'exo_events', labelKo: '출애굽 · 언약 사건', subLabelKo: '유월절·시내산', color: '#9a4d24' },
+  ],
+  conquest_judges: [
+    { key: 'jud_leaders', labelKo: '정복 · 전환 지도자', subLabelKo: '여호수아·사무엘', color: '#2c6252' },
+    { key: 'jud_cycle', labelKo: '사사 구원 주기', subLabelKo: '옷니엘~삼손', color: '#8f6b3e' },
+    { key: 'jud_lineage', labelKo: '언약 계보 · 사건', subLabelKo: '룻·다윗 계보', color: '#735c70' },
+  ],
+  united_kingdom: [
+    { key: 'uk_polity', labelKo: '통일 왕국 체제', subLabelKo: '12지파 연합', color: '#526b7a' },
+    { key: 'uk_kings', labelKo: '사울 · 다윗 · 솔로몬', subLabelKo: '통일 3대 왕', color: '#4c6f94' },
+    { key: 'uk_prophets', labelKo: '선지자 · 제사장', subLabelKo: '사무엘·나단', color: '#8f6b3e' },
+    { key: 'uk_events', labelKo: '언약 · 성전 사건', subLabelKo: '주요 사건', color: '#9a4d24' },
+  ],
+  divided_kingdom: [
+    { key: 'dk_israel', labelKo: '북이스라엘 왕', subLabelKo: '여로보암~호세아', color: '#476b88' },
+    { key: 'dk_judah', labelKo: '남유다 왕', subLabelKo: '다윗 왕조 계승', color: '#7d5260' },
+    { key: 'dk_prophets', labelKo: '활동 선지자', subLabelKo: '엘리야~이사야', color: '#8f6b3e' },
+    { key: 'dk_polities', labelKo: '왕국 · 주변 제국', subLabelKo: '남북왕국·앗수르', color: '#526b7a' },
+    { key: 'dk_events', labelKo: '분열 · 함락 사건', subLabelKo: '역사 분기점', color: '#9a4d24' },
+  ],
+  judah_alone: [
+    { key: 'ja_judah', labelKo: '남유다 왕', subLabelKo: '히스기야~시드기야', color: '#7d5260' },
+    { key: 'ja_prophets', labelKo: '유다 선지자', subLabelKo: '이사야~예레미야', color: '#8f6b3e' },
+    { key: 'ja_empires', labelKo: '주변 제국 · 황제', subLabelKo: '앗수르·바벨론', color: '#526b7a' },
+    { key: 'ja_events', labelKo: '개혁 · 포로 · 함락', subLabelKo: '성전 소실까지', color: '#9a4d24' },
+  ],
+  exile: [
+    { key: 'exl_empires', labelKo: '바벨론 · 바사 제국', subLabelKo: '제국과 황제', color: '#526b7a' },
+    { key: 'exl_exiles', labelKo: '포로기 왕족 · 인물', subLabelKo: '여호야긴·다니엘', color: '#2c6252' },
+    { key: 'exl_prophets', labelKo: '포로기 선지자', subLabelKo: '예레미야·에스겔', color: '#8f6b3e' },
+    { key: 'exl_events', labelKo: '함락 · 회복 분기', subLabelKo: '핵심 사건', color: '#9a4d24' },
+  ],
+  return_persian: [
+    { key: 'ret_persia', labelKo: '페르시아 제국 · 황제', subLabelKo: '고레스~아하수에로', color: '#526b7a' },
+    { key: 'ret_leaders', labelKo: '총독 · 귀환 인물', subLabelKo: '스룹바벨·느헤미야', color: '#2c6252' },
+    { key: 'ret_prophets', labelKo: '선지자 · 학사', subLabelKo: '학개·에스라·말라기', color: '#8f6b3e' },
+    { key: 'ret_events', labelKo: '귀환 · 성전 재건', subLabelKo: '칙령·성전 완공', color: '#9a4d24' },
+  ],
+  intertestamental: [
+    { key: 'int_polities', labelKo: '제국 · 왕조', subLabelKo: '프톨레마이오스~하스몬', color: '#526b7a' },
+    { key: 'int_rulers', labelKo: '헬레니즘 · 유대 통치자', subLabelKo: '안티오코스·헤롯', color: '#4c6f94' },
+    { key: 'int_events', labelKo: '역사적 격변 사건', subLabelKo: '원정·마카비·로마', color: '#9a4d24' },
+  ],
+  jesus_life: [
+    { key: 'jl_jesus', labelKo: '예수 그리스도', subLabelKo: '성육신 · 공생애', color: '#8b3a2e' },
+    { key: 'jl_disciples', labelKo: '성가족 · 선구자 · 제자', subLabelKo: '마리아·세례 요한·사도', color: '#2c6252' },
+    { key: 'jl_rulers', labelKo: '로마 · 유대 통치자', subLabelKo: '아우구스투스·빌라도', color: '#4c6f94' },
+    { key: 'jl_events', labelKo: '구속 중심 사건', subLabelKo: '십자가와 부활', color: '#9a4d24' },
+  ],
+  early_church: [
+    { key: 'ec_apostles', labelKo: '사도 · 교회 지도자', subLabelKo: '베드로·요한·바울', color: '#2c6252' },
+    { key: 'ec_journeys', labelKo: '선교여행 · 교회 사건', subLabelKo: '공의회·1~3차 여행', color: '#9a4d24' },
+    { key: 'ec_pauline', labelKo: '바울 서신 작성', subLabelKo: '로마서~목회서신', color: '#7b5e3b' },
+    { key: 'ec_general_nt', labelKo: '일반서신 · 계시록', subLabelKo: '히브리서~요한계시록', color: '#6b5876' },
+    { key: 'ec_rulers', labelKo: '로마 황제 · 총독', subLabelKo: '글라우디오·갈리오·네로', color: '#4c6f94' },
+  ],
+};
+
+export function resolveEraCustomTrackDef(
+  eraId: HistoryEraId,
+  item: TimelineItem,
+): EraCustomTrackDef {
+  const defs = ERA_CUSTOM_TRACKS[eraId];
+  const byKey = (k: string) => defs.find((d) => d.key === k) ?? defs[defs.length - 1];
+
+  switch (eraId) {
+    case 'primeval': {
+      if (item.id === 'event-flood') return byKey('prim_flood');
+      if (item.id === 'event-babel') return byKey('prim_babel');
+      return byKey('prim_creation');
+    }
+    case 'patriarchs': {
+      if (item.id === 'item-abraham') return byKey('pat_abraham');
+      if (item.id === 'item-isaac') return byKey('pat_isaac');
+      if (item.id === 'item-jacob') return byKey('pat_jacob');
+      if (item.id === 'item-joseph') return byKey('pat_joseph');
+      return byKey('pat_events');
+    }
+    case 'exodus': {
+      if (item.id === 'item-moses' || item.category === 'person') return byKey('exo_moses');
+      if (item.category === 'prophet_priest') return byKey('exo_aaron');
+      return byKey('exo_events');
+    }
+    case 'conquest_judges': {
+      if (item.id === 'item-joshua' || item.id === 'item-samuel') return byKey('jud_leaders');
+      if (item.category === 'prophet_priest') return byKey('jud_cycle');
+      return byKey('jud_lineage');
+    }
+    case 'united_kingdom': {
+      if (item.category === 'polity') return byKey('uk_polity');
+      if (item.category === 'ruler') return byKey('uk_kings');
+      if (item.category === 'prophet_priest') return byKey('uk_prophets');
+      return byKey('uk_events');
+    }
+    case 'divided_kingdom': {
+      if (item.category === 'polity') return byKey('dk_polities');
+      if (item.category === 'ruler') {
+        if (item.roleLabelKo.includes('북이스라엘')) return byKey('dk_israel');
+        if (item.roleLabelKo.includes('남유다')) return byKey('dk_judah');
+        return byKey('dk_polities');
+      }
+      if (item.category === 'prophet_priest') return byKey('dk_prophets');
+      return byKey('dk_events');
+    }
+    case 'judah_alone': {
+      if (item.category === 'ruler' && item.roleLabelKo.includes('남유다')) {
+        return byKey('ja_judah');
+      }
+      if (item.category === 'polity' || item.category === 'ruler') {
+        return byKey('ja_empires');
+      }
+      if (item.category === 'prophet_priest') return byKey('ja_prophets');
+      return byKey('ja_events');
+    }
+    case 'exile': {
+      if (item.category === 'polity') return byKey('exl_empires');
+      if (item.category === 'ruler') {
+        if (item.roleLabelKo.includes('남유다')) return byKey('exl_exiles');
+        return byKey('exl_empires');
+      }
+      if (item.category === 'prophet_priest') return byKey('exl_prophets');
+      if (item.category === 'person') return byKey('exl_exiles');
+      return byKey('exl_events');
+    }
+    case 'return_persian': {
+      if (item.category === 'polity' || item.category === 'ruler') return byKey('ret_persia');
+      if (item.category === 'person') return byKey('ret_leaders');
+      if (item.category === 'prophet_priest') return byKey('ret_prophets');
+      return byKey('ret_events');
+    }
+    case 'intertestamental': {
+      if (item.category === 'polity') return byKey('int_polities');
+      if (item.category === 'ruler') return byKey('int_rulers');
+      return byKey('int_events');
+    }
+    case 'jesus_life': {
+      if (item.id === 'person-jesus') return byKey('jl_jesus');
+      if (item.category === 'ruler' || item.category === 'polity') return byKey('jl_rulers');
+      if (item.category === 'event') return byKey('jl_events');
+      return byKey('jl_disciples');
+    }
+    case 'early_church': {
+      if (item.category === 'ruler' || item.category === 'polity') return byKey('ec_rulers');
+      if (item.recordType === 'epistle_background') {
+        const epMatch = item.id.match(/^epistle-(\d+)$/);
+        const bookNum = epMatch ? Number(epMatch[1]) : 0;
+        if (bookNum >= 45 && bookNum <= 57) return byKey('ec_pauline');
+        return byKey('ec_general_nt');
+      }
+      if (item.category === 'event') return byKey('ec_journeys');
+      return byKey('ec_apostles');
+    }
+  }
+}
+
+interface CompressedStretchSpec {
+  startYear: number;
+  endYear: number;
+  factor: number;
+  labelKo: string;
+}
+
+interface EraNumericAxisSpec {
+  domainStartYear: number;
+  domainEndYear: number;
+  baseCanvasPx: number;
+  tickYears: readonly number[];
+  compressedStretches?: readonly CompressedStretchSpec[];
+}
+
+const ERA_NUMERIC_SPECS: Partial<Record<HistoryEraId, EraNumericAxisSpec>> = {
+  united_kingdom: {
+    domainStartYear: -1060,
+    domainEndYear: -928,
+    baseCanvasPx: 760,
+    tickYears: [-1050, -1030, -1010, -990, -970, -950, -931],
+  },
+  divided_kingdom: {
+    domainStartYear: -935,
+    domainEndYear: -718,
+    baseCanvasPx: 1120,
+    tickYears: [-930, -900, -875, -850, -825, -800, -775, -750, -722],
+  },
+  judah_alone: {
+    domainStartYear: -726,
+    domainEndYear: -582,
+    baseCanvasPx: 920,
+    tickYears: [-722, -700, -680, -660, -640, -620, -605, -597, -586],
+  },
+  exile: {
+    domainStartYear: -608,
+    domainEndYear: -535,
+    baseCanvasPx: 760,
+    tickYears: [-605, -597, -586, -575, -560, -550, -538],
+  },
+  return_persian: {
+    domainStartYear: -542,
+    domainEndYear: -426,
+    baseCanvasPx: 820,
+    tickYears: [-538, -520, -515, -485, -475, -458, -445, -430],
+    compressedStretches: [
+      { startYear: -512, endYear: -488, factor: 0.35, labelKo: '성전 완공~아하수에로 공백 압축' },
+    ],
+  },
+  intertestamental: {
+    domainStartYear: -432,
+    domainEndYear: -4,
+    baseCanvasPx: 880,
+    tickYears: [-430, -334, -301, -198, -175, -164, -142, -63, -37, -4],
+    compressedStretches: [
+      { startYear: -425, endYear: -340, factor: 0.24, labelKo: '페르시아 후기 축척 압축' },
+      { startYear: -295, endYear: -205, factor: 0.28, labelKo: '프톨레마이오스기 축척 압축' },
+      { startYear: -135, endYear: -70, factor: 0.36, labelKo: '하스몬 중기 축척 압축' },
+    ],
+  },
+  jesus_life: {
+    domainStartYear: -8,
+    domainEndYear: 35,
+    baseCanvasPx: 780,
+    tickYears: [-6, -4, 1, 14, 26, 28, 30, 33],
+    compressedStretches: [
+      { startYear: -2, endYear: 24, factor: 0.3, labelKo: '나사렛 성장기 축척 압축' },
+    ],
+  },
+  early_church: {
+    domainStartYear: 29,
+    domainEndYear: 98,
+    baseCanvasPx: 1180,
+    tickYears: [30, 35, 40, 45, 50, 55, 60, 65, 70, 85, 95],
+    compressedStretches: [
+      { startYear: 71, endYear: 83, factor: 0.38, labelKo: 'AD 70 이후 축척 압축' },
+    ],
+  },
+};
+
+const RELATIVE_ERA_SLOT_LABELS: Partial<Record<HistoryEraId, Record<number, string>>> = {
+  primeval: {
+    1: '1. 창조',
+    2: '2. 에덴 타락',
+    3: '3. 노아 홍수',
+    4: '4. 바벨탑',
+  },
+  patriarchs: {
+    5: '아브라함 소명',
+    6: '이삭 출생',
+    7: '야곱 출생',
+    9: '요셉 출생·총리',
+    11: '애굽 이주·보존',
+  },
+  exodus: {
+    13: '출애굽·유월절',
+    14: '시내산 언약·성막',
+    15: '광야 40년 여정',
+    16: '모압 평지 고별',
+  },
+  conquest_judges: {
+    17: '가나안 정복',
+    19: '옷니엘·에훗',
+    21: '드보라·기드온',
+    23: '입다·룻 배경',
+    24: '삼손·블레셋기',
+    25: '사무엘·왕정 전환',
+  },
+};
+
+export interface EraScaleBreakMark {
+  x: number;
+  labelKo: string;
+}
+
+export interface PackedEraTimelineItem extends PackedTimelineItem {
+  clippedLeft: boolean;
+  clippedRight: boolean;
+  hasUncertaintyWhisker: boolean;
+  customTrackKey: string;
+  customTrackLabelKo: string;
+}
+
+export interface PackedEraCustomTrack {
+  key: string;
+  labelKo: string;
+  subLabelKo: string;
+  defaultColor: string;
+  subLaneCount: number;
+  items: PackedEraTimelineItem[];
+}
+
+export interface DedicatedEraChartLayout {
+  era: TimelineEra;
+  canvasWidth: number;
+  ticks: AxisTick[];
+  scaleBreaks: EraScaleBreakMark[];
+  tracks: PackedEraCustomTrack[];
+  yearOrOrderToX: (year: number | null, relativeOrder?: number) => number;
+  spanToGeometry: (
+    startYear: number | null,
+    endYear: number | null,
+    relativeOrder?: number,
+    relativeSpan?: number,
+  ) => { x: number; width: number; clippedLeft: boolean; clippedRight: boolean };
+}
+
+const ERA_ZOOM_FACTORS = [0.76, 1.0, 1.32, 1.72, 2.25] as const;
+
+export function buildDedicatedEraChartLayout(
+  era: TimelineEra,
+  allItems: readonly TimelineItem[],
+  zoomIndex: number,
+  categoryFilter: TimelineCategoryFilter,
+): DedicatedEraChartLayout {
+  const zFactor = ERA_ZOOM_FACTORS[Math.max(0, Math.min(ERA_ZOOM_FACTORS.length - 1, zoomIndex))] ?? 1.0;
+  const leftPad = 24;
+  const rightPad = 150;
+
+  const eraItems = allItems.filter(
+    (it) =>
+      it.eraIds.includes(era.id) &&
+      (categoryFilter === 'ALL' || it.category === categoryFilter),
+  );
+
+  let innerWidth = Math.round(680 * zFactor);
+  let ticks: AxisTick[] = [];
+  const scaleBreaks: EraScaleBreakMark[] = [];
+
+  let mapSpan: DedicatedEraChartLayout['spanToGeometry'];
+  let mapPoint: DedicatedEraChartLayout['yearOrOrderToX'];
+
+  const numericSpec = ERA_NUMERIC_SPECS[era.id];
+
+  if (!numericSpec && era.relativeRange) {
+    const [slotMin, slotMax] = era.relativeRange;
+    const slotCount = Math.max(1, slotMax - slotMin + 1);
+    const pxPerSlot = Math.max(92, Math.round(118 * zFactor));
+    innerWidth = Math.max(Math.round(520 * zFactor), slotCount * pxPerSlot);
+
+    const slotToX = (slot: number) => leftPad + (slot - slotMin) * pxPerSlot;
+
+    const labelMap = RELATIVE_ERA_SLOT_LABELS[era.id] ?? {};
+    for (let s = slotMin; s <= slotMax; s += 1) {
+      const customLbl = labelMap[s];
+      if (customLbl || slotCount <= 6) {
+        ticks.push({
+          year: s,
+          x: slotToX(s) + pxPerSlot * 0.12,
+          label: customLbl ?? `순서 ${s - slotMin + 1}`,
+        });
+      }
+    }
+
+    mapPoint = (_year, relOrder) => {
+      const effectiveSlot = relOrder ?? slotMax;
+      return slotToX(Math.max(slotMin, Math.min(slotMax, effectiveSlot)));
+    };
+
+    mapSpan = (_sy, _ey, relOrder, relSpan) => {
+      const isDatedTransition = relOrder === undefined;
+      const startSlot = isDatedTransition ? slotMax : Math.max(slotMin, relOrder);
+      const spanSlots = isDatedTransition ? 1 : Math.max(1, relSpan ?? 1);
+      const clippedRight = isDatedTransition || startSlot + spanSlots - 1 > slotMax;
+      const clampedEnd = Math.min(slotMax + 1, startSlot + spanSlots);
+      const x = slotToX(startSlot);
+      const width = Math.max(22, (clampedEnd - startSlot) * pxPerSlot - 10);
+      return { x, width, clippedLeft: startSlot < slotMin, clippedRight };
+    };
+  } else {
+    const spec: EraNumericAxisSpec = numericSpec ?? {
+      domainStartYear: era.startYear ?? -1000,
+      domainEndYear: era.endYear ?? 100,
+      baseCanvasPx: 840,
+      tickYears: [era.startYear ?? -1000, era.endYear ?? 100],
+    };
+    innerWidth = Math.round(spec.baseCanvasPx * zFactor);
+
+    const cMin = yearToContinuous(spec.domainStartYear);
+    const cMax = yearToContinuous(spec.domainEndYear) + 1;
+    const stretches = (spec.compressedStretches ?? []).map((st) => ({
+      cStart: yearToContinuous(st.startYear),
+      cEnd: yearToContinuous(st.endYear),
+      factor: st.factor,
+      labelKo: st.labelKo,
+    }));
+
+    const effectiveUnitsUpTo = (cVal: number): number => {
+      const clamped = Math.max(cMin, Math.min(cMax, cVal));
+      let cursor = cMin;
+      let acc = 0;
+      for (const st of stretches) {
+        if (clamped <= cursor) break;
+        if (st.cStart > cursor) {
+          const normalEnd = Math.min(clamped, st.cStart);
+          acc += normalEnd - cursor;
+          cursor = normalEnd;
+        }
+        if (clamped > st.cStart && cursor < st.cEnd) {
+          const compEnd = Math.min(clamped, st.cEnd);
+          acc += (compEnd - Math.max(cursor, st.cStart)) * st.factor;
+          cursor = compEnd;
+        }
+      }
+      if (clamped > cursor) {
+        acc += clamped - cursor;
+      }
+      return acc;
+    };
+
+    const totalEffective = Math.max(1, effectiveUnitsUpTo(cMax));
+    const contToX = (cVal: number): number =>
+      leftPad + (effectiveUnitsUpTo(cVal) / totalEffective) * innerWidth;
+
+    // 가변 축척 변화점(≈) 마커 산출
+    for (const st of stretches) {
+      const midX = (contToX(st.cStart) + contToX(st.cEnd)) / 2;
+      scaleBreaks.push({ x: midX, labelKo: st.labelKo });
+    }
+
+    // 비겹침 눈금 생성 (BC/AD 0년 없음)
+    const rawTicks: AxisTick[] = spec.tickYears
+      .filter((y) => y !== 0 && y >= spec.domainStartYear && y <= spec.domainEndYear)
+      .map((y) => ({
+        year: y,
+        x: contToX(yearToContinuous(y)),
+        label: formatHistoricalYearKo(y),
+        isBoundary: y === 1,
+      }));
+
+    const minLabelGapPx = 56;
+    const filteredTicks: AxisTick[] = [];
+    for (const tk of rawTicks) {
+      const prev = filteredTicks[filteredTicks.length - 1];
+      if (!prev || tk.x - prev.x >= minLabelGapPx || tk.isBoundary) {
+        if (prev && tk.isBoundary && tk.x - prev.x < minLabelGapPx) {
+          filteredTicks[filteredTicks.length - 1] = tk;
+        } else {
+          filteredTicks.push(tk);
+        }
+      }
+    }
+    ticks = filteredTicks;
+
+    mapPoint = (year) => {
+      if (year === null || year === 0) return leftPad;
+      return contToX(yearToContinuous(year));
+    };
+
+    mapSpan = (sy, ey) => {
+      const rawStart = sy ?? spec.domainStartYear;
+      const rawEnd = ey ?? rawStart;
+      const clippedLeft = rawStart < spec.domainStartYear;
+      const clippedRight = rawEnd > spec.domainEndYear;
+      const clampedStart = Math.max(spec.domainStartYear, Math.min(spec.domainEndYear, rawStart));
+      const clampedEnd = Math.max(clampedStart, Math.min(spec.domainEndYear, rawEnd));
+      const x1 = contToX(yearToContinuous(clampedStart));
+      const x2 = contToX(yearToContinuous(clampedEnd) + 1);
+      return {
+        x: x1,
+        width: Math.max(MIN_BAR_VISUAL_PX, x2 - x1),
+        clippedLeft,
+        clippedRight,
+      };
+    };
+  }
+
+  const canvasWidth = leftPad + innerWidth + rightPad;
+  const trackDefs = ERA_CUSTOM_TRACKS[era.id];
+  const bucketMap = new Map<string, TimelineItem[]>();
+  for (const d of trackDefs) bucketMap.set(d.key, []);
+
+  for (const item of eraItems) {
+    const tDef = resolveEraCustomTrackDef(era.id, item);
+    bucketMap.get(tDef.key)?.push(item);
+  }
+
+  // 항목이 존재하는 맞춤 행만 노출하되, 필터로 인해 모두 비었으면 첫 행 유지
+  const activeDefs = trackDefs.filter((d) => (bucketMap.get(d.key)?.length ?? 0) > 0);
+  const effectiveDefs = activeDefs.length > 0 ? activeDefs : [trackDefs[0]];
+
+  const packedTracks: PackedEraCustomTrack[] = effectiveDefs.map((def) => {
+    const groupItems = bucketMap.get(def.key) ?? [];
+    const measured = groupItems.map((item) => {
+      const displayLabel = item.shortLabelKo ?? item.nameKo;
+      const geom = mapSpan(
+        item.startYear,
+        item.endYear,
+        item.relativeOrder,
+        item.relativeSpan,
+      );
+      const barX = geom.x;
+      const barWidth =
+        item.periodScale === 'point_or_brief' ||
+        (item.category === 'event' &&
+          item.datePrecision === 'undetermined' &&
+          (item.relativeSpan ?? 1) <= 1)
+          ? Math.min(26, Math.max(MIN_BAR_VISUAL_PX, geom.width))
+          : Math.max(MIN_BAR_VISUAL_PX, geom.width);
+
+      const prefixExtra = (geom.clippedLeft ? 12 : 0) + (geom.clippedRight ? 12 : 0);
+      const labelPx = estimateLabelWidthPx(displayLabel) + prefixExtra;
+      const labelInside = barWidth >= labelPx + 14;
+      const totalInteractiveWidth = labelInside
+        ? Math.max(barWidth, MIN_TOUCH_TARGET_PX)
+        : Math.max(MIN_TOUCH_TARGET_PX, barWidth + 8 + labelPx);
+
+      return {
+        item,
+        displayLabel,
+        barX,
+        barWidth,
+        labelInside,
+        visualWidth: totalInteractiveWidth,
+        footprintEndX: barX + totalInteractiveWidth,
+        clippedLeft: geom.clippedLeft,
+        clippedRight: geom.clippedRight,
+        hasUncertaintyWhisker:
+          item.periodScale === 'uncertainty_window' || item.datePrecision === 'range',
+        customTrackKey: def.key,
+        customTrackLabelKo: def.labelKo,
+      };
+    });
+
+    measured.sort((a, b) => {
+      if (a.barX !== b.barX) return a.barX - b.barX;
+      return b.barWidth - a.barWidth;
+    });
+
+    const laneEnds: number[] = [];
+    const packed: PackedEraTimelineItem[] = [];
+
+    for (const m of measured) {
+      let chosenLane = -1;
+      for (let i = 0; i < laneEnds.length; i += 1) {
+        if (laneEnds[i] + HORIZONTAL_LANE_GAP_PX <= m.barX) {
+          chosenLane = i;
+          laneEnds[i] = m.footprintEndX;
+          break;
+        }
+      }
+      if (chosenLane === -1) {
+        chosenLane = laneEnds.length;
+        laneEnds.push(m.footprintEndX);
+      }
+      packed.push({ ...m, subLane: chosenLane });
+    }
+
+    return {
+      key: def.key,
+      labelKo: def.labelKo,
+      subLabelKo: def.subLabelKo,
+      defaultColor: def.color,
+      subLaneCount: Math.max(1, laneEnds.length),
+      items: packed,
+    };
+  });
+
+  return {
+    era,
+    canvasWidth,
+    ticks,
+    scaleBreaks,
+    tracks: packedTracks,
+    yearOrOrderToX: mapPoint,
+    spanToGeometry: mapSpan,
+  };
+}
+
+export interface VerticalEraCardEntry {
+  item: TimelineItem;
+  customTrackLabelKo: string;
+  customTrackColor: string;
+}
+
+export interface VerticalEraSection {
+  era: TimelineEra;
+  entries: VerticalEraCardEntry[];
+}
+
+export function buildVerticalEraSections(
+  dataset: BibleHistoryDataset,
+  categoryFilter: TimelineCategoryFilter,
+  targetEraId: HistoryEraId | 'ALL',
+): VerticalEraSection[] {
+  const targetEras =
+    targetEraId === 'ALL'
+      ? dataset.eras
+      : dataset.eras.filter((e) => e.id === targetEraId);
+
+  return targetEras.map((era) => {
+    const rawItems = dataset.items.filter(
+      (it) =>
+        it.eraIds.includes(era.id) &&
+        (categoryFilter === 'ALL' || it.category === categoryFilter),
+    );
+
+    const sorted = [...rawItems].sort((a, b) => {
+      const aRel = a.relativeOrder;
+      const bRel = b.relativeOrder;
+      if (aRel !== undefined && bRel !== undefined) {
+        if (aRel !== bRel) return aRel - bRel;
+        return (b.relativeSpan ?? 1) - (a.relativeSpan ?? 1);
+      }
+      if (aRel !== undefined) return -1;
+      if (bRel !== undefined) return 1;
+      const aStart = a.startYear ?? 0;
+      const bStart = b.startYear ?? 0;
+      if (aStart !== bStart) return aStart - bStart;
+      return (a.endYear ?? aStart) - (b.endYear ?? bStart);
+    });
+
+    const entries: VerticalEraCardEntry[] = sorted.map((item) => {
+      const def = resolveEraCustomTrackDef(era.id, item);
+      return {
+        item,
+        customTrackLabelKo: def.labelKo,
+        customTrackColor: def.color,
+      };
+    });
+
+    return { era, entries };
+  });
 }
 
 let historyDatasetPromise: Promise<BibleHistoryDataset> | null = null;

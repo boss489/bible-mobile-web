@@ -303,6 +303,15 @@ def validate_and_compile_history_data(
             ):
                 raise ValueError(f"[{e_ctx}] 잘못된 relativeRange: {rr}")
             compiled_era["relativeRange"] = rr
+        if era.get("anchorBasisKo"):
+            compiled_era["anchorBasisKo"] = era["anchorBasisKo"].strip()
+        if era.get("studyNotesKo"):
+            notes_raw = era["studyNotesKo"]
+            if not isinstance(notes_raw, list) or not all(
+                isinstance(n, str) and n.strip() for n in notes_raw
+            ):
+                raise ValueError(f"[{e_ctx}] 잘못된 studyNotesKo 목록")
+            compiled_era["studyNotesKo"] = [n.strip() for n in notes_raw]
         if era.get("divergentViewsKo"):
             compiled_era["divergentViewsKo"] = era["divergentViewsKo"].strip()
 
@@ -631,7 +640,171 @@ def validate_and_compile_history_data(
 
         compiled_mappings.append(compiled_mp)
 
-    return {
+    # 4. 특집 연대기(specialChronicles) 선택 검증 (모든 구절 ID 및 항목 참조 정합성 검증)
+    specials_raw = raw.get("specialChronicles") or []
+    compiled_specials: list[dict] = []
+    seen_special_ids: set[str] = set()
+    allowed_gospel_tags = {"마태", "마가", "누가", "요한"}
+
+    for s_idx, sp in enumerate(specials_raw):
+        sp_id = (sp.get("id") or "").strip()
+        s_ctx = f"specialChronicles[{s_idx}]({sp_id})"
+        if sp_id not in {"sanctuary_history", "passion_week"} or sp_id in seen_special_ids:
+            raise ValueError(f"[{s_ctx}] 잘못되었거나 중복된 특집 연대기 ID: {sp_id!r}")
+        seen_special_ids.add(sp_id)
+
+        layout = sp.get("layout")
+        if layout not in {"stages", "day_columns"}:
+            raise ValueError(f"[{s_ctx}] 허용되지 않은 layout: {layout!r}")
+
+        for req_str in (
+            "nameKo",
+            "shortNameKo",
+            "subtitleKo",
+            "displayPeriodKo",
+            "color",
+            "summaryKo",
+            "anchorBasisKo",
+        ):
+            if not (sp.get(req_str) or "").strip():
+                raise ValueError(f"[{s_ctx}] 필수 문자열 누락: {req_str}")
+
+        s_ids = sp.get("sourceIds") or []
+        if not s_ids or any(sid not in valid_source_ids for sid in s_ids):
+            raise ValueError(f"[{s_ctx}] 유효하지 않은 sourceIds: {s_ids}")
+
+        notes_raw = sp.get("studyNotesKo") or []
+        if not isinstance(notes_raw, list) or not notes_raw or not all(
+            isinstance(n, str) and n.strip() for n in notes_raw
+        ):
+            raise ValueError(f"[{s_ctx}] studyNotesKo 최소 1개 이상 필요")
+
+        groups_raw = sp.get("groups") or []
+        if not groups_raw:
+            raise ValueError(f"[{s_ctx}] groups 목록 필요")
+        seen_group_keys: set[str] = set()
+        compiled_groups: list[dict] = []
+        for g_i, grp in enumerate(groups_raw):
+            gk = (grp.get("key") or "").strip()
+            if not gk or gk in seen_group_keys:
+                raise ValueError(f"[{s_ctx}.groups[{g_i}]] 잘못된 group key: {gk!r}")
+            seen_group_keys.add(gk)
+            compiled_groups.append(
+                {
+                    "key": gk,
+                    "labelKo": (grp.get("labelKo") or "").strip(),
+                    "subLabelKo": (grp.get("subLabelKo") or "").strip(),
+                    "color": (grp.get("color") or "").strip(),
+                }
+            )
+
+        compiled_stages: list[dict] = []
+        valid_stage_indices: set[int] = set()
+        if layout == "stages":
+            for st_i, stg in enumerate(sp.get("stages") or []):
+                st_num = stg.get("index")
+                if not isinstance(st_num, int) or st_num < 1 or st_num in valid_stage_indices:
+                    raise ValueError(f"[{s_ctx}.stages[{st_i}]] 잘못된 stage index: {st_num!r}")
+                valid_stage_indices.add(st_num)
+                compiled_stages.append(
+                    {
+                        "index": st_num,
+                        "labelKo": (stg.get("labelKo") or "").strip(),
+                        "periodKo": (stg.get("periodKo") or "").strip(),
+                    }
+                )
+            if not compiled_stages:
+                raise ValueError(f"[{s_ctx}] stages 레이아웃은 stages 정의가 필요합니다.")
+
+        events_raw = sp.get("events") or []
+        if not events_raw:
+            raise ValueError(f"[{s_ctx}] events 목록이 비어 있습니다.")
+        seen_ev_ids: set[str] = set()
+        compiled_events: list[dict] = []
+
+        for e_i, ev in enumerate(events_raw):
+            ev_id = (ev.get("id") or "").strip()
+            ev_ctx = f"{s_ctx}.events[{e_i}]({ev_id})"
+            if not ev_id or ev_id in seen_ev_ids:
+                raise ValueError(f"[{ev_ctx}] 잘못되었거나 중복된 event id")
+            seen_ev_ids.add(ev_id)
+
+            gk = (ev.get("groupKey") or "").strip()
+            if gk not in seen_group_keys:
+                raise ValueError(f"[{ev_ctx}] 존재하지 않는 groupKey: {gk!r}")
+
+            prec = ev.get("datePrecision")
+            if prec not in ALLOWED_DATE_PRECISIONS:
+                raise ValueError(f"[{ev_ctx}] 잘못된 datePrecision: {prec!r}")
+
+            rec_t = ev.get("recordType")
+            if rec_t not in ALLOWED_RECORD_TYPES:
+                raise ValueError(f"[{ev_ctx}] 잘못된 recordType: {rec_t!r}")
+
+            ev_passages = [
+                _validate_passage_link(p, max_verses, f"{ev_ctx}.passages[{p_i}]")
+                for p_i, p in enumerate(ev.get("passages") or [])
+            ]
+            if rec_t == "biblical_record" and not ev_passages:
+                raise ValueError(f"[{ev_ctx}] 성경 본문 항목은 최소 1개 이상의 말씀이 필요합니다.")
+
+            compiled_ev: dict = {
+                "id": ev_id,
+                "groupKey": gk,
+                "timeLabelKo": (ev.get("timeLabelKo") or "").strip(),
+                "titleKo": (ev.get("titleKo") or "").strip(),
+                "summaryKo": (ev.get("summaryKo") or "").strip(),
+                "datePrecision": prec,
+                "recordType": rec_t,
+                "passages": ev_passages,
+            }
+            if layout == "stages":
+                st_idx = ev.get("stageIndex")
+                if st_idx not in valid_stage_indices:
+                    raise ValueError(f"[{ev_ctx}] 유효하지 않은 stageIndex: {st_idx!r}")
+                compiled_ev["stageIndex"] = st_idx
+
+            if ev.get("gospelTags"):
+                gtags = ev["gospelTags"]
+                if not isinstance(gtags, list) or any(gt not in allowed_gospel_tags for gt in gtags):
+                    raise ValueError(f"[{ev_ctx}] 잘못된 gospelTags: {gtags}")
+                compiled_ev["gospelTags"] = gtags
+
+            if ev.get("linkedItemId"):
+                lid = ev["linkedItemId"].strip()
+                if lid not in seen_item_ids:
+                    raise ValueError(f"[{ev_ctx}] 존재하지 않는 linkedItemId: {lid}")
+                compiled_ev["linkedItemId"] = lid
+
+            if ev.get("externalHistoryNoteKo"):
+                compiled_ev["externalHistoryNoteKo"] = ev["externalHistoryNoteKo"].strip()
+
+            compiled_events.append(compiled_ev)
+
+        compiled_sp: dict = {
+            "id": sp_id,
+            "order": s_idx + 1,
+            "nameKo": sp["nameKo"].strip(),
+            "shortNameKo": sp["shortNameKo"].strip(),
+            "subtitleKo": sp["subtitleKo"].strip(),
+            "displayPeriodKo": sp["displayPeriodKo"].strip(),
+            "layout": layout,
+            "color": sp["color"].strip(),
+            "summaryKo": sp["summaryKo"].strip(),
+            "anchorBasisKo": sp["anchorBasisKo"].strip(),
+            "studyNotesKo": [n.strip() for n in notes_raw],
+            "groups": compiled_groups,
+            "events": compiled_events,
+            "sourceIds": s_ids,
+        }
+        if sp.get("divergentViewsKo"):
+            compiled_sp["divergentViewsKo"] = sp["divergentViewsKo"].strip()
+        if compiled_stages:
+            compiled_sp["stages"] = compiled_stages
+
+        compiled_specials.append(compiled_sp)
+
+    result_payload = {
         "contentVersion": content_version,
         "overviewNoticeKo": overview_notice,
         "sources": sources_map,
@@ -639,6 +812,10 @@ def validate_and_compile_history_data(
         "items": compiled_items,
         "chapterMappings": compiled_mappings,
     }
+    if compiled_specials:
+        result_payload["specialChronicles"] = compiled_specials
+
+    return result_payload
 
 
 def main() -> None:
