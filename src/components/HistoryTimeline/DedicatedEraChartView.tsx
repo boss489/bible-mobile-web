@@ -1,4 +1,4 @@
-import { type PointerEvent as ReactPointerEvent, type RefObject } from 'react';
+import { useState, type PointerEvent as ReactPointerEvent, type RefObject } from 'react';
 import {
   DATE_PRECISION_LABELS_KO,
   PERIOD_KIND_LABELS_KO,
@@ -37,6 +37,12 @@ interface DedicatedEraChartViewProps {
 
 const SUB_LANE_HEIGHT_PX = 38;
 const TRACK_PAD_Y_PX = 9;
+const JESUS_EVENT_GROUPS = [
+  { labelKo: '탄생', fromYear: -Infinity, toYear: 1 },
+  { labelKo: '공생애 시작', fromYear: 1, toYear: 28 },
+  { labelKo: '가르침과 표적', fromYear: 28, toYear: 30 },
+  { labelKo: '수난·부활·승천', fromYear: 30, toYear: Infinity },
+] as const;
 
 export function DedicatedEraChartView({
   mode,
@@ -59,6 +65,7 @@ export function DedicatedEraChartView({
   onSelectSpecialEvent,
   onSelectPassage,
 }: DedicatedEraChartViewProps) {
+  const [expandedJesusGroup, setExpandedJesusGroup] = useState<number | null>(null);
   const headerTitle =
     mode === 'era' && eraLayout
       ? `${eraLayout.era.order}. ${eraLayout.era.nameKo}`
@@ -247,7 +254,32 @@ export function DedicatedEraChartView({
             </div>
 
             {eraLayout.tracks.map((track) => {
-              const laneHeight = track.subLaneCount * SUB_LANE_HEIGHT_PX + TRACK_PAD_Y_PX * 2;
+              const groupJesusEvents = eraLayout.era.id === 'jesus_life' && track.key === 'jl_events';
+              const eventGroups = groupJesusEvents
+                ? JESUS_EVENT_GROUPS.map((group) => ({
+                    ...group,
+                    items: track.items.filter((packed) => {
+                      const year = packed.item.startYear ?? 30;
+                      return year >= group.fromYear && year < group.toYear;
+                    }),
+                  }))
+                : [];
+              const groupLaneCount = groupJesusEvents ? JESUS_EVENT_GROUPS.length : 0;
+              const expandedItems = groupJesusEvents && expandedJesusGroup !== null
+                ? eventGroups[expandedJesusGroup].items
+                : [];
+              const visibleItems = groupJesusEvents
+                ? [
+                    ...eventGroups.flatMap((group, index) => group.items.length === 1
+                      ? [{ packed: group.items[0], lane: index }]
+                      : []),
+                    ...expandedItems.map((packed, index) => ({ packed, lane: groupLaneCount + index })),
+                  ]
+                : track.items.map((packed) => ({ packed, lane: packed.subLane }));
+              const visibleLaneCount = groupJesusEvents
+                ? groupLaneCount + expandedItems.length
+                : track.subLaneCount;
+              const laneHeight = visibleLaneCount * SUB_LANE_HEIGHT_PX + TRACK_PAD_Y_PX * 2;
               return (
                 <div key={track.key} className="timeline-track-row">
                   <div className="timeline-track-label-cell">
@@ -317,13 +349,33 @@ export function DedicatedEraChartView({
                       ) : null}
                     </svg>
 
-                    {track.items.map((packed) => {
+                    {eventGroups.map((group, index) => group.items.length > 1 ? (
+                      <button
+                        key={group.labelKo}
+                        type="button"
+                        className={`timeline-event-group ${
+                          group.items.some((packed) => selection?.kind === 'item' && selection.id === packed.item.id)
+                            ? 'timeline-event-group-selected' : ''
+                        }`}
+                        style={{
+                          left: `${Math.min(...group.items.map((packed) => packed.barX))}px`,
+                          top: `${TRACK_PAD_Y_PX + index * SUB_LANE_HEIGHT_PX}px`,
+                        }}
+                        aria-expanded={expandedJesusGroup === index}
+                        aria-label={`${group.labelKo} 사건 ${group.items.length}개 ${expandedJesusGroup === index ? '접기' : '펼치기'}`}
+                        onClick={() => setExpandedJesusGroup((current) => current === index ? null : index)}
+                      >
+                        ◆ {group.labelKo} · {group.items.length}건
+                      </button>
+                    ) : null)}
+
+                    {visibleItems.map(({ packed, lane }) => {
                       const { item } = packed;
                       const isSelected = selection?.kind === 'item' && selection.id === item.id;
                       const isPrimary = primaryHighlightIds.has(item.id);
                       const isRelated = relatedHighlightIds.has(item.id);
                       const baseColor = item.accentColor ?? track.defaultColor;
-                      const topPx = TRACK_PAD_Y_PX + packed.subLane * SUB_LANE_HEIGHT_PX;
+                      const topPx = TRACK_PAD_Y_PX + lane * SUB_LANE_HEIGHT_PX;
                       const isEvent = item.category === 'event';
                       const isWindow = item.periodScale === 'uncertainty_window';
                       const isUncertain =

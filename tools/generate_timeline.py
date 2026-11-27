@@ -93,7 +93,7 @@ eras: list[dict] = [
         "id": "patriarchs",
         "nameKo": "족장",
         "shortNameKo": "족장",
-        "summaryKo": "아브라함·이삭·야곱·요셉 4대 가문에게 주어진 언약과 애굽 이주까지의 가족사입니다.",
+        "summaryKo": "아브라함의 부르심과 이삭의 탄생, 야곱의 새 이름, 요셉의 애굽 통치와 가족의 이주로 이어지는 언약의 역사입니다.",
         "datePrecision": "undetermined",
         "displayPeriodKo": "본문 계보 순서 (중기 청동기 배경 논의)",
         "startYear": None,
@@ -471,6 +471,42 @@ add_relative_item(
 # 2B. 족장 시대 (Slots 5..12) — 본문 내 세대 연수·순서 반영 (아브라함 [5..8) ↔ 요셉 [9..12) 완전 분리!)
 # =====================================================================
 add_relative_item(
+    "event-abraham-call", "아브라함의 부르심", "event", "patriarchs", 5, 1,
+    "event", "본문 서사 순서 · 아브라함 75세",
+    "하나님이 아브라함을 부르시고 땅과 자손, 열방에 미칠 복을 약속하셨습니다.",
+    [("GEN.12.1-4", "하란을 떠나라는 부르심과 언약의 말씀입니다.")],
+    related=["item-abraham"],
+)
+add_relative_item(
+    "event-isaac-birth", "약속의 아들 이삭 탄생", "event", "patriarchs", 6, 1,
+    "event", "본문 서사 순서 · 아브라함 100세",
+    "하나님이 약속하신 대로 사라가 이삭을 낳아 족장 언약이 다음 세대로 이어졌습니다.",
+    [("GEN.21.1-5", "사라가 이삭을 낳았을 때 아브라함은 100세였습니다.")],
+    related=["item-abraham", "item-isaac"],
+)
+add_relative_item(
+    "event-jacob-israel", "야곱이 이스라엘로 불림", "event", "patriarchs", 8, 1,
+    "event", "본문 서사 순서 · 얍복강 사건",
+    "야곱이 얍복강에서 씨름한 뒤 이스라엘이라는 이름을 받았습니다.",
+    [("GEN.32.24-30", "야곱이 이스라엘이라는 새 이름을 받은 기록입니다.")],
+    related=["item-jacob"],
+)
+add_relative_item(
+    "event-joseph-ruler", "요셉이 애굽 통치자가 됨", "event", "patriarchs", 10, 1,
+    "event", "본문 서사 순서 · 요셉 30세",
+    "바로의 꿈을 해석한 요셉이 애굽을 다스리게 되어 뒤이은 기근에 대비했습니다.",
+    [("GEN.41.39-46", "바로가 요셉에게 애굽 온 땅을 맡긴 기록입니다.")],
+    related=["item-joseph"],
+)
+add_relative_item(
+    "event-jacob-egypt", "야곱 가족의 애굽 이주", "event", "patriarchs", 11, 1,
+    "event", "본문 서사 순서 · 야곱 130세",
+    "기근 중 야곱과 가족이 요셉이 있는 애굽으로 내려가 생명을 보존했습니다.",
+    [("GEN.46.1-7", "야곱이 가족과 함께 애굽으로 내려간 기록입니다."),
+     ("GEN.47.9", "야곱이 바로 앞에서 자신의 나이를 130세라 밝힌 기록입니다.")],
+    related=["item-jacob", "item-joseph"],
+)
+add_relative_item(
     "item-abraham",
     "아브라함",
     "person",
@@ -599,6 +635,43 @@ add_relative_item(
     ],
     hypotheses="발생 연대 가설: 출애굽 시점 직후 약 1년 (초기설 BC 15세기 중엽 / 후기설 BC 13세기 중엽)",
     related=["item-moses", "item-aaron", "item-exodus"],
+)
+add_relative_item(
+    "event-manna", "만나와 메추라기", "event", "exodus", 13, 1,
+    "event", "출애굽 후 · 시내산 도착 전",
+    "광야에서 먹을 것이 없어 원망하던 백성에게 하나님이 만나와 메추라기를 공급하셨습니다.",
+    [("EXOD.16.13-18", "메추라기가 진을 덮고 아침에는 만나가 내려 백성이 거둔 기록입니다.")],
+    related=["item-exodus", "item-moses"],
+)
+add_relative_item(
+    "event-golden-calf", "금송아지와 언약 갱신", "event", "exodus", 14, 1,
+    "event", "시내산 체류 중",
+    "백성이 금송아지를 만들었으나 모세의 중보 후 하나님이 언약을 새롭게 하셨습니다.",
+    [("EXOD.32.1-6", "백성이 금송아지를 만들어 제사를 드린 기록입니다."),
+     ("EXOD.34.1-10", "새 돌판을 만들고 언약을 다시 세우신 기록입니다.")],
+    related=["item-sinai", "item-moses", "item-aaron"],
+)
+add_relative_item(
+    "event-spies", "정탐꾼과 광야 40년", "event", "exodus", 15, 1,
+    "event", "가데스 바네아 · 광야 여정",
+    "가나안을 정탐한 뒤 백성이 불신하여 그 세대가 광야에서 40년을 지내게 되었습니다.",
+    [("NUM.13.25-33", "정탐꾼들이 가나안에서 돌아와 보고한 기록입니다."),
+     ("NUM.14.26-35", "광야에서 40년을 지내게 된 판결입니다.")],
+    related=["item-moses"],
+)
+add_relative_item(
+    "event-bronze-serpent", "놋뱀 사건", "event", "exodus", 15, 1,
+    "event", "광야 여정 중",
+    "불뱀에 물린 백성이 하나님의 명령에 따라 세운 놋뱀을 바라보고 살아났습니다.",
+    [("NUM.21.4-9", "모세가 만든 놋뱀을 바라본 사람이 살아난 기록입니다.")],
+    related=["item-moses"],
+)
+add_relative_item(
+    "event-moses-farewell", "모세의 고별과 여호수아 위임", "event", "exodus", 16, 1,
+    "event", "광야 40년 끝 · 모압 평지",
+    "모세가 백성 앞에서 여호수아를 후계자로 세우고 가나안 입성을 앞둔 세대를 격려했습니다.",
+    [("DEUT.31.1-8", "모세가 여호수아에게 담대히 백성을 인도하라고 명한 기록입니다.")],
+    related=["item-moses", "item-joshua"],
 )
 add_relative_item(
     "item-moses",
@@ -2396,6 +2469,70 @@ for book_num, start_y, end_y, rel_ids, sec_note in EPISTLE_SPECS:
         secondary=[("event", sec_note)],
         related=rel_ids,
     )
+
+# 4–12시대 차트의 사건 행: 본문에 명시된 전환점만 추가하고 왕정 이전은 상대 순서로 둔다.
+for item_id, name, slot, ref, summary in [
+    ("event-jordan-crossing", "요단강 도하", 17, "JOSH.3.14-17", "이스라엘이 언약궤를 앞세워 마른 땅으로 요단강을 건넜습니다."),
+    ("event-jericho", "여리고 함락", 17, "JOSH.6.20", "백성이 나팔 소리에 외치자 여리고 성벽이 무너졌습니다."),
+    ("event-gideon-300", "기드온의 삼백 용사", 22, "JUDG.7.19-22", "기드온의 삼백 명이 미디안 진영을 공격해 승리했습니다."),
+    ("event-mizpah", "미스바 회개와 에벤에셀", 25, "1SAM.7.5-12", "사무엘이 미스바에 백성을 모아 회개를 이끌고 블레셋을 물리쳤습니다."),
+]:
+    add_relative_item(item_id, name, "event", "conquest_judges", slot, 1, "event", "본문 사건 순서", summary, [(ref, summary)])
+
+for item_id, name, era, year, ref, summary in [
+    ("event-david-covenant", "다윗 언약", "united_kingdom", -1000, "2SAM.7.12-16", "하나님이 다윗의 집과 왕위를 견고하게 하겠다고 약속하셨습니다."),
+    ("event-first-temple", "솔로몬 성전 봉헌", "united_kingdom", -960, "1KGS.8.10-13", "솔로몬이 세운 성전에 여호와의 영광이 가득했습니다."),
+    ("event-golden-calves-dan-bethel", "단·벧엘 금송아지", "divided_kingdom", -930, "1KGS.12.28-30", "여로보암이 단과 벧엘에 금송아지를 세워 북왕국의 예배를 예루살렘에서 분리했습니다."),
+    ("event-samaria-capital", "사마리아 수도 건설", "divided_kingdom", -880, "1KGS.16.24", "오므리가 사마리아 산을 사서 성읍을 세우고 북왕국의 수도로 삼았습니다."),
+    ("event-carmel", "갈멜산 대결", "divided_kingdom", -860, "1KGS.18.36-39", "엘리야의 기도에 불이 내려와 백성이 여호와를 하나님으로 고백했습니다."),
+    ("event-jehu", "예후의 쿠데타", "divided_kingdom", -841, "2KGS.9.21-29", "예후가 요람과 아하시야를 죽이며 북이스라엘 왕조가 바뀌었습니다."),
+    ("event-joash-temple-repair", "요아스의 성전 수리", "divided_kingdom", -812, "2KGS.12.9-12", "남유다 요아스가 헌금을 모아 훼손된 예루살렘 성전을 수리하게 했습니다."),
+    ("event-amos-justice", "아모스의 공의 선포", "divided_kingdom", -760, "AMOS.5.21-24", "아모스가 북왕국의 형식적 예배와 사회 불의를 꾸짖고 공의를 촉구했습니다."),
+    ("event-ahaz-assyria", "아하스의 앗수르 원조 요청", "divided_kingdom", -734, "2KGS.16.7-9", "남유다 아하스가 아람과 북이스라엘의 압박에 맞서 앗수르에 원조를 청했습니다."),
+    ("event-galilee-captivity", "앗수르의 갈릴리 점령", "divided_kingdom", -732, "2KGS.15.29", "앗수르가 갈릴리와 길르앗을 점령하고 북왕국 주민을 사로잡아 갔습니다."),
+    ("event-jerusalem-deliverance", "앗수르 포위에서 예루살렘 구원", "judah_alone", -701, "2KGS.19.32-36", "산헤립의 군대가 예루살렘을 점령하지 못하고 물러났습니다."),
+    ("event-josiah-reform", "율법책 발견과 요시야 개혁", "judah_alone", -622, "2KGS.22.8-13", "성전에서 율법책을 발견한 요시야가 언약에 따른 개혁을 시작했습니다."),
+    ("event-second-deportation", "여호야긴의 바벨론 포로", "judah_alone", -597, "2KGS.24.10-15", "여호야긴과 지도층이 바벨론으로 사로잡혀 갔습니다."),
+    ("event-jehoiachin-release", "여호야긴 석방", "exile", -561, "2KGS.25.27-30", "바벨론 왕이 포로였던 여호야긴을 석방하고 예우했습니다."),
+    ("event-babylon-fall", "바벨론 함락", "exile", -539, "DAN.5.30-31", "벨사살이 죽고 메대·바사의 통치로 넘어가는 전환점입니다."),
+    ("event-esther-deliverance", "에스더와 유다인 구원", "return_persian", -473, "ESTH.9.20-28", "에스더와 모르드개를 통해 유다인들이 위기를 넘기고 부림절을 세웠습니다."),
+    ("event-wall-complete", "예루살렘 성벽 완공", "return_persian", -445, "NEH.6.15-16", "느헤미야가 이끈 공동체가 52일 만에 성벽을 완공했습니다."),
+    ("event-torah-reading", "에스라의 율법 낭독", "return_persian", -445, "NEH.8.1-8", "에스라가 율법을 낭독하고 레위인들이 백성에게 그 뜻을 설명했습니다."),
+    ("event-jesus-birth", "예수님의 탄생", "jesus_life", -5, "LUKE.2.1-7", "예수님이 베들레헴에서 태어나셨습니다."),
+    ("event-jesus-baptism", "예수님의 세례와 공생애 시작", "jesus_life", 27, "MATT.3.13-17", "예수님이 요단강에서 세례를 받으실 때 하늘의 증언이 있었습니다."),
+    ("event-triumphal-entry", "예루살렘 입성", "jesus_life", 30, "MATT.21.1-11", "예수님이 나귀를 타고 예루살렘에 들어가셨습니다."),
+    ("event-pentecost", "오순절 성령 강림", "early_church", 30, "ACTS.2.1-4", "오순절에 성령이 임해 예루살렘 교회의 복음 증언이 시작됐습니다."),
+    ("event-stephen-martyrdom", "스데반 순교와 교회 흩어짐", "early_church", 34, "ACTS.8.1-4", "스데반의 순교 뒤 박해로 흩어진 성도들이 곳곳에 복음을 전했습니다."),
+    ("event-cornelius", "고넬료 집의 이방인 성령 강림", "early_church", 40, "ACTS.10.44-48", "베드로의 설교를 듣던 이방인들에게도 성령이 임했습니다."),
+]:
+    add_dated_item(item_id, name, "event", era, year, year, [(ref, summary)], summary, precision="estimated")
+
+for item_id, name, start, end, ref, summary in [
+    ("event-jesus-temptation", "광야 시험", 27, 28, "MATT.4.1-11", "예수님이 광야에서 시험을 받으시고 말씀으로 이기셨습니다."),
+    ("event-first-disciples", "첫 제자들을 부르심", 27, 28, "MARK.1.16-20", "예수님이 시몬·안드레·야고보·요한을 부르셨습니다."),
+    ("event-cana", "가나 혼인잔치 첫 표적", 27, 28, "JOHN.2.1-11", "예수님이 물을 포도주로 바꾸시는 첫 표적을 행하셨습니다."),
+    ("event-sermon-mount", "산상수훈", 27, 29, "MATT.5.1-12", "예수님이 제자들과 무리에게 하나님 나라의 복을 가르치셨습니다."),
+    ("event-feeding-five-thousand", "오병이어", 28, 29, "MARK.6.34-44", "예수님이 떡 다섯 개와 물고기 두 마리로 큰 무리를 먹이셨습니다."),
+    ("event-peter-confession", "베드로의 그리스도 고백", 28, 30, "MATT.16.13-20", "베드로가 예수님을 그리스도이자 하나님의 아들로 고백했습니다."),
+    ("event-transfiguration", "변화산 사건", 28, 30, "MATT.17.1-8", "예수님이 산 위에서 영광스러운 모습으로 변화되셨습니다."),
+]:
+    add_dated_item(item_id, name, "event", "jesus_life", start, end, [(ref, summary)], summary,
+                   scale="uncertainty_window", precision="range")
+
+for item_id, name, ref, summary in [
+    ("event-lazarus", "나사로를 살리심", "JOHN.11.38-44", "예수님이 죽은 지 나흘 된 나사로를 무덤에서 불러내셨습니다."),
+    ("event-last-supper", "마지막 만찬", "LUKE.22.14-20", "예수님이 제자들과 유월절 식사를 하시며 새 언약을 말씀하셨습니다."),
+    ("event-ascension", "예수님의 승천", "ACTS.1.9-11", "부활하신 예수님이 제자들이 보는 가운데 하늘로 올라가셨습니다."),
+]:
+    add_dated_item(item_id, name, "event", "jesus_life", 30, 30, [(ref, summary)], summary,
+                   precision="estimated", display_period="약 AD 30년 (수난 AD 33년설 병존)")
+
+for item_id, name, year, summary in [
+    ("external-temple-rededication", "성전 재봉헌", -164, "마카비 항쟁 뒤 예루살렘 성전이 다시 봉헌되었습니다."),
+    ("external-judean-independence", "유대 독립 선언", -142, "시몬 시대 유대가 셀레우코스 왕조의 지배에서 벗어났습니다."),
+]:
+    add_dated_item(item_id, name, "event", "intertestamental", year, year, [], summary,
+                   record="external_history", precision="confirmed", note=EXTERNAL_NOTE)
 
 # =====================================================================
 # 10. 장별 역사적 배경 매핑 (chapterMappings) — 비역사 지혜서(18, 20, 21, 22) 및 요엘(29) 제외

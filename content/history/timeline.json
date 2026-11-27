@@ -47,7 +47,7 @@
       "id": "patriarchs",
       "nameKo": "족장",
       "shortNameKo": "족장",
-      "summaryKo": "아브라함·이삭·야곱·요셉 4대 가문에게 주어진 언약과 애굽 이주까지의 가족사입니다.",
+      "summaryKo": "아브라함의 부르심과 이삭의 탄생, 야곱의 새 이름, 요셉의 애굽 통치와 가족의 이주로 이어지는 언약의 역사입니다.",
       "datePrecision": "undetermined",
       "displayPeriodKo": "본문 계보 순서 (중기 청동기 배경 논의)",
       "startYear": null,
@@ -600,6 +600,178 @@
       ]
     },
     {
+      "id": "event-abraham-call",
+      "nameKo": "아브라함의 부르심",
+      "roleLabelKo": "역사적 사건",
+      "category": "event",
+      "eraIds": [
+        "patriarchs"
+      ],
+      "recordType": "biblical_record",
+      "periodKind": "event",
+      "periodScale": "relative_sequence",
+      "datePrecision": "undetermined",
+      "displayPeriodKo": "본문 서사 순서 · 아브라함 75세",
+      "startYear": null,
+      "endYear": null,
+      "relativeOrder": 5,
+      "relativeSpan": 1,
+      "summaryKo": "하나님이 아브라함을 부르시고 땅과 자손, 열방에 미칠 복을 약속하셨습니다.",
+      "passages": [
+        {
+          "verseId": "GEN.12.1-4",
+          "titleKo": "창세기",
+          "roleKo": "하란을 떠나라는 부르심과 언약의 말씀입니다."
+        }
+      ],
+      "sourceIds": [
+        "biblical-internal-text",
+        "standard-biblical-intro"
+      ],
+      "relatedItemIds": [
+        "item-abraham"
+      ]
+    },
+    {
+      "id": "event-isaac-birth",
+      "nameKo": "약속의 아들 이삭 탄생",
+      "roleLabelKo": "역사적 사건",
+      "category": "event",
+      "eraIds": [
+        "patriarchs"
+      ],
+      "recordType": "biblical_record",
+      "periodKind": "event",
+      "periodScale": "relative_sequence",
+      "datePrecision": "undetermined",
+      "displayPeriodKo": "본문 서사 순서 · 아브라함 100세",
+      "startYear": null,
+      "endYear": null,
+      "relativeOrder": 6,
+      "relativeSpan": 1,
+      "summaryKo": "하나님이 약속하신 대로 사라가 이삭을 낳아 족장 언약이 다음 세대로 이어졌습니다.",
+      "passages": [
+        {
+          "verseId": "GEN.21.1-5",
+          "titleKo": "창세기",
+          "roleKo": "사라가 이삭을 낳았을 때 아브라함은 100세였습니다."
+        }
+      ],
+      "sourceIds": [
+        "biblical-internal-text",
+        "standard-biblical-intro"
+      ],
+      "relatedItemIds": [
+        "item-abraham",
+        "item-isaac"
+      ]
+    },
+    {
+      "id": "event-jacob-israel",
+      "nameKo": "야곱이 이스라엘로 불림",
+      "roleLabelKo": "역사적 사건",
+      "category": "event",
+      "eraIds": [
+        "patriarchs"
+      ],
+      "recordType": "biblical_record",
+      "periodKind": "event",
+      "periodScale": "relative_sequence",
+      "datePrecision": "undetermined",
+      "displayPeriodKo": "본문 서사 순서 · 얍복강 사건",
+      "startYear": null,
+      "endYear": null,
+      "relativeOrder": 8,
+      "relativeSpan": 1,
+      "summaryKo": "야곱이 얍복강에서 씨름한 뒤 이스라엘이라는 이름을 받았습니다.",
+      "passages": [
+        {
+          "verseId": "GEN.32.24-30",
+          "titleKo": "창세기",
+          "roleKo": "야곱이 이스라엘이라는 새 이름을 받은 기록입니다."
+        }
+      ],
+      "sourceIds": [
+        "biblical-internal-text",
+        "standard-biblical-intro"
+      ],
+      "relatedItemIds": [
+        "item-jacob"
+      ]
+    },
+    {
+      "id": "event-joseph-ruler",
+      "nameKo": "요셉이 애굽 통치자가 됨",
+      "roleLabelKo": "역사적 사건",
+      "category": "event",
+      "eraIds": [
+        "patriarchs"
+      ],
+      "recordType": "biblical_record",
+      "periodKind": "event",
+      "periodScale": "relative_sequence",
+      "datePrecision": "undetermined",
+      "displayPeriodKo": "본문 서사 순서 · 요셉 30세",
+      "startYear": null,
+      "endYear": null,
+      "relativeOrder": 10,
+      "relativeSpan": 1,
+      "summaryKo": "바로의 꿈을 해석한 요셉이 애굽을 다스리게 되어 뒤이은 기근에 대비했습니다.",
+      "passages": [
+        {
+          "verseId": "GEN.41.39-46",
+          "titleKo": "창세기",
+          "roleKo": "바로가 요셉에게 애굽 온 땅을 맡긴 기록입니다."
+        }
+      ],
+      "sourceIds": [
+        "biblical-internal-text",
+        "standard-biblical-intro"
+      ],
+      "relatedItemIds": [
+        "item-joseph"
+      ]
+    },
+    {
+      "id": "event-jacob-egypt",
+      "nameKo": "야곱 가족의 애굽 이주",
+      "roleLabelKo": "역사적 사건",
+      "category": "event",
+      "eraIds": [
+        "patriarchs"
+      ],
+      "recordType": "biblical_record",
+      "periodKind": "event",
+      "periodScale": "relative_sequence",
+      "datePrecision": "undetermined",
+      "displayPeriodKo": "본문 서사 순서 · 야곱 130세",
+      "startYear": null,
+      "endYear": null,
+      "relativeOrder": 11,
+      "relativeSpan": 1,
+      "summaryKo": "기근 중 야곱과 가족이 요셉이 있는 애굽으로 내려가 생명을 보존했습니다.",
+      "passages": [
+        {
+          "verseId": "GEN.46.1-7",
+          "titleKo": "창세기",
+          "roleKo": "야곱이 가족과 함께 애굽으로 내려간 기록입니다."
+        },
+        {
+          "verseId": "GEN.47.9",
+          "titleKo": "창세기",
+          "roleKo": "야곱이 바로 앞에서 자신의 나이를 130세라 밝힌 기록입니다."
+        }
+      ],
+      "sourceIds": [
+        "biblical-internal-text",
+        "standard-biblical-intro"
+      ],
+      "relatedItemIds": [
+        "item-jacob",
+        "item-joseph"
+      ]
+    },
+    {
       "id": "item-abraham",
       "nameKo": "아브라함",
       "roleLabelKo": "족장 · 언약의 시조",
@@ -915,6 +1087,185 @@
         "item-moses",
         "item-aaron",
         "item-exodus"
+      ]
+    },
+    {
+      "id": "event-manna",
+      "nameKo": "만나와 메추라기",
+      "roleLabelKo": "역사적 사건",
+      "category": "event",
+      "eraIds": [
+        "exodus"
+      ],
+      "recordType": "biblical_record",
+      "periodKind": "event",
+      "periodScale": "relative_sequence",
+      "datePrecision": "undetermined",
+      "displayPeriodKo": "출애굽 후 · 시내산 도착 전",
+      "startYear": null,
+      "endYear": null,
+      "relativeOrder": 13,
+      "relativeSpan": 1,
+      "summaryKo": "광야에서 먹을 것이 없어 원망하던 백성에게 하나님이 만나와 메추라기를 공급하셨습니다.",
+      "passages": [
+        {
+          "verseId": "EXOD.16.13-18",
+          "titleKo": "출애굽기",
+          "roleKo": "메추라기가 진을 덮고 아침에는 만나가 내려 백성이 거둔 기록입니다."
+        }
+      ],
+      "sourceIds": [
+        "biblical-internal-text",
+        "standard-biblical-intro"
+      ],
+      "relatedItemIds": [
+        "item-exodus",
+        "item-moses"
+      ]
+    },
+    {
+      "id": "event-golden-calf",
+      "nameKo": "금송아지와 언약 갱신",
+      "roleLabelKo": "역사적 사건",
+      "category": "event",
+      "eraIds": [
+        "exodus"
+      ],
+      "recordType": "biblical_record",
+      "periodKind": "event",
+      "periodScale": "relative_sequence",
+      "datePrecision": "undetermined",
+      "displayPeriodKo": "시내산 체류 중",
+      "startYear": null,
+      "endYear": null,
+      "relativeOrder": 14,
+      "relativeSpan": 1,
+      "summaryKo": "백성이 금송아지를 만들었으나 모세의 중보 후 하나님이 언약을 새롭게 하셨습니다.",
+      "passages": [
+        {
+          "verseId": "EXOD.32.1-6",
+          "titleKo": "출애굽기",
+          "roleKo": "백성이 금송아지를 만들어 제사를 드린 기록입니다."
+        },
+        {
+          "verseId": "EXOD.34.1-10",
+          "titleKo": "출애굽기",
+          "roleKo": "새 돌판을 만들고 언약을 다시 세우신 기록입니다."
+        }
+      ],
+      "sourceIds": [
+        "biblical-internal-text",
+        "standard-biblical-intro"
+      ],
+      "relatedItemIds": [
+        "item-sinai",
+        "item-moses",
+        "item-aaron"
+      ]
+    },
+    {
+      "id": "event-spies",
+      "nameKo": "정탐꾼과 광야 40년",
+      "roleLabelKo": "역사적 사건",
+      "category": "event",
+      "eraIds": [
+        "exodus"
+      ],
+      "recordType": "biblical_record",
+      "periodKind": "event",
+      "periodScale": "relative_sequence",
+      "datePrecision": "undetermined",
+      "displayPeriodKo": "가데스 바네아 · 광야 여정",
+      "startYear": null,
+      "endYear": null,
+      "relativeOrder": 15,
+      "relativeSpan": 1,
+      "summaryKo": "가나안을 정탐한 뒤 백성이 불신하여 그 세대가 광야에서 40년을 지내게 되었습니다.",
+      "passages": [
+        {
+          "verseId": "NUM.13.25-33",
+          "titleKo": "민수기",
+          "roleKo": "정탐꾼들이 가나안에서 돌아와 보고한 기록입니다."
+        },
+        {
+          "verseId": "NUM.14.26-35",
+          "titleKo": "민수기",
+          "roleKo": "광야에서 40년을 지내게 된 판결입니다."
+        }
+      ],
+      "sourceIds": [
+        "biblical-internal-text",
+        "standard-biblical-intro"
+      ],
+      "relatedItemIds": [
+        "item-moses"
+      ]
+    },
+    {
+      "id": "event-bronze-serpent",
+      "nameKo": "놋뱀 사건",
+      "roleLabelKo": "역사적 사건",
+      "category": "event",
+      "eraIds": [
+        "exodus"
+      ],
+      "recordType": "biblical_record",
+      "periodKind": "event",
+      "periodScale": "relative_sequence",
+      "datePrecision": "undetermined",
+      "displayPeriodKo": "광야 여정 중",
+      "startYear": null,
+      "endYear": null,
+      "relativeOrder": 15,
+      "relativeSpan": 1,
+      "summaryKo": "불뱀에 물린 백성이 하나님의 명령에 따라 세운 놋뱀을 바라보고 살아났습니다.",
+      "passages": [
+        {
+          "verseId": "NUM.21.4-9",
+          "titleKo": "민수기",
+          "roleKo": "모세가 만든 놋뱀을 바라본 사람이 살아난 기록입니다."
+        }
+      ],
+      "sourceIds": [
+        "biblical-internal-text",
+        "standard-biblical-intro"
+      ],
+      "relatedItemIds": [
+        "item-moses"
+      ]
+    },
+    {
+      "id": "event-moses-farewell",
+      "nameKo": "모세의 고별과 여호수아 위임",
+      "roleLabelKo": "역사적 사건",
+      "category": "event",
+      "eraIds": [
+        "exodus"
+      ],
+      "recordType": "biblical_record",
+      "periodKind": "event",
+      "periodScale": "relative_sequence",
+      "datePrecision": "undetermined",
+      "displayPeriodKo": "광야 40년 끝 · 모압 평지",
+      "startYear": null,
+      "endYear": null,
+      "relativeOrder": 16,
+      "relativeSpan": 1,
+      "summaryKo": "모세가 백성 앞에서 여호수아를 후계자로 세우고 가나안 입성을 앞둔 세대를 격려했습니다.",
+      "passages": [
+        {
+          "verseId": "DEUT.31.1-8",
+          "titleKo": "신명기",
+          "roleKo": "모세가 여호수아에게 담대히 백성을 인도하라고 명한 기록입니다."
+        }
+      ],
+      "sourceIds": [
+        "biblical-internal-text",
+        "standard-biblical-intro"
+      ],
+      "relatedItemIds": [
+        "item-moses",
+        "item-joshua"
       ]
     },
     {
@@ -6458,6 +6809,1158 @@
       "relatedItemIds": [
         "item-john-apostle"
       ]
+    },
+    {
+      "id": "event-jordan-crossing",
+      "nameKo": "요단강 도하",
+      "roleLabelKo": "역사적 사건",
+      "category": "event",
+      "eraIds": [
+        "conquest_judges"
+      ],
+      "recordType": "biblical_record",
+      "periodKind": "event",
+      "periodScale": "relative_sequence",
+      "datePrecision": "undetermined",
+      "displayPeriodKo": "본문 사건 순서",
+      "startYear": null,
+      "endYear": null,
+      "relativeOrder": 17,
+      "relativeSpan": 1,
+      "summaryKo": "이스라엘이 언약궤를 앞세워 마른 땅으로 요단강을 건넜습니다.",
+      "passages": [
+        {
+          "verseId": "JOSH.3.14-17",
+          "titleKo": "여호수아",
+          "roleKo": "이스라엘이 언약궤를 앞세워 마른 땅으로 요단강을 건넜습니다."
+        }
+      ],
+      "sourceIds": [
+        "biblical-internal-text",
+        "standard-biblical-intro"
+      ]
+    },
+    {
+      "id": "event-jericho",
+      "nameKo": "여리고 함락",
+      "roleLabelKo": "역사적 사건",
+      "category": "event",
+      "eraIds": [
+        "conquest_judges"
+      ],
+      "recordType": "biblical_record",
+      "periodKind": "event",
+      "periodScale": "relative_sequence",
+      "datePrecision": "undetermined",
+      "displayPeriodKo": "본문 사건 순서",
+      "startYear": null,
+      "endYear": null,
+      "relativeOrder": 17,
+      "relativeSpan": 1,
+      "summaryKo": "백성이 나팔 소리에 외치자 여리고 성벽이 무너졌습니다.",
+      "passages": [
+        {
+          "verseId": "JOSH.6.20",
+          "titleKo": "여호수아",
+          "roleKo": "백성이 나팔 소리에 외치자 여리고 성벽이 무너졌습니다."
+        }
+      ],
+      "sourceIds": [
+        "biblical-internal-text",
+        "standard-biblical-intro"
+      ]
+    },
+    {
+      "id": "event-gideon-300",
+      "nameKo": "기드온의 삼백 용사",
+      "roleLabelKo": "역사적 사건",
+      "category": "event",
+      "eraIds": [
+        "conquest_judges"
+      ],
+      "recordType": "biblical_record",
+      "periodKind": "event",
+      "periodScale": "relative_sequence",
+      "datePrecision": "undetermined",
+      "displayPeriodKo": "본문 사건 순서",
+      "startYear": null,
+      "endYear": null,
+      "relativeOrder": 22,
+      "relativeSpan": 1,
+      "summaryKo": "기드온의 삼백 명이 미디안 진영을 공격해 승리했습니다.",
+      "passages": [
+        {
+          "verseId": "JUDG.7.19-22",
+          "titleKo": "사사기",
+          "roleKo": "기드온의 삼백 명이 미디안 진영을 공격해 승리했습니다."
+        }
+      ],
+      "sourceIds": [
+        "biblical-internal-text",
+        "standard-biblical-intro"
+      ]
+    },
+    {
+      "id": "event-mizpah",
+      "nameKo": "미스바 회개와 에벤에셀",
+      "roleLabelKo": "역사적 사건",
+      "category": "event",
+      "eraIds": [
+        "conquest_judges"
+      ],
+      "recordType": "biblical_record",
+      "periodKind": "event",
+      "periodScale": "relative_sequence",
+      "datePrecision": "undetermined",
+      "displayPeriodKo": "본문 사건 순서",
+      "startYear": null,
+      "endYear": null,
+      "relativeOrder": 25,
+      "relativeSpan": 1,
+      "summaryKo": "사무엘이 미스바에 백성을 모아 회개를 이끌고 블레셋을 물리쳤습니다.",
+      "passages": [
+        {
+          "verseId": "1SAM.7.5-12",
+          "titleKo": "사무엘상",
+          "roleKo": "사무엘이 미스바에 백성을 모아 회개를 이끌고 블레셋을 물리쳤습니다."
+        }
+      ],
+      "sourceIds": [
+        "biblical-internal-text",
+        "standard-biblical-intro"
+      ]
+    },
+    {
+      "id": "event-david-covenant",
+      "nameKo": "다윗 언약",
+      "roleLabelKo": "역사적 사건",
+      "category": "event",
+      "eraIds": [
+        "united_kingdom"
+      ],
+      "recordType": "biblical_record",
+      "periodKind": "event",
+      "periodScale": "point_or_brief",
+      "datePrecision": "estimated",
+      "displayPeriodKo": "약 BC 1000년",
+      "startYear": -1000,
+      "endYear": -1000,
+      "summaryKo": "하나님이 다윗의 집과 왕위를 견고하게 하겠다고 약속하셨습니다.",
+      "passages": [
+        {
+          "verseId": "2SAM.7.12-16",
+          "titleKo": "사무엘하",
+          "roleKo": "하나님이 다윗의 집과 왕위를 견고하게 하겠다고 약속하셨습니다."
+        }
+      ],
+      "sourceIds": [
+        "biblical-internal-text",
+        "standard-biblical-intro",
+        "ane-epigraphic-chronology"
+      ]
+    },
+    {
+      "id": "event-first-temple",
+      "nameKo": "솔로몬 성전 봉헌",
+      "roleLabelKo": "역사적 사건",
+      "category": "event",
+      "eraIds": [
+        "united_kingdom"
+      ],
+      "recordType": "biblical_record",
+      "periodKind": "event",
+      "periodScale": "point_or_brief",
+      "datePrecision": "estimated",
+      "displayPeriodKo": "약 BC 960년",
+      "startYear": -960,
+      "endYear": -960,
+      "summaryKo": "솔로몬이 세운 성전에 여호와의 영광이 가득했습니다.",
+      "passages": [
+        {
+          "verseId": "1KGS.8.10-13",
+          "titleKo": "열왕기상",
+          "roleKo": "솔로몬이 세운 성전에 여호와의 영광이 가득했습니다."
+        }
+      ],
+      "sourceIds": [
+        "biblical-internal-text",
+        "standard-biblical-intro",
+        "ane-epigraphic-chronology"
+      ]
+    },
+    {
+      "id": "event-golden-calves-dan-bethel",
+      "nameKo": "단·벧엘 금송아지",
+      "roleLabelKo": "역사적 사건",
+      "category": "event",
+      "eraIds": [
+        "divided_kingdom"
+      ],
+      "recordType": "biblical_record",
+      "periodKind": "event",
+      "periodScale": "point_or_brief",
+      "datePrecision": "estimated",
+      "displayPeriodKo": "약 BC 930년",
+      "startYear": -930,
+      "endYear": -930,
+      "summaryKo": "여로보암이 단과 벧엘에 금송아지를 세워 북왕국의 예배를 예루살렘에서 분리했습니다.",
+      "passages": [
+        {
+          "verseId": "1KGS.12.28-30",
+          "titleKo": "열왕기상",
+          "roleKo": "여로보암이 단과 벧엘에 금송아지를 세워 북왕국의 예배를 예루살렘에서 분리했습니다."
+        }
+      ],
+      "sourceIds": [
+        "biblical-internal-text",
+        "standard-biblical-intro",
+        "ane-epigraphic-chronology"
+      ]
+    },
+    {
+      "id": "event-samaria-capital",
+      "nameKo": "사마리아 수도 건설",
+      "roleLabelKo": "역사적 사건",
+      "category": "event",
+      "eraIds": [
+        "divided_kingdom"
+      ],
+      "recordType": "biblical_record",
+      "periodKind": "event",
+      "periodScale": "point_or_brief",
+      "datePrecision": "estimated",
+      "displayPeriodKo": "약 BC 880년",
+      "startYear": -880,
+      "endYear": -880,
+      "summaryKo": "오므리가 사마리아 산을 사서 성읍을 세우고 북왕국의 수도로 삼았습니다.",
+      "passages": [
+        {
+          "verseId": "1KGS.16.24",
+          "titleKo": "열왕기상",
+          "roleKo": "오므리가 사마리아 산을 사서 성읍을 세우고 북왕국의 수도로 삼았습니다."
+        }
+      ],
+      "sourceIds": [
+        "biblical-internal-text",
+        "standard-biblical-intro",
+        "ane-epigraphic-chronology"
+      ]
+    },
+    {
+      "id": "event-carmel",
+      "nameKo": "갈멜산 대결",
+      "roleLabelKo": "역사적 사건",
+      "category": "event",
+      "eraIds": [
+        "divided_kingdom"
+      ],
+      "recordType": "biblical_record",
+      "periodKind": "event",
+      "periodScale": "point_or_brief",
+      "datePrecision": "estimated",
+      "displayPeriodKo": "약 BC 860년",
+      "startYear": -860,
+      "endYear": -860,
+      "summaryKo": "엘리야의 기도에 불이 내려와 백성이 여호와를 하나님으로 고백했습니다.",
+      "passages": [
+        {
+          "verseId": "1KGS.18.36-39",
+          "titleKo": "열왕기상",
+          "roleKo": "엘리야의 기도에 불이 내려와 백성이 여호와를 하나님으로 고백했습니다."
+        }
+      ],
+      "sourceIds": [
+        "biblical-internal-text",
+        "standard-biblical-intro",
+        "ane-epigraphic-chronology"
+      ]
+    },
+    {
+      "id": "event-jehu",
+      "nameKo": "예후의 쿠데타",
+      "roleLabelKo": "역사적 사건",
+      "category": "event",
+      "eraIds": [
+        "divided_kingdom"
+      ],
+      "recordType": "biblical_record",
+      "periodKind": "event",
+      "periodScale": "point_or_brief",
+      "datePrecision": "estimated",
+      "displayPeriodKo": "약 BC 841년",
+      "startYear": -841,
+      "endYear": -841,
+      "summaryKo": "예후가 요람과 아하시야를 죽이며 북이스라엘 왕조가 바뀌었습니다.",
+      "passages": [
+        {
+          "verseId": "2KGS.9.21-29",
+          "titleKo": "열왕기하",
+          "roleKo": "예후가 요람과 아하시야를 죽이며 북이스라엘 왕조가 바뀌었습니다."
+        }
+      ],
+      "sourceIds": [
+        "biblical-internal-text",
+        "standard-biblical-intro",
+        "ane-epigraphic-chronology"
+      ]
+    },
+    {
+      "id": "event-joash-temple-repair",
+      "nameKo": "요아스의 성전 수리",
+      "roleLabelKo": "역사적 사건",
+      "category": "event",
+      "eraIds": [
+        "divided_kingdom"
+      ],
+      "recordType": "biblical_record",
+      "periodKind": "event",
+      "periodScale": "point_or_brief",
+      "datePrecision": "estimated",
+      "displayPeriodKo": "약 BC 812년",
+      "startYear": -812,
+      "endYear": -812,
+      "summaryKo": "남유다 요아스가 헌금을 모아 훼손된 예루살렘 성전을 수리하게 했습니다.",
+      "passages": [
+        {
+          "verseId": "2KGS.12.9-12",
+          "titleKo": "열왕기하",
+          "roleKo": "남유다 요아스가 헌금을 모아 훼손된 예루살렘 성전을 수리하게 했습니다."
+        }
+      ],
+      "sourceIds": [
+        "biblical-internal-text",
+        "standard-biblical-intro",
+        "ane-epigraphic-chronology"
+      ]
+    },
+    {
+      "id": "event-amos-justice",
+      "nameKo": "아모스의 공의 선포",
+      "roleLabelKo": "역사적 사건",
+      "category": "event",
+      "eraIds": [
+        "divided_kingdom"
+      ],
+      "recordType": "biblical_record",
+      "periodKind": "event",
+      "periodScale": "point_or_brief",
+      "datePrecision": "estimated",
+      "displayPeriodKo": "약 BC 760년",
+      "startYear": -760,
+      "endYear": -760,
+      "summaryKo": "아모스가 북왕국의 형식적 예배와 사회 불의를 꾸짖고 공의를 촉구했습니다.",
+      "passages": [
+        {
+          "verseId": "AMOS.5.21-24",
+          "titleKo": "아모스",
+          "roleKo": "아모스가 북왕국의 형식적 예배와 사회 불의를 꾸짖고 공의를 촉구했습니다."
+        }
+      ],
+      "sourceIds": [
+        "biblical-internal-text",
+        "standard-biblical-intro",
+        "ane-epigraphic-chronology"
+      ]
+    },
+    {
+      "id": "event-ahaz-assyria",
+      "nameKo": "아하스의 앗수르 원조 요청",
+      "roleLabelKo": "역사적 사건",
+      "category": "event",
+      "eraIds": [
+        "divided_kingdom"
+      ],
+      "recordType": "biblical_record",
+      "periodKind": "event",
+      "periodScale": "point_or_brief",
+      "datePrecision": "estimated",
+      "displayPeriodKo": "약 BC 734년",
+      "startYear": -734,
+      "endYear": -734,
+      "summaryKo": "남유다 아하스가 아람과 북이스라엘의 압박에 맞서 앗수르에 원조를 청했습니다.",
+      "passages": [
+        {
+          "verseId": "2KGS.16.7-9",
+          "titleKo": "열왕기하",
+          "roleKo": "남유다 아하스가 아람과 북이스라엘의 압박에 맞서 앗수르에 원조를 청했습니다."
+        }
+      ],
+      "sourceIds": [
+        "biblical-internal-text",
+        "standard-biblical-intro",
+        "ane-epigraphic-chronology"
+      ]
+    },
+    {
+      "id": "event-galilee-captivity",
+      "nameKo": "앗수르의 갈릴리 점령",
+      "roleLabelKo": "역사적 사건",
+      "category": "event",
+      "eraIds": [
+        "divided_kingdom"
+      ],
+      "recordType": "biblical_record",
+      "periodKind": "event",
+      "periodScale": "point_or_brief",
+      "datePrecision": "estimated",
+      "displayPeriodKo": "약 BC 732년",
+      "startYear": -732,
+      "endYear": -732,
+      "summaryKo": "앗수르가 갈릴리와 길르앗을 점령하고 북왕국 주민을 사로잡아 갔습니다.",
+      "passages": [
+        {
+          "verseId": "2KGS.15.29",
+          "titleKo": "열왕기하",
+          "roleKo": "앗수르가 갈릴리와 길르앗을 점령하고 북왕국 주민을 사로잡아 갔습니다."
+        }
+      ],
+      "sourceIds": [
+        "biblical-internal-text",
+        "standard-biblical-intro",
+        "ane-epigraphic-chronology"
+      ]
+    },
+    {
+      "id": "event-jerusalem-deliverance",
+      "nameKo": "앗수르 포위에서 예루살렘 구원",
+      "roleLabelKo": "역사적 사건",
+      "category": "event",
+      "eraIds": [
+        "judah_alone"
+      ],
+      "recordType": "biblical_record",
+      "periodKind": "event",
+      "periodScale": "point_or_brief",
+      "datePrecision": "estimated",
+      "displayPeriodKo": "약 BC 701년",
+      "startYear": -701,
+      "endYear": -701,
+      "summaryKo": "산헤립의 군대가 예루살렘을 점령하지 못하고 물러났습니다.",
+      "passages": [
+        {
+          "verseId": "2KGS.19.32-36",
+          "titleKo": "열왕기하",
+          "roleKo": "산헤립의 군대가 예루살렘을 점령하지 못하고 물러났습니다."
+        }
+      ],
+      "sourceIds": [
+        "biblical-internal-text",
+        "standard-biblical-intro",
+        "ane-epigraphic-chronology"
+      ]
+    },
+    {
+      "id": "event-josiah-reform",
+      "nameKo": "율법책 발견과 요시야 개혁",
+      "roleLabelKo": "역사적 사건",
+      "category": "event",
+      "eraIds": [
+        "judah_alone"
+      ],
+      "recordType": "biblical_record",
+      "periodKind": "event",
+      "periodScale": "point_or_brief",
+      "datePrecision": "estimated",
+      "displayPeriodKo": "약 BC 622년",
+      "startYear": -622,
+      "endYear": -622,
+      "summaryKo": "성전에서 율법책을 발견한 요시야가 언약에 따른 개혁을 시작했습니다.",
+      "passages": [
+        {
+          "verseId": "2KGS.22.8-13",
+          "titleKo": "열왕기하",
+          "roleKo": "성전에서 율법책을 발견한 요시야가 언약에 따른 개혁을 시작했습니다."
+        }
+      ],
+      "sourceIds": [
+        "biblical-internal-text",
+        "standard-biblical-intro",
+        "ane-epigraphic-chronology"
+      ]
+    },
+    {
+      "id": "event-second-deportation",
+      "nameKo": "여호야긴의 바벨론 포로",
+      "roleLabelKo": "역사적 사건",
+      "category": "event",
+      "eraIds": [
+        "judah_alone"
+      ],
+      "recordType": "biblical_record",
+      "periodKind": "event",
+      "periodScale": "point_or_brief",
+      "datePrecision": "estimated",
+      "displayPeriodKo": "약 BC 597년",
+      "startYear": -597,
+      "endYear": -597,
+      "summaryKo": "여호야긴과 지도층이 바벨론으로 사로잡혀 갔습니다.",
+      "passages": [
+        {
+          "verseId": "2KGS.24.10-15",
+          "titleKo": "열왕기하",
+          "roleKo": "여호야긴과 지도층이 바벨론으로 사로잡혀 갔습니다."
+        }
+      ],
+      "sourceIds": [
+        "biblical-internal-text",
+        "standard-biblical-intro",
+        "ane-epigraphic-chronology"
+      ]
+    },
+    {
+      "id": "event-jehoiachin-release",
+      "nameKo": "여호야긴 석방",
+      "roleLabelKo": "역사적 사건",
+      "category": "event",
+      "eraIds": [
+        "exile"
+      ],
+      "recordType": "biblical_record",
+      "periodKind": "event",
+      "periodScale": "point_or_brief",
+      "datePrecision": "estimated",
+      "displayPeriodKo": "약 BC 561년",
+      "startYear": -561,
+      "endYear": -561,
+      "summaryKo": "바벨론 왕이 포로였던 여호야긴을 석방하고 예우했습니다.",
+      "passages": [
+        {
+          "verseId": "2KGS.25.27-30",
+          "titleKo": "열왕기하",
+          "roleKo": "바벨론 왕이 포로였던 여호야긴을 석방하고 예우했습니다."
+        }
+      ],
+      "sourceIds": [
+        "biblical-internal-text",
+        "standard-biblical-intro",
+        "ane-epigraphic-chronology"
+      ]
+    },
+    {
+      "id": "event-babylon-fall",
+      "nameKo": "바벨론 함락",
+      "roleLabelKo": "역사적 사건",
+      "category": "event",
+      "eraIds": [
+        "exile"
+      ],
+      "recordType": "biblical_record",
+      "periodKind": "event",
+      "periodScale": "point_or_brief",
+      "datePrecision": "estimated",
+      "displayPeriodKo": "약 BC 539년",
+      "startYear": -539,
+      "endYear": -539,
+      "summaryKo": "벨사살이 죽고 메대·바사의 통치로 넘어가는 전환점입니다.",
+      "passages": [
+        {
+          "verseId": "DAN.5.30-31",
+          "titleKo": "다니엘",
+          "roleKo": "벨사살이 죽고 메대·바사의 통치로 넘어가는 전환점입니다."
+        }
+      ],
+      "sourceIds": [
+        "biblical-internal-text",
+        "standard-biblical-intro",
+        "ane-epigraphic-chronology"
+      ]
+    },
+    {
+      "id": "event-esther-deliverance",
+      "nameKo": "에스더와 유다인 구원",
+      "roleLabelKo": "역사적 사건",
+      "category": "event",
+      "eraIds": [
+        "return_persian"
+      ],
+      "recordType": "biblical_record",
+      "periodKind": "event",
+      "periodScale": "point_or_brief",
+      "datePrecision": "estimated",
+      "displayPeriodKo": "약 BC 473년",
+      "startYear": -473,
+      "endYear": -473,
+      "summaryKo": "에스더와 모르드개를 통해 유다인들이 위기를 넘기고 부림절을 세웠습니다.",
+      "passages": [
+        {
+          "verseId": "ESTH.9.20-28",
+          "titleKo": "에스더",
+          "roleKo": "에스더와 모르드개를 통해 유다인들이 위기를 넘기고 부림절을 세웠습니다."
+        }
+      ],
+      "sourceIds": [
+        "biblical-internal-text",
+        "standard-biblical-intro",
+        "ane-epigraphic-chronology"
+      ]
+    },
+    {
+      "id": "event-wall-complete",
+      "nameKo": "예루살렘 성벽 완공",
+      "roleLabelKo": "역사적 사건",
+      "category": "event",
+      "eraIds": [
+        "return_persian"
+      ],
+      "recordType": "biblical_record",
+      "periodKind": "event",
+      "periodScale": "point_or_brief",
+      "datePrecision": "estimated",
+      "displayPeriodKo": "약 BC 445년",
+      "startYear": -445,
+      "endYear": -445,
+      "summaryKo": "느헤미야가 이끈 공동체가 52일 만에 성벽을 완공했습니다.",
+      "passages": [
+        {
+          "verseId": "NEH.6.15-16",
+          "titleKo": "느헤미야",
+          "roleKo": "느헤미야가 이끈 공동체가 52일 만에 성벽을 완공했습니다."
+        }
+      ],
+      "sourceIds": [
+        "biblical-internal-text",
+        "standard-biblical-intro",
+        "ane-epigraphic-chronology"
+      ]
+    },
+    {
+      "id": "event-torah-reading",
+      "nameKo": "에스라의 율법 낭독",
+      "roleLabelKo": "역사적 사건",
+      "category": "event",
+      "eraIds": [
+        "return_persian"
+      ],
+      "recordType": "biblical_record",
+      "periodKind": "event",
+      "periodScale": "point_or_brief",
+      "datePrecision": "estimated",
+      "displayPeriodKo": "약 BC 445년",
+      "startYear": -445,
+      "endYear": -445,
+      "summaryKo": "에스라가 율법을 낭독하고 레위인들이 백성에게 그 뜻을 설명했습니다.",
+      "passages": [
+        {
+          "verseId": "NEH.8.1-8",
+          "titleKo": "느헤미야",
+          "roleKo": "에스라가 율법을 낭독하고 레위인들이 백성에게 그 뜻을 설명했습니다."
+        }
+      ],
+      "sourceIds": [
+        "biblical-internal-text",
+        "standard-biblical-intro",
+        "ane-epigraphic-chronology"
+      ]
+    },
+    {
+      "id": "event-jesus-birth",
+      "nameKo": "예수님의 탄생",
+      "roleLabelKo": "역사적 사건",
+      "category": "event",
+      "eraIds": [
+        "jesus_life"
+      ],
+      "recordType": "biblical_record",
+      "periodKind": "event",
+      "periodScale": "point_or_brief",
+      "datePrecision": "estimated",
+      "displayPeriodKo": "약 BC 5년",
+      "startYear": -5,
+      "endYear": -5,
+      "summaryKo": "예수님이 베들레헴에서 태어나셨습니다.",
+      "passages": [
+        {
+          "verseId": "LUKE.2.1-7",
+          "titleKo": "누가복음",
+          "roleKo": "예수님이 베들레헴에서 태어나셨습니다."
+        }
+      ],
+      "sourceIds": [
+        "biblical-internal-text",
+        "standard-biblical-intro",
+        "ane-epigraphic-chronology"
+      ]
+    },
+    {
+      "id": "event-jesus-baptism",
+      "nameKo": "예수님의 세례와 공생애 시작",
+      "roleLabelKo": "역사적 사건",
+      "category": "event",
+      "eraIds": [
+        "jesus_life"
+      ],
+      "recordType": "biblical_record",
+      "periodKind": "event",
+      "periodScale": "point_or_brief",
+      "datePrecision": "estimated",
+      "displayPeriodKo": "약 AD 27년",
+      "startYear": 27,
+      "endYear": 27,
+      "summaryKo": "예수님이 요단강에서 세례를 받으실 때 하늘의 증언이 있었습니다.",
+      "passages": [
+        {
+          "verseId": "MATT.3.13-17",
+          "titleKo": "마태복음",
+          "roleKo": "예수님이 요단강에서 세례를 받으실 때 하늘의 증언이 있었습니다."
+        }
+      ],
+      "sourceIds": [
+        "biblical-internal-text",
+        "standard-biblical-intro",
+        "ane-epigraphic-chronology"
+      ]
+    },
+    {
+      "id": "event-triumphal-entry",
+      "nameKo": "예루살렘 입성",
+      "roleLabelKo": "역사적 사건",
+      "category": "event",
+      "eraIds": [
+        "jesus_life"
+      ],
+      "recordType": "biblical_record",
+      "periodKind": "event",
+      "periodScale": "point_or_brief",
+      "datePrecision": "estimated",
+      "displayPeriodKo": "약 AD 30년",
+      "startYear": 30,
+      "endYear": 30,
+      "summaryKo": "예수님이 나귀를 타고 예루살렘에 들어가셨습니다.",
+      "passages": [
+        {
+          "verseId": "MATT.21.1-11",
+          "titleKo": "마태복음",
+          "roleKo": "예수님이 나귀를 타고 예루살렘에 들어가셨습니다."
+        }
+      ],
+      "sourceIds": [
+        "biblical-internal-text",
+        "standard-biblical-intro",
+        "ane-epigraphic-chronology"
+      ]
+    },
+    {
+      "id": "event-pentecost",
+      "nameKo": "오순절 성령 강림",
+      "roleLabelKo": "역사적 사건",
+      "category": "event",
+      "eraIds": [
+        "early_church"
+      ],
+      "recordType": "biblical_record",
+      "periodKind": "event",
+      "periodScale": "point_or_brief",
+      "datePrecision": "estimated",
+      "displayPeriodKo": "약 AD 30년",
+      "startYear": 30,
+      "endYear": 30,
+      "summaryKo": "오순절에 성령이 임해 예루살렘 교회의 복음 증언이 시작됐습니다.",
+      "passages": [
+        {
+          "verseId": "ACTS.2.1-4",
+          "titleKo": "사도행전",
+          "roleKo": "오순절에 성령이 임해 예루살렘 교회의 복음 증언이 시작됐습니다."
+        }
+      ],
+      "sourceIds": [
+        "biblical-internal-text",
+        "standard-biblical-intro",
+        "ane-epigraphic-chronology"
+      ]
+    },
+    {
+      "id": "event-stephen-martyrdom",
+      "nameKo": "스데반 순교와 교회 흩어짐",
+      "roleLabelKo": "역사적 사건",
+      "category": "event",
+      "eraIds": [
+        "early_church"
+      ],
+      "recordType": "biblical_record",
+      "periodKind": "event",
+      "periodScale": "point_or_brief",
+      "datePrecision": "estimated",
+      "displayPeriodKo": "약 AD 34년",
+      "startYear": 34,
+      "endYear": 34,
+      "summaryKo": "스데반의 순교 뒤 박해로 흩어진 성도들이 곳곳에 복음을 전했습니다.",
+      "passages": [
+        {
+          "verseId": "ACTS.8.1-4",
+          "titleKo": "사도행전",
+          "roleKo": "스데반의 순교 뒤 박해로 흩어진 성도들이 곳곳에 복음을 전했습니다."
+        }
+      ],
+      "sourceIds": [
+        "biblical-internal-text",
+        "standard-biblical-intro",
+        "ane-epigraphic-chronology"
+      ]
+    },
+    {
+      "id": "event-cornelius",
+      "nameKo": "고넬료 집의 이방인 성령 강림",
+      "roleLabelKo": "역사적 사건",
+      "category": "event",
+      "eraIds": [
+        "early_church"
+      ],
+      "recordType": "biblical_record",
+      "periodKind": "event",
+      "periodScale": "point_or_brief",
+      "datePrecision": "estimated",
+      "displayPeriodKo": "약 AD 40년",
+      "startYear": 40,
+      "endYear": 40,
+      "summaryKo": "베드로의 설교를 듣던 이방인들에게도 성령이 임했습니다.",
+      "passages": [
+        {
+          "verseId": "ACTS.10.44-48",
+          "titleKo": "사도행전",
+          "roleKo": "베드로의 설교를 듣던 이방인들에게도 성령이 임했습니다."
+        }
+      ],
+      "sourceIds": [
+        "biblical-internal-text",
+        "standard-biblical-intro",
+        "ane-epigraphic-chronology"
+      ]
+    },
+    {
+      "id": "event-jesus-temptation",
+      "nameKo": "광야 시험",
+      "roleLabelKo": "역사적 사건",
+      "category": "event",
+      "eraIds": [
+        "jesus_life"
+      ],
+      "recordType": "biblical_record",
+      "periodKind": "event",
+      "periodScale": "uncertainty_window",
+      "datePrecision": "range",
+      "displayPeriodKo": "약 AD 27–28년",
+      "startYear": 27,
+      "endYear": 28,
+      "summaryKo": "예수님이 광야에서 시험을 받으시고 말씀으로 이기셨습니다.",
+      "passages": [
+        {
+          "verseId": "MATT.4.1-11",
+          "titleKo": "마태복음",
+          "roleKo": "예수님이 광야에서 시험을 받으시고 말씀으로 이기셨습니다."
+        }
+      ],
+      "sourceIds": [
+        "biblical-internal-text",
+        "standard-biblical-intro",
+        "ane-epigraphic-chronology"
+      ]
+    },
+    {
+      "id": "event-first-disciples",
+      "nameKo": "첫 제자들을 부르심",
+      "roleLabelKo": "역사적 사건",
+      "category": "event",
+      "eraIds": [
+        "jesus_life"
+      ],
+      "recordType": "biblical_record",
+      "periodKind": "event",
+      "periodScale": "uncertainty_window",
+      "datePrecision": "range",
+      "displayPeriodKo": "약 AD 27–28년",
+      "startYear": 27,
+      "endYear": 28,
+      "summaryKo": "예수님이 시몬·안드레·야고보·요한을 부르셨습니다.",
+      "passages": [
+        {
+          "verseId": "MARK.1.16-20",
+          "titleKo": "마가복음",
+          "roleKo": "예수님이 시몬·안드레·야고보·요한을 부르셨습니다."
+        }
+      ],
+      "sourceIds": [
+        "biblical-internal-text",
+        "standard-biblical-intro",
+        "ane-epigraphic-chronology"
+      ]
+    },
+    {
+      "id": "event-cana",
+      "nameKo": "가나 혼인잔치 첫 표적",
+      "roleLabelKo": "역사적 사건",
+      "category": "event",
+      "eraIds": [
+        "jesus_life"
+      ],
+      "recordType": "biblical_record",
+      "periodKind": "event",
+      "periodScale": "uncertainty_window",
+      "datePrecision": "range",
+      "displayPeriodKo": "약 AD 27–28년",
+      "startYear": 27,
+      "endYear": 28,
+      "summaryKo": "예수님이 물을 포도주로 바꾸시는 첫 표적을 행하셨습니다.",
+      "passages": [
+        {
+          "verseId": "JOHN.2.1-11",
+          "titleKo": "요한복음",
+          "roleKo": "예수님이 물을 포도주로 바꾸시는 첫 표적을 행하셨습니다."
+        }
+      ],
+      "sourceIds": [
+        "biblical-internal-text",
+        "standard-biblical-intro",
+        "ane-epigraphic-chronology"
+      ]
+    },
+    {
+      "id": "event-sermon-mount",
+      "nameKo": "산상수훈",
+      "roleLabelKo": "역사적 사건",
+      "category": "event",
+      "eraIds": [
+        "jesus_life"
+      ],
+      "recordType": "biblical_record",
+      "periodKind": "event",
+      "periodScale": "uncertainty_window",
+      "datePrecision": "range",
+      "displayPeriodKo": "약 AD 27–29년",
+      "startYear": 27,
+      "endYear": 29,
+      "summaryKo": "예수님이 제자들과 무리에게 하나님 나라의 복을 가르치셨습니다.",
+      "passages": [
+        {
+          "verseId": "MATT.5.1-12",
+          "titleKo": "마태복음",
+          "roleKo": "예수님이 제자들과 무리에게 하나님 나라의 복을 가르치셨습니다."
+        }
+      ],
+      "sourceIds": [
+        "biblical-internal-text",
+        "standard-biblical-intro",
+        "ane-epigraphic-chronology"
+      ]
+    },
+    {
+      "id": "event-feeding-five-thousand",
+      "nameKo": "오병이어",
+      "roleLabelKo": "역사적 사건",
+      "category": "event",
+      "eraIds": [
+        "jesus_life"
+      ],
+      "recordType": "biblical_record",
+      "periodKind": "event",
+      "periodScale": "uncertainty_window",
+      "datePrecision": "range",
+      "displayPeriodKo": "약 AD 28–29년",
+      "startYear": 28,
+      "endYear": 29,
+      "summaryKo": "예수님이 떡 다섯 개와 물고기 두 마리로 큰 무리를 먹이셨습니다.",
+      "passages": [
+        {
+          "verseId": "MARK.6.34-44",
+          "titleKo": "마가복음",
+          "roleKo": "예수님이 떡 다섯 개와 물고기 두 마리로 큰 무리를 먹이셨습니다."
+        }
+      ],
+      "sourceIds": [
+        "biblical-internal-text",
+        "standard-biblical-intro",
+        "ane-epigraphic-chronology"
+      ]
+    },
+    {
+      "id": "event-peter-confession",
+      "nameKo": "베드로의 그리스도 고백",
+      "roleLabelKo": "역사적 사건",
+      "category": "event",
+      "eraIds": [
+        "jesus_life"
+      ],
+      "recordType": "biblical_record",
+      "periodKind": "event",
+      "periodScale": "uncertainty_window",
+      "datePrecision": "range",
+      "displayPeriodKo": "약 AD 28–30년",
+      "startYear": 28,
+      "endYear": 30,
+      "summaryKo": "베드로가 예수님을 그리스도이자 하나님의 아들로 고백했습니다.",
+      "passages": [
+        {
+          "verseId": "MATT.16.13-20",
+          "titleKo": "마태복음",
+          "roleKo": "베드로가 예수님을 그리스도이자 하나님의 아들로 고백했습니다."
+        }
+      ],
+      "sourceIds": [
+        "biblical-internal-text",
+        "standard-biblical-intro",
+        "ane-epigraphic-chronology"
+      ]
+    },
+    {
+      "id": "event-transfiguration",
+      "nameKo": "변화산 사건",
+      "roleLabelKo": "역사적 사건",
+      "category": "event",
+      "eraIds": [
+        "jesus_life"
+      ],
+      "recordType": "biblical_record",
+      "periodKind": "event",
+      "periodScale": "uncertainty_window",
+      "datePrecision": "range",
+      "displayPeriodKo": "약 AD 28–30년",
+      "startYear": 28,
+      "endYear": 30,
+      "summaryKo": "예수님이 산 위에서 영광스러운 모습으로 변화되셨습니다.",
+      "passages": [
+        {
+          "verseId": "MATT.17.1-8",
+          "titleKo": "마태복음",
+          "roleKo": "예수님이 산 위에서 영광스러운 모습으로 변화되셨습니다."
+        }
+      ],
+      "sourceIds": [
+        "biblical-internal-text",
+        "standard-biblical-intro",
+        "ane-epigraphic-chronology"
+      ]
+    },
+    {
+      "id": "event-lazarus",
+      "nameKo": "나사로를 살리심",
+      "roleLabelKo": "역사적 사건",
+      "category": "event",
+      "eraIds": [
+        "jesus_life"
+      ],
+      "recordType": "biblical_record",
+      "periodKind": "event",
+      "periodScale": "point_or_brief",
+      "datePrecision": "estimated",
+      "displayPeriodKo": "약 AD 30년 (수난 AD 33년설 병존)",
+      "startYear": 30,
+      "endYear": 30,
+      "summaryKo": "예수님이 죽은 지 나흘 된 나사로를 무덤에서 불러내셨습니다.",
+      "passages": [
+        {
+          "verseId": "JOHN.11.38-44",
+          "titleKo": "요한복음",
+          "roleKo": "예수님이 죽은 지 나흘 된 나사로를 무덤에서 불러내셨습니다."
+        }
+      ],
+      "sourceIds": [
+        "biblical-internal-text",
+        "standard-biblical-intro",
+        "ane-epigraphic-chronology"
+      ]
+    },
+    {
+      "id": "event-last-supper",
+      "nameKo": "마지막 만찬",
+      "roleLabelKo": "역사적 사건",
+      "category": "event",
+      "eraIds": [
+        "jesus_life"
+      ],
+      "recordType": "biblical_record",
+      "periodKind": "event",
+      "periodScale": "point_or_brief",
+      "datePrecision": "estimated",
+      "displayPeriodKo": "약 AD 30년 (수난 AD 33년설 병존)",
+      "startYear": 30,
+      "endYear": 30,
+      "summaryKo": "예수님이 제자들과 유월절 식사를 하시며 새 언약을 말씀하셨습니다.",
+      "passages": [
+        {
+          "verseId": "LUKE.22.14-20",
+          "titleKo": "누가복음",
+          "roleKo": "예수님이 제자들과 유월절 식사를 하시며 새 언약을 말씀하셨습니다."
+        }
+      ],
+      "sourceIds": [
+        "biblical-internal-text",
+        "standard-biblical-intro",
+        "ane-epigraphic-chronology"
+      ]
+    },
+    {
+      "id": "event-ascension",
+      "nameKo": "예수님의 승천",
+      "roleLabelKo": "역사적 사건",
+      "category": "event",
+      "eraIds": [
+        "jesus_life"
+      ],
+      "recordType": "biblical_record",
+      "periodKind": "event",
+      "periodScale": "point_or_brief",
+      "datePrecision": "estimated",
+      "displayPeriodKo": "약 AD 30년 (수난 AD 33년설 병존)",
+      "startYear": 30,
+      "endYear": 30,
+      "summaryKo": "부활하신 예수님이 제자들이 보는 가운데 하늘로 올라가셨습니다.",
+      "passages": [
+        {
+          "verseId": "ACTS.1.9-11",
+          "titleKo": "사도행전",
+          "roleKo": "부활하신 예수님이 제자들이 보는 가운데 하늘로 올라가셨습니다."
+        }
+      ],
+      "sourceIds": [
+        "biblical-internal-text",
+        "standard-biblical-intro",
+        "ane-epigraphic-chronology"
+      ]
+    },
+    {
+      "id": "external-temple-rededication",
+      "nameKo": "성전 재봉헌",
+      "roleLabelKo": "역사적 사건",
+      "category": "event",
+      "eraIds": [
+        "intertestamental"
+      ],
+      "recordType": "external_history",
+      "periodKind": "event",
+      "periodScale": "point_or_brief",
+      "datePrecision": "confirmed",
+      "displayPeriodKo": "BC 164년",
+      "startYear": -164,
+      "endYear": -164,
+      "summaryKo": "마카비 항쟁 뒤 예루살렘 성전이 다시 봉헌되었습니다.",
+      "passages": [],
+      "sourceIds": [
+        "standard-biblical-intro",
+        "ane-epigraphic-chronology"
+      ],
+      "externalHistoryNoteKo": "정경 66권 본문의 직접 사건 서술이 아닌 신구약 중간기 외부 역사 배경입니다. 임의의 성경 구절을 억지로 연결하지 않습니다."
+    },
+    {
+      "id": "external-judean-independence",
+      "nameKo": "유대 독립 선언",
+      "roleLabelKo": "역사적 사건",
+      "category": "event",
+      "eraIds": [
+        "intertestamental"
+      ],
+      "recordType": "external_history",
+      "periodKind": "event",
+      "periodScale": "point_or_brief",
+      "datePrecision": "confirmed",
+      "displayPeriodKo": "BC 142년",
+      "startYear": -142,
+      "endYear": -142,
+      "summaryKo": "시몬 시대 유대가 셀레우코스 왕조의 지배에서 벗어났습니다.",
+      "passages": [],
+      "sourceIds": [
+        "standard-biblical-intro",
+        "ane-epigraphic-chronology"
+      ],
+      "externalHistoryNoteKo": "정경 66권 본문의 직접 사건 서술이 아닌 신구약 중간기 외부 역사 배경입니다. 임의의 성경 구절을 억지로 연결하지 않습니다."
     }
   ],
   "chapterMappings": [

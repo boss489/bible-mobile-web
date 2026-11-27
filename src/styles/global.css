@@ -3081,6 +3081,30 @@ input {
   pointer-events: none;
 }
 
+.timeline-event-group {
+  position: absolute;
+  z-index: 3;
+  min-height: 30px;
+  padding: 4px 9px;
+  border: 1px solid #9a4d24;
+  border-radius: 7px;
+  background: #9a4d24;
+  color: #fff;
+  font-size: 0.76rem;
+  font-weight: 700;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.timeline-event-group-selected {
+  outline: 2px solid #1f1c18;
+}
+
+.timeline-event-group:focus-visible {
+  outline: 2px solid #1f1c18;
+  outline-offset: 2px;
+}
+
 .timeline-item-hit {
   position: absolute;
   height: 30px;

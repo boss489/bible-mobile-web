@@ -546,15 +546,69 @@ describe('성경 앱 개편: 성경순 · 연대순 읽기 및 역사 연대표 
       expect.arrayContaining(['북이스라엘 왕', '남유다 왕', '활동 선지자']),
     );
 
-    // 족장 시대: 아브라함~요셉 4대 가계 개별 행 분리 검증
+    // 족장 시대: 핵심 사건을 먼저 보여 주고 인물 생애는 이어서 표시
     const patEra = REAL_HISTORY_DATASET.eras.find((e) => e.id === 'patriarchs')!;
     const patLayout = buildDedicatedEraChartLayout(patEra, REAL_HISTORY_DATASET.items, 2, 'ALL');
     expect(patLayout.tracks.map((t) => t.labelKo)).toEqual([
+      '족장기 중요 사건',
       '아브라함 (1대)',
       '이삭 (2대)',
       '야곱 · 이스라엘',
       '요셉 (4대)',
     ]);
+    expect(patLayout.tracks[0].items.map((p) => p.item.id)).toEqual(
+      expect.arrayContaining([
+        'event-abraham-call',
+        'event-isaac-birth',
+        'event-jacob-israel',
+        'event-joseph-ruler',
+        'event-jacob-egypt',
+      ]),
+    );
+    const patVertical = buildVerticalEraSections(REAL_HISTORY_DATASET, 'ALL', 'patriarchs')[0];
+    expect(patVertical.entries[0].item.id).toBe('event-abraham-call');
+    expect(patVertical.entries[2].item.id).toBe('event-isaac-birth');
+
+    const exodusEra = REAL_HISTORY_DATASET.eras.find((e) => e.id === 'exodus')!;
+    const exodusLayout = buildDedicatedEraChartLayout(exodusEra, REAL_HISTORY_DATASET.items, 2, 'ALL');
+    expect(exodusLayout.tracks[0].labelKo).toBe('출애굽 중요 사건');
+    expect(exodusLayout.tracks[0].items.map((p) => p.item.id)).toEqual(
+      expect.arrayContaining([
+        'item-exodus', 'item-sinai', 'event-manna', 'event-golden-calf',
+        'event-spies', 'event-bronze-serpent', 'event-moses-farewell',
+      ]),
+    );
+    const exodusVertical = buildVerticalEraSections(REAL_HISTORY_DATASET, 'ALL', 'exodus')[0];
+    expect(exodusVertical.entries[0].item.id).toBe('item-exodus');
+
+    const newKeyEvents: Record<string, string[]> = {
+      conquest_judges: ['event-jordan-crossing', 'event-jericho', 'event-gideon-300', 'event-mizpah'],
+      united_kingdom: ['event-david-covenant', 'event-first-temple'],
+      divided_kingdom: [
+        'event-golden-calves-dan-bethel', 'event-samaria-capital', 'event-carmel',
+        'event-jehu', 'event-joash-temple-repair', 'event-amos-justice',
+        'event-ahaz-assyria', 'event-galilee-captivity',
+      ],
+      judah_alone: ['event-jerusalem-deliverance', 'event-josiah-reform', 'event-second-deportation'],
+      exile: ['event-jehoiachin-release', 'event-babylon-fall'],
+      return_persian: ['event-esther-deliverance', 'event-wall-complete', 'event-torah-reading'],
+      intertestamental: ['external-temple-rededication', 'external-judean-independence'],
+      jesus_life: [
+        'event-jesus-birth', 'event-jesus-baptism', 'event-jesus-temptation',
+        'event-first-disciples', 'event-cana', 'event-sermon-mount',
+        'event-feeding-five-thousand', 'event-peter-confession', 'event-transfiguration',
+        'event-lazarus', 'event-triumphal-entry', 'event-last-supper',
+        'item-crucifixion', 'event-ascension',
+      ],
+      early_church: ['event-pentecost', 'event-stephen-martyrdom', 'event-cornelius'],
+    };
+    for (const era of REAL_HISTORY_DATASET.eras.filter((e) => newKeyEvents[e.id])) {
+      const layout = buildDedicatedEraChartLayout(era, REAL_HISTORY_DATASET.items, 2, 'ALL');
+      expect(layout.tracks[0].items.every((p) => p.item.category === 'event')).toBe(true);
+      expect(layout.tracks[0].items.map((p) => p.item.id)).toEqual(
+        expect.arrayContaining(newKeyEvents[era.id]),
+      );
+    }
 
     // 예수님 생애·중간기·초대교회: 공백 구간 가변 축척 압축 마커(≈) 생성 검증
     const jesusEra = REAL_HISTORY_DATASET.eras.find((e) => e.id === 'jesus_life')!;
@@ -564,6 +618,7 @@ describe('성경 앱 개편: 성경순 · 연대순 읽기 및 역사 연대표 
       2,
       'ALL',
     );
+    expect(jesusLayout.tracks[0].items).toHaveLength(14);
     expect(jesusLayout.scaleBreaks.length).toBeGreaterThan(0);
 
     // 세로 읽기 섹션 정렬 검증
@@ -648,5 +703,39 @@ describe('성경 앱 개편: 성경순 · 연대순 읽기 및 역사 연대표 
       'true',
     );
     expect(screen.getByRole('region', { name: '모바일 세로 읽기 연대기' })).toBeInTheDocument();
+  });
+
+  it('11. 예수님 탄생은 바로 보이고 선택한 묶음의 사건만 펼쳐진다', async () => {
+    window.localStorage.setItem('bible_web_v1:unlocked_hash', UNLOCKED_SHA256);
+    const user = userEvent.setup();
+    render(<App />);
+
+    await user.click(screen.getByRole('button', { name: /역사 연대표/ }));
+    await user.click(screen.getByRole('button', { name: '📖 연대 노트' }));
+    const notes = screen.getByRole('region', { name: '성경 연대기 산출 근거 및 연구 노트' });
+    await user.click(within(notes).getAllByRole('button', { name: '🔍 이 시대 차트 열기' })[10]);
+
+    const chart = screen.getByRole('region', { name: '예수님의 생애 전용 역사 시간축' });
+    const eventRow = within(chart).getByText('구속 중심 사건').closest('.timeline-track-row') as HTMLElement;
+    const canvas = eventRow.querySelector('.timeline-track-canvas') as HTMLElement;
+    expect(canvas).toHaveStyle({ height: '170px' });
+    expect(within(eventRow).getAllByRole('button', { name: /사건 \d+개 펼치기/ })).toHaveLength(3);
+    expect(eventRow.querySelectorAll('[data-item-id]')).toHaveLength(1);
+    expect(within(eventRow).getByRole('button', { name: /예수님의 탄생/ })).toBeInTheDocument();
+
+    await user.click(within(eventRow).getByRole('button', { name: '공생애 시작 사건 5개 펼치기' }));
+    expect(canvas).toHaveStyle({ height: '360px' });
+    expect(eventRow.querySelectorAll('[data-item-id]')).toHaveLength(6);
+    expect(within(eventRow).getByRole('button', { name: /광야 시험/ })).toBeInTheDocument();
+    expect(within(eventRow).queryByRole('button', { name: /나사로/ })).not.toBeInTheDocument();
+
+    await user.click(within(eventRow).getByRole('button', { name: '수난·부활·승천 사건 5개 펼치기' }));
+    expect(eventRow.querySelectorAll('[data-item-id]')).toHaveLength(6);
+    expect(within(eventRow).getByRole('button', { name: /나사로/ })).toBeInTheDocument();
+    expect(within(eventRow).queryByRole('button', { name: /광야 시험/ })).not.toBeInTheDocument();
+
+    await user.click(within(eventRow).getByRole('button', { name: '수난·부활·승천 사건 5개 접기' }));
+    expect(canvas).toHaveStyle({ height: '170px' });
+    expect(eventRow.querySelectorAll('[data-item-id]')).toHaveLength(1);
   });
 });

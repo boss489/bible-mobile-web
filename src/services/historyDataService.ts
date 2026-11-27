@@ -505,67 +505,68 @@ export const ERA_CUSTOM_TRACKS: Readonly<Record<HistoryEraId, readonly EraCustom
     { key: 'prim_babel', labelKo: '바벨 · 열방 분화', subLabelKo: '창 10–11장', color: '#8f6b3e' },
   ],
   patriarchs: [
+    { key: 'pat_events', labelKo: '족장기 중요 사건', subLabelKo: '소명·언약·이주', color: '#9a4d24' },
     { key: 'pat_abraham', labelKo: '아브라함 (1대)', subLabelKo: '언약의 시조', color: '#8b5e34' },
     { key: 'pat_isaac', labelKo: '이삭 (2대)', subLabelKo: '언약 계승', color: '#6f6544' },
     { key: 'pat_jacob', labelKo: '야곱 · 이스라엘', subLabelKo: '12지파 조상', color: '#2c6252' },
     { key: 'pat_joseph', labelKo: '요셉 (4대)', subLabelKo: '애굽 총리', color: '#4c6f94' },
-    { key: 'pat_events', labelKo: '족장기 사건', subLabelKo: '언약·이주', color: '#9a4d24' },
   ],
   exodus: [
+    { key: 'exo_events', labelKo: '출애굽 중요 사건', subLabelKo: '구원·언약·광야', color: '#9a4d24' },
     { key: 'exo_moses', labelKo: '모세 (인도자)', subLabelKo: '광야 40년', color: '#2c6252' },
     { key: 'exo_aaron', labelKo: '아론 · 제사장', subLabelKo: '초대 대제사장', color: '#8f6b3e' },
-    { key: 'exo_events', labelKo: '출애굽 · 언약 사건', subLabelKo: '유월절·시내산', color: '#9a4d24' },
   ],
   conquest_judges: [
+    { key: 'jud_events', labelKo: '정복·사사 중요 사건', subLabelKo: '입성·정복·회복', color: '#9a4d24' },
     { key: 'jud_leaders', labelKo: '정복 · 전환 지도자', subLabelKo: '여호수아·사무엘', color: '#2c6252' },
     { key: 'jud_cycle', labelKo: '사사 구원 주기', subLabelKo: '옷니엘~삼손', color: '#8f6b3e' },
     { key: 'jud_lineage', labelKo: '언약 계보 · 사건', subLabelKo: '룻·다윗 계보', color: '#735c70' },
   ],
   united_kingdom: [
+    { key: 'uk_events', labelKo: '언약 · 성전 사건', subLabelKo: '주요 사건', color: '#9a4d24' },
     { key: 'uk_polity', labelKo: '통일 왕국 체제', subLabelKo: '12지파 연합', color: '#526b7a' },
     { key: 'uk_kings', labelKo: '사울 · 다윗 · 솔로몬', subLabelKo: '통일 3대 왕', color: '#4c6f94' },
     { key: 'uk_prophets', labelKo: '선지자 · 제사장', subLabelKo: '사무엘·나단', color: '#8f6b3e' },
-    { key: 'uk_events', labelKo: '언약 · 성전 사건', subLabelKo: '주요 사건', color: '#9a4d24' },
   ],
   divided_kingdom: [
+    { key: 'dk_events', labelKo: '분열 · 함락 사건', subLabelKo: '역사 분기점', color: '#9a4d24' },
     { key: 'dk_israel', labelKo: '북이스라엘 왕', subLabelKo: '여로보암~호세아', color: '#476b88' },
     { key: 'dk_judah', labelKo: '남유다 왕', subLabelKo: '다윗 왕조 계승', color: '#7d5260' },
     { key: 'dk_prophets', labelKo: '활동 선지자', subLabelKo: '엘리야~이사야', color: '#8f6b3e' },
     { key: 'dk_polities', labelKo: '왕국 · 주변 제국', subLabelKo: '남북왕국·앗수르', color: '#526b7a' },
-    { key: 'dk_events', labelKo: '분열 · 함락 사건', subLabelKo: '역사 분기점', color: '#9a4d24' },
   ],
   judah_alone: [
+    { key: 'ja_events', labelKo: '개혁 · 포로 · 함락', subLabelKo: '성전 소실까지', color: '#9a4d24' },
     { key: 'ja_judah', labelKo: '남유다 왕', subLabelKo: '히스기야~시드기야', color: '#7d5260' },
     { key: 'ja_prophets', labelKo: '유다 선지자', subLabelKo: '이사야~예레미야', color: '#8f6b3e' },
     { key: 'ja_empires', labelKo: '주변 제국 · 황제', subLabelKo: '앗수르·바벨론', color: '#526b7a' },
-    { key: 'ja_events', labelKo: '개혁 · 포로 · 함락', subLabelKo: '성전 소실까지', color: '#9a4d24' },
   ],
   exile: [
+    { key: 'exl_events', labelKo: '함락 · 회복 분기', subLabelKo: '핵심 사건', color: '#9a4d24' },
     { key: 'exl_empires', labelKo: '바벨론 · 바사 제국', subLabelKo: '제국과 황제', color: '#526b7a' },
     { key: 'exl_exiles', labelKo: '포로기 왕족 · 인물', subLabelKo: '여호야긴·다니엘', color: '#2c6252' },
     { key: 'exl_prophets', labelKo: '포로기 선지자', subLabelKo: '예레미야·에스겔', color: '#8f6b3e' },
-    { key: 'exl_events', labelKo: '함락 · 회복 분기', subLabelKo: '핵심 사건', color: '#9a4d24' },
   ],
   return_persian: [
+    { key: 'ret_events', labelKo: '귀환 · 성전 재건', subLabelKo: '칙령·성전 완공', color: '#9a4d24' },
     { key: 'ret_persia', labelKo: '페르시아 제국 · 황제', subLabelKo: '고레스~아하수에로', color: '#526b7a' },
     { key: 'ret_leaders', labelKo: '총독 · 귀환 인물', subLabelKo: '스룹바벨·느헤미야', color: '#2c6252' },
     { key: 'ret_prophets', labelKo: '선지자 · 학사', subLabelKo: '학개·에스라·말라기', color: '#8f6b3e' },
-    { key: 'ret_events', labelKo: '귀환 · 성전 재건', subLabelKo: '칙령·성전 완공', color: '#9a4d24' },
   ],
   intertestamental: [
+    { key: 'int_events', labelKo: '역사적 격변 사건', subLabelKo: '원정·마카비·로마', color: '#9a4d24' },
     { key: 'int_polities', labelKo: '제국 · 왕조', subLabelKo: '프톨레마이오스~하스몬', color: '#526b7a' },
     { key: 'int_rulers', labelKo: '헬레니즘 · 유대 통치자', subLabelKo: '안티오코스·헤롯', color: '#4c6f94' },
-    { key: 'int_events', labelKo: '역사적 격변 사건', subLabelKo: '원정·마카비·로마', color: '#9a4d24' },
   ],
   jesus_life: [
+    { key: 'jl_events', labelKo: '구속 중심 사건', subLabelKo: '십자가와 부활', color: '#9a4d24' },
     { key: 'jl_jesus', labelKo: '예수 그리스도', subLabelKo: '성육신 · 공생애', color: '#8b3a2e' },
     { key: 'jl_disciples', labelKo: '성가족 · 선구자 · 제자', subLabelKo: '마리아·세례 요한·사도', color: '#2c6252' },
     { key: 'jl_rulers', labelKo: '로마 · 유대 통치자', subLabelKo: '아우구스투스·빌라도', color: '#4c6f94' },
-    { key: 'jl_events', labelKo: '구속 중심 사건', subLabelKo: '십자가와 부활', color: '#9a4d24' },
   ],
   early_church: [
-    { key: 'ec_apostles', labelKo: '사도 · 교회 지도자', subLabelKo: '베드로·요한·바울', color: '#2c6252' },
     { key: 'ec_journeys', labelKo: '선교여행 · 교회 사건', subLabelKo: '공의회·1~3차 여행', color: '#9a4d24' },
+    { key: 'ec_apostles', labelKo: '사도 · 교회 지도자', subLabelKo: '베드로·요한·바울', color: '#2c6252' },
     { key: 'ec_pauline', labelKo: '바울 서신 작성', subLabelKo: '로마서~목회서신', color: '#7b5e3b' },
     { key: 'ec_general_nt', labelKo: '일반서신 · 계시록', subLabelKo: '히브리서~요한계시록', color: '#6b5876' },
     { key: 'ec_rulers', labelKo: '로마 황제 · 총독', subLabelKo: '글라우디오·갈리오·네로', color: '#4c6f94' },
@@ -598,6 +599,7 @@ export function resolveEraCustomTrackDef(
       return byKey('exo_events');
     }
     case 'conquest_judges': {
+      if (item.category === 'event') return byKey('jud_events');
       if (item.id === 'item-joshua' || item.id === 'item-samuel') return byKey('jud_leaders');
       if (item.category === 'prophet_priest') return byKey('jud_cycle');
       return byKey('jud_lineage');
@@ -622,6 +624,7 @@ export function resolveEraCustomTrackDef(
       if (item.category === 'ruler' && item.roleLabelKo.includes('남유다')) {
         return byKey('ja_judah');
       }
+      if (item.id === 'item-daniel') return byKey('ja_prophets');
       if (item.category === 'polity' || item.category === 'ruler') {
         return byKey('ja_empires');
       }
@@ -760,7 +763,9 @@ const RELATIVE_ERA_SLOT_LABELS: Partial<Record<HistoryEraId, Record<number, stri
     5: '아브라함 소명',
     6: '이삭 출생',
     7: '야곱 출생',
-    9: '요셉 출생·총리',
+    8: '야곱 · 이스라엘',
+    9: '요셉 세대',
+    10: '요셉 통치',
     11: '애굽 이주·보존',
   },
   exodus: {
@@ -1111,6 +1116,10 @@ export function buildVerticalEraSections(
       const bRel = b.relativeOrder;
       if (aRel !== undefined && bRel !== undefined) {
         if (aRel !== bRel) return aRel - bRel;
+        if ((era.id === 'patriarchs' || era.id === 'exodus' || era.id === 'conquest_judges') && a.category !== b.category) {
+          if (a.category === 'event') return -1;
+          if (b.category === 'event') return 1;
+        }
         return (b.relativeSpan ?? 1) - (a.relativeSpan ?? 1);
       }
       if (aRel !== undefined) return -1;
