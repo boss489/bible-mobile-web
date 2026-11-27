@@ -1331,6 +1331,24 @@ add_dated_item(
     contemporaries=["item-ahaz", "item-hosea", "item-isaiah", "item-micah"],
     related=["item-samaria-fall", "item-assyrian-empire"],
 )
+
+# 왕위 계승 흐름에서 빠져 있던 단기 재위 왕도 연대표의 각 왕국 행에 표시한다.
+for item_id, name, start, end, ref, summary, role in [
+    ("item-abijah-judah", "아비야 (아비얌)", -913, -911, "1KGS.15.1-8", "르호보암의 아들로 남유다를 3년간 다스린 왕입니다.", "남유다 왕"),
+    ("item-nadab-israel", "나답", -910, -909, "1KGS.15.25-28", "여로보암 1세의 아들로 북이스라엘을 다스리다 바아사에게 살해되었습니다.", "북이스라엘 왕"),
+    ("item-elah-israel", "엘라", -886, -885, "1KGS.16.8-10", "바아사의 아들로 북이스라엘을 다스리다 시므리에게 살해되었습니다.", "북이스라엘 왕"),
+    ("item-zimri-israel", "시므리", -885, -885, "1KGS.16.15-20", "엘라를 죽이고 왕위에 올랐으나 7일 만에 오므리의 공격을 받자 왕궁에 불을 지르고 죽었습니다.", "북이스라엘 왕"),
+    ("item-ahaziah-israel", "아하시야 (북이스라엘)", -853, -852, "1KGS.22.51-53", "아합의 아들로 북이스라엘을 다스렸으며 바알 숭배를 이어 갔습니다.", "북이스라엘 왕"),
+    ("item-jehoram-judah", "여호람 (남유다)", -848, -842, "2KGS.8.16-19", "여호사밧의 아들로 남유다를 다스리며 아합 집안과 혼인 동맹을 맺었습니다.", "남유다 왕"),
+    ("item-ahaziah-judah", "아하시야 (남유다)", -842, -841, "2KGS.8.25-29", "여호람의 아들로 남유다를 짧게 다스리다 예후의 정변 때 죽었습니다.", "남유다 왕"),
+    ("item-jehoahaz-israel", "여호아하스 (북이스라엘)", -814, -798, "2KGS.13.1-9", "예후의 아들로 북이스라엘을 다스리며 아람의 압박을 받았습니다.", "북이스라엘 왕"),
+    ("item-zechariah-israel", "스가랴 (북이스라엘)", -753, -752, "2KGS.15.8-12", "여로보암 2세의 아들로 6개월간 다스리다 살룸에게 살해되어 예후 왕조가 끝났습니다.", "북이스라엘 왕"),
+    ("item-shallum-israel", "살룸", -752, -752, "2KGS.15.13-15", "스가랴를 죽이고 왕이 되었으나 한 달 만에 므나헴에게 살해되었습니다.", "북이스라엘 왕"),
+    ("item-pekahiah-israel", "브가히야", -742, -740, "2KGS.15.23-26", "므나헴의 아들로 2년간 다스리다 베가의 반란으로 죽었습니다.", "북이스라엘 왕"),
+]:
+    add_dated_item(item_id, name, "ruler", "divided_kingdom", start, end,
+                   [(ref, summary)], summary, precision="estimated", role_label=role)
+
 add_dated_item(
     "item-isaiah",
     "이사야",

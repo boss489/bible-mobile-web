@@ -3033,6 +3033,325 @@
       ]
     },
     {
+      "id": "item-abijah-judah",
+      "nameKo": "아비야 (아비얌)",
+      "roleLabelKo": "남유다 왕",
+      "category": "ruler",
+      "eraIds": [
+        "divided_kingdom"
+      ],
+      "recordType": "biblical_record",
+      "periodKind": "reign",
+      "periodScale": "actual_duration",
+      "datePrecision": "estimated",
+      "displayPeriodKo": "약 BC 913–911년",
+      "startYear": -913,
+      "endYear": -911,
+      "summaryKo": "르호보암의 아들로 남유다를 3년간 다스린 왕입니다.",
+      "passages": [
+        {
+          "verseId": "1KGS.15.1-8",
+          "titleKo": "열왕기상",
+          "roleKo": "르호보암의 아들로 남유다를 3년간 다스린 왕입니다."
+        }
+      ],
+      "sourceIds": [
+        "biblical-internal-text",
+        "standard-biblical-intro",
+        "ane-epigraphic-chronology"
+      ]
+    },
+    {
+      "id": "item-nadab-israel",
+      "nameKo": "나답",
+      "roleLabelKo": "북이스라엘 왕",
+      "category": "ruler",
+      "eraIds": [
+        "divided_kingdom"
+      ],
+      "recordType": "biblical_record",
+      "periodKind": "reign",
+      "periodScale": "actual_duration",
+      "datePrecision": "estimated",
+      "displayPeriodKo": "약 BC 910–909년",
+      "startYear": -910,
+      "endYear": -909,
+      "summaryKo": "여로보암 1세의 아들로 북이스라엘을 다스리다 바아사에게 살해되었습니다.",
+      "passages": [
+        {
+          "verseId": "1KGS.15.25-28",
+          "titleKo": "열왕기상",
+          "roleKo": "여로보암 1세의 아들로 북이스라엘을 다스리다 바아사에게 살해되었습니다."
+        }
+      ],
+      "sourceIds": [
+        "biblical-internal-text",
+        "standard-biblical-intro",
+        "ane-epigraphic-chronology"
+      ]
+    },
+    {
+      "id": "item-elah-israel",
+      "nameKo": "엘라",
+      "roleLabelKo": "북이스라엘 왕",
+      "category": "ruler",
+      "eraIds": [
+        "divided_kingdom"
+      ],
+      "recordType": "biblical_record",
+      "periodKind": "reign",
+      "periodScale": "actual_duration",
+      "datePrecision": "estimated",
+      "displayPeriodKo": "약 BC 886–885년",
+      "startYear": -886,
+      "endYear": -885,
+      "summaryKo": "바아사의 아들로 북이스라엘을 다스리다 시므리에게 살해되었습니다.",
+      "passages": [
+        {
+          "verseId": "1KGS.16.8-10",
+          "titleKo": "열왕기상",
+          "roleKo": "바아사의 아들로 북이스라엘을 다스리다 시므리에게 살해되었습니다."
+        }
+      ],
+      "sourceIds": [
+        "biblical-internal-text",
+        "standard-biblical-intro",
+        "ane-epigraphic-chronology"
+      ]
+    },
+    {
+      "id": "item-zimri-israel",
+      "nameKo": "시므리",
+      "roleLabelKo": "북이스라엘 왕",
+      "category": "ruler",
+      "eraIds": [
+        "divided_kingdom"
+      ],
+      "recordType": "biblical_record",
+      "periodKind": "reign",
+      "periodScale": "actual_duration",
+      "datePrecision": "estimated",
+      "displayPeriodKo": "약 BC 885년",
+      "startYear": -885,
+      "endYear": -885,
+      "summaryKo": "엘라를 죽이고 왕위에 올랐으나 7일 만에 오므리의 공격을 받자 왕궁에 불을 지르고 죽었습니다.",
+      "passages": [
+        {
+          "verseId": "1KGS.16.15-20",
+          "titleKo": "열왕기상",
+          "roleKo": "엘라를 죽이고 왕위에 올랐으나 7일 만에 오므리의 공격을 받자 왕궁에 불을 지르고 죽었습니다."
+        }
+      ],
+      "sourceIds": [
+        "biblical-internal-text",
+        "standard-biblical-intro",
+        "ane-epigraphic-chronology"
+      ]
+    },
+    {
+      "id": "item-ahaziah-israel",
+      "nameKo": "아하시야 (북이스라엘)",
+      "roleLabelKo": "북이스라엘 왕",
+      "category": "ruler",
+      "eraIds": [
+        "divided_kingdom"
+      ],
+      "recordType": "biblical_record",
+      "periodKind": "reign",
+      "periodScale": "actual_duration",
+      "datePrecision": "estimated",
+      "displayPeriodKo": "약 BC 853–852년",
+      "startYear": -853,
+      "endYear": -852,
+      "summaryKo": "아합의 아들로 북이스라엘을 다스렸으며 바알 숭배를 이어 갔습니다.",
+      "passages": [
+        {
+          "verseId": "1KGS.22.51-53",
+          "titleKo": "열왕기상",
+          "roleKo": "아합의 아들로 북이스라엘을 다스렸으며 바알 숭배를 이어 갔습니다."
+        }
+      ],
+      "sourceIds": [
+        "biblical-internal-text",
+        "standard-biblical-intro",
+        "ane-epigraphic-chronology"
+      ]
+    },
+    {
+      "id": "item-jehoram-judah",
+      "nameKo": "여호람 (남유다)",
+      "roleLabelKo": "남유다 왕",
+      "category": "ruler",
+      "eraIds": [
+        "divided_kingdom"
+      ],
+      "recordType": "biblical_record",
+      "periodKind": "reign",
+      "periodScale": "actual_duration",
+      "datePrecision": "estimated",
+      "displayPeriodKo": "약 BC 848–842년",
+      "startYear": -848,
+      "endYear": -842,
+      "summaryKo": "여호사밧의 아들로 남유다를 다스리며 아합 집안과 혼인 동맹을 맺었습니다.",
+      "passages": [
+        {
+          "verseId": "2KGS.8.16-19",
+          "titleKo": "열왕기하",
+          "roleKo": "여호사밧의 아들로 남유다를 다스리며 아합 집안과 혼인 동맹을 맺었습니다."
+        }
+      ],
+      "sourceIds": [
+        "biblical-internal-text",
+        "standard-biblical-intro",
+        "ane-epigraphic-chronology"
+      ]
+    },
+    {
+      "id": "item-ahaziah-judah",
+      "nameKo": "아하시야 (남유다)",
+      "roleLabelKo": "남유다 왕",
+      "category": "ruler",
+      "eraIds": [
+        "divided_kingdom"
+      ],
+      "recordType": "biblical_record",
+      "periodKind": "reign",
+      "periodScale": "actual_duration",
+      "datePrecision": "estimated",
+      "displayPeriodKo": "약 BC 842–841년",
+      "startYear": -842,
+      "endYear": -841,
+      "summaryKo": "여호람의 아들로 남유다를 짧게 다스리다 예후의 정변 때 죽었습니다.",
+      "passages": [
+        {
+          "verseId": "2KGS.8.25-29",
+          "titleKo": "열왕기하",
+          "roleKo": "여호람의 아들로 남유다를 짧게 다스리다 예후의 정변 때 죽었습니다."
+        }
+      ],
+      "sourceIds": [
+        "biblical-internal-text",
+        "standard-biblical-intro",
+        "ane-epigraphic-chronology"
+      ]
+    },
+    {
+      "id": "item-jehoahaz-israel",
+      "nameKo": "여호아하스 (북이스라엘)",
+      "roleLabelKo": "북이스라엘 왕",
+      "category": "ruler",
+      "eraIds": [
+        "divided_kingdom"
+      ],
+      "recordType": "biblical_record",
+      "periodKind": "reign",
+      "periodScale": "actual_duration",
+      "datePrecision": "estimated",
+      "displayPeriodKo": "약 BC 814–798년",
+      "startYear": -814,
+      "endYear": -798,
+      "summaryKo": "예후의 아들로 북이스라엘을 다스리며 아람의 압박을 받았습니다.",
+      "passages": [
+        {
+          "verseId": "2KGS.13.1-9",
+          "titleKo": "열왕기하",
+          "roleKo": "예후의 아들로 북이스라엘을 다스리며 아람의 압박을 받았습니다."
+        }
+      ],
+      "sourceIds": [
+        "biblical-internal-text",
+        "standard-biblical-intro",
+        "ane-epigraphic-chronology"
+      ]
+    },
+    {
+      "id": "item-zechariah-israel",
+      "nameKo": "스가랴 (북이스라엘)",
+      "roleLabelKo": "북이스라엘 왕",
+      "category": "ruler",
+      "eraIds": [
+        "divided_kingdom"
+      ],
+      "recordType": "biblical_record",
+      "periodKind": "reign",
+      "periodScale": "actual_duration",
+      "datePrecision": "estimated",
+      "displayPeriodKo": "약 BC 753–752년",
+      "startYear": -753,
+      "endYear": -752,
+      "summaryKo": "여로보암 2세의 아들로 6개월간 다스리다 살룸에게 살해되어 예후 왕조가 끝났습니다.",
+      "passages": [
+        {
+          "verseId": "2KGS.15.8-12",
+          "titleKo": "열왕기하",
+          "roleKo": "여로보암 2세의 아들로 6개월간 다스리다 살룸에게 살해되어 예후 왕조가 끝났습니다."
+        }
+      ],
+      "sourceIds": [
+        "biblical-internal-text",
+        "standard-biblical-intro",
+        "ane-epigraphic-chronology"
+      ]
+    },
+    {
+      "id": "item-shallum-israel",
+      "nameKo": "살룸",
+      "roleLabelKo": "북이스라엘 왕",
+      "category": "ruler",
+      "eraIds": [
+        "divided_kingdom"
+      ],
+      "recordType": "biblical_record",
+      "periodKind": "reign",
+      "periodScale": "actual_duration",
+      "datePrecision": "estimated",
+      "displayPeriodKo": "약 BC 752년",
+      "startYear": -752,
+      "endYear": -752,
+      "summaryKo": "스가랴를 죽이고 왕이 되었으나 한 달 만에 므나헴에게 살해되었습니다.",
+      "passages": [
+        {
+          "verseId": "2KGS.15.13-15",
+          "titleKo": "열왕기하",
+          "roleKo": "스가랴를 죽이고 왕이 되었으나 한 달 만에 므나헴에게 살해되었습니다."
+        }
+      ],
+      "sourceIds": [
+        "biblical-internal-text",
+        "standard-biblical-intro",
+        "ane-epigraphic-chronology"
+      ]
+    },
+    {
+      "id": "item-pekahiah-israel",
+      "nameKo": "브가히야",
+      "roleLabelKo": "북이스라엘 왕",
+      "category": "ruler",
+      "eraIds": [
+        "divided_kingdom"
+      ],
+      "recordType": "biblical_record",
+      "periodKind": "reign",
+      "periodScale": "actual_duration",
+      "datePrecision": "estimated",
+      "displayPeriodKo": "약 BC 742–740년",
+      "startYear": -742,
+      "endYear": -740,
+      "summaryKo": "므나헴의 아들로 2년간 다스리다 베가의 반란으로 죽었습니다.",
+      "passages": [
+        {
+          "verseId": "2KGS.15.23-26",
+          "titleKo": "열왕기하",
+          "roleKo": "므나헴의 아들로 2년간 다스리다 베가의 반란으로 죽었습니다."
+        }
+      ],
+      "sourceIds": [
+        "biblical-internal-text",
+        "standard-biblical-intro",
+        "ane-epigraphic-chronology"
+      ]
+    },
+    {
       "id": "item-isaiah",
       "nameKo": "이사야",
       "roleLabelKo": "선지자",

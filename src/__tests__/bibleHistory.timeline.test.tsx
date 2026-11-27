@@ -738,4 +738,26 @@ describe('성경 앱 개편: 성경순 · 연대순 읽기 및 역사 연대표 
     expect(canvas).toHaveStyle({ height: '170px' });
     expect(eventRow.querySelectorAll('[data-item-id]')).toHaveLength(1);
   });
+
+  it('12. 분열왕국 왕 행에 북이스라엘 19왕과 남유다 통치자가 빠짐없이 표시된다', () => {
+    const era = REAL_HISTORY_DATASET.eras.find((item) => item.id === 'divided_kingdom')!;
+    const layout = buildDedicatedEraChartLayout(era, REAL_HISTORY_DATASET.items, 2, 'ALL');
+    const north = layout.tracks.find((track) => track.key === 'dk_israel')!.items.map((packed) => packed.item.id);
+    const south = layout.tracks.find((track) => track.key === 'dk_judah')!.items.map((packed) => packed.item.id);
+
+    expect(north).toHaveLength(19);
+    expect(north).toEqual(expect.arrayContaining([
+      'item-jeroboam-i', 'item-nadab-israel', 'item-baasha', 'item-elah-israel',
+      'item-zimri-israel', 'item-omri', 'item-ahab', 'item-ahaziah-israel',
+      'item-joram-israel', 'item-jehu', 'item-jehoahaz-israel', 'item-joash-israel',
+      'item-jeroboam-ii', 'item-zechariah-israel', 'item-shallum-israel',
+      'item-menahem', 'item-pekahiah-israel', 'item-pekah', 'item-hoshea-king',
+    ]));
+    expect(south).toHaveLength(12);
+    expect(south).toEqual(expect.arrayContaining([
+      'item-rehoboam', 'item-abijah-judah', 'item-asa', 'item-jehoshaphat',
+      'item-jehoram-judah', 'item-ahaziah-judah', 'item-athaliah',
+      'item-joash-judah', 'item-amaziah', 'item-uzziah', 'item-jotham', 'item-ahaz',
+    ]));
+  });
 });
